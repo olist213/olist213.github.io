@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/tips1/" />
+  <link rel="next" href="https://olist213.github.io/posts/forensic_analysis_1/" />
+  <link rel="canonical" href="https://olist213.github.io/posts/emergency_response1/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           记一次linux下的应急响应 | Olist.213
+       
+  </title>
+  <meta name="title" content="记一次linux下的应急响应 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "记一次linux下的应急响应",
+    "headline" : "记一次linux下的应急响应",
+    "description" : "0x01 事件描述\n某同事在某单位遇到一个linux主机运行不正常，疑似服务器被植入恶意代码，叫我这边看下，当时同事了解到，由于服务器业务出现问题，导致客户登陆服务器查看情况，对异常进程进行查杀之后，恢复正常，但之后该进程又会重新启动。\n要了服务器的登陆信息之后，开始进行排查。\n0x02 漏洞排查\n1、用户根目录发现一个异常文件。\n2、通过火绒进行查杀\n3、stat命令查看文件状态\n Access : 文件最近一次被访问的时间 Modify: 文件内容最近一次被修改的时间 Change: 文件属性最近一次被改变的时间  4、存在异常账户\n5、在home目录下也发现一个异常文件tufei34。\n6、通过在线云沙箱(https:\/\/s.threatbook.cn)检测，发现为木马后门。\n7、利用utmpdump对该二进制文件提取可读内容，发现对外连接了许多异常ip。\n火绒杀毒软件扫描结果。\n8、通过top命令对进程进行排查，发现异常进程rvnshcqhiq，进程id为13987，通过对进程id进行分析，发现其对外连接到ip183.ip-178-32-145.eu，这个域名也为一个异常域名。\n9、lsof -p PID，查看进程的连接情况，该异常文件位于\/usr\/bin下\n10、将异常文件rvnshcqhiq下载下来，通过在线云沙箱(https:\/\/s.threatbook.cn)对这个木马进行进一步分析，发现其为Xorddos木马。\n11、使用pstree也可以看到异常文件进程\n12、利用strings \/usr\/bin\/rvnshcqhiq对木马文件进行排查，发现该木马文件启动了计划任务，每三分钟执行一次。\n13、查看任务计划文件。\n14、同时在\/usr\/bin\/目录下也发现其他的木马文件。\n15、查看自启动文件ls \/etc\/rc*\n0x03 使用clamav进行查杀\n使用clamav进行查杀的效果,clamscan -r \/usr\/bin\n对其中的一个\/usr\/bin\/.ssh文件进行分析,发现大量异常ip。\nstrings \/usr\/bin\/.sshd | egrep \u0027[1-9]{1,3}\\.[1-9]{1,3}\\.\u0027\n利用clamav扫描\/etc\/目录下的文件。\nMysql也为木马文件。\n对登录记录进行分析，登录成功的ip前两个分别为54.36.137.146和37.44.212.223，这两个ip都为境外ip。\ngrep \u0026#39;Accepted\u0026#39; \/var\/log\/secure | awk \u0026#39;{pirnt $11}\u0026#39; | sort | uniq -c | sorn -nr 0x04 解决建议\n  对服务器的异常文件进行清理，由于木马会自动生成，所以先把木马文件的权限关闭，然后删除开机自启动的木马程序和软链接，手动清除全部木马原始文件，同时，将恶意文件生成的计划任务清空。\n  安装 clamav 扫描并删除感染文件。",
+    "inLanguage" : "zh-cn",
+    "author" : "Olist.213",
+    "creator" : "Olist.213",
+    "publisher": "Olist.213",
+    "accountablePerson" : "Olist.213",
+    "copyrightHolder" : "Olist.213",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-03-06 15:35:36 \u002b0800 CST",
+    "dateModified" : "2019-03-06 15:35:36 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/emergency_response1\/",
+    "wordCount" : "69",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">记一次linux下的应急响应</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Olist.213</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-03-06 itemprop="datePublished">March 6, 2019</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>0x01 事件描述</p>
+<p>某同事在某单位遇到一个linux主机运行不正常，疑似服务器被植入恶意代码，叫我这边看下，当时同事了解到，由于服务器业务出现问题，导致客户登陆服务器查看情况，对异常进程进行查杀之后，恢复正常，但之后该进程又会重新启动。</p>
+<p>要了服务器的登陆信息之后，开始进行排查。</p>
+<p>0x02 漏洞排查</p>
+<p>1、用户根目录发现一个异常文件。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551857883029.jpg" alt="异常文件1"></p>
+<p>2、通过火绒进行查杀</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551857938922.jpg" alt="火绒查杀"></p>
+<p>3、stat命令查看文件状态</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551857992946.jpg" alt="stat"></p>
+<ul>
+<li>Access : 文件最近一次被访问的时间</li>
+<li>Modify: 文件内容最近一次被修改的时间</li>
+<li>Change: 文件属性最近一次被改变的时间</li>
+</ul>
+<p>4、存在异常账户</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858013114.jpg" alt="异常账户"></p>
+<p>5、在home目录下也发现一个异常文件tufei34。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858065809.jpg" alt="异常文件2"></p>
+<p>6、通过在线云沙箱(<a href="https://s.threatbook.cn">https://s.threatbook.cn</a>)检测，发现为木马后门。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858317697.jpg" alt="云检测"></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858344343.jpg" alt="云检测"></p>
+<p>7、利用utmpdump对该二进制文件提取可读内容，发现对外连接了许多异常ip。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858382360.jpg" alt="utmpdump tufei34"></p>
+<p>火绒杀毒软件扫描结果。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858413906.jpg" alt="火绒杀毒"></p>
+<p>8、通过top命令对进程进行排查，发现异常进程<code>rvnshcqhiq</code>，进程id为13987，通过对进程id进行分析，发现其对外连接到ip183.ip-178-32-145.eu，这个域名也为一个异常域名。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858449465.jpg" alt="top"></p>
+<p>9、lsof -p PID，查看进程的连接情况，该异常文件位于/usr/bin下</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858475540.jpg" alt="lsof -p13987"></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858507126.jpg" alt="异常域名"></p>
+<p>10、将异常文件<code>rvnshcqhiq</code>下载下来，通过在线云沙箱(<a href="https://s.threatbook.cn">https://s.threatbook.cn</a>)对这个木马进行进一步分析，发现其为Xorddos木马。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858570403.jpg" alt="云检测"></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858580141.jpg" alt="云检测"></p>
+<p>11、使用pstree也可以看到异常文件进程</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858839155.jpg" alt="pstree"></p>
+<p>12、利用<code>strings /usr/bin/rvnshcqhiq</code>对木马文件进行排查，发现该木马文件启动了计划任务，每三分钟执行一次。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858599053.jpg" alt="strings /usr/bin/rvnshcqhiq"></p>
+<p>13、查看任务计划文件。</p>
+<p><img src="https://markdown.xiaoshujiang.com/img/spinner.gif" alt="计划任务文件" title="[[[1551858624803]]]"></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858656397.jpg" alt="计划任务"></p>
+<p>14、同时在/usr/bin/目录下也发现其他的木马文件。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858699423.jpg" alt="其他木马文件"></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858745237.jpg" alt="恶意文件开机自启动"></p>
+<p>15、查看自启动文件<code>ls /etc/rc*</code></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858785119.jpg" alt="ls /etc/rc*"></p>
+<p>0x03 使用<code>clamav</code>进行查杀</p>
+<p>使用clamav进行查杀的效果,<code>clamscan -r /usr/bin</code></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858955621.jpg" alt="clamav1"></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551858967271.jpg" alt="clamav2"></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551859075576.jpg" alt="clamav3"></p>
+<p>对其中的一个/usr/bin/.ssh文件进行分析,发现大量异常ip。</p>
+<p><code>strings /usr/bin/.sshd | egrep '[1-9]{1,3}\.[1-9]{1,3}\.'</code></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551859007106.jpg" alt=".ssh"></p>
+<p>利用clamav扫描/etc/目录下的文件。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551859263455.jpg" alt="clamav4"></p>
+<p>Mysql也为木马文件。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551859063945.jpg" alt="Mysql"></p>
+<p>对登录记录进行分析，登录成功的ip前两个分别为54.36.137.146和37.44.212.223，这两个ip都为境外ip。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">grep <span style="color:#e6db74">&#39;Accepted&#39;</span> /var/log/secure | awk <span style="color:#e6db74">&#39;{pirnt $11}&#39;</span> | sort | uniq -c | sorn -nr
+</code></pre></div><p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551859157667.jpg" alt="登录记录分析1"></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551859172260.jpg" alt="登录记录分析2"></p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1551859176069.jpg" alt="登录记录分析3"></p>
+<p>0x04 解决建议</p>
+<ul>
+<li>
+<p>对服务器的异常文件进行清理，由于木马会自动生成，所以先把木马文件的权限关闭，然后删除开机自启动的木马程序和软链接，手动清除全部木马原始文件，同时，将恶意文件生成的计划任务清空。</p>
+</li>
+<li>
+<p>安装 clamav 扫描并删除感染文件。</p>
+</li>
+<li>
+<p>在条件允许的情况下，建议对服务器进行重新部署，防止出现病毒遗留的症状。</p>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/emergency_response1/>https://olist213.github.io/posts/emergency_response1/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/tips1/" class="prev" rel="prev" title="Tips1"><i class="iconfont icon-left"></i>&nbsp;Tips1</a>
+         
+        
+        <a href="https://olist213.github.io/posts/forensic_analysis_1/" class="next" rel="next" title="记一次取证分析1">记一次取证分析1&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>病毒 on Olist.213</title>
+    <link>https://olist213.github.io/tags/%E7%97%85%E6%AF%92/</link>
+    <description>Recent content in 病毒 on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 25 Jan 2019 16:23:39 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E7%97%85%E6%AF%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>勒索病毒防护建议</title>
+      <link>https://olist213.github.io/posts/virus/</link>
+      <pubDate>Fri, 25 Jan 2019 16:23:39 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/virus/</guid>
+      <description>1、通过防火墙进行ip、端口的细粒化访问控制，部署防毒墙对病毒进行安全防护，建立日志审计系统，对服务器日志进行收集和分析，以便日后排查。
+2、服务器操作系统和内网办公电脑安装专业的终端安全防护软件，为主机提供端点防护和病毒检测清理功能。
+3、尽量关闭不必要的文件共享权限以及关闭不必要的端口，如：445,135,139,3389 等。
+4、服务器和内网办公电脑及时给主机打补丁 (永恒之蓝漏洞补丁)，修复相应的高危漏洞。
+5、RDP 远程服务器等连接尽量使用强密码，不要使用弱密码。
+6、不要点击来源不明的邮件附件，不从不明网站下载软件。
+7、不定时进行异地备份计算机中重要的数据和文件，万一中病毒可以进行恢复。
+8、加强信息管理人员的安全意识，教育用户识别有关社会工程学攻击的危险和标志，完善信息安全管理制度，保障在出现问题时，能及时登录安全设备，完善网络拓扑图。
+9、正确的实施网络分段和网络安全域的划分。
+10、完善单位完善应急预案，定期进行应急演练工作，做到防患于未然。</description>
+    </item>
+    
+    <item>
+      <title>记一次某医院勒索软件事件处理整理</title>
+      <link>https://olist213.github.io/posts/blackmail_virus/</link>
+      <pubDate>Mon, 21 Jan 2019 10:50:31 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/blackmail_virus/</guid>
+      <description>之前的旧文章，换了hugo之后，重新拉过来，就拉这一篇，其他的就算了。
+ 起因 2018年的某天，公司接到某医院的电话，医院的后台和终端机出现数据库异常报错情况。
+基于这种紧急情况，公司立马出动应急人员，赶到客户现场。
+到现场，初步了解情况之后，通过沟通以及对报错信息进行分析，后台报错如下:
+（你的数据库已被SQL RUSH Team锁死 发送5个比特币到这个地址 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (大小写一致) 之后把你的Oracle SID邮寄地址 sqlrush@mail.com 我们将让你知道如何解锁你的数据库 Hi buddy, your database was hacked by SQL RUSH Team, send 5 bitcoin to address 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (case sensitive), after that send your Oracle SID to mail address sqlrush@mail.com, we will let you know how to unlock your database.） 初步判断为Ransom_RUSHQL.A勒索病毒。这种病毒针对oracle数据库，通过一定的条件触发，并最终锁死数据库，从而引发数据库宕机。
+由于是生产库，所以我们最终需要做的就是处理掉病毒，对数据进行恢复。
+病毒如下：
+-- -- Copyright (c) 1988, 2011, Oracle and/or its affiliates. -- All rights reserved.</description>
+    </item>
+    
+  </channel>
+</rss>

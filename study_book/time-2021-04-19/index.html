@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/time-2021-04-18/" />
+  <link rel="next" href="https://olist213.github.io/study_book/time-2021-04-21/" />
+  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-04-19/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Time 2021 04 19 | Olist.213
+       
+  </title>
+  <meta name="title" content="Time 2021 04 19 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "Time 2021 04 19",
+    "headline" : "Time 2021 04 19",
+    "description" : "Windows平台运行Masscan和Nmap\n  前提：WinPcap\n  @echo off cd %~dp0 if \u0026#34;%PROCESSOR_ARCHITECTURE%\u0026#34;==\u0026#34;x86\u0026#34; move npf_x86.sys %SystemRoot%\\system32\\drivers\\npf.sys if \u0026#34;%PROCESSOR_ARCHITECTURE%\u0026#34;==\u0026#34;AMD64\u0026#34; move npf_x64.sys %SystemRoot%\\system32\\drivers\\npf.sys if exist %SystemRoot%\\system32\\drivers\\npf.sys (echo move success!) else (echo move error!) sc create npf binPath= system32\\drivers\\npf.sys type= kernel start= demand error= normal tag= no DisplayName= \u0026#34;NetGroup Packet Filter Driver\u0026#34; sc start npf   https:\/\/github.com\/3gstudent\/Winpcap_Install\n    实例：vs2019编译masscan\n  windows平台内网常用信息收集工具\n  masscan\n  nmap",
+    "inLanguage" : "zh-cn",
+    "author" : "Olist.213",
+    "creator" : "Olist.213",
+    "publisher": "Olist.213",
+    "accountablePerson" : "Olist.213",
+    "copyrightHolder" : "Olist.213",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-19 14:29:39 \u002b0800 CST",
+    "dateModified" : "2021-04-19 14:29:39 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-04-19\/",
+    "wordCount" : "143",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Time 2021 04 19</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Olist.213</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-04-19 itemprop="datePublished">April 19, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="/images/time-2021-04-19.assets/mountains-3840x2160.jpg" alt="mountains-3840x2160"></p>
+<hr>
+<ul>
+<li>
+<p><a href="https://github.com/3gstudent/3gstudent.github.io/blob/main/_posts/2017-7-5-%E6%B8%97%E9%80%8F%E6%8A%80%E5%B7%A7%E2%80%94%E2%80%94Windows%E5%B9%B3%E5%8F%B0%E8%BF%90%E8%A1%8CMasscan%E5%92%8CNmap.md">Windows平台运行Masscan和Nmap</a></p>
+<ul>
+<li>
+<p>前提：WinPcap</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off
+cd %~dp0
+<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;%PROCESSOR_ARCHITECTURE%&#34;</span><span style="color:#f92672">==</span><span style="color:#e6db74">&#34;x86&#34;</span> move npf_x86.sys %SystemRoot%<span style="color:#ae81ff">\s</span>ystem32<span style="color:#ae81ff">\d</span>rivers<span style="color:#ae81ff">\n</span>pf.sys
+<span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;%PROCESSOR_ARCHITECTURE%&#34;</span><span style="color:#f92672">==</span><span style="color:#e6db74">&#34;AMD64&#34;</span> move npf_x64.sys %SystemRoot%<span style="color:#ae81ff">\s</span>ystem32<span style="color:#ae81ff">\d</span>rivers<span style="color:#ae81ff">\n</span>pf.sys
+<span style="color:#66d9ef">if</span> exist %SystemRoot%<span style="color:#ae81ff">\s</span>ystem32<span style="color:#ae81ff">\d</span>rivers<span style="color:#ae81ff">\n</span>pf.sys <span style="color:#f92672">(</span>echo move success!<span style="color:#f92672">)</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">(</span>echo move error!<span style="color:#f92672">)</span>
+sc create npf binPath<span style="color:#f92672">=</span> system32<span style="color:#ae81ff">\d</span>rivers<span style="color:#ae81ff">\n</span>pf.sys type<span style="color:#f92672">=</span> kernel start<span style="color:#f92672">=</span> demand error<span style="color:#f92672">=</span> normal tag<span style="color:#f92672">=</span> no DisplayName<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;NetGroup Packet Filter Driver&#34;</span>
+sc start npf
+</code></pre></div></li>
+<li>
+<p><a href="https://github.com/3gstudent/Winpcap_Install">https://github.com/3gstudent/Winpcap_Install</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://olist213.github.io/posts/vs2019-build-masscan/">实例：vs2019编译masscan</a></p>
+</li>
+<li>
+<p>windows平台内网常用信息收集工具</p>
+<ul>
+<li>
+<p>masscan</p>
+</li>
+<li>
+<p>nmap</p>
+</li>
+<li>
+<p><a href="https://github.com/shadow1ng/fscan">fscan</a></p>
+<ul>
+<li>
+<p>支持主机存活探测、端口扫描、常见服务的爆破、ms17010、redis批量写公钥、计划任务反弹shell、读取win网卡信息、web指纹识别、web漏洞扫描等。</p>
+</li>
+<li>
+<p>简单用法</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fscan.exe -h 192.168.1.1/24  <span style="color:#f92672">(</span>默认使用全部模块<span style="color:#f92672">)</span>
+fscan.exe -h 192.168.1.1/16  <span style="color:#f92672">(</span>B段扫描<span style="color:#f92672">)</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/Adminisme/ServerScan">ServerScan</a></p>
+<ul>
+<li>内网横向信息收集的高并发网络扫描、服务探测工具.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/4dogs-cn/TXPortMap">TXPortMap</a></p>
+<ul>
+<li>
+<p>端口扫描和指纹识别</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">TxPortMap.exe -i x.x.x.x -p 80,8080
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/lz520520/railgun">railgun</a></p>
+<ul>
+<li>集成了端口扫描、端口爆破、web指纹扫描、漏洞扫描、漏洞利用以及编码转换功能.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/lcvvvv/kscan">kscan</a></p>
+<ul>
+<li>指纹识别，资产探测</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/CTF-MissFeng/nmaps">nmaps</a></p>
+<ul>
+<li>go</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/projectdiscovery/naabu">naabu</a></p>
+<ul>
+<li>go</li>
+<li>端口扫描</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/RustScan/RustScan">RustScan</a></p>
+<ul>
+<li>rust</li>
+<li>端口扫描</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>windows平台外网常用信息收集工具</p>
+<ul>
+<li>
+<p><a href="https://github.com/EdgeSecurityTeam/Eeyes">Eeyes</a></p>
+<ul>
+<li><code>Eeyes -f xxx.com </code></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/s7ckTeam/Glass">Glass</a></p>
+<ul>
+<li>资产列表的快速指纹识别工具</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/broken5/bscan">bscan</a></p>
+<ul>
+<li>
+<p>一款强大、简单、实用、高效的HTTP扫描器。</p>
+</li>
+<li>
+<p><strong>bscan</strong>的前身是WebAliveScan</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./bscan -target ip.txt -ports 80,443
+</code></pre></div></li>
+<li>
+<p>快速扫描OneForAll结果</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat results/*.csv |awk -F , <span style="color:#e6db74">&#39;{print$6}&#39;</span> &gt; &lt;filepath&gt; 
+./bscan -target &lt;filepath&gt;
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/EASY233/Finger">Finger</a></p>
+<ul>
+<li>指纹识别</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/projectdiscovery/httpx">httpx</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>fofa工具</p>
+<ul>
+<li><a href="https://github.com/EASY233/Gather">Gather</a></li>
+<li><a href="https://github.com/KpLi0rn/FofaSpider">FofaSpider</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/zongdeiqianxing/hscan">hscan</a></p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/zongdeiqianxing/hscan.git
+docker build -t hscan .
+  
+docker run -ti --rm -v <span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>/:/root/ hscan:latest -u testphp.vulnweb.com
+</code></pre></div></li>
+<li>
+<p>hcan重构版</p>
+<ul>
+<li>
+<p><a href="https://github.com/zongdeiqianxing/Autoscanner">Autoscanner</a></p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t auto .
+    
+./docker_run.sh
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/time-2021-04-19/>https://olist213.github.io/study_book/time-2021-04-19/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-18/" class="prev" rel="prev" title="Time 2021 04 18"><i class="iconfont icon-left"></i>&nbsp;Time 2021 04 18</a>
+         
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-21/" class="next" rel="next" title="Time 2021 04 20">Time 2021 04 20&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

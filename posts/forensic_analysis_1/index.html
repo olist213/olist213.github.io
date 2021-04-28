@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/emergency_response1/" />
+  <link rel="next" href="https://olist213.github.io/posts/easy_rce_ports/" />
+  <link rel="canonical" href="https://olist213.github.io/posts/forensic_analysis_1/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           记一次取证分析1 | Olist.213
+       
+  </title>
+  <meta name="title" content="记一次取证分析1 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "记一次取证分析1",
+    "headline" : "记一次取证分析1",
+    "description" : "0x01 事件描述  这次更新两篇文章，都是关于服务器取证的，也是我工作中的实例，两次取证先有了第一次取证，获取了攻击者的信息，第二次进行跨省取证。（具体详情就不多说了）\n  最近攻击者落网了（境外回来），才想把这次取证再次分享出来。\n  某单位直接被攻击者打了50多G的流量。所以事先电信方面进行了地址筛选，选出了一批地址，开始进行排查。\n 取证流程 直接去了地市电信IDC机房（期间历经各种流程），找到对应的服务器，服务器是台linux服务器 。\n1、通过netstat命令查看服务器状态，发现本地端口对外连接，对外异常ip为122.224.32.32，端口为6009。\n2、通过webshell漏洞扫描工具（hm）对\/home目录下的文件进行扫描，发现异常木马文件，由于网站在2015年就不用了所以这个木马文件应该是之前留下的。\n3、webshell本地访问\n4、查看本地初始化程序，发现异常文件\/etc\/rc.d\/rc.local，该异常文件首先建立一个local文件，之后将系统防火墙关闭，通过nohup命令隐藏\/etc\/udisks-daemon命令执行的结果，以便达到隐藏的目的。文件内容如下:\n5、发现了\/etc\/udisks-daemon异常文件之后，找到\/etc\/udisks-daemon文件，发现该文件的权限为777任意权限。\n6、进一步分析还发现存在另外一个文件udisks-daemon_xmit.ini。\n疑似用来进行端口的初始化操作。，内容如下：\n7、将病毒文件udisks-daemon拉取到本地进行分析，利用wireshark进行抓包分析，同样的，向外连接的ip地址为。\n8、通过strace对病毒文件进行信号跟踪，发现病毒的向外连接的地址为122.224.32.32，端口为6009。\n9、反编译分析\n10、结合互联网上（微步https:\/\/x.threatbook.cn）的威胁情报信息对122.224.32.32地址进行查询分析，已经有用户举报此IP地址存在远控（作为服务端控制肉鸡的行为）行为。\n11、对ip地址进行定位。\n0x03 结论 至此分析完成，这台服务器同样为肉鸡。\nip:122.224.32.32（控制端）",
+    "inLanguage" : "zh-cn",
+    "author" : "Olist.213",
+    "creator" : "Olist.213",
+    "publisher": "Olist.213",
+    "accountablePerson" : "Olist.213",
+    "copyrightHolder" : "Olist.213",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-03-15 15:20:24 \u002b0800 CST",
+    "dateModified" : "2019-03-15 15:20:24 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/forensic_analysis_1\/",
+    "wordCount" : "24",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">记一次取证分析1</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Olist.213</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-03-15 itemprop="datePublished">March 15, 2019</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="0x01-事件描述">0x01 事件描述</h2>
+<blockquote>
+<p>这次更新两篇文章，都是关于服务器取证的，也是我工作中的实例，两次取证先有了第一次取证，获取了攻击者的信息，第二次进行跨省取证。（具体详情就不多说了）</p>
+</blockquote>
+<blockquote>
+<p>最近攻击者落网了（境外回来），才想把这次取证再次分享出来。</p>
+</blockquote>
+<blockquote>
+<p>某单位直接被攻击者打了50多G的流量。所以事先电信方面进行了地址筛选，选出了一批地址，开始进行排查。</p>
+</blockquote>
+<h2 id="取证流程">取证流程</h2>
+<p>直接去了地市电信IDC机房（期间历经各种流程），找到对应的服务器，服务器是台linux服务器 。</p>
+<p>1、通过netstat命令查看服务器状态，发现本地端口对外连接，对外异常ip为122.224.32.32，端口为6009。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1552635214914.jpg" alt="端口"></p>
+<p>2、通过webshell漏洞扫描工具（hm）对/home目录下的文件进行扫描，发现异常木马文件，由于网站在2015年就不用了所以这个木马文件应该是之前留下的。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1552635739250.jpg" alt="webshell"></p>
+<p>3、webshell本地访问</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/344.png" alt="webshell" title="344"></p>
+<p>4、查看本地初始化程序，发现异常文件/etc/rc.d/rc.local，该异常文件首先建立一个local文件，之后将系统防火墙关闭，通过nohup命令隐藏/etc/udisks-daemon命令执行的结果，以便达到隐藏的目的。文件内容如下:</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/4455.png" alt="病毒" title="4455"></p>
+<p>5、发现了/etc/udisks-daemon异常文件之后，找到/etc/udisks-daemon文件，发现该文件的权限为777任意权限。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/123.png" alt="病毒文件" title="123"></p>
+<p>6、进一步分析还发现存在另外一个文件udisks-daemon_xmit.ini。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1552636033457.jpg" alt="病毒文件配置"></p>
+<p>疑似用来进行端口的初始化操作。，内容如下：</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/12345.png" alt="病毒文件配置详情" title="12345"></p>
+<p>7、将病毒文件udisks-daemon拉取到本地进行分析，利用wireshark进行抓包分析，同样的，向外连接的ip地址为。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1552636150919.jpg" alt="病毒文件分析1"></p>
+<p>8、通过strace对病毒文件进行信号跟踪，发现病毒的向外连接的地址为122.224.32.32，端口为6009。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/8.jpg" alt="病毒文件分析2" title="8"></p>
+<p>9、反编译分析</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/13.png" alt="反编译分析" title="13"></p>
+<p>10、结合互联网上（微步https://x.threatbook.cn）的威胁情报信息对122.224.32.32地址进行查询分析，已经有用户举报此IP地址存在远控（作为服务端控制肉鸡的行为）行为。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/9.png" alt="病毒文件分析3" title="9"></p>
+<p>11、对ip地址进行定位。</p>
+<p><img src="https://www.github.com/olist213/olistimg/raw/master/olistimg/1552636312827.jpg" alt="ip定位"></p>
+<h2 id="0x03-结论">0x03 结论</h2>
+<p>至此分析完成，这台服务器同样为肉鸡。</p>
+<p>ip:122.224.32.32（控制端）</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/forensic_analysis_1/>https://olist213.github.io/posts/forensic_analysis_1/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/emergency_response1/" class="prev" rel="prev" title="记一次linux下的应急响应"><i class="iconfont icon-left"></i>&nbsp;记一次linux下的应急响应</a>
+         
+        
+        <a href="https://olist213.github.io/posts/easy_rce_ports/" class="next" rel="next" title="Easy_Rce_Ports">Easy_Rce_Ports&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

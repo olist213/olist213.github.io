@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/parsing_vulnerability/" />
+  <link rel="next" href="https://olist213.github.io/posts/web_vulnerability_description/" />
+  <link rel="canonical" href="https://olist213.github.io/posts/virus/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           勒索病毒防护建议 | Olist.213
+       
+  </title>
+  <meta name="title" content="勒索病毒防护建议 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "勒索病毒防护建议",
+    "headline" : "勒索病毒防护建议",
+    "description" : "1、通过防火墙进行ip、端口的细粒化访问控制，部署防毒墙对病毒进行安全防护，建立日志审计系统，对服务器日志进行收集和分析，以便日后排查。\n2、服务器操作系统和内网办公电脑安装专业的终端安全防护软件，为主机提供端点防护和病毒检测清理功能。\n3、尽量关闭不必要的文件共享权限以及关闭不必要的端口，如：445,135,139,3389 等。\n4、服务器和内网办公电脑及时给主机打补丁 (永恒之蓝漏洞补丁)，修复相应的高危漏洞。\n5、RDP 远程服务器等连接尽量使用强密码，不要使用弱密码。\n6、不要点击来源不明的邮件附件，不从不明网站下载软件。\n7、不定时进行异地备份计算机中重要的数据和文件，万一中病毒可以进行恢复。\n8、加强信息管理人员的安全意识，教育用户识别有关社会工程学攻击的危险和标志，完善信息安全管理制度，保障在出现问题时，能及时登录安全设备，完善网络拓扑图。\n9、正确的实施网络分段和网络安全域的划分。\n10、完善单位完善应急预案，定期进行应急演练工作，做到防患于未然。",
+    "inLanguage" : "zh-cn",
+    "author" : "Olist.213",
+    "creator" : "Olist.213",
+    "publisher": "Olist.213",
+    "accountablePerson" : "Olist.213",
+    "copyrightHolder" : "Olist.213",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-01-25 16:23:39 \u002b0800 CST",
+    "dateModified" : "2019-01-25 16:23:39 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/virus\/",
+    "wordCount" : "13",
+    "keywords" : [ "病毒", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">勒索病毒防护建议</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Olist.213</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-01-25 itemprop="datePublished">January 25, 2019</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>1、通过防火墙进行ip、端口的细粒化访问控制，部署防毒墙对病毒进行安全防护，建立日志审计系统，对服务器日志进行收集和分析，以便日后排查。</p>
+<p>2、服务器操作系统和内网办公电脑安装专业的终端安全防护软件，为主机提供端点防护和病毒检测清理功能。</p>
+<p>3、尽量关闭不必要的文件共享权限以及关闭不必要的端口，如：445,135,139,3389 等。</p>
+<p>4、服务器和内网办公电脑及时给主机打补丁 (永恒之蓝漏洞补丁)，修复相应的高危漏洞。</p>
+<p>5、RDP 远程服务器等连接尽量使用强密码，不要使用弱密码。</p>
+<p>6、不要点击来源不明的邮件附件，不从不明网站下载软件。</p>
+<p>7、不定时进行异地备份计算机中重要的数据和文件，万一中病毒可以进行恢复。</p>
+<p>8、加强信息管理人员的安全意识，教育用户识别有关社会工程学攻击的危险和标志，完善信息安全管理制度，保障在出现问题时，能及时登录安全设备，完善网络拓扑图。</p>
+<p>9、正确的实施网络分段和网络安全域的划分。</p>
+<p>10、完善单位完善应急预案，定期进行应急演练工作，做到防患于未然。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/virus/>https://olist213.github.io/posts/virus/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E7%97%85%E6%AF%92/">
+                    #病毒</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/parsing_vulnerability/" class="prev" rel="prev" title="解析漏洞总结"><i class="iconfont icon-left"></i>&nbsp;解析漏洞总结</a>
+         
+        
+        <a href="https://olist213.github.io/posts/web_vulnerability_description/" class="next" rel="next" title="web漏洞描述与解决建议">web漏洞描述与解决建议&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

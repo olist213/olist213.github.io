@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>每日学习 on Olist.213</title>
+    <link>https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/</link>
+    <description>Recent content in 每日学习 on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 27 Apr 2021 12:48:01 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time 2021 04 27 Github Star</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-27-github-star/</link>
+      <pubDate>Tue, 27 Apr 2021 12:48:01 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-27-github-star/</guid>
+      <description>渗透环境
+ sqli-labs  SQLI labs to test error based, Blind boolean based, Time based.   vulhub  Pre-Built Vulnerable Environments Based on Docker-Compose   commando-vm upload-labs ptf juice-shop commix-testbed Viper  Viper (炫彩蛇) 图形化内网渗透工具   vulfocus dvta    好用的软件
+ CopyTranslator  Foreign language reading and translation assistant based on copy and translate.   gotop  A terminal based graphical activity monitor inspired by gtop and vtop   RssHub Netch    书籍</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 27</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-27/</link>
+      <pubDate>Tue, 27 Apr 2021 09:12:13 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-27/</guid>
+      <description>【防溯源】如何通过域名 + CDN 完美隐藏你的 C2
+  freenom.com 注册一个域名
+  注册cloudflare.com账号
+  cf http端口支持
+  80,8080,8880,2052,2082,2086,2095     cf https端口支持
+  443,2053,2083,2087,2096,8443       最新注册freenom免费域名的方法
+ 更换注册地 xxxx.tk搜索 注册成功    snmpwalk
+  #得到取得windows端的系统进程用户数等 snmpwalk -c public -v 1 -m ALL 192.168.30.49 .1.3.6.1.2.1.25.1 #取得系统总内存 snmpwalk -c public -v 1 -m ALL 192.168.30.49 .1.3.6.1.2.1.25.2.2 #取得IP信息 snmpwalk -c public -v 1 -m ALL 192.</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 26</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-26/</link>
+      <pubDate>Mon, 26 Apr 2021 09:57:46 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-26/</guid>
+      <description>内网渗透-3389
+  查看远程桌面端口
+  #得到连接端口为 0xd3d，转换后为 3389 REG QUERY &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&amp;#34; /V PortNumber     查看是否支持远程桌面连接
+  #1表示关闭，0表示开启 REG QUERY &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server&amp;#34; /v fDenyTSConnections       开启rdp
+  # 修改连接端口重启生效 REG ADD &amp;#34;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server&amp;#34; /v fDenyTSConnections /t REG_DWORD /d 00000000 /f   REG ADD &amp;ldquo;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&amp;rdquo; /v PortNumber /t REG_DWORD /d 0x00000d3d /f
+   (强开3389)</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 25</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-25/</link>
+      <pubDate>Sun, 25 Apr 2021 09:17:27 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-25/</guid>
+      <description>red-team
+  木马查杀工具-火绒恶性木马专杀工具
+  Windows / Linux Local Privilege Escalation Workshop
+  404 StarLink Project 2.0 - Galaxy
+ Elkeid  Elkeid是一个云原生的基于主机的入侵检测解决方案。   linglong  一款甲方资产巡航扫描系统。系统定位是发现资产，进行端口爆破。   Glass  Glass是一款针对资产列表的快速指纹识别工具，通过调用Fofa/ZoomEye/Shodan/360等api接口快速查询资产信息并识别重点资产的指纹，也可针对IP/IP段或资产列表进行快速的指纹识别。   AppInfoScanner  一款适用于以HW行动/红队/渗透测试团队为场景的移动端(Android、iOS、WEB、H5、静态网站)信息收集扫描工具，可以帮助渗透测试工程师、攻击队成员、红队成员快速收集到移动端或者静态WEB站点中关键的资产信息并提供基本的信息输出,如：Title、Domain、CDN、指纹信息、状态信息等。   redis-rogue-server HackBrowserData  hack-browser-data 是一个解密浏览器数据（密码|历史记录|Cookies|书签）的导出工具，支持全平台主流浏览器的数据导出窃取。   antSword  中国蚁剑是一款开源的跨平台网站管理工具.   ServerScan  一款使用Golang开发且适用于攻防演习内网横向信息收集的高并发网络扫描、服务探测工具。   fscan  一款内网综合扫描工具，方便一键自动化、全方位漏扫扫描。   As-Exploits  中国蚁剑后渗透框架      获取Windows高版本明文密码</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 22</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-22/</link>
+      <pubDate>Thu, 22 Apr 2021 09:41:28 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-22/</guid>
+      <description>  浏览器插件分享  Wappalyzer  Google Chrome &amp;amp; Mozilla Firefox   Shodan  google Chrome &amp;amp; Mozilla Firefox   proxy-switchyomega HTTP Header Live  Google Chrome &amp;amp; Mozilla Firefox   Mitaka  Google Chrome &amp;amp; Mozilla Firefox   HackBar  Google Chrome | Mozilla Firefox   JavaScript and CSS Code Beautifier User-Agent Switcher  Google Chrome | Mozilla Firefox   FOFA Pro View  fofa插件   HeaderEditor Hack-Tools antiHoneypot  一个拦截蜜罐XSSI的Chrome扩展      </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 21</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-21-1/</link>
+      <pubDate>Wed, 21 Apr 2021 12:49:50 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-21-1/</guid>
+      <description>等保培训  安全管理技术要求  信息收集小脚本 #nmap扫描存活 nmap -sn 172.29.130.0/24 &amp;gt; nmap-ip.txt #获取nmap扫描存活的ip cat nmap-ip.txt | grep &amp;#34;repo&amp;#34; | cut -d &amp;#34; &amp;#34; -f6 | cut -d &amp;#34;(&amp;#34; -f2 | cut -d &amp;#34;)&amp;#34; -f1 &amp;gt; ip.txt #masscan扫描端口 sudo masscan -iL ip.txt --rate 10000 -p1-65535 --only-open #获取masscan扫描结果中的ip cat masscan-ip.txt | grep &amp;#34;tcp&amp;#34; | cut -d &amp;#34; &amp;#34; -f 4,6 | awk &amp;#39;{print $2,$1}&amp;#39;| tr &amp;#34; &amp;#34; &amp;#34;:&amp;#34; | cut -d &amp;#34;/&amp;#34; -f1 | cut -d &amp;#34;:&amp;#34; -f1 | sort -t &amp;#34;.</description>
+    </item>
+    
+  </channel>
+</rss>

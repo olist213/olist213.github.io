@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/time-2019-01-15/" />
+  <link rel="next" href="https://olist213.github.io/study_book/time-2021-04-19/" />
+  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-04-18/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Time 2021 04 18 | Olist.213
+       
+  </title>
+  <meta name="title" content="Time 2021 04 18 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "Time 2021 04 18",
+    "headline" : "Time 2021 04 18",
+    "description" : "Cobalt Strike\n  Cobalt Strike Malleable C2设计和参考指南\n 语法检测：.\/c2lint [\/path\/to\/my.profile]    Random C2 Profile Generator\n  Cobalt Strike生成随机MalleableC2 Profile文件\n  setup\n  pip3 install -r requirements python random_c2profile.py     其他同类型项目\n C2concealer      Malleable-C2-Profiles\n    实战\n  Cobalt Strike 团队服务器隐匿\n    条件：\n 需要域名 机器C ssh远程端口转发 A和B分别为代理节点，将来自80的流量转发出去 Beacon弹回至机器A，最终本地机器E与机器A进行通信，监听器为foreign    红队基础建设:隐藏你的C2 server",
+    "inLanguage" : "zh-cn",
+    "author" : "Olist.213",
+    "creator" : "Olist.213",
+    "publisher": "Olist.213",
+    "accountablePerson" : "Olist.213",
+    "copyrightHolder" : "Olist.213",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-18 11:40:22 \u002b0800 CST",
+    "dateModified" : "2021-04-18 11:40:22 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-04-18\/",
+    "wordCount" : "368",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Time 2021 04 18</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Olist.213</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-04-18 itemprop="datePublished">April 18, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <hr>
+<p><img src="/images/time-2021-04-18.assets/wallhaven-6kvrkl.png" alt="wallhaven-6kvrkl"></p>
+<ul>
+<li>
+<p>Cobalt Strike</p>
+<ul>
+<li>
+<p><a href="https://github.com/threatexpress/malleable-c2">Cobalt Strike Malleable C2设计和参考指南</a></p>
+<ul>
+<li>语法检测：<code>./c2lint [/path/to/my.profile]</code></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/threatexpress/random_c2_profile">Random C2 Profile Generator</a></p>
+<ul>
+<li>
+<p>Cobalt Strike生成随机MalleableC2 Profile文件</p>
+</li>
+<li>
+<p>setup</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip3 install <span style="color:#f92672">-</span>r requirements
+python random_c2profile<span style="color:#f92672">.</span>py
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>其他同类型项目</p>
+<ul>
+<li><a href="https://github.com/FortyNorthSecurity/C2concealer/">C2concealer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/rsmudge/Malleable-C2-Profiles">Malleable-C2-Profiles</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>实战</p>
+<ul>
+<li>
+<p><a href="http://blog.leanote.com/post/snowming/d5d2b4ba20d0">Cobalt Strike 团队服务器隐匿</a></p>
+</li>
+<li>
+<p><img src="/images/time-2021-04-18.assets/image-20210418131625596.png" alt="image-20210418131625596"></p>
+</li>
+<li>
+<p>条件：</p>
+<ul>
+<li><del>需要域名</del></li>
+<li>机器C ssh远程端口转发</li>
+<li>A和B分别为代理节点，将来自80的流量转发出去</li>
+<li>Beacon弹回至机器A，最终本地机器E与机器A进行通信，监听器为foreign</li>
+</ul>
+</li>
+<li>
+<p><a href="https://xz.aliyun.com/t/4509">红队基础建设:隐藏你的C2 server</a></p>
+<ul>
+<li>
+<p>Domain Fronting</p>
+</li>
+<li>
+<p><img src="/images/time-2021-04-18.assets/20190321223303-3be376ca-4be6-1.png" alt="20190321223303-3be376ca-4be6-1"></p>
+</li>
+<li>
+<p>知识点：</p>
+<ul>
+<li>
+<p>1、修改HTTP包内的Host头字段，会将HTTP包发送给Host指向的那个域名。</p>
+</li>
+<li>
+<p>2、配置C2 profile，配置高信誉域名。</p>
+</li>
+<li>
+<p><img src="/images/time-2021-04-18.assets/image-20210418162813471.png" alt="image-20210418162813471"></p>
+</li>
+<li>
+<p>3、添加Listener，Host指向CDN的地址。</p>
+</li>
+<li>
+<p>4、<a href="https://github.com/mdsecactivebreach/CACTUSTORCH">agent 生成</a></p>
+</li>
+<li>
+<p>5、基于流量转发隐藏服务端</p>
+<ul>
+<li>利用Apache的mod_rewrite模块或者Nginx的反向代理通过判断特定特征然后将URL重写，通过特征判定的就指向服务端，反之跳转至其他网站，比如上文的test域名。</li>
+<li><img src="/images/time-2021-04-18.assets/20190321223424-6c38b786-4be6-1.png" alt="20190321223424-6c38b786-4be6-1"></li>
+</ul>
+</li>
+<li>
+<p>生成web容器.htaccess配置信息<a href="https://github.com/threatexpress/cs2modrewrite">cs2modrewrite</a></p>
+</li>
+<li>
+<p>开启apache mod_rewrite模块</p>
+</li>
+<li>
+<p>禁止入口流量</p>
+</li>
+<li>
+<p>创建多个80端口监听器</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># create an HTTP Beacon listener  </span>
+listener_create(<span style="color:#e6db74">&#34;CDN-Relay&#34;</span>, <span style="color:#e6db74">&#34;windows/beacon_http/reverse_http&#34;</span>,  
+        <span style="color:#e6db74">&#34;116.211.153.234&#34;</span>, <span style="color:#ae81ff">80</span>,  
+        <span style="color:#e6db74">&#34;116.211.153.234&#34;</span>);
+</code></pre></div></li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=01XwImjQYZs&amp;t=332s">视频</a></p>
+</li>
+<li>
+<p><a href="https://bluescreenofjeff.com/2016-06-28-cobalt-strike-http-c2-redirectors-with-apache-mod_rewrite/">Cobalt Strike HTTP C2 Redirectors with Apache mod_rewrite</a></p>
+<ul>
+<li>条件：一个apache web服务器</li>
+<li><img src="/images/time-2021-04-18.assets/cobalt-strike-http-c2.png" alt="cobalt-strike-http-c2"></li>
+<li>加载profile文件</li>
+<li><code>./teamserver &lt;Public IP&gt; &lt;password&gt; &lt;/path/to/profile&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/projectdiscovery/nuclei">nculei漏洞扫描器</a></p>
+<ul>
+<li>
+<p>安装</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#a6e22e">GO111MODULE</span>=<span style="color:#a6e22e">on</span> <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">get</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">v</span> <span style="color:#a6e22e">github</span>.<span style="color:#a6e22e">com</span><span style="color:#f92672">/</span><span style="color:#a6e22e">projectdiscovery</span><span style="color:#f92672">/</span><span style="color:#a6e22e">nuclei</span><span style="color:#f92672">/</span><span style="color:#a6e22e">v2</span><span style="color:#f92672">/</span><span style="color:#a6e22e">cmd</span><span style="color:#f92672">/</span><span style="color:#a6e22e">nuclei</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>更新</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">nuclei</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">update</span><span style="color:#f92672">-</span><span style="color:#a6e22e">templates</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><a href="https://nuclei.projectdiscovery.io/nuclei/get-started/">语法</a></p>
+<ul>
+<li>
+<p><code>nuclei -h</code></p>
+</li>
+<li>
+<p>nuclei模板可以通过多种方式去执行，目前使用tags、templates、severity和workflows。</p>
+</li>
+<li>
+<p><strong>templates</strong></p>
+<ul>
+<li>单一模板</li>
+<li><code>nuclei -t exposures/configs/git-config.yaml -l urls.txt</code></li>
+<li>模板目录</li>
+<li><code>nuclei -t cves/2021/ -l urls.txt</code></li>
+<li>多个模板目录</li>
+<li><code>nuclei -t cves/2020/ -t exposed-tokens -t misconfiguration -l urls.txt</code></li>
+</ul>
+</li>
+<li>
+<p><strong>tags</strong></p>
+</li>
+<li>
+<p>单个标签</p>
+<ul>
+<li><code>nuclei -tags cve -l urls.txt</code></li>
+<li><code>nuclei -tags network -l urls.txt</code></li>
+<li><code>nuclei -tags logs -l urls.txt</code></li>
+</ul>
+</li>
+<li>
+<p>标签和目录</p>
+<ul>
+<li><code>nuclei -tags config -t exposures/ -l urls.txt</code></li>
+<li>多个标签
+<ul>
+<li><code>nuclei -tags lfi,ssrf,rce -t cves/ -l urls.txt</code></li>
+<li><code>nuclei -tags xss -t vulnerabilities/ -l urls.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>workflows</p>
+<ul>
+<li>单个workflow
+<ul>
+<li><code>nuclei -w workflows/wordpress-workflow.yaml -l wordpress_urls.txt</code></li>
+</ul>
+</li>
+<li>多个workflow
+<ul>
+<li><code>nuclei -w workflows/wordpress-workflow.yaml -w workflows/jira-workflow.yaml -l urls.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>severity（严重程度）</p>
+<ul>
+<li><code>nuclei -t cves/ -severity critical -l urls.txt</code></li>
+<li><code>nuclei -t cves/ -t vulnerabilities -severity critical,high -l urls.txt</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/projectdiscovery/nuclei-templates">Nuclei Templates</a></p>
+</li>
+<li>
+<p>id</p>
+<ul>
+<li><code>id: git-config</code></li>
+</ul>
+</li>
+<li>
+<p>info</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">  <span style="color:#a6e22e">info</span>:
+    <span style="color:#a6e22e">name</span>: <span style="color:#a6e22e">Git</span> <span style="color:#a6e22e">Config</span> <span style="color:#a6e22e">File</span> <span style="color:#a6e22e">Detection</span> <span style="color:#a6e22e">Template</span>
+    <span style="color:#a6e22e">author</span>: <span style="color:#a6e22e">Ice3man</span>
+    <span style="color:#a6e22e">severity</span>: <span style="color:#a6e22e">medium</span>
+    <span style="color:#a6e22e">description</span>: <span style="color:#a6e22e">Searches</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">pattern</span> <span style="color:#f92672">/</span>.<span style="color:#a6e22e">git</span><span style="color:#f92672">/</span><span style="color:#a6e22e">config</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">passed</span> <span style="color:#a6e22e">URLs</span>.
+    <span style="color:#a6e22e">tags</span>: <span style="color:#a6e22e">git</span>,<span style="color:#a6e22e">config</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>基础请求</p>
+<ul>
+<li>
+<p>requests:</p>
+<ul>
+<li>
+<p>Method:GET|POST|PUT|DELETE</p>
+</li>
+<li>
+<p>Redirects:</p>
+</li>
+<li>
+<p>max-redirects:</p>
+</li>
+<li>
+<p>path:请求路径</p>
+<ul>
+<li><strong>{{BaseURL}}</strong>
+<ul>
+<li><strong>{{Hostname}}</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Headers</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">  <span style="color:#a6e22e">User</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Agent</span>: <span style="color:#a6e22e">Some</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Random</span><span style="color:#f92672">-</span><span style="color:#a6e22e">User</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Agent</span>
+  <span style="color:#a6e22e">Origin</span>: <span style="color:#a6e22e">https</span>:<span style="color:#75715e">//google.com
+</span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Body</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">  <span style="color:#a6e22e">body</span>: <span style="color:#e6db74">&#34;{\&#34;some random JSON\&#34;}&#34;</span>
+  <span style="color:#a6e22e">body</span>: <span style="color:#e6db74">&#34;admin=test&#34;</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Session</p>
+<ul>
+<li>
+<pre><code>  cookie-reuse: true
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>Request Condition</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">      <span style="color:#a6e22e">req</span><span style="color:#f92672">-</span><span style="color:#a6e22e">condition</span>: <span style="color:#66d9ef">true</span>
+      <span style="color:#a6e22e">matchers</span>:
+        <span style="color:#f92672">-</span> <span style="color:#66d9ef">type</span>: <span style="color:#a6e22e">dsl</span>
+          <span style="color:#a6e22e">dsl</span>:
+            <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;status_code_1 == 404 &amp;&amp; status_code_2 == 200 &amp;&amp; contains((body_2), &#39;secret_string&#39;)&#34;</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>示例：<code>.git/config</code></p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">  <span style="color:#a6e22e">id</span>: <span style="color:#a6e22e">git</span><span style="color:#f92672">-</span><span style="color:#a6e22e">config</span>
+          
+  <span style="color:#a6e22e">info</span>:
+    <span style="color:#a6e22e">name</span>: <span style="color:#a6e22e">Git</span> <span style="color:#a6e22e">Config</span> <span style="color:#a6e22e">File</span>
+    <span style="color:#a6e22e">author</span>: <span style="color:#a6e22e">Ice3man</span>
+    <span style="color:#a6e22e">severity</span>: <span style="color:#a6e22e">medium</span>
+    <span style="color:#a6e22e">description</span>: <span style="color:#a6e22e">Searches</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">pattern</span> <span style="color:#f92672">/</span>.<span style="color:#a6e22e">git</span><span style="color:#f92672">/</span><span style="color:#a6e22e">config</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">passed</span> <span style="color:#a6e22e">URLs</span>.
+          
+  <span style="color:#a6e22e">requests</span>:
+    <span style="color:#f92672">-</span> <span style="color:#a6e22e">method</span>: <span style="color:#a6e22e">GET</span>
+      <span style="color:#a6e22e">path</span>:
+        <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;{{BaseURL}}/.git/config&#34;</span>
+      <span style="color:#a6e22e">matchers</span>:
+        <span style="color:#f92672">-</span> <span style="color:#66d9ef">type</span>: <span style="color:#a6e22e">word</span>
+          <span style="color:#a6e22e">words</span>:
+            <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;[core]&#34;</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>RAW HTTP requests</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">requests</span>:
+  <span style="color:#f92672">-</span> <span style="color:#a6e22e">raw</span>:
+    <span style="color:#f92672">-</span> |
+        <span style="color:#a6e22e">POST</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">path2</span><span style="color:#f92672">/</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+        <span style="color:#a6e22e">Host</span>: {{<span style="color:#a6e22e">Hostname</span>}}
+        <span style="color:#a6e22e">Content</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Length</span>: <span style="color:#ae81ff">1</span>
+        <span style="color:#a6e22e">Origin</span>: <span style="color:#a6e22e">https</span>:<span style="color:#75715e">//www.google.com
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">Content</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Type</span>: <span style="color:#a6e22e">application</span><span style="color:#f92672">/</span><span style="color:#a6e22e">x</span><span style="color:#f92672">-</span><span style="color:#a6e22e">www</span><span style="color:#f92672">-</span><span style="color:#a6e22e">form</span><span style="color:#f92672">-</span><span style="color:#a6e22e">urlencoded</span>
+        <span style="color:#a6e22e">User</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Agent</span>: <span style="color:#a6e22e">Mozilla</span><span style="color:#f92672">/</span><span style="color:#ae81ff">5.0</span> (<span style="color:#a6e22e">Macintosh</span>; <span style="color:#a6e22e">Intel</span> <span style="color:#a6e22e">Mac</span> <span style="color:#a6e22e">OS</span> <span style="color:#a6e22e">X</span> <span style="color:#ae81ff">10</span><span style="color:#a6e22e">_15_5</span>) <span style="color:#a6e22e">AppleWebKit</span><span style="color:#f92672">/</span><span style="color:#ae81ff">537.36</span> (<span style="color:#a6e22e">KHTML</span>, <span style="color:#a6e22e">like</span> <span style="color:#a6e22e">Gecko</span>)
+        <span style="color:#a6e22e">Accept</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Language</span>: <span style="color:#a6e22e">en</span><span style="color:#f92672">-</span><span style="color:#a6e22e">US</span>,<span style="color:#a6e22e">en</span>;<span style="color:#a6e22e">q</span>=<span style="color:#ae81ff">0.9</span>
+          
+        <span style="color:#a6e22e">a</span>=<span style="color:#a6e22e">test</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">b</span>=<span style="color:#a6e22e">pd</span>
+</code></pre></div></li>
+<li>
+<p>函数</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#a6e22e">raw</span>:
+      <span style="color:#f92672">-</span> |
+        <span style="color:#a6e22e">GET</span> <span style="color:#f92672">/</span><span style="color:#a6e22e">manager</span><span style="color:#f92672">/</span><span style="color:#a6e22e">html</span> <span style="color:#a6e22e">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+        <span style="color:#a6e22e">Host</span>: {{<span style="color:#a6e22e">Hostname</span>}}
+        <span style="color:#a6e22e">Authorization</span>: <span style="color:#a6e22e">Basic</span> {{<span style="color:#a6e22e">base64</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">username</span>:<span style="color:#a6e22e">password</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)}} <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Helper</span> <span style="color:#a6e22e">function</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">encode</span> <span style="color:#a6e22e">input</span> <span style="color:#a6e22e">at</span> <span style="color:#a6e22e">run</span> <span style="color:#a6e22e">time</span>.
+        <span style="color:#a6e22e">User</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Agent</span>: <span style="color:#a6e22e">Mozilla</span><span style="color:#f92672">/</span><span style="color:#ae81ff">5.0</span> (<span style="color:#a6e22e">Windows</span> <span style="color:#a6e22e">NT</span> <span style="color:#ae81ff">6.1</span>; <span style="color:#a6e22e">WOW64</span>) <span style="color:#a6e22e">AppleWebKit</span><span style="color:#f92672">/</span><span style="color:#ae81ff">537.36</span> (<span style="color:#a6e22e">KHTML</span>, <span style="color:#a6e22e">like</span> <span style="color:#a6e22e">Gecko</span>) <span style="color:#a6e22e">Chrome</span><span style="color:#f92672">/</span><span style="color:#ae81ff">55.0</span>
+        <span style="color:#a6e22e">Accept</span><span style="color:#f92672">-</span><span style="color:#a6e22e">Language</span>: <span style="color:#a6e22e">en</span><span style="color:#f92672">-</span><span style="color:#a6e22e">US</span>,<span style="color:#a6e22e">en</span>;<span style="color:#a6e22e">q</span>=<span style="color:#ae81ff">0.9</span>
+        <span style="color:#a6e22e">Connection</span>: <span style="color:#a6e22e">close</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>HTTP Fuzzing</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/time-2021-04-18/>https://olist213.github.io/study_book/time-2021-04-18/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/time-2019-01-15/" class="prev" rel="prev" title="Time 2019 01 15"><i class="iconfont icon-left"></i>&nbsp;Time 2019 01 15</a>
+         
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-19/" class="next" rel="next" title="Time 2021 04 19">Time 2021 04 19&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

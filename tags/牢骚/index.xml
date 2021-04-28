@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>牢骚 on Olist.213</title>
+    <link>https://olist213.github.io/tags/%E7%89%A2%E9%AA%9A/</link>
+    <description>Recent content in 牢骚 on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Feb 2019 10:03:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E7%89%A2%E9%AA%9A/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tips1</title>
+      <link>https://olist213.github.io/posts/tips1/</link>
+      <pubDate>Fri, 15 Feb 2019 10:03:34 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/tips1/</guid>
+      <description>一些想法 一直在追寻好用的工具，而忘记了工具只是辅助，最重要的还是怎么去写。
+做笔记：
+做笔记其实还是用markdown比较好，可视化方面做得非常不错，但如果能结合nextcloud的日历就好了，但nextcloud的markdown editor在编辑的时候会有各种问题，从而直接用nextcloud内置的markdown editor还是会有很多的问题。
+目前，我所用的markdown editor主要如下：
+1、印象笔记内带的markdown编辑器 2、马克飞象 3、typora 4、小书匠
+马克飞象之前所有的文档都是同步到印象笔记中，那时印象笔记不支持markdown，所以第三方开发出了马克飞象进行印象笔记markdown同步，在印象笔记打开不支持编辑。
+typora在windows上的口碑甚好，但无奈用的还是不习惯。
+小书匠功能多，但比较冗余，功能多了，反倒不好用了。
+学习久了，一直学习也不是办法，永远处在学习的阶段，而没有产出成功，当知识转换不成生产力的时候，就是无用的知识，所以最近也想加大自己的学习力度，尽量做好笔记，产生自己的想法，也许当写的够多的时候，自己对知识的理解也就可以更上一层楼了吧！
+最近接触了nextcloud之后，想很多东西都围绕nextcloud来进行，包括生活、工作方面，我觉得都是可以的。
+学习笔记结合日历（caldav）来进行记录，每天学习的东西通过日历来进行记录，每天学习的东西，所感想东西。在学完一个知识点之后，在进行所有的分类、归总，不断地去总结、复习，最终通过语言表达出来，达到精炼的地步，我想高手的学习过程是这样的吧！不断地复习，不断地复习，不断地复习&amp;hellip;。
+1、在学习和复习的过程中，总会有一个问题，就是你觉得内容过多，有些知识点似懂非懂，你看着看着就会感到非常的厌烦，从而就不想看了，就搁在那里了，后面也就没有时间看了，慢慢的也就不看了，也就忘记了。
+针对这个问题，还是得仔细去思考，一个一个知识点来学习，不能好高骛远。
+2、还有一个问题，就是知识的实践，尽量做到知行合一。
+也许这是对的 在学习的时候，感觉现在少了思考的时候，可以在每件事情上面，去谈谈自己的看法，一部电影、一件琐事、生活中的感想，其实都是可以写下来的，一方面，锻炼自己的文字功底，一方面生活方面的柴米油盐也是自己身边的故事，把故事记录下来，其实也对自己有好处。
+技术方面也是，看完一篇技术文章，学完一门技术，做笔记是很重要的一件事情，先做笔记，后开始自己思考，自己要怎么写出这种文章。
+想法是靠写出来的吧 很多时候，想写blog，但有的时候，总不清楚该从哪里开始写起，但我想，最大的问题就是自己对知识不是很熟悉导致的，你不了解，导致你写不出来，看了别人的文章，感觉总写的不错。
+以后还是现在自己熟悉的方面去写，在做什么事情的时候，做好笔记，去总结在学习过程中的问题。
+这样才是最好的方式，锻炼自己的写作能力。</description>
+    </item>
+    
+  </channel>
+</rss>

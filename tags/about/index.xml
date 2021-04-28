@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on Olist.213</title>
+    <link>https://olist213.github.io/tags/about/</link>
+    <description>Recent content in About on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 27 Dec 2018 12:01:19 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://olist213.github.io/about/</link>
+      <pubDate>Thu, 27 Dec 2018 12:01:19 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/about/</guid>
+      <description>111111111111111</description>
+    </item>
+    
+  </channel>
+</rss>

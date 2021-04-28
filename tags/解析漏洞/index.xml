@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>解析漏洞 on Olist.213</title>
+    <link>https://olist213.github.io/tags/%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E/</link>
+    <description>Recent content in 解析漏洞 on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 22 Jan 2019 10:21:18 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E8%A7%A3%E6%9E%90%E6%BC%8F%E6%B4%9E/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>解析漏洞总结</title>
+      <link>https://olist213.github.io/posts/parsing_vulnerability/</link>
+      <pubDate>Tue, 22 Jan 2019 10:21:18 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/parsing_vulnerability/</guid>
+      <description>当我们访问web服务器时，如：www.test.com/index.php文件时，向web服务器发出请求，访问php文件，php的解析器将php文件解析成静态文件，返回给浏览器供用户浏览。
+服务器解析漏洞就发生在浏览器向服务器上传文件时，服务器把攻击者恶意构造的文件进行解析，并返回给浏览器，从而达到上传恶意文件的目的。
+一、解析漏洞分类
+ 0x01 IIS5.x/6.0解析漏洞 IIS的解析方法有两种
+1、目录解析
+如果服务器上存在一个目录为xx.asp，那么在这个目录下的文件都会被解析成asp文件。
+2、文件解析
+通过菜刀进行连接即可连接成功。
+IIS6.0除了执行asp文件外，还可以执行如：asa、cer、cdx等文件后缀的文件。可结合目录解析漏洞进行利用。如：xxx.cer/xxx.jpg,xxx.asa;.jpg。
+0x02 apache解析漏洞  1、多种后缀
+apache对文件后缀的识别是从右往左进行解析，如：xxx.php.hcx.hts。会先判断右边的.hts后缀，发现这个后缀不正常，开始解析.hcx，最终解析到php文件，从而执行恶意文件。
+查看php的模块配置文件/etc/apache2/mods-available/php7.0.conf
+#从下面的FileMatch中可以看到&amp;#34;.+.ph(p[3457]?|t|tml)$&amp;#34;，$代表最后一个，说明php本身 #还是检测最后一个后缀的 。  &amp;lt;FilesMatch &amp;#34;.+.ph(p[3457]?|t|tml)$&amp;#34;&amp;gt; SetHandler application/x-httpd-php &amp;lt;/FilesMatch&amp;gt; &amp;lt;FilesMatch &amp;#34;.+.phps$&amp;#34;&amp;gt; SetHandler application/x-httpd-php-source # Deny access to raw php sources by default 	# To re-enable it&amp;#39;s recommended to enable access to the files 	# only in specific virtual host or directory 	Require all denied &amp;lt;/FilesMatch&amp;gt; Deny access to files without filename (e.</description>
+    </item>
+    
+  </channel>
+</rss>

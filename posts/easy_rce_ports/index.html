@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/forensic_analysis_1/" />
+  <link rel="next" href="https://olist213.github.io/posts/weixin-0day/" />
+  <link rel="canonical" href="https://olist213.github.io/posts/easy_rce_ports/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Easy_Rce_Ports | Olist.213
+       
+  </title>
+  <meta name="title" content="Easy_Rce_Ports | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Easy_Rce_Ports",
+    "headline" : "Easy_Rce_Ports",
+    "description" : "易RCE的端口 Java RMI: 1090,1098,1099,4444,11099,47001,47002,10999,12721 WebLogic: 7000-7004,8000-8003,9000-9003,9503,7070,7071 JDWP: 45000,45001 JMX: 8686,9012,50500 GlassFish: 4848 JBoss: 11111,4444,4445，8080，8090，8083，8093 Cisco Smart Install: 4786 HP Data Protector: 5555,5556 IBM WebSphere:8880，9080，9090 Apache Hadoop:8088 Redis:6379 Docker:2375 #docker remote api漏洞 Apache Solr:8983 Zoho Manageengine Desktop:8383 Atlassian Crowd:4990 Portainer:9000 Hashicorp Consul:8500 Apache Spark:6066 Apache Tomcat:8009，8080 Apache Flink:8081 elasticsearch:9200,9300 zabbix:8069 ~持续更新~",
+    "inLanguage" : "zh-cn",
+    "author" : "Olist.213",
+    "creator" : "Olist.213",
+    "publisher": "Olist.213",
+    "accountablePerson" : "Olist.213",
+    "copyrightHolder" : "Olist.213",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-17 23:16:10 \u002b0800 CST",
+    "dateModified" : "2021-04-17 23:16:10 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/easy_rce_ports\/",
+    "wordCount" : "50",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Easy_Rce_Ports</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Olist.213</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-04-17 itemprop="datePublished">April 17, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <pre><code>易RCE的端口
+
+Java RMI: 1090,1098,1099,4444,11099,47001,47002,10999,12721
+
+WebLogic: 7000-7004,8000-8003,9000-9003,9503,7070,7071
+
+JDWP: 45000,45001
+
+JMX: 8686,9012,50500
+
+GlassFish: 4848
+
+JBoss: 11111,4444,4445，8080，8090，8083，8093
+
+Cisco Smart Install: 4786
+
+HP Data Protector: 5555,5556
+
+IBM WebSphere:8880，9080，9090
+
+Apache Hadoop:8088 
+
+Redis:6379 
+
+Docker:2375  #docker remote api漏洞
+
+Apache Solr:8983 
+
+Zoho Manageengine Desktop:8383 
+
+Atlassian Crowd:4990 
+
+Portainer:9000 
+
+Hashicorp Consul:8500 
+
+Apache Spark:6066
+
+Apache Tomcat:8009，8080
+
+Apache Flink:8081
+
+elasticsearch:9200,9300
+
+zabbix:8069
+</code></pre><p>~持续更新~</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/easy_rce_ports/>https://olist213.github.io/posts/easy_rce_ports/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/forensic_analysis_1/" class="prev" rel="prev" title="记一次取证分析1"><i class="iconfont icon-left"></i>&nbsp;记一次取证分析1</a>
+         
+        
+        <a href="https://olist213.github.io/posts/weixin-0day/" class="next" rel="next" title="Weixin 0day复现">Weixin 0day复现&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

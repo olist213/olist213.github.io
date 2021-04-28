@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>等保 on Olist.213</title>
+    <link>https://olist213.github.io/tags/%E7%AD%89%E4%BF%9D/</link>
+    <description>Recent content in 等保 on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 20 Apr 2021 09:10:48 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E7%AD%89%E4%BF%9D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time 2021 04 20</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-21/</link>
+      <pubDate>Tue, 20 Apr 2021 09:10:48 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-21/</guid>
+      <description>等保培训  关键信息基础设施  PenTest-Tools 1、domainname 域名搜集工具
+2、webscan web扫描工具
+  3xp10it
+  AngelSword
+ Python3编写的CMS漏洞检测框架    AutoSploit
+ Automated Mass Exploiter(远程/外网)    AZScanner
+ 自动漏洞扫描器，自动子域名爆破，自动爬取注入，调用sqlmapapi检测注入，端口扫描，目录爆破，子网段服务探测及其端口扫描，常用框架漏洞检测。    BBScan
+ A fast vulnerability scanner    cansina
+ Web Content Discovery Tool    Fast_Scan
+ Quick and Dirty full-connect scanner. ./fastscan 192.169.1.1    FingerPrint
+  F-MiddlewareScan
+  实现针对中间件的自动化检测，端口探测-&amp;gt;中间件识别-&amp;gt;漏洞检测-&amp;gt;获取webshell</description>
+    </item>
+    
+  </channel>
+</rss>

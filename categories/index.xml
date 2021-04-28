@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Olist.213</title>
+    <link>https://olist213.github.io/categories/</link>
+    <description>Recent content in Categories on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 14 Feb 2019 11:34:30 +0800</lastBuildDate><atom:link href="https://olist213.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My life</title>
+      <link>https://olist213.github.io/categories/my-life/</link>
+      <pubDate>Thu, 14 Feb 2019 11:34:30 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/categories/my-life/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

