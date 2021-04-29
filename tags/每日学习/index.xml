@@ -6,7 +6,31 @@
     <description>Recent content in 每日学习 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 27 Apr 2021 12:48:01 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Apr 2021 09:38:47 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time 2021 04 29 Ctf</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-29-ctf/</link>
+      <pubDate>Thu, 29 Apr 2021 09:38:47 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-29-ctf/</guid>
+      <description>大型赛事Writeup
+ 赛事安排  ctftime i春秋      部委&amp;amp;公安&amp;amp;网信
+ CNAS  2018  2018年CNAS网络安全等级保护测评能力验证与攻防大赛writeup  1、burp加载字典，延迟2000ms暴力破解 2、越权uid=1 3、sql盲注，apk接口泄露 4、宽字节注入 - %df%27 5、weblogic写入shell 6、jwt token伪造 7、修改UA、XFF头，SSRF漏洞file读取flag 8、ptf后缀文件上传   2017年CNAS网络安全等级保护测评能力验证与攻防大赛部分题目writeup  JPK 编码解码工具    cnas能力验证攻防比赛writeup      ISG  2018  ISG 2018 Web Writeup     虎符杯  2020  虎符杯两道NodeJS题目的分析 数字中国创新大赛-虎符网络安全赛道Write up 虎符 CTF Web 部分 Writeup     强网杯  2019  2019 第三届强网杯 Web 部分 WriteUp + 复现环境  qwb_2019_supersqli   强网杯Web部分writeup   2019 广东强网杯  2019广东强网杯Writeup(MISC)   2019 强网杯拟态挑战赛  MIMIC Defense CTF 2019 final writeup     网鼎杯  2020  青龙组  2020网鼎杯青龙组部分wp 2020网鼎杯第一场Crypto题解 网鼎杯2020青龙组 web writeup 网鼎杯 2020 Web Writeup 2020-网鼎杯(青龙组)-Web题目-AreUserialz Writeup 网鼎杯-青龙组web题目writeup 2020网鼎杯青龙组_re_signal 2020网鼎杯 青龙组 Android逆向题 rev01 WP 2020-网鼎杯(青龙组)_Web题目 FileJava Writeup 2020年第二届“网鼎杯”-网络安全大赛青龙组writeup   白虎组  2020年第二届“网鼎杯”网络安全大赛 白虎组 部分题目Writeup 网鼎杯2020白虎组Reverse-py,恶龙,幸运的数字 WP 网鼎杯2020白虎组Crypto-rand,b64 WP 网鼎杯2020白虎组web-picdown,张三的网站,starbucket WP 网鼎杯2020白虎组misc-hidden,密码柜,boot WP 网鼎杯2020白虎组misc-hack WP [原创]网鼎杯2020 白虎组 【恶龙】 解题 网鼎杯CTF——白虎组 (week 4) [原创]网鼎杯2020 白虎组 CY 解题 网鼎杯白虎组部分题目复盘 网鼎杯2020白虎组Misc题目hidden总结 网鼎杯-白虎组web题目writeup 2020网鼎杯白虎组re 恶龙 wp   朱雀组  2020网鼎杯朱雀组云顿WP(入门向) 【网鼎杯2020朱雀组】Web WriteUp [re]go语言逆向：2020网鼎杯朱雀组re what wp 2020网鼎杯朱雀组_PHPweb 2020网鼎杯-朱雀组-部分wp 2020网鼎杯-朱雀组部分题目Writeup 2020网鼎杯-朱雀组-Crypto、Misc(带视频) 2020网鼎杯朱雀组逆向2 tree   玄武组  网鼎杯2020-玄武组签到题 网鼎杯玄武组部分web题解 网鼎杯-玄武组-writeup-简单思路讲究 2020网鼎杯玄武组_babyvm 2020网鼎杯玄武组部分题writeup（签到/vulcrack/java/js_on） 2020网鼎杯-玄武组-部分WriteUp 【CTF】网鼎杯【玄武组】CTF部分题     2018  青龙组  【2018年 网鼎杯CTF 第一场】China H.</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 28</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-28/</link>
+      <pubDate>Wed, 28 Apr 2021 21:52:43 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-28/</guid>
+      <description>hashcat
+  爆破NTLM-hash
+  hashcat -m 1000 hash.txt pass1.txt MODE: 1000 TYPE: NTLM b4b9b02e6f09a9bd760f388b67351e2b     爆破shadow文件
+  hash.txt 只保留加密的密码字段 : $id$salt$encrypted
+  hashcat -m 500 hash.txt pass1.txt hashcat -m 1500 hash.txt pass1.txt hashcat -m 1800 hash.txt pass1.txt MODE: 500 TYPE: md5crypt, MD5 (Unix), Cisco-IOS $1$ (MD5) 2 $1$28772684$iEwNOgGugqO9.bIz5sk8k/ MODE: 1500 TYPE: descrypt, DES (Unix), Traditional DES 48c/R8JAv757A MODE: 1800 TYPE: sha512crypt $6$, SHA512 (Unix) $6$52450745$k5ka2p8bFuSmoVT1tzOyyuaREkkKBcCNqoDKzYiJL9RaE8yMnPgh2XzzF0NDrUhgrcLwg78xs1w5pJiypEdFX/     批量破解</description>
+    </item>
+    
     <item>
       <title>Time 2021 04 27 Github Star</title>
       <link>https://olist213.github.io/study_book/time-2021-04-27-github-star/</link>
@@ -14,8 +38,7 @@
       
       <guid>https://olist213.github.io/study_book/time-2021-04-27-github-star/</guid>
       <description>渗透环境
- sqli-labs  SQLI labs to test error based, Blind boolean based, Time based.   vulhub  Pre-Built Vulnerable Environments Based on Docker-Compose   commando-vm upload-labs ptf juice-shop commix-testbed Viper  Viper (炫彩蛇) 图形化内网渗透工具   vulfocus dvta    好用的软件
- CopyTranslator  Foreign language reading and translation assistant based on copy and translate.   gotop  A terminal based graphical activity monitor inspired by gtop and vtop   RssHub Netch    书籍</description>
+ sqli-labs  SQLI labs to test error based, Blind boolean based, Time based.   vulhub  Pre-Built Vulnerable Environments Based on Docker-Compose   commando-vm upload-labs ptf juice-shop commix-testbed Viper  Viper (炫彩蛇) 图形化内网渗透工具   vulfocus dvta VulnHub  DC Serial  DC 系列靶场,难度简单至中等,可以学习各种提权和CMS漏洞利用,推荐初学者挑战   symfonos Serial  挺有难度的靶场,内容丰富,难度中等,漏洞利用内容很多,推荐有一定经验者挑战   Kioptrix Serial  Kioptrix 系列靶场,难度简单至中等,推荐初学者挑战        好用的软件</description>
     </item>
     
     <item>

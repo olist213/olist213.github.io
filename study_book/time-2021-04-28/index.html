@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/time-2021-04-27-github-star/" />
+  <link rel="next" href="https://olist213.github.io/study_book/time-2021-04-29-ctf/" />
+  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-04-28/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Time 2021 04 28 | Olist.213
+       
+  </title>
+  <meta name="title" content="Time 2021 04 28 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "Time 2021 04 28",
+    "headline" : "Time 2021 04 28",
+    "description" : "hashcat\n  爆破NTLM-hash\n  hashcat -m 1000 hash.txt pass1.txt MODE: 1000 TYPE: NTLM b4b9b02e6f09a9bd760f388b67351e2b     爆破shadow文件\n  hash.txt 只保留加密的密码字段 : $id$salt$encrypted\n  hashcat -m 500 hash.txt pass1.txt hashcat -m 1500 hash.txt pass1.txt hashcat -m 1800 hash.txt pass1.txt MODE: 500 TYPE: md5crypt, MD5 (Unix), Cisco-IOS $1$ (MD5) 2 $1$28772684$iEwNOgGugqO9.bIz5sk8k\/ MODE: 1500 TYPE: descrypt, DES (Unix), Traditional DES 48c\/R8JAv757A MODE: 1800 TYPE: sha512crypt $6$, SHA512 (Unix) $6$52450745$k5ka2p8bFuSmoVT1tzOyyuaREkkKBcCNqoDKzYiJL9RaE8yMnPgh2XzzF0NDrUhgrcLwg78xs1w5pJiypEdFX\/     批量破解",
+    "inLanguage" : "zh-cn",
+    "author" : "Grayash",
+    "creator" : "Grayash",
+    "publisher": "Grayash",
+    "accountablePerson" : "Grayash",
+    "copyrightHolder" : "Grayash",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-28 21:52:43 \u002b0800 CST",
+    "dateModified" : "2021-04-28 21:52:43 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-04-28\/",
+    "wordCount" : "68",
+    "keywords" : [ "每日学习", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Time 2021 04 28</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Grayash</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-04-28 itemprop="datePublished">April 28, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="/images/time-2021-04-28.assets/wallhaven-g77kg7.png" alt="wallhaven-g77kg7"></p>
+<hr>
+<ul>
+<li>
+<p>hashcat</p>
+<ul>
+<li>
+<p>爆破NTLM-hash</p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hashcat -m <span style="color:#ae81ff">1000</span> hash.txt pass1.txt
+      
+MODE: <span style="color:#ae81ff">1000</span>
+TYPE: NTLM
+b4b9b02e6f09a9bd760f388b67351e2b
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>爆破shadow文件</p>
+<ul>
+<li>
+<p>hash.txt 只保留加密的密码字段 : <code>$id$salt$encrypted</code></p>
+</li>
+<li>
+<pre><code>hashcat -m 500 hash.txt pass1.txt
+hashcat -m 1500 hash.txt pass1.txt
+hashcat -m 1800 hash.txt pass1.txt
+      
+MODE: 500
+TYPE: md5crypt, MD5 (Unix), Cisco-IOS $1$ (MD5) 2
+$1$28772684$iEwNOgGugqO9.bIz5sk8k/
+      
+MODE: 1500
+TYPE: descrypt, DES (Unix), Traditional DES
+48c/R8JAv757A
+      
+MODE: 1800
+TYPE: sha512crypt $6$, SHA512 (Unix)
+$6$52450745$k5ka2p8bFuSmoVT1tzOyyuaREkkKBcCNqoDKzYiJL9RaE8yMnPgh2XzzF0NDrUhgrcLwg78xs1w5pJiypEdFX/
+</code></pre></li>
+</ul>
+</li>
+<li>
+<p>批量破解</p>
+<ul>
+<li>
+<pre><code>hashcat -a 0 hash.txt password.txt -o result.txt
+</code></pre></li>
+</ul>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/time-2021-04-28/>https://olist213.github.io/study_book/time-2021-04-28/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/">
+                    #每日学习</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-27-github-star/" class="prev" rel="prev" title="Time 2021 04 27 Github Star"><i class="iconfont icon-left"></i>&nbsp;Time 2021 04 27 Github Star</a>
+         
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-29-ctf/" class="next" rel="next" title="Time 2021 04 29 Ctf">Time 2021 04 29 Ctf&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

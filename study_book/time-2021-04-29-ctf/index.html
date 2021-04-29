@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/time-2021-04-28/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-04-29-ctf/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Time 2021 04 29 Ctf | Olist.213
+       
+  </title>
+  <meta name="title" content="Time 2021 04 29 Ctf | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "Time 2021 04 29 Ctf",
+    "headline" : "Time 2021 04 29 Ctf",
+    "description" : "大型赛事Writeup\n 赛事安排  ctftime i春秋      部委\u0026amp;公安\u0026amp;网信\n CNAS  2018  2018年CNAS网络安全等级保护测评能力验证与攻防大赛writeup  1、burp加载字典，延迟2000ms暴力破解 2、越权uid=1 3、sql盲注，apk接口泄露 4、宽字节注入 - %df%27 5、weblogic写入shell 6、jwt token伪造 7、修改UA、XFF头，SSRF漏洞file读取flag 8、ptf后缀文件上传   2017年CNAS网络安全等级保护测评能力验证与攻防大赛部分题目writeup  JPK 编码解码工具    cnas能力验证攻防比赛writeup      ISG  2018  ISG 2018 Web Writeup     虎符杯  2020  虎符杯两道NodeJS题目的分析 数字中国创新大赛-虎符网络安全赛道Write up 虎符 CTF Web 部分 Writeup     强网杯  2019  2019 第三届强网杯 Web 部分 WriteUp \u002b 复现环境  qwb_2019_supersqli   强网杯Web部分writeup   2019 广东强网杯  2019广东强网杯Writeup(MISC)   2019 强网杯拟态挑战赛  MIMIC Defense CTF 2019 final writeup     网鼎杯  2020  青龙组  2020网鼎杯青龙组部分wp 2020网鼎杯第一场Crypto题解 网鼎杯2020青龙组 web writeup 网鼎杯 2020 Web Writeup 2020-网鼎杯(青龙组)-Web题目-AreUserialz Writeup 网鼎杯-青龙组web题目writeup 2020网鼎杯青龙组_re_signal 2020网鼎杯 青龙组 Android逆向题 rev01 WP 2020-网鼎杯(青龙组)_Web题目 FileJava Writeup 2020年第二届“网鼎杯”-网络安全大赛青龙组writeup   白虎组  2020年第二届“网鼎杯”网络安全大赛 白虎组 部分题目Writeup 网鼎杯2020白虎组Reverse-py,恶龙,幸运的数字 WP 网鼎杯2020白虎组Crypto-rand,b64 WP 网鼎杯2020白虎组web-picdown,张三的网站,starbucket WP 网鼎杯2020白虎组misc-hidden,密码柜,boot WP 网鼎杯2020白虎组misc-hack WP [原创]网鼎杯2020 白虎组 【恶龙】 解题 网鼎杯CTF——白虎组 (week 4) [原创]网鼎杯2020 白虎组 CY 解题 网鼎杯白虎组部分题目复盘 网鼎杯2020白虎组Misc题目hidden总结 网鼎杯-白虎组web题目writeup 2020网鼎杯白虎组re 恶龙 wp   朱雀组  2020网鼎杯朱雀组云顿WP(入门向) 【网鼎杯2020朱雀组】Web WriteUp [re]go语言逆向：2020网鼎杯朱雀组re what wp 2020网鼎杯朱雀组_PHPweb 2020网鼎杯-朱雀组-部分wp 2020网鼎杯-朱雀组部分题目Writeup 2020网鼎杯-朱雀组-Crypto、Misc(带视频) 2020网鼎杯朱雀组逆向2 tree   玄武组  网鼎杯2020-玄武组签到题 网鼎杯玄武组部分web题解 网鼎杯-玄武组-writeup-简单思路讲究 2020网鼎杯玄武组_babyvm 2020网鼎杯玄武组部分题writeup（签到\/vulcrack\/java\/js_on） 2020网鼎杯-玄武组-部分WriteUp 【CTF】网鼎杯【玄武组】CTF部分题     2018  青龙组  【2018年 网鼎杯CTF 第一场】China H.",
+    "inLanguage" : "zh-cn",
+    "author" : "Grayash",
+    "creator" : "Grayash",
+    "publisher": "Grayash",
+    "accountablePerson" : "Grayash",
+    "copyrightHolder" : "Grayash",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-29 09:38:47 \u002b0800 CST",
+    "dateModified" : "2021-04-29 09:38:47 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-04-29-ctf\/",
+    "wordCount" : "192",
+    "keywords" : [ "每日学习", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Time 2021 04 29 Ctf</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">Grayash</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-04-29 itemprop="datePublished">April 29, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="/images/time-2021-04-29-ctf.assets/wallhaven-oxz575.jpg" alt="wallhaven-oxz575"></p>
+<hr>
+<ul>
+<li>
+<p>大型赛事Writeup</p>
+<ul>
+<li>赛事安排
+<ul>
+<li><a href="https://ctftime.org/event/list/">ctftime</a></li>
+<li><a href="https://www.ichunqiu.com/competition/all?source=1">i春秋</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>部委&amp;公安&amp;网信</p>
+<ul>
+<li>CNAS
+<ul>
+<li>2018
+<ul>
+<li><a href="http://www.jdicsp.org/xinwengonggao/gongsixinwen/20181023/16.html">2018年CNAS网络安全等级保护测评能力验证与攻防大赛writeup</a>
+<ul>
+<li>1、burp加载字典，延迟2000ms暴力破解</li>
+<li>2、越权uid=1</li>
+<li>3、sql盲注，apk接口泄露</li>
+<li>4、宽字节注入 - <code>%df%27</code></li>
+<li>5、weblogic写入shell</li>
+<li>6、jwt token伪造</li>
+<li>7、修改UA、XFF头，SSRF漏洞file读取flag</li>
+<li>8、ptf后缀文件上传</li>
+</ul>
+</li>
+<li><a href="https://freewechat.com/a/MzIyNTI0ODcwMw==/2662122981/1">2017年CNAS网络安全等级保护测评能力验证与攻防大赛部分题目writeup</a>
+<ul>
+<li>JPK 编码解码工具</li>
+</ul>
+</li>
+<li>
+<h2 id="cnas能力验证攻防比赛writeuphttpsjcxpgithubio20191106cnase883bde58a9be9aa8ce8af81e694bbe998b2e6af94e8b59bwriteupe5898de8a880"><a href="https://jcxp.github.io/2019/11/06/cnas%E8%83%BD%E5%8A%9B%E9%AA%8C%E8%AF%81%E6%94%BB%E9%98%B2%E6%AF%94%E8%B5%9Bwriteup/#%E5%89%8D%E8%A8%80">cnas能力验证攻防比赛writeup</a></h2>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>ISG
+<ul>
+<li>2018
+<ul>
+<li><a href="https://www.freebuf.com/articles/network/183413.html">ISG 2018 Web Writeup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>虎符杯
+<ul>
+<li>2020
+<ul>
+<li><a href="https://xz.aliyun.com/t/7714">虎符杯两道NodeJS题目的分析</a></li>
+<li><a href="https://mp.weixin.qq.com/s/ih2X8IXVFmrMVwJYuf5gng">数字中国创新大赛-虎符网络安全赛道Write up</a></li>
+<li><a href="https://www.zhaoj.in/read-6512.html">虎符 CTF Web 部分 Writeup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>强网杯
+<ul>
+<li>2019
+<ul>
+<li><a href="https://www.zhaoj.in/read-5873.html">2019 第三届强网杯 Web 部分 WriteUp + 复现环境</a>
+<ul>
+<li><a href="https://github.com/glzjin/qwb_2019_supersqli">qwb_2019_supersqli</a></li>
+</ul>
+</li>
+<li><a href="https://www.freebuf.com/articles/network/205789.html">强网杯Web部分writeup</a></li>
+</ul>
+</li>
+<li><strong>2019 广东强网杯</strong>
+<ul>
+<li><a href="https://sec.thief.one/article_content?a_id=bd1f559d1f0ddfe66b69d767a0b6cb5a">2019广东强网杯Writeup(MISC)</a></li>
+</ul>
+</li>
+<li><strong>2019 强网杯拟态挑战赛</strong>
+<ul>
+<li><a href="https://paper.seebug.org/932/">MIMIC Defense CTF 2019 final writeup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>网鼎杯
+<ul>
+<li><strong>2020</strong>
+<ul>
+<li>青龙组
+<ul>
+<li><a href="https://www.52pojie.cn/thread-1176169-1-1.html">2020网鼎杯青龙组部分wp</a></li>
+<li><a href="https://blog.csdn.net/cccchhhh6819/article/details/106038866/">2020网鼎杯第一场Crypto题解</a></li>
+<li><a href="https://www.xuenixiang.com/thread-2208-1-1.html">网鼎杯2020青龙组 web writeup</a></li>
+<li><a href="https://www.xmsec.cc/wang-ding-bei-2020-web-writeup/">网鼎杯 2020 Web Writeup</a></li>
+<li><a href="https://mp.weixin.qq.com/s/16QfU8lZYChSckJWtcLiqg">2020-网鼎杯(青龙组)-Web题目-AreUserialz Writeup</a></li>
+<li><a href="https://mp.weixin.qq.com/s/E-lRUm1zPkEIxSoV7cHfow">网鼎杯-青龙组web题目writeup</a></li>
+<li><a href="https://mp.weixin.qq.com/s/uI2nLuM1K-J-fWBA-5Z7Zw">2020网鼎杯青龙组_re_signal</a></li>
+<li><a href="https://mp.weixin.qq.com/s/st6w3ax_DLHhd-AK5F509g">2020网鼎杯 青龙组 Android逆向题 rev01 WP</a></li>
+<li><a href="https://www.t00ls.net/viewthread.php?tid=56351&amp;highlight=writeup">2020-网鼎杯(青龙组)_Web题目 FileJava Writeup</a></li>
+<li><a href="https://blog.fullstackpentest.com/2020-wang-ding-bei-writeup.html">2020年第二届“网鼎杯”-网络安全大赛青龙组writeup</a></li>
+</ul>
+</li>
+<li>白虎组
+<ul>
+<li><a href="https://codingnote.cc/p/113802">2020年第二届“网鼎杯”网络安全大赛 白虎组 部分题目Writeup</a></li>
+<li><a href="https://www.52pojie.cn/thread-1180352-1-1.html">网鼎杯2020白虎组Reverse-py,恶龙,幸运的数字 WP</a></li>
+<li><a href="https://www.52pojie.cn/thread-1180315-1-1.html">网鼎杯2020白虎组Crypto-rand,b64 WP</a></li>
+<li><a href="https://www.52pojie.cn/thread-1180274-1-1.html">网鼎杯2020白虎组web-picdown,张三的网站,starbucket WP</a></li>
+<li><a href="https://www.52pojie.cn/thread-1180202-1-1.html">网鼎杯2020白虎组misc-hidden,密码柜,boot WP</a></li>
+<li><a href="https://www.52pojie.cn/thread-1180008-1-1.html">网鼎杯2020白虎组misc-hack WP</a></li>
+<li>[<a href="https://bbs.pediy.com/thread-259532.htm">原创]网鼎杯2020 白虎组 【恶龙】 解题</a></li>
+<li><a href="https://l0x1c.github.io/2020/05/15/2020-5-14/#HERO">网鼎杯CTF——白虎组 (week 4)</a></li>
+<li>[<a href="https://bbs.pediy.com/thread-259529.htm">原创]网鼎杯2020 白虎组 CY 解题</a></li>
+<li><a href="https://www.secquan.org/Notes/1071122">网鼎杯白虎组部分题目复盘</a></li>
+<li><a href="https://mp.weixin.qq.com/s/G1NttGYTUsQ1i8wNJQ667g">网鼎杯2020白虎组Misc题目hidden总结</a></li>
+<li><a href="https://mp.weixin.qq.com/s/v2C4BtZSYJDT64_ByrDhoA">网鼎杯-白虎组web题目writeup</a></li>
+<li><a href="https://www.52pojie.cn/thread-1181663-1-1.html">2020网鼎杯白虎组re 恶龙 wp</a></li>
+</ul>
+</li>
+<li>朱雀组
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/TpKXezPMZLx3VlejxlFyiQ">2020网鼎杯朱雀组云顿WP(入门向)</a></li>
+<li><a href="https://www.cnblogs.com/vege/p/12907941.html">【网鼎杯2020朱雀组】Web WriteUp</a></li>
+<li>[<a href="https://blog.csdn.net/Breeze_CAT/article/details/106195499">re]go语言逆向：2020网鼎杯朱雀组re what wp</a></li>
+<li><a href="https://blog.csdn.net/gd_9988/article/details/106181577">2020网鼎杯朱雀组_PHPweb</a></li>
+<li><a href="https://www.anquanke.com/post/id/205578">2020网鼎杯-朱雀组-部分wp</a></li>
+<li><a href="https://www.kkzevip.com/?post=51">2020网鼎杯-朱雀组部分题目Writeup</a></li>
+<li><a href="https://mp.weixin.qq.com/s/XYkgD_5Y0FcgsNqRAb_1Yw">2020网鼎杯-朱雀组-Crypto、Misc(带视频)</a></li>
+<li><a href="https://www.52pojie.cn/thread-1181476-1-1.html">2020网鼎杯朱雀组逆向2 tree</a></li>
+</ul>
+</li>
+<li>玄武组
+<ul>
+<li><a href="https://blog.csdn.net/slavik_/article/details/106264509">网鼎杯2020-玄武组签到题</a></li>
+<li><a href="https://mp.weixin.qq.com/s/Kr2AlygNpeM7UYiLPINcrA">网鼎杯玄武组部分web题解</a></li>
+<li><a href="https://mp.weixin.qq.com/s/PlpG6maNObxvRaXuaVSwIA">网鼎杯-玄武组-writeup-简单思路讲究</a></li>
+<li><a href="https://bbs.pediy.com/thread-259714.htm">2020网鼎杯玄武组_babyvm</a></li>
+<li><a href="https://blog.csdn.net/w1590191166/article/details/106314499/">2020网鼎杯玄武组部分题writeup（签到/vulcrack/java/js_on）</a></li>
+<li><a href="https://mp.weixin.qq.com/s/xNDUYkxCIEJuvHJWQwtflw">2020网鼎杯-玄武组-部分WriteUp</a></li>
+<li><a href="https://blog.csdn.net/God_XiangYu/article/details/106306773">【CTF】网鼎杯【玄武组】CTF部分题</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>2018</strong>
+<ul>
+<li>青龙组
+<ul>
+<li><a href="https://xz.aliyun.com/t/2611">【2018年 网鼎杯CTF 第一场】China H.L.B “网鼎杯” 部分WriteUp</a></li>
+<li><a href="https://xz.aliyun.com/t/2607">【2018年 网鼎杯CTF 第一场】Web 题解</a></li>
+<li>[网鼎杯2018第一场WEB&amp;Misc WP](<a href="https://v0w.top/2018/08/20/">https://v0w.top/2018/08/20/</a>网鼎杯2018第一场WEB&amp;Misc WP/)</li>
+<li><a href="https://cyto.top/2018/08/21/writeup-2018wangdingbei/">2018网鼎杯部分WriteUp</a></li>
+<li><a href="https://xz.aliyun.com/t/2608">【2018年 网鼎杯CTF 第一场】教育组 WP — Lilac</a></li>
+<li><a href="https://github.com/hongriSec/CTF-Training/tree/master/2018/2018%E7%BD%91%E9%BC%8E%E6%9D%AF%E7%AC%AC1%E5%9C%BA">2018网鼎杯第1场</a></li>
+</ul>
+</li>
+<li>白虎组
+<ul>
+<li><a href="https://www.o2oxy.cn/1688.html">网鼎杯第二场wp</a></li>
+<li><a href="http://dreamcracker.today/2020/05/12/%E7%BD%91%E9%BC%8E%E6%9D%AF-2018-game-writeup/">网鼎杯 2018 game writeup</a></li>
+<li><a href="https://www.smi1e.top/%E7%BD%91%E9%BC%8E%E6%9D%AF%E7%AC%AC%E4%BA%8C%E5%9C%BAwrite-up/">“网鼎杯”第二场Write up</a></li>
+<li><a href="https://github.com/hongriSec/CTF-Training/tree/master/2018/2018%E7%BD%91%E9%BC%8E%E6%9D%AF%E7%AC%AC2%E5%9C%BA">2018网鼎杯第2场</a></li>
+</ul>
+</li>
+<li>朱雀组
+<ul>
+<li><a href="https://www.o2oxy.cn/1753.html">网鼎杯第三场wp</a></li>
+<li><a href="https://www.smi1e.top/%E7%BD%91%E9%BC%8E%E6%9D%AF%E7%AC%AC%E4%B8%89%E5%9C%BAwrite-up/">“网鼎杯”第三场Write up</a></li>
+<li><a href="https://blog.csdn.net/whklhhhh/article/details/82150041">180828 逆向-网鼎杯（3-2）</a></li>
+<li><a href="https://github.com/hongriSec/CTF-Training/tree/master/2018/2018%E7%BD%91%E9%BC%8E%E6%9D%AF%E7%AC%AC3%E5%9C%BA">2018网鼎杯第3场</a></li>
+</ul>
+</li>
+<li>玄武组
+<ul>
+<li><a href="https://www.anquanke.com/post/id/158386">网鼎杯 第四场 部分WriteUp</a></li>
+<li><a href="https://www.secshi.com/16267.html">网鼎杯第四场 shenyue2 writeup</a></li>
+<li><a href="https://www.o2oxy.cn/1817.html">网鼎杯第四场wp</a></li>
+<li><a href="http://dreamcracker.today/2020/05/13/%E7%BD%91%E9%BC%8E%E6%9D%AF-2018-dalao-writeup/">网鼎杯 2018 dalao writeup</a></li>
+<li><a href="https://github.com/hongriSec/CTF-Training/tree/master/2018/2018%E7%BD%91%E9%BC%8E%E6%9D%AF%E7%AC%AC4%E5%9C%BA">2018网鼎杯第4场</a></li>
+</ul>
+</li>
+<li>线下赛
+<ul>
+<li><a href="https://github.com/hongriSec/CTF-Training/tree/master/2018/2018%E7%BD%91%E9%BC%8E%E6%9D%AF%E7%BA%BF%E4%B8%8B%E8%B5%9B">2018网鼎杯线下赛</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/time-2021-04-29-ctf/>https://olist213.github.io/study_book/time-2021-04-29-ctf/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/">
+                    #每日学习</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/time-2021-04-28/" class="prev" rel="prev" title="Time 2021 04 28"><i class="iconfont icon-left"></i>&nbsp;Time 2021 04 28</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
