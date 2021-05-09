@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/time-2021-05-06/" />
+  <link rel="next" href="https://olist213.github.io/study_book/time-2021-05-09/" />
+  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-05-08/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Time 2021 05 08 | Olist.213
+       
+  </title>
+  <meta name="title" content="Time 2021 05 08 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "Time 2021 05 08",
+    "headline" : "Time 2021 05 08",
+    "description" : "pppXray\n  Xray批量化自动扫描\n  xray挂机刷漏洞\n  import hashlib import re import time import os import click import config import winsound @click.command() @click.option(\u0026#39;-r\u0026#39;, \u0026#39;--readfile\u0026#39;,default=\u0026#39;target.txt\u0026#39;,help=\u0026#39;xray批量扫描读取文件名,按行读取\u0026#39;,type=str) @click.option(\u0026#39;--plugins\u0026#39;,help=\u0026#39;自定义xray插件 plugins\u0026#39;) def init(readfile,plugins): \u0026#34;\u0026#34;\u0026#34;pppXray : xray 批量扫描\\nhttps:\/\/github.com\/Cl0udG0d\/pppXray \u0026#34;\u0026#34;\u0026#34; try: if not os.path.exists(config.saveDir): os.makedirs(config.saveDir) config.targetFileName=readfile if plugins: config.plugins=plugins click.echo(\u0026#34;读取文件 {} \u0026#34;.format(readfile)) except Exception as e: print(e) pass def xrayScan(targeturl,outputfilename=\u0026#34;test\u0026#34;): scanCommand = \u0026#34;xray_windows_amd64.exe webscan {} --basic-crawler {} --html-output {}\\\\{}.html\u0026#34;.format(\u0026#39;--plugins {}\u0026#39;.format(config.plugins) if config.plugins else \u0026#39;\u0026#39;,targeturl, config.",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-05-08 16:31:02 \u002b0800 CST",
+    "dateModified" : "2021-05-08 16:31:02 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-05-08\/",
+    "wordCount" : "133",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Time 2021 05 08</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-05-08 itemprop="datePublished">May 8, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <ul>
+<li>
+<p><a href="https://github.com/Cl0udG0d/pppXray">pppXray</a></p>
+<ul>
+<li>
+<p>Xray批量化自动扫描</p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxMjE3ODU3MQ==&amp;mid=2650510185&amp;idx=2&amp;sn=2831c106595713d6719dc79cf604fb28&amp;chksm=83baf68db4cd7f9b8104f297e14deaccf112f4486c7a72637470e12c51eea7a1dc012c738c62&amp;scene=27">xray挂机刷漏洞</a></p>
+<ul>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> hashlib
+      
+<span style="color:#f92672">import</span> re
+      
+<span style="color:#f92672">import</span> time
+      
+<span style="color:#f92672">import</span> os
+      
+<span style="color:#f92672">import</span> click
+      
+<span style="color:#f92672">import</span> config
+      
+<span style="color:#f92672">import</span> winsound
+      
+<span style="color:#a6e22e">@click.command</span>()
+      
+<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74">&#39;-r&#39;</span>, <span style="color:#e6db74">&#39;--readfile&#39;</span>,default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;target.txt&#39;</span>,help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;xray批量扫描读取文件名,按行读取&#39;</span>,type<span style="color:#f92672">=</span>str)
+      
+<span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74">&#39;--plugins&#39;</span>,help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;自定义xray插件 plugins&#39;</span>)
+      
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">init</span>(readfile,plugins):
+      
+    <span style="color:#e6db74">&#34;&#34;&#34;pppXray : xray 批量扫描</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">      
+</span><span style="color:#e6db74">       https://github.com/Cl0udG0d/pppXray
+</span><span style="color:#e6db74">      
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+      
+    <span style="color:#66d9ef">try</span>:
+      
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(config<span style="color:#f92672">.</span>saveDir):
+      
+            os<span style="color:#f92672">.</span>makedirs(config<span style="color:#f92672">.</span>saveDir)
+      
+        config<span style="color:#f92672">.</span>targetFileName<span style="color:#f92672">=</span>readfile
+      
+        <span style="color:#66d9ef">if</span> plugins:
+      
+            config<span style="color:#f92672">.</span>plugins<span style="color:#f92672">=</span>plugins
+      
+        click<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&#34;读取文件 {} &#34;</span><span style="color:#f92672">.</span>format(readfile))
+      
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+      
+        <span style="color:#66d9ef">print</span>(e)
+      
+        <span style="color:#66d9ef">pass</span>
+      
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xrayScan</span>(targeturl,outputfilename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>):
+      
+    scanCommand <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;xray_windows_amd64.exe  webscan {} --basic-crawler {} --html-output {}</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">{}.html&#34;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;--plugins {}&#39;</span><span style="color:#f92672">.</span>format(config<span style="color:#f92672">.</span>plugins) <span style="color:#66d9ef">if</span> config<span style="color:#f92672">.</span>plugins <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;&#39;</span>,targeturl, config<span style="color:#f92672">.</span>saveDir,
+      
+                                                                                         outputfilename)
+      
+    <span style="color:#66d9ef">print</span>(scanCommand)
+      
+    os<span style="color:#f92672">.</span>system(scanCommand)
+      
+    <span style="color:#66d9ef">return</span>
+      
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pppGet</span>():
+      
+    f <span style="color:#f92672">=</span> open(config<span style="color:#f92672">.</span>targetFileName)
+      
+    lines <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
+      
+    pattern <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^http&#39;</span>)
+      
+    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> lines:
+      
+        <span style="color:#66d9ef">try</span>:
+      
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> pattern<span style="color:#f92672">.</span>match(line<span style="color:#f92672">.</span>strip()):
+      
+                targeturl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://&#34;</span><span style="color:#f92672">+</span>line<span style="color:#f92672">.</span>strip()
+      
+            <span style="color:#66d9ef">else</span>:
+      
+                targeturl<span style="color:#f92672">=</span>line<span style="color:#f92672">.</span>strip()
+      
+            <span style="color:#66d9ef">print</span>(targeturl<span style="color:#f92672">.</span>strip())
+      
+            outputfilename<span style="color:#f92672">=</span>hashlib<span style="color:#f92672">.</span>md5(targeturl<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>))
+      
+            xrayScan(targeturl<span style="color:#f92672">.</span>strip(), outputfilename<span style="color:#f92672">.</span>hexdigest())
+      
+            <span style="color:#75715e"># print(type(line))</span>
+      
+        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+      
+            <span style="color:#66d9ef">print</span>(e)
+      
+            <span style="color:#66d9ef">pass</span>
+      
+    f<span style="color:#f92672">.</span>close()
+      
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Xray Scan End~&#34;</span>)
+      
+    winsound<span style="color:#f92672">.</span>Beep(<span style="color:#ae81ff">600</span>,<span style="color:#ae81ff">5000</span>)
+      
+    <span style="color:#66d9ef">return</span>
+      
+      
+      
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+      
+    <span style="color:#66d9ef">try</span>:
+      
+        <span style="color:#66d9ef">print</span>(config<span style="color:#f92672">.</span>logo())
+      
+        init<span style="color:#f92672">.</span>main(standalone_mode<span style="color:#f92672">=</span>False)
+      
+        pppGet()
+      
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+      
+        <span style="color:#66d9ef">print</span>(e)
+      
+        <span style="color:#66d9ef">pass</span>
+    <span style="color:#66d9ef">return</span>
+      
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+      
+    main()
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/oliverwiegers/pentest_lab">pentest_lab</a></p>
+<ul>
+<li>Local penetration testing lab using docker-compose.使用docker-compose搭建常见的几种靶机系统</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/time-2021-05-08/>https://olist213.github.io/study_book/time-2021-05-08/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/time-2021-05-06/" class="prev" rel="prev" title="Time 2021 05 06"><i class="iconfont icon-left"></i>&nbsp;Time 2021 05 06</a>
+         
+        
+        <a href="https://olist213.github.io/study_book/time-2021-05-09/" class="next" rel="next" title="Time 2021 05 09">Time 2021 05 09&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
