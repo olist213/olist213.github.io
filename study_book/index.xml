@@ -6,7 +6,41 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 10 May 2021 23:01:40 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 May 2021 16:19:20 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time 2021 05 11 Fofa</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-11-fofa/</link>
+      <pubDate>Tue, 11 May 2021 16:19:20 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-11-fofa/</guid>
+      <description>直接输入查询语句，将从标题，html内容，http头信息，url字段中搜索
+  title=&amp;ldquo;abc&amp;rdquo; 从标题中搜索abc。例：标题中有北京的网站
+  header=&amp;ldquo;abc&amp;rdquo; 从http头中搜索abc。例：jboss服务器
+  body=&amp;ldquo;abc&amp;rdquo; 从html正文中搜索abc。例：正文包含Hacked by
+  domain=&amp;ldquo;qq.com&amp;rdquo; 搜索根域名带有qq.com的网站。例： 根域名是qq.com的网站
+  host=&amp;quot;.gov.cn&amp;quot; 从url中搜索.gov.cn,注意搜索要用host作为名称。例： 政府网站, 教育网站
+  port=&amp;ldquo;443&amp;rdquo; 查找对应443端口的资产。例： 查找对应443端口的资产
+  ip=&amp;ldquo;1.1.1.1&amp;rdquo; 从ip中搜索包含1.1.1.1的网站,注意搜索要用ip作为名称。例： 查询IP为220.181.111.1的网站; 如果想要查询网段，可以是： ip=&amp;ldquo;220.181.111.1/24&amp;rdquo;，例如查询IP为220.181.111.1的C网段资产
+  protocol=&amp;ldquo;https&amp;rdquo; 搜索指定协议类型(在开启端口扫描的情况下有效)。例： 查询https协议资产
+  city=&amp;ldquo;Hangzhou&amp;rdquo; 搜索指定城市的资产。例： 搜索指定城市的资产
+  region=&amp;ldquo;Zhejiang&amp;rdquo; 搜索指定行政区的资产。例： 搜索指定行政区的资产
+  Province=&amp;ldquo;Zhejiang&amp;rdquo;
+  country=&amp;ldquo;CN&amp;rdquo; 搜索指定国家(编码)的资产。例： 搜索指定国家(编码)的资产
+  cert=&amp;ldquo;google&amp;rdquo; 搜索证书(https或者imaps等)中带有google的资产。例： 搜索证书(https或者imaps等)中带有google的资产
+  banner=users &amp;amp;&amp;amp; protocol=ftp 搜索FTP协议中带有users文本的资产。例： 搜索FTP协议中带有users文本的资产</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 11</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-11/</link>
+      <pubDate>Tue, 11 May 2021 10:26:20 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-11/</guid>
+      <description>   渗透测试靶场
+ buuoj Vulhub webhacking.kr hackinglab.cn mozhe.cn  收费   安鸾渗透实战平台 xss-quiz.int21h MS08067 实战型训练平台  邀请码   东塔在线靶场 DVWA BWVS BWAPP sqli-lib Upload-labs Metasploitable Web for Pentester    ATT&amp;amp;CK 初探&amp;ndash;侦察阶段
+  </description>
+    </item>
+    
     <item>
       <title>Time 2021 05 10</title>
       <link>https://olist213.github.io/study_book/time-2021-05-10/</link>
