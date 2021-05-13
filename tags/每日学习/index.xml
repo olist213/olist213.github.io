@@ -6,7 +6,16 @@
     <description>Recent content in 每日学习 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 May 2021 10:06:48 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 May 2021 15:07:01 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E6%AF%8F%E6%97%A5%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time 2021 05 12 RapidDns Domain</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-12/</link>
+      <pubDate>Wed, 12 May 2021 15:07:01 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-12/</guid>
+      <description> RapidDns 在线域名批量解析ip地址查询  curl -s &amp;#34;&amp;lt;https://rapiddns.io/subdomain/jxuspt.com?full=1#result&amp;gt;&amp;#34; | grep &amp;#34;&amp;lt;td&amp;gt;&amp;lt;a&amp;#34; | cut -d &amp;#34;/&amp;#34; -f3 | cut -d &amp;#39;&amp;#34;&amp;#39; -f1 | xargs -l2 | sed &amp;#39;s/#result//g&amp;#39; </description>
+    </item>
+    
     <item>
       <title>Time 2021 05 05</title>
       <link>https://olist213.github.io/study_book/time-2021-05-05/</link>
