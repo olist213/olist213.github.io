@@ -6,7 +6,29 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 May 2021 15:07:01 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 May 2021 11:54:25 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time 2021 05 15 httpx naabu subfinder</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-15/</link>
+      <pubDate>Sat, 15 May 2021 11:54:25 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-15/</guid>
+      <description> fluent-reader naabu  docker pull projectdiscovery/naabu docker run -it projectdiscovery/naabu -host hackerone.com &amp;gt; hackerone.com.txt  subfinder  subfinder -d example.com echo hackerone.com | subfinder -silent | httpx -silent  httpx  httpx -l hosts.txt -silent echo 173.0.84.0/24 | httpx -silent subfinder -d hackerone.com | httpx -title -tech-detect -status-code -title -follow-redirects  notify  </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 14</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-14/</link>
+      <pubDate>Fri, 14 May 2021 12:29:54 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-14/</guid>
+      <description>tmux
+  How to navigate directories faster with bash
+ cd别名设置  alias ..=&amp;#34;cd ..&amp;#34; alias ...=&amp;#34;cd ../..&amp;#34; alias ....=&amp;#34;cd ../../..&amp;#34; alias .....=&amp;#34;cd ../../../..&amp;#34; alias ......=&amp;#34;cd ../../../../..&amp;#34; alias .......=&amp;#34;cd ../../../../../..&amp;#34; alias ........=&amp;#34;cd ../../../../../../..&amp;#34; alias .........=&amp;#34;cd ../../../../../../../..&amp;#34; alias ..........=&amp;#34;cd ../../../../../../../../..&amp;#34; alias ...........=&amp;#34;cd ../../../../../../../../../..&amp;#34; alias ............=&amp;#34;cd ../../../../../../../../../../..&amp;#34; alias .............=&amp;#34;cd ../../../../../../../../../../../..&amp;#34;   !$
+ 前一个命令最后一个参数的别名，如下面这个命令就是等价于cd make/new/directory  mkdir -p make/new/directory cd !$     OneListForAll
+  ffuf -c -w onelistforall.</description>
+    </item>
+    
     <item>
       <title>Time 2021 05 12 RapidDns Domain</title>
       <link>https://olist213.github.io/study_book/time-2021-05-12/</link>
