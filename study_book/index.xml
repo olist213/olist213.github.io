@@ -6,7 +6,25 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 16 May 2021 18:49:11 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Jun 2021 15:52:32 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time 2021 06 05</title>
+      <link>https://olist213.github.io/study_book/time-2021-06-05/</link>
+      <pubDate>Sat, 05 Jun 2021 15:52:32 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-06-05/</guid>
+      <description>mac os软件安装  notion onedrive spotify office 365 微信 google浏览器 Clashx for mac telegram 无法开启代理 clashx idm 使用folx替换 git firefox vscode zy player fluent reader bandizip 收费 copytranslater typora steam mybase 百度网盘 wgestures betterandbetter dbeaver finalshell snapeste motrix docker parallels desktop folx clearmymac xmind zen ssr telegram desktop antsword wireshark 010 editor touchbar-systemmonitor  A better simple reactive system monitor on macOS for your MacBook pro. Built with Electron.    </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 20 Docker Install Nessus</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-20-docker-install-nessus/</link>
+      <pubDate>Thu, 20 May 2021 12:53:03 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-20-docker-install-nessus/</guid>
+      <description># 拉取镜像 docker pull leishianquan/awvs-nessus:v4 # 启动 docker run --name awvs-nessus -it -d -p 13443:3443 -p 8834:8834 leishianquan/awvs-nessus:v4 # 查看容器 docker ps –a # 启动容器 docker start container-id # 进入容器 docker exec –it container-id /bin/bash # 进入容器后，启动nessus /etc/init.d/nessusd start # 访问扫描器地址和账号密码 Nessus: https://127.0.0.1:8834/#/ account:leishi/leishianquan Awvs13: https://127.0.0.1:13443/ account:admin@admin.com/Admin123 #上传插件 docker cp all-2.0-20210510.tar.gz container-id:/ #更新插件 &amp;gt;/etc/init.d/nessusd stop &amp;gt;/opt/nessus/sbin/nessuscli update /root/Downloads/all-2.0.tar.gz &amp;gt;/etc/init.d/nessusd start Test all the hosts via @pdiscoveryio httpx tool:- httpx -l hosts.</description>
+    </item>
+    
     <item>
       <title>Time 2021 05 16</title>
       <link>https://olist213.github.io/study_book/time-2021-05-16/</link>

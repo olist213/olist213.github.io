@@ -162,128 +162,128 @@
 <ul>
 <li>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> hashlib
-      
+
 <span style="color:#f92672">import</span> re
-      
+
 <span style="color:#f92672">import</span> time
-      
+
 <span style="color:#f92672">import</span> os
-      
+
 <span style="color:#f92672">import</span> click
-      
+
 <span style="color:#f92672">import</span> config
-      
+
 <span style="color:#f92672">import</span> winsound
-      
+
 <span style="color:#a6e22e">@click.command</span>()
-      
+
 <span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74">&#39;-r&#39;</span>, <span style="color:#e6db74">&#39;--readfile&#39;</span>,default<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;target.txt&#39;</span>,help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;xray批量扫描读取文件名,按行读取&#39;</span>,type<span style="color:#f92672">=</span>str)
-      
+
 <span style="color:#a6e22e">@click.option</span>(<span style="color:#e6db74">&#39;--plugins&#39;</span>,help<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;自定义xray插件 plugins&#39;</span>)
-      
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">init</span>(readfile,plugins):
-      
+
     <span style="color:#e6db74">&#34;&#34;&#34;pppXray : xray 批量扫描</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">      
+</span><span style="color:#e6db74">
 </span><span style="color:#e6db74">       https://github.com/Cl0udG0d/pppXray
-</span><span style="color:#e6db74">      
+</span><span style="color:#e6db74">
 </span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-      
+
     <span style="color:#66d9ef">try</span>:
-      
+
         <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(config<span style="color:#f92672">.</span>saveDir):
-      
+
             os<span style="color:#f92672">.</span>makedirs(config<span style="color:#f92672">.</span>saveDir)
-      
+
         config<span style="color:#f92672">.</span>targetFileName<span style="color:#f92672">=</span>readfile
-      
+
         <span style="color:#66d9ef">if</span> plugins:
-      
+
             config<span style="color:#f92672">.</span>plugins<span style="color:#f92672">=</span>plugins
-      
+
         click<span style="color:#f92672">.</span>echo(<span style="color:#e6db74">&#34;读取文件 {} &#34;</span><span style="color:#f92672">.</span>format(readfile))
-      
+
     <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-      
+
         <span style="color:#66d9ef">print</span>(e)
-      
+
         <span style="color:#66d9ef">pass</span>
-      
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">xrayScan</span>(targeturl,outputfilename<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>):
-      
+
     scanCommand <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;xray_windows_amd64.exe  webscan {} --basic-crawler {} --html-output {}</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">{}.html&#34;</span><span style="color:#f92672">.</span>format(<span style="color:#e6db74">&#39;--plugins {}&#39;</span><span style="color:#f92672">.</span>format(config<span style="color:#f92672">.</span>plugins) <span style="color:#66d9ef">if</span> config<span style="color:#f92672">.</span>plugins <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;&#39;</span>,targeturl, config<span style="color:#f92672">.</span>saveDir,
-      
+
                                                                                          outputfilename)
-      
+
     <span style="color:#66d9ef">print</span>(scanCommand)
-      
+
     os<span style="color:#f92672">.</span>system(scanCommand)
-      
+
     <span style="color:#66d9ef">return</span>
-      
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">pppGet</span>():
-      
+
     f <span style="color:#f92672">=</span> open(config<span style="color:#f92672">.</span>targetFileName)
-      
+
     lines <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>readlines()
-      
+
     pattern <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>compile(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;^http&#39;</span>)
-      
+
     <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> lines:
-      
+
         <span style="color:#66d9ef">try</span>:
-      
+
             <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> pattern<span style="color:#f92672">.</span>match(line<span style="color:#f92672">.</span>strip()):
-      
+
                 targeturl<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://&#34;</span><span style="color:#f92672">+</span>line<span style="color:#f92672">.</span>strip()
-      
+
             <span style="color:#66d9ef">else</span>:
-      
+
                 targeturl<span style="color:#f92672">=</span>line<span style="color:#f92672">.</span>strip()
-      
+
             <span style="color:#66d9ef">print</span>(targeturl<span style="color:#f92672">.</span>strip())
-      
+
             outputfilename<span style="color:#f92672">=</span>hashlib<span style="color:#f92672">.</span>md5(targeturl<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#34;utf-8&#34;</span>))
-      
+
             xrayScan(targeturl<span style="color:#f92672">.</span>strip(), outputfilename<span style="color:#f92672">.</span>hexdigest())
-      
+
             <span style="color:#75715e"># print(type(line))</span>
-      
+
         <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-      
+
             <span style="color:#66d9ef">print</span>(e)
-      
+
             <span style="color:#66d9ef">pass</span>
-      
+
     f<span style="color:#f92672">.</span>close()
-      
+
     <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Xray Scan End~&#34;</span>)
-      
+
     winsound<span style="color:#f92672">.</span>Beep(<span style="color:#ae81ff">600</span>,<span style="color:#ae81ff">5000</span>)
-      
+
     <span style="color:#66d9ef">return</span>
-      
-      
-      
+
+
+
 <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
-      
+
     <span style="color:#66d9ef">try</span>:
-      
+
         <span style="color:#66d9ef">print</span>(config<span style="color:#f92672">.</span>logo())
-      
+
         init<span style="color:#f92672">.</span>main(standalone_mode<span style="color:#f92672">=</span>False)
-      
+
         pppGet()
-      
+
     <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-      
+
         <span style="color:#66d9ef">print</span>(e)
-      
+
         <span style="color:#66d9ef">pass</span>
     <span style="color:#66d9ef">return</span>
-      
+
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
-      
+
     main()
 </code></pre></div></li>
 </ul>
