@@ -5,8 +5,17 @@
     <description>Recent content in Olist.213 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 14 Jun 2021 08:29:29 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 17 Mar 2022 15:06:38 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Posts</title>
+      <link>https://olist213.github.io/posts/</link>
+      <pubDate>Thu, 17 Mar 2022 15:06:38 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Study_books</title>
@@ -14,15 +23,6 @@
       <pubDate>Mon, 14 Jun 2021 08:29:29 +0800</pubDate>
       
       <guid>https://olist213.github.io/study_book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Posts</title>
-      <link>https://olist213.github.io/posts/</link>
-      <pubDate>Mon, 17 May 2021 19:28:31 +0800</pubDate>
-      
-      <guid>https://olist213.github.io/posts/</guid>
       <description></description>
     </item>
     
