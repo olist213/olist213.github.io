@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 Mar 2023 16:42:48 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Mar 2023 15:18:07 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fastjson_dbcp_rce_replicate</title>
+      <link>https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/</link>
+      <pubDate>Wed, 29 Mar 2023 15:18:07 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/</guid>
+      <description>先进行环境的编译，项目地址：GitHub - depycode/fastjson-local-echo: 基于dbcp的fastjson rce 回显
+idea编译 配置好maven和setting.xml
+配置jdk为1.8
+package之后生成jar文件
+运行jar文件，启动环境
+java -jar demo-0.0.1-SNAPSHOT.jar
+浏览器访问
+适用场景  fastjson &amp;lt;= 1.2.24 1.2.33 &amp;lt;= fastjson &amp;lt;= 1.2.47 jdk &amp;lt;= 8u251 存在 tomcat-dbcp  复现    文件名 介绍     SpringEcho.java spring 回显代码   BCELEncode.java 将class文件进行bcel编码    首先将SpringEcho.java 编译生成 SpringEcho.class 文件，然后用BCELEncode 对class 文件进行bcel编码
+  fastjson &amp;lt;= 1.2.24 poc
+ 见github项目    1.2.33 &amp;lt;= fastjson &amp;lt;= 1.</description>
+    </item>
+    
     <item>
       <title>20230328_test</title>
       <link>https://olist213.github.io/posts/20230328_test/</link>

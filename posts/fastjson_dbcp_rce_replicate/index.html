@@ -9,9 +9,9 @@
   <meta name="description" content="一点牢骚">
   
   
-  <link rel="prev" href="https://olist213.github.io/posts/20220317_test/" />
-  <link rel="next" href="https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/" />
-  <link rel="canonical" href="https://olist213.github.io/posts/20230328_test/" />
+  <link rel="prev" href="https://olist213.github.io/posts/20230328_test/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           20230328_test | Olist.213
+           Fastjson_dbcp_rce_replicate | Olist.213
        
   </title>
-  <meta name="title" content="20230328_test | Olist.213">
+  <meta name="title" content="Fastjson_dbcp_rce_replicate | Olist.213">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/olist213.github.io"
     },
     "articleSection" : "posts",
-    "name" : "20230328_test",
-    "headline" : "20230328_test",
-    "description" : "1111\ntest",
+    "name" : "Fastjson_dbcp_rce_replicate",
+    "headline" : "Fastjson_dbcp_rce_replicate",
+    "description" : "先进行环境的编译，项目地址：GitHub - depycode\/fastjson-local-echo: 基于dbcp的fastjson rce 回显\nidea编译 配置好maven和setting.xml\n配置jdk为1.8\npackage之后生成jar文件\n运行jar文件，启动环境\njava -jar demo-0.0.1-SNAPSHOT.jar\n浏览器访问\n适用场景  fastjson \u0026lt;= 1.2.24 1.2.33 \u0026lt;= fastjson \u0026lt;= 1.2.47 jdk \u0026lt;= 8u251 存在 tomcat-dbcp  复现    文件名 介绍     SpringEcho.java spring 回显代码   BCELEncode.java 将class文件进行bcel编码    首先将SpringEcho.java 编译生成 SpringEcho.class 文件，然后用BCELEncode 对class 文件进行bcel编码\n  fastjson \u0026lt;= 1.2.24 poc\n 见github项目    1.2.33 \u0026lt;= fastjson \u0026lt;= 1.",
     "inLanguage" : "zh-cn",
     "author" : "",
     "creator" : "",
@@ -54,10 +54,10 @@
     "accountablePerson" : "",
     "copyrightHolder" : "",
     "copyrightYear" : "2023",
-    "datePublished": "2023-03-28 16:42:48 \u002b0800 CST",
-    "dateModified" : "2023-03-28 16:42:48 \u002b0800 CST",
-    "url" : "https:\/\/olist213.github.io\/posts\/20230328_test\/",
-    "wordCount" : "2",
+    "datePublished": "2023-03-29 15:18:07 \u002b0800 CST",
+    "dateModified" : "2023-03-29 15:18:07 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/fastjson_dbcp_rce_replicate\/",
+    "wordCount" : "56",
     "keywords" : [  "Olist.213"]
 }
 </script>
@@ -124,11 +124,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">20230328_test</h1>
+        <h1 class="post-title" itemprop="name headline">Fastjson_dbcp_rce_replicate</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2023-03-28 itemprop="datePublished">March 28, 2023</time>
+                on <time datetime=2023-03-29 itemprop="datePublished">March 29, 2023</time>
                 </span>
                 in
                 
@@ -137,6 +137,8 @@
     <div class="post-content">
         
 
+        
+            
         
 
         
@@ -150,8 +152,65 @@
           
           
 
-          <p>1111</p>
-<p>test</p>
+          <p>先进行环境的编译，项目地址：<a href="https://github.com/depycode/fastjson-local-echo">GitHub - depycode/fastjson-local-echo: 基于dbcp的fastjson rce 回显</a></p>
+<h2 id="idea编译">idea编译</h2>
+<p>配置好maven和setting.xml</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/c2i4HC.png" alt="image-20230329151853299"></p>
+<p>配置jdk为1.8</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/D9tAzw.png" alt="image-20230329151908401"></p>
+<p>package之后生成jar文件</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/WU65dA.png" alt="image-20230329152319368"></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/dmIsBL.png" alt="image-20230329151933841"></p>
+<p>运行jar文件，启动环境</p>
+<p>java -jar demo-0.0.1-SNAPSHOT.jar</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/zN4ETz.png" alt="image-20230329151948017"></p>
+<p>浏览器访问</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/8GuMh9.png" alt="image-20230329152028904"></p>
+<h2 id="适用场景"><strong>适用场景</strong></h2>
+<ul>
+<li>fastjson &lt;= 1.2.24</li>
+<li>1.2.33 &lt;= fastjson &lt;= 1.2.47</li>
+<li>jdk &lt;= 8u251</li>
+<li>存在 tomcat-dbcp</li>
+</ul>
+<h2 id="复现">复现</h2>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SpringEcho.java</td>
+<td>spring 回显代码</td>
+</tr>
+<tr>
+<td>BCELEncode.java</td>
+<td>将class文件进行bcel编码</td>
+</tr>
+</tbody>
+</table>
+<p>首先将SpringEcho.java 编译生成 SpringEcho.class 文件，然后用BCELEncode 对class 文件进行bcel编码</p>
+<ul>
+<li>
+<p>fastjson &lt;= 1.2.24 poc</p>
+<ul>
+<li>见github项目</li>
+</ul>
+</li>
+<li>
+<p>1.2.33 &lt;= fastjson &lt;= 1.2.47 poc</p>
+<ul>
+<li>见github项目</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/021dvJ.png" alt="image-20230329152045628"></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/QauTqK.png" alt="image-20230329152104074"></p>
+<p>上处driverClassName中的内容通过BCELEncode进行编码</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/j3QmP7.png" alt="image-20230329152124284"></p>
 
     </div>
 
@@ -166,7 +225,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://olist213.github.io/posts/20230328_test/>https://olist213.github.io/posts/20230328_test/</span>
+                    <a href=https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/>https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/</span>
             </p>
             
             
@@ -183,10 +242,8 @@
 
     <div class="post-nav">
         
-        <a href="https://olist213.github.io/posts/20220317_test/" class="prev" rel="prev" title="20220317_test"><i class="iconfont icon-left"></i>&nbsp;20220317_test</a>
+        <a href="https://olist213.github.io/posts/20230328_test/" class="prev" rel="prev" title="20230328_test"><i class="iconfont icon-left"></i>&nbsp;20230328_test</a>
          
-        
-        <a href="https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/" class="next" rel="next" title="Fastjson_dbcp_rce_replicate">Fastjson_dbcp_rce_replicate&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -228,8 +285,9 @@
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 
