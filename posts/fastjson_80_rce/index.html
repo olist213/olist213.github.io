@@ -9,9 +9,9 @@
   <meta name="description" content="一点牢骚">
   
   
-  <link rel="prev" href="https://olist213.github.io/study_book/time-2021-06-05/" />
-  <link rel="next" href="https://olist213.github.io/study_book/2023-03-29/" />
-  <link rel="canonical" href="https://olist213.github.io/study_book/time-2021-06-14/" />
+  <link rel="prev" href="https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/fastjson_80_rce/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Time 2021 06 14 | Olist.213
+           fastjson 80远程代码执行漏洞复现 | Olist.213
        
   </title>
-  <meta name="title" content="Time 2021 06 14 | Olist.213">
+  <meta name="title" content="fastjson 80远程代码执行漏洞复现 | Olist.213">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -43,22 +43,22 @@
          "@type": "WebPage",
          "@id": "https:\/\/olist213.github.io"
     },
-    "articleSection" : "study_book",
-    "name" : "Time 2021 06 14",
-    "headline" : "Time 2021 06 14",
-    "description" : "  ProxyLogon\nProxyLogon(CVE-2021-26855\u002bCVE-2021-27065) Exchange Server RCE(SSRF-\u0026gt;GetWebShell) usage: python ProxyLogon.py --host=exchange.com --mail=admin@exchange.com python ProxyLogon.py --host=exchange.com --mails=.\/mails.txt args: --host: target\u0026#39;s address. --mail: exists user\u0026#39;s mail. --mails: mails file.  chisel get_Team_Pass pyinstall编译 AoiAWD https:\/\/github.com\/lawrenceamer\/dns-black-cat.git http:\/\/www.firstsight.me\/2020\/02\/from-recon-to-optimizing-rce-results-simple-story-with-one-of-the-biggest-ict-company-in-the-world\/ onlinetools  在线cms识别|信息泄露|工控|系统|物联网安全|cms漏洞扫描|nmap端口扫描|子域名获取   Mssql 常规提权    ",
+    "articleSection" : "posts",
+    "name" : "fastjson 80远程代码执行漏洞复现",
+    "headline" : "fastjson 80远程代码执行漏洞复现",
+    "description" : "项目地址 GitHub - Lonely-night\/fastjsonVul at 7f9d2d8ea1c27ae1f9c06076849ae76c25b6aff7\n利用条件  fastjson版本： 1.2.76 \u0026lt;= fastjson \u0026lt; 1.2.83 存在groovy依赖  复现步骤 1、编译attack模块为attack-1.jar包\n2、在attack-1.jar包所在的目录下执行启用http服务。\npython -m SimpleHTTPServer 8433\n3、运行poc\n利用idea重新打开项目，项目路径：\njdk版本切换成1.8\n打开poc.java文件，这个文件是漏洞验证的payload。\n右键运行\n成功运行payload",
     "inLanguage" : "zh-cn",
     "author" : "",
     "creator" : "",
     "publisher": "",
     "accountablePerson" : "",
     "copyrightHolder" : "",
-    "copyrightYear" : "2021",
-    "datePublished": "2021-06-14 08:29:29 \u002b0800 CST",
-    "dateModified" : "2021-06-14 08:29:29 \u002b0800 CST",
-    "url" : "https:\/\/olist213.github.io\/study_book\/time-2021-06-14\/",
-    "wordCount" : "35",
-    "keywords" : [  "Olist.213"]
+    "copyrightYear" : "2023",
+    "datePublished": "2023-03-29 15:59:44 \u002b0800 CST",
+    "dateModified" : "2023-03-29 15:59:44 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/fastjson_80_rce\/",
+    "wordCount" : "27",
+    "keywords" : [ "web安全", "Olist.213"]
 }
 </script>
 
@@ -124,11 +124,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Time 2021 06 14</h1>
+        <h1 class="post-title" itemprop="name headline">fastjson 80远程代码执行漏洞复现</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2021-06-14 itemprop="datePublished">June 14, 2021</time>
+                on <time datetime=2023-03-29 itemprop="datePublished">March 29, 2023</time>
                 </span>
                 in
                 
@@ -137,6 +137,8 @@
     <div class="post-content">
         
 
+        
+            
         
 
         
@@ -150,34 +152,31 @@
           
           
 
-          <ul>
-<li>
-<p><a href="https://github.com/p0wershe11/ProxyLogon">ProxyLogon</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ProxyLogon<span style="color:#f92672">(</span>CVE-2021-26855+CVE-2021-27065<span style="color:#f92672">)</span> Exchange Server RCE<span style="color:#f92672">(</span>SSRF-&gt;GetWebShell<span style="color:#f92672">)</span>
-
-usage:
-    python ProxyLogon.py --host<span style="color:#f92672">=</span>exchange.com --mail<span style="color:#f92672">=</span>admin@exchange.com
-    python ProxyLogon.py --host<span style="color:#f92672">=</span>exchange.com --mails<span style="color:#f92672">=</span>./mails.txt
-args:
-    --host: target<span style="color:#e6db74">&#39;s address.
-</span><span style="color:#e6db74">    --mail: exists user&#39;</span>s mail.
-    --mails: mails file.
-</code></pre></div><ul>
-<li><a href="https://github.com/jpillora/chisel">chisel</a></li>
-<li><a href="https://github.com/kr1shn4murt1/get_Team_Pass/">get_Team_Pass</a></li>
-<li>pyinstall编译</li>
-<li><a href="https://github.com/DasSecurity-HatLab/AoiAWD">AoiAWD</a></li>
-<li><a href="https://github.com/lawrenceamer/dns-black-cat.git">https://github.com/lawrenceamer/dns-black-cat.git</a></li>
-<li><a href="http://www.firstsight.me/2020/02/from-recon-to-optimizing-rce-results-simple-story-with-one-of-the-biggest-ict-company-in-the-world/">http://www.firstsight.me/2020/02/from-recon-to-optimizing-rce-results-simple-story-with-one-of-the-biggest-ict-company-in-the-world/</a></li>
-<li>onlinetools
+          <h2 id="项目地址">项目地址</h2>
+<p><a href="https://github.com/Lonely-night/fastjsonVul/tree/7f9d2d8ea1c27ae1f9c06076849ae76c25b6aff7">GitHub - Lonely-night/fastjsonVul at 7f9d2d8ea1c27ae1f9c06076849ae76c25b6aff7</a></p>
+<h2 id="利用条件">利用条件</h2>
 <ul>
-<li>在线cms识别|信息泄露|工控|系统|物联网安全|cms漏洞扫描|nmap端口扫描|子域名获取</li>
+<li>fastjson版本： 1.2.76 &lt;= fastjson &lt; 1.2.83</li>
+<li>存在groovy依赖</li>
 </ul>
-</li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzAxMjE3ODU3MQ==&amp;mid=2650514304&amp;idx=3&amp;sn=8cfb66b79bd1bb45ac64341e2f496246&amp;chksm=83bac664b4cd4f72c2788701868a445011add8a6bc725488ea88bcf0e77cd6d98cc7d1e97ce1&amp;scene=27#wechat_redirect">Mssql 常规提权</a></li>
-</ul>
-</li>
-</ul>
+<h2 id="复现步骤"><strong>复现步骤</strong></h2>
+<p>1、编译attack模块为attack-1.jar包</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/Jmqhfo.png" alt="image-20230329160058491"></p>
+<p>2、在attack-1.jar包所在的目录下执行启用http服务。</p>
+<p><code>python -m SimpleHTTPServer 8433</code></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/UEOWX7.png" alt="image-20230329160109284"></p>
+<p>3、运行poc</p>
+<p>利用idea重新打开项目，项目路径：</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/ndz2xm.png" alt="image-20230329160132495"></p>
+<p><strong>jdk版本切换成1.8</strong></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/5jIaYw.png" alt="image-20230329160148463"></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/GqXFxy.png" alt="image-20230329160158358"></p>
+<p>打开poc.java文件，这个文件是漏洞验证的payload。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/pYqlQQ.png" alt="image-20230329160216067"></p>
+<p>右键运行</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/2yN3D6.png" alt="image-20230329160228607"></p>
+<p>成功运行payload</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/8zgvcz.png" alt="image-20230329160239277"></p>
 
     </div>
 
@@ -192,7 +191,7 @@ args:
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://olist213.github.io/study_book/time-2021-06-14/>https://olist213.github.io/study_book/time-2021-06-14/</span>
+                    <a href=https://olist213.github.io/posts/fastjson_80_rce/>https://olist213.github.io/posts/fastjson_80_rce/</span>
             </p>
             
             
@@ -200,6 +199,14 @@ args:
 
   
     <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/">
+                    #web安全</a></span>
+            
+            </section>
         
         <section>
                 <a href="javascript:window.history.back();">back</a></span> · 
@@ -209,10 +216,8 @@ args:
 
     <div class="post-nav">
         
-        <a href="https://olist213.github.io/study_book/time-2021-06-05/" class="prev" rel="prev" title="Time 2021 06 05 mac os软件安装"><i class="iconfont icon-left"></i>&nbsp;Time 2021 06 05 mac os软件安装</a>
+        <a href="https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/" class="prev" rel="prev" title="Fastjson_dbcp_rce_replicate"><i class="iconfont icon-left"></i>&nbsp;Fastjson_dbcp_rce_replicate</a>
          
-        
-        <a href="https://olist213.github.io/study_book/2023-03-29/" class="next" rel="next" title="2023 03 29">2023 03 29&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -254,8 +259,9 @@ args:
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 

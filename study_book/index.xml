@@ -6,7 +6,19 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 14 Jun 2021 08:29:29 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Mar 2023 15:46:21 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023 03 29</title>
+      <link>https://olist213.github.io/study_book/2023-03-29/</link>
+      <pubDate>Wed, 29 Mar 2023 15:46:21 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/2023-03-29/</guid>
+      <description>   https://github.com/GrrrDog/Java-Deserialization-Cheat-Sheet/ (未完成，继续)
+  写了一篇blog
+ https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/    使用chatgpt翻译两本oscp的官方手册
+  </description>
+    </item>
+    
     <item>
       <title>Time 2021 06 14</title>
       <link>https://olist213.github.io/study_book/time-2021-06-14/</link>

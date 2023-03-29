@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 29 Mar 2023 15:18:07 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Mar 2023 15:59:44 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fastjson 80远程代码执行漏洞复现</title>
+      <link>https://olist213.github.io/posts/fastjson_80_rce/</link>
+      <pubDate>Wed, 29 Mar 2023 15:59:44 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/fastjson_80_rce/</guid>
+      <description>项目地址 GitHub - Lonely-night/fastjsonVul at 7f9d2d8ea1c27ae1f9c06076849ae76c25b6aff7
+利用条件  fastjson版本： 1.2.76 &amp;lt;= fastjson &amp;lt; 1.2.83 存在groovy依赖  复现步骤 1、编译attack模块为attack-1.jar包
+2、在attack-1.jar包所在的目录下执行启用http服务。
+python -m SimpleHTTPServer 8433
+3、运行poc
+利用idea重新打开项目，项目路径：
+jdk版本切换成1.8
+打开poc.java文件，这个文件是漏洞验证的payload。
+右键运行
+成功运行payload</description>
+    </item>
+    
     <item>
       <title>Fastjson_dbcp_rce_replicate</title>
       <link>https://olist213.github.io/posts/fastjson_dbcp_rce_replicate/</link>
