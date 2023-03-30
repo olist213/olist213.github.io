@@ -27,11 +27,11 @@ Direct Minimum/Maximum Port : 靶机端口开放范围
 GitHub - Un1kTeam/CTFd: CTFs as you need them
 此项目版本是3.3.0，可以进行汉化，同时也包括了frp、ctfd-whale @ 138b042，ctf-whale单独下载安装。
 ctfd环境测试 打开浏览器，输入http://127.0.0.1:9124访问，返回如下界面：
-![](https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted image 20221231133629.png)
 一步一步设置完，在样式处，banner如果尺寸太大有点问题，设置完成后，就可以使用了。
 动态靶场配置，点击Whale插件
 没有域名Http Domain Suffix可以不填写
-Direct IP Address 填写虚拟机的ip地址。</description>
+Direct IP Address 填写虚拟机的ip地址。
+创建题目 选择dynamic_docker</description>
     </item>
     
   </channel>
