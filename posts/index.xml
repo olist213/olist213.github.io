@@ -6,7 +6,32 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 30 Mar 2023 18:56:49 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Mar 2023 22:09:58 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python_pyinstaller</title>
+      <link>https://olist213.github.io/posts/python_pyinstaller/</link>
+      <pubDate>Thu, 30 Mar 2023 22:09:58 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/python_pyinstaller/</guid>
+      <description> date: 2023-03-30 type: ctf alias: author: title: tags:
+ ctf crypto   [[python打包]] 如何讲python文件打包成exe文件呢？利用pyinstaller就可以了。
+PyInstaller是一种将Python程序转化为独立执行文件的工具。其主要原理是将Python脚本代码和相关的资源文件打包到一个可执行文件中，并通过解压缩操作在运行时将这些文件解压出来，然后执行其中的Python代码。其打包过程主要分为以下几个步骤：
+1、解析和分析Python脚本代码，识别出脚本的依赖项以及相应的引用路径；
+2、找到并收集依赖项的所有相关文件和资源，并将它们一起打包为一个可执行文件；
+3、将Python解释器和所有脚本以及资源文件一起打包为一个二进制可执行文件；
+4、执行可执行文件时进行解压缩操作，将所有资源文件和Python脚本解压到临时目录中；
+5、然后用Python解释器运行程序脚本并完成执行过程。
+pyinstall提供两种打包方式：
+ 打包成一个文件夹  pyinstaller -D test.py  打包成一个单独的文件  pyinstaller -F test.py 如果要将打包后的exe文件还原成py文件，可以使用下面的项目进行还原：
+GitHub - extremecoders-re/pyinstxtractor: PyInstaller Extractor
+使用方法很简单：
+$ python pyinstxtractor.py &amp;lt;filename&amp;gt; X:\&amp;gt;python pyinstxtractor.py &amp;lt;filename&amp;gt; 上述代码提取为pyc文件，然后对pyc文件进行转码。
+使用Uncompyle6
+X:\&amp;gt; uncompyle6.exe test.exe_extracted\test.pyc X:\&amp;gt; uncompyle6.exe test.exe_extracted\PYZ-00.pyz_extracted\__future__.pyc Windows下还有个软件可以对pyc进行反编译，下载地址：EasyPythonDecompiler
+ 生成pyc文件
+python -m test.py </description>
+    </item>
+    
     <item>
       <title>Orbstack_tool</title>
       <link>https://olist213.github.io/posts/orbstack_tool/</link>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/orbstack_tool/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/python_pyinstaller/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Python_pyinstaller | Olist.213
+       
+  </title>
+  <meta name="title" content="Python_pyinstaller | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Python_pyinstaller",
+    "headline" : "Python_pyinstaller",
+    "description" : " date: 2023-03-30 type: ctf alias: author: title: tags:\n ctf crypto   [[python打包]] 如何讲python文件打包成exe文件呢？利用pyinstaller就可以了。\nPyInstaller是一种将Python程序转化为独立执行文件的工具。其主要原理是将Python脚本代码和相关的资源文件打包到一个可执行文件中，并通过解压缩操作在运行时将这些文件解压出来，然后执行其中的Python代码。其打包过程主要分为以下几个步骤：\n1、解析和分析Python脚本代码，识别出脚本的依赖项以及相应的引用路径；\n2、找到并收集依赖项的所有相关文件和资源，并将它们一起打包为一个可执行文件；\n3、将Python解释器和所有脚本以及资源文件一起打包为一个二进制可执行文件；\n4、执行可执行文件时进行解压缩操作，将所有资源文件和Python脚本解压到临时目录中；\n5、然后用Python解释器运行程序脚本并完成执行过程。\npyinstall提供两种打包方式：\n 打包成一个文件夹  pyinstaller -D test.py  打包成一个单独的文件  pyinstaller -F test.py 如果要将打包后的exe文件还原成py文件，可以使用下面的项目进行还原：\nGitHub - extremecoders-re\/pyinstxtractor: PyInstaller Extractor\n使用方法很简单：\n$ python pyinstxtractor.py \u0026lt;filename\u0026gt; X:\\\u0026gt;python pyinstxtractor.py \u0026lt;filename\u0026gt; 上述代码提取为pyc文件，然后对pyc文件进行转码。\n使用Uncompyle6\nX:\\\u0026gt; uncompyle6.exe test.exe_extracted\\test.pyc X:\\\u0026gt; uncompyle6.exe test.exe_extracted\\PYZ-00.pyz_extracted\\__future__.pyc Windows下还有个软件可以对pyc进行反编译，下载地址：EasyPythonDecompiler\n 生成pyc文件\npython -m test.py ",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-03-30 22:09:58 \u002b0800 CST",
+    "dateModified" : "2023-03-30 22:09:58 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/python_pyinstaller\/",
+    "wordCount" : "54",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Python_pyinstaller</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-03-30 itemprop="datePublished">March 30, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <hr>
+<p>date: 2023-03-30
+type: ctf
+alias:
+author:
+title:
+tags:</p>
+<ul>
+<li>ctf</li>
+<li>crypto</li>
+</ul>
+<hr>
+<h1 id="python打包">[[python打包]]</h1>
+<p>如何讲python文件打包成exe文件呢？利用pyinstaller就可以了。</p>
+<p>PyInstaller是一种将Python程序转化为独立执行文件的工具。其主要原理是将Python脚本代码和相关的资源文件打包到一个可执行文件中，并通过解压缩操作在运行时将这些文件解压出来，然后执行其中的Python代码。其打包过程主要分为以下几个步骤：</p>
+<p>1、解析和分析Python脚本代码，识别出脚本的依赖项以及相应的引用路径；</p>
+<p>2、找到并收集依赖项的所有相关文件和资源，并将它们一起打包为一个可执行文件；</p>
+<p>3、将Python解释器和所有脚本以及资源文件一起打包为一个二进制可执行文件；</p>
+<p>4、执行可执行文件时进行解压缩操作，将所有资源文件和Python脚本解压到临时目录中；</p>
+<p>5、然后用Python解释器运行程序脚本并完成执行过程。</p>
+<p>pyinstall提供两种打包方式：</p>
+<ul>
+<li>打包成一个文件夹</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pyinstaller -D test.py
+</code></pre></div><ul>
+<li>打包成一个单独的文件</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pyinstaller -F test.py
+</code></pre></div><p>如果要将打包后的exe文件还原成py文件，可以使用下面的项目进行还原：</p>
+<p><a href="https://github.com/extremecoders-re/pyinstxtractor">GitHub - extremecoders-re/pyinstxtractor: PyInstaller Extractor</a></p>
+<p>使用方法很简单：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python pyinstxtractor.py &lt;filename&gt;
+X:<span style="color:#ae81ff">\&gt;</span>python pyinstxtractor.py &lt;filename&gt;
+</code></pre></div><p>上述代码提取为pyc文件，然后对pyc文件进行转码。</p>
+<p>使用<a href="https://github.com/rocky/python-uncompyle6/">Uncompyle6</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">X:<span style="color:#ae81ff">\&gt;</span> uncompyle6.exe test.exe_extracted<span style="color:#ae81ff">\t</span>est.pyc
+X:<span style="color:#ae81ff">\&gt;</span> uncompyle6.exe test.exe_extracted<span style="color:#ae81ff">\P</span>YZ-00.pyz_extracted<span style="color:#ae81ff">\_</span>_future__.pyc
+</code></pre></div><p>Windows下还有个软件可以对pyc进行反编译，下载地址：<a href="https://sourceforge.net/projects/easypythondecompiler/">EasyPythonDecompiler</a></p>
+<hr>
+<p>生成pyc文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python -m test.py
+</code></pre></div>
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/python_pyinstaller/>https://olist213.github.io/posts/python_pyinstaller/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/orbstack_tool/" class="prev" rel="prev" title="Orbstack_tool"><i class="iconfont icon-left"></i>&nbsp;Orbstack_tool</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
