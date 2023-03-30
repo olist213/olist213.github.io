@@ -13,7 +13,7 @@
       <pubDate>Thu, 30 Mar 2023 22:09:58 +0800</pubDate>
       
       <guid>https://olist213.github.io/posts/python_pyinstaller/</guid>
-      <description> date: 2023-03-30 type: ctf alias: author: title: tags:
+      <description>date: 2023-03-30 type: ctf alias: author: title: tags:
  ctf crypto   [[python打包]] 如何讲python文件打包成exe文件呢？利用pyinstaller就可以了。
 PyInstaller是一种将Python程序转化为独立执行文件的工具。其主要原理是将Python脚本代码和相关的资源文件打包到一个可执行文件中，并通过解压缩操作在运行时将这些文件解压出来，然后执行其中的Python代码。其打包过程主要分为以下几个步骤：
 1、解析和分析Python脚本代码，识别出脚本的依赖项以及相应的引用路径；
@@ -29,7 +29,8 @@ $ python pyinstxtractor.py &amp;lt;filename&amp;gt; X:\&amp;gt;python pyinstxtra
 使用Uncompyle6
 X:\&amp;gt; uncompyle6.exe test.exe_extracted\test.pyc X:\&amp;gt; uncompyle6.exe test.exe_extracted\PYZ-00.pyz_extracted\__future__.pyc Windows下还有个软件可以对pyc进行反编译，下载地址：EasyPythonDecompiler
  生成pyc文件
-python -m test.py </description>
+python -m test.py  这个环境刚好练手：
+https://infosecwriteups.com/socket-hack-the-box-writeup-walkthrough-by-md-amiruddin-8b2a4ee35711</description>
     </item>
     
     <item>
