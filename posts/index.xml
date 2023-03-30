@@ -6,7 +6,27 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 30 Mar 2023 09:14:22 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Mar 2023 18:56:49 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Orbstack_tool</title>
+      <link>https://olist213.github.io/posts/orbstack_tool/</link>
+      <pubDate>Thu, 30 Mar 2023 18:56:49 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/orbstack_tool/</guid>
+      <description>Quick start · OrbStack Docs
+mac上一直离不开docker环境，不管是拉环境进行测试，还是搭建一些docker环境都很好用。
+从最初的docker desktop到colima，再到现在的orbstack，之前的docker desktop会占用大量存储并且运行缓慢，而colima解决了不需要desktop图形化的界面，但自启动是个问题，总是需要手动启动，可能是我没找到方法让其自动启动，orbstack体验了一下，真的很快，而且不太占存储。
+官方手册也有与其他产品的比较。
+orbstack目前是免费的，后期会是订阅制服务，看后期价格，如果太贵，也只能劝退了。
+OrbStack可以运行各种不同的Linux发行版的完整机器。类似于WSL，这些机器具有轻量级的特点，并且可以像标准虚拟机一样使用。
+你可以在上面安装各种服务。
+如果使用的是mac，mac的文件可以在linux机器的/mnt/mac上找到，linux文件可以在~/OrbStack目录下找到。
+在linux下，你可以使用mac的命令，通过mac关键字。
+如：
+mac open ~/foo.txt 如果有多个linux机器，可以跨机器访问文件。
+ls /mnt/machines/foo 目前没啥缺点，先体验，看后期价格吧！</description>
+    </item>
+    
     <item>
       <title>Ctfd_env_setting</title>
       <link>https://olist213.github.io/posts/ctfd_env_setting/</link>

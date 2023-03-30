@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/ctfd_env_setting/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/orbstack_tool/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Orbstack_tool | Olist.213
+       
+  </title>
+  <meta name="title" content="Orbstack_tool | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Orbstack_tool",
+    "headline" : "Orbstack_tool",
+    "description" : "Quick start · OrbStack Docs\nmac上一直离不开docker环境，不管是拉环境进行测试，还是搭建一些docker环境都很好用。\n从最初的docker desktop到colima，再到现在的orbstack，之前的docker desktop会占用大量存储并且运行缓慢，而colima解决了不需要desktop图形化的界面，但自启动是个问题，总是需要手动启动，可能是我没找到方法让其自动启动，orbstack体验了一下，真的很快，而且不太占存储。\n官方手册也有与其他产品的比较。\norbstack目前是免费的，后期会是订阅制服务，看后期价格，如果太贵，也只能劝退了。\nOrbStack可以运行各种不同的Linux发行版的完整机器。类似于WSL，这些机器具有轻量级的特点，并且可以像标准虚拟机一样使用。\n你可以在上面安装各种服务。\n如果使用的是mac，mac的文件可以在linux机器的\/mnt\/mac上找到，linux文件可以在~\/OrbStack目录下找到。\n在linux下，你可以使用mac的命令，通过mac关键字。\n如：\nmac open ~\/foo.txt 如果有多个linux机器，可以跨机器访问文件。\nls \/mnt\/machines\/foo 目前没啥缺点，先体验，看后期价格吧！",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-03-30 18:56:49 \u002b0800 CST",
+    "dateModified" : "2023-03-30 18:56:49 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/orbstack_tool\/",
+    "wordCount" : "23",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Orbstack_tool</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-03-30 itemprop="datePublished">March 30, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><a href="https://docs.orbstack.dev/quick-start">Quick start · OrbStack Docs</a></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/aUm2da.png" alt="image.png"></p>
+<p>mac上一直离不开docker环境，不管是拉环境进行测试，还是搭建一些docker环境都很好用。</p>
+<p>从最初的docker desktop到colima，再到现在的orbstack，之前的docker desktop会占用大量存储并且运行缓慢，而colima解决了不需要desktop图形化的界面，但自启动是个问题，总是需要手动启动，可能是我没找到方法让其自动启动，orbstack体验了一下，真的很快，而且不太占存储。</p>
+<p><del>官方手册也有与其他产品的比较。</del></p>
+<p>orbstack目前是免费的，后期会是订阅制服务，看后期价格，如果太贵，也只能劝退了。</p>
+<p>OrbStack可以运行各种不同的Linux发行版的完整机器。类似于WSL，这些机器具有轻量级的特点，并且可以像标准虚拟机一样使用。</p>
+<p>你可以在上面安装各种服务。</p>
+<p>如果使用的是mac，mac的文件可以在linux机器的/mnt/mac上找到，linux文件可以在~/OrbStack目录下找到。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/Q6EvNb.png" alt="image.png"></p>
+<p>在linux下，你可以使用mac的命令，通过<code>mac</code>关键字。</p>
+<p>如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mac open ~/foo.txt
+</code></pre></div><p>如果有多个linux机器，可以跨机器访问文件。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls /mnt/machines/foo
+</code></pre></div><p>目前没啥缺点，先体验，看后期价格吧！</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/orbstack_tool/>https://olist213.github.io/posts/orbstack_tool/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/ctfd_env_setting/" class="prev" rel="prev" title="Ctfd_env_setting"><i class="iconfont icon-left"></i>&nbsp;Ctfd_env_setting</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
