@@ -6,7 +6,27 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 29 Mar 2023 15:46:21 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Mar 2023 09:30:18 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023 03 30</title>
+      <link>https://olist213.github.io/study_book/2023-03-30/</link>
+      <pubDate>Thu, 30 Mar 2023 09:30:18 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/2023-03-30/</guid>
+      <description>  发了一篇之前记录的ctfd平台搭建过程的笔记
+  readwise今日记录
+  在PTES标准中，将渗透测试分为了7个阶段，分别是： 1）前期交互 2）情报搜集 3）威胁建模 4）漏洞分析 5）渗透测试 6）后渗透测试利用 7）报告编制   主义理论者们可以置身于道德高地而无须付出实际努力，对他们来说更简单也更有满足感的方式是将问题简化，然后树立一个稻草人并对其进行道德讨伐。 - 人生12法则2
+  安全将成为越来越多的需求品，成为非专业安全人员的一种标配属性，这将是安全发展趋势之一。- 企业安全建设指南：金融行业安全架构与技术实践
+  他很谦虚，真正有本领的人都谦虚，吹牛的人往往没本事或没有大本事。 - 莫言
+  需要能力和职级同步提升。有些时候，职级提升得太快，能力跟不上，并非什么好事。- 格局
+  因为生活的痛苦而憎恨和鄙视生活，只能让痛苦变得无以复加。 - 人生12法则
+    Java 反序列化漏洞（一） - 前置知识 &amp;amp; URLDNS
+  学习java反序列化的前置知识
+  还有好几个漏洞环境不会测试
+    java反序列化漏洞及其检测
+ 这篇文章的久违的给出了漏洞示例，实属难得，其他的文章，作为不了解java的人来说，看了确实很头大，希望我也写这种文章。    </description>
+    </item>
+    
     <item>
       <title>2023 03 29</title>
       <link>https://olist213.github.io/study_book/2023-03-29/</link>
