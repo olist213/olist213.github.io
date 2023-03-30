@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/fastjson_80_rce/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/ctfd_env_setting/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Ctfd_env_setting | Olist.213
+       
+  </title>
+  <meta name="title" content="Ctfd_env_setting | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Ctfd_env_setting",
+    "headline" : "Ctfd_env_setting",
+    "description" : "ctfd汉化 导入文件到ctfd目录下即可\n项目地址：GitHub - Gu-f\/CTFd_chinese_CN: 对CTFd平台各版本的汉化记录。key:中文、汉化、翻译、chinese、CN、CTFd\n汉化版已推送到hub docker中。\ndocker pull liangchenga\/ctfd-341_ctfd:latest 支持动态flag的ctfd  大佬已经搭建好的vmware版本：VMware虚拟机版本  直接用别人做好的虚拟机搭建，自己搭建起来有点麻烦，这里会记录一些使用过程中的问题及使用心得。\n 这里也有一个自动搭建ctfd的脚本，用到的是nip.io的域名。  项目地址：GitHub - pwnthebox\/ctfd-auto-deploy\nsh \u0026lt;(curl -s https:\/\/raw.githubusercontent.com\/pwnthebox\/ctfd-auto-deploy\/master\/install.sh) 需要手动输入的值得\nHttp Domain Suffix ：域名\/ip\nExternal Http Port : 靶机http映射端口 (这里不能写80，因为80给了ctfd)\nDirect Minimum\/Maximum Port : 靶机端口开放范围\n 通过这篇文章搭建，简单易懂。2022.12.31  https:\/\/mp.weixin.qq.com\/s\/oMI9h_hBc373poVsR2CiVw\n项目地址：\nGitHub - Un1kTeam\/CTFd: CTFs as you need them\n此项目版本是3.3.0，可以进行汉化，同时也包括了frp、ctfd-whale @ 138b042，ctf-whale单独下载安装。\nctfd环境测试 打开浏览器，输入http:\/\/127.0.0.1:9124访问，返回如下界面：\n![](https:\/\/raw.githubusercontent.com\/olist213\/olistimg\/master\/picgo\/Pasted image 20221231133629.png)\n一步一步设置完，在样式处，banner如果尺寸太大有点问题，设置完成后，就可以使用了。\n动态靶场配置，点击Whale插件\n没有域名Http Domain Suffix可以不填写\nDirect IP Address 填写虚拟机的ip地址。",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-03-30 09:14:22 \u002b0800 CST",
+    "dateModified" : "2023-03-30 09:14:22 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/ctfd_env_setting\/",
+    "wordCount" : "239",
+    "keywords" : [ "ctf", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Ctfd_env_setting</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-03-30 itemprop="datePublished">March 30, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="ctfd汉化">ctfd汉化</h2>
+<p>导入文件到ctfd目录下即可</p>
+<p>项目地址：<a href="https://github.com/Gu-f/CTFd_chinese_CN">GitHub - Gu-f/CTFd_chinese_CN: 对CTFd平台各版本的汉化记录。key:中文、汉化、翻译、chinese、CN、CTFd</a></p>
+<p>汉化版已推送到hub docker中。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull liangchenga/ctfd-341_ctfd:latest
+</code></pre></div><h2 id="支持动态flag的ctfd">支持动态flag的ctfd</h2>
+<ul>
+<li>大佬已经搭建好的vmware版本：<a href="https://www.yuque.com/dat0u/ctfd/lic2kz">VMware虚拟机版本</a></li>
+</ul>
+<p><del>直接用别人做好的虚拟机搭建，自己搭建起来有点麻烦，这里会记录一些使用过程中的问题及使用心得。</del></p>
+<ul>
+<li>这里也有一个自动搭建ctfd的脚本，用到的是nip.io的域名。</li>
+</ul>
+<p>项目地址：<a href="https://github.com/pwnthebox/ctfd-auto-deploy">GitHub - pwnthebox/ctfd-auto-deploy</a></p>
+<pre><code>sh &lt;(curl -s https://raw.githubusercontent.com/pwnthebox/ctfd-auto-deploy/master/install.sh)
+</code></pre><p>需要手动输入的值得</p>
+<p><code>Http Domain Suffix</code> ：<code>域名/ip</code><br>
+<code>External Http Port</code> : <code>靶机http映射端口</code> (这里不能写80，因为80给了ctfd)<br>
+<code>Direct Minimum/Maximum Port</code> : <code>靶机端口开放范围</code></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/X2i4MW.png" alt=""></p>
+<ul>
+<li>通过这篇文章搭建，简单易懂。<!-- raw HTML omitted -->2022.12.31<!-- raw HTML omitted --></li>
+</ul>
+<p><a href="https://mp.weixin.qq.com/s/oMI9h_hBc373poVsR2CiVw">https://mp.weixin.qq.com/s/oMI9h_hBc373poVsR2CiVw</a></p>
+<p>项目地址：</p>
+<p><a href="https://github.com/Un1kTeam/CTFd">GitHub - Un1kTeam/CTFd: CTFs as you need them</a></p>
+<p>此项目版本是3.3.0，可以进行汉化，同时也包括了frp、<a href="https://github.com/VaalaCat/ctfd-whale/tree/138b042e3390d5af20300432716782f0d4949d54">ctfd-whale @ 138b042</a>，ctf-whale单独下载安装。</p>
+<h2 id="ctfd环境测试">ctfd环境测试</h2>
+<p>打开浏览器，输入<!-- raw HTML omitted -->http://127.0.0.1:9124<!-- raw HTML omitted -->访问，返回如下界面：</p>
+<p>![](<a href="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted">https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted</a> image 20221231133629.png)</p>
+<p>一步一步设置完，在样式处，banner如果尺寸太大有点问题，设置完成后，就可以使用了。</p>
+<p>动态靶场配置，点击Whale插件</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/5nLbhV.png" alt=""></p>
+<p>没有域名Http Domain Suffix可以不填写</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/0Ayeic.png" alt=""></p>
+<p>Direct IP Address 填写虚拟机的ip地址。</p>
+<p>![](<a href="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted">https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted</a> image 20221231142128.png)</p>
+<h3 id="创建题目">创建题目</h3>
+<p>选择dynamic_docker</p>
+<p>![](<a href="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted">https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted</a> image 20221231142319.png)</p>
+<p>写题目名、分类、描述等内容，docker image填写docker镜像的地址，Frp Redirect Type换成Direct，Frp Redirect Port设置成docker容器的内部端口，通常dockerfile中指定。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/6O2TDo.png" alt=""></p>
+<p>题目的分值设定，Initial Value是初始分值，Decay Limit衰减次数，一道题被两次解答后，开始使用Minimum Value中设置的分值，Score Type设置成Dynamic Score（动态分值），如果把Decay Limit衰减次数设置成0不进行最小分值设定，那么Score Type只能换成Static Score（静态分值）。</p>
+<p>![](<a href="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted">https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted</a> image 20221231142618.png)</p>
+<p>题目创建完成后，测试下。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/RV0f3j.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/edMVtM.png" alt=""></p>
+<p>访问题目环境</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/UTixsh.png" alt=""></p>
+<p>测试下提交flag。</p>
+<p>![](<a href="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted">https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted</a> image 20221231143121.png)</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/jKrDZ7.png" alt=""></p>
+<p>至此，环境搭建完成。</p>
+<h3 id="dockerfile动态flag生成">dockerfile动态flag生成</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;/bin/sh&#34;</span>, <span style="color:#e6db74">&#34;-c&#34;</span>, <span style="color:#e6db74">&#34;docker-php-entrypoint&#34;</span><span style="color:#f92672">]</span>
+
+echo $FLAG &gt; /flag <span style="color:#f92672">&amp;&amp;</span> export FLAG<span style="color:#f92672">=</span>not_flag <span style="color:#f92672">&amp;&amp;</span> FLAG<span style="color:#f92672">=</span>not_flag
+</code></pre></div><h2 id="ctfd页面管理设置">ctfd页面管理设置</h2>
+<ul>
+<li>修改首页</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/FvekGF.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">&lt;</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
+  <span style="color:#f92672">body</span> {
+	  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">替换首页背景图片</span>
+      <span style="color:#66d9ef">background-image</span>: url(<span style="color:#e6db74">&#34;/files/f28557e77fc748c85633ae868e2f0742/background.png&#34;</span>);
+      <span style="color:#66d9ef">background-size</span>:<span style="color:#66d9ef">cover</span>;
+  }
+	<span style="color:#f92672">&lt;/</span><span style="color:#f92672">div</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;/</span><span style="color:#f92672">main</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#f92672">footer</span> <span style="color:#f92672">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span><span style="color:#f92672">&gt;</span>
+		<span style="color:#f92672">&lt;</span><span style="color:#f92672">div</span> <span style="color:#f92672">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container text-center&#34;</span><span style="color:#f92672">&gt;</span>
+			<span style="color:#f92672">&lt;</span><span style="color:#f92672">a</span> <span style="color:#f92672">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://ctfd.io&#34;</span> <span style="color:#f92672">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-secondary&#34;</span><span style="color:#f92672">&gt;</span>
+				<span style="color:#f92672">&lt;</span><span style="color:#f92672">small</span> <span style="color:#f92672">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text-muted&#34;</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#f92672">small</span><span style="color:#f92672">&gt;</span>
+			<span style="color:#f92672">&lt;/</span><span style="color:#f92672">a</span><span style="color:#f92672">&gt;</span>
+		<span style="color:#f92672">&lt;/</span><span style="color:#f92672">div</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;/</span><span style="color:#f92672">footer</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#f92672">script</span> <span style="color:#f92672">defer</span> <span style="color:#f92672">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/themes/core/static/js/vendor.bundle.min.js?d=59b78ea4&#34;</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#f92672">script</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#f92672">script</span> <span style="color:#f92672">defer</span> <span style="color:#f92672">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/themes/core/static/js/core.min.js?d=59b78ea4&#34;</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#f92672">script</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#f92672">script</span> <span style="color:#f92672">defer</span> <span style="color:#f92672">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/themes/core/static/js/helpers.min.js?d=59b78ea4&#34;</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#f92672">script</span><span style="color:#f92672">&gt;</span>
+	<span style="color:#f92672">&lt;</span><span style="color:#f92672">script</span> <span style="color:#f92672">defer</span> <span style="color:#f92672">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/themes/core/static/js/pages/main.min.js?d=59b78ea4&#34;</span><span style="color:#f92672">&gt;&lt;/</span><span style="color:#f92672">script</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span><span style="color:#f92672">body</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span><span style="color:#f92672">html</span><span style="color:#f92672">&gt;</span>
+<span style="color:#f92672">&lt;/</span><span style="color:#f92672">style</span><span style="color:#f92672">&gt;</span>
+</code></pre></div><h2 id="ctfd平台映射到外网">ctfd平台映射到外网</h2>
+<p>需要设置如下地方</p>
+<p>1、在互联网出口的路由器上映射平台端口（9124）
+2、在互联网出口的路由器上映射环境端口（28000-28200）
+3、配置whale</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/20230330091202.png" alt="image.png"></p>
+<p>往下拉Frps config template [generated]中设置subdomain_host为公网ip或域名。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/Y6f8U3.png" alt="image.png"></p>
+<p>如上设置就可以了。</p>
+<hr>
+<h2 id="删除容器重新拉取镜像">删除容器，重新拉取镜像</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker system prune --volumes
+</code></pre></div><h2 id="read-only-file-system解决">Read-only file system解决</h2>
+<p>想进 ctfd 的 docker 换个主题啥的，结果给我说 Read-only file system</p>
+<p>感觉是 docker-compose.yml 的第 22 行有个 <code>:ro</code>，因为它的基础镜像是没有这个 Read-only的，把这个去掉就行了🤦‍♂️我给的链接已经去掉了，可以直接用，这里只是记录一下</p>
+<h2 id="部分靶场无法访问互联网">部分靶场无法访问互联网</h2>
+<p>需要修改docker-compose.yml文件</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/upic/IqnZ6M.png" alt=""></p>
+<p>容器已启动，如果修改这个地方会报错。</p>
+<hr>
+<p>参考：</p>
+<p><a href="https://github.com/frankli0324/ctfd-whale/blob/master/docs/install.zh-cn.md">ctfd-whale/install.zh-cn.md at master · frankli0324/ctfd-whale · GitHub</a></p>
+<p><a href="https://www.v0n.top/2020/05/01/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8Docker%E5%87%BA%E4%B8%80%E9%81%93CTF%E9%A2%98%E7%9B%AE/">如何正确使用Docker出一道CTF题目 - Von的博客 | Von Blog</a></p>
+<p><a href="https://github.com/antlers12/CTFd_sqlilabs">GitHub - antlers12/CTFd_sqlilabs</a></p>
+<p><a href="https://www.yuque.com/hxfqg9/misc/ctfd">CTFd&amp;ctfd-whale动态靶机搭建与维护 · 语雀</a></p>
+<p><a href="https://github.com/CTFTraining/CTFTraining">GitHub - CTFTraining/CTFTraining: CTF Training 经典赛题复现环境</a></p>
+<p><a href="https://www.zhaoj.in/read-6259.html">BUUCTF 题目贡献指南 – glzjin</a></p>
+<p><a href="https://www.lewiserii.top/%E7%AB%9E%E8%B5%9B/ctf%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%E5%92%8C%E5%87%BA%E9%A2%98%E6%8C%87%E5%8D%97.html">https://www.lewiserii.top/%E7%AB%9E%E8%B5%9B/ctf%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA%E5%92%8C%E5%87%BA%E9%A2%98%E6%8C%87%E5%8D%97.html</a></p>
+<p><a href="https://www.r00team.cc/wiki/ctf_deploy.html#web%E7%B1%BB">https://www.r00team.cc/wiki/ctf_deploy.html#web%E7%B1%BB</a></p>
+<p><a href="https://github.com/frankli0324/ctfd-whale">GitHub - frankli0324/ctfd-whale: A plugin for CTFd which allow your users to deploy standalone instances for challenges.</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/ctfd_env_setting/>https://olist213.github.io/posts/ctfd_env_setting/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/ctf/">
+                    #ctf</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/fastjson_80_rce/" class="prev" rel="prev" title="fastjson 80远程代码执行漏洞复现"><i class="iconfont icon-left"></i>&nbsp;fastjson 80远程代码执行漏洞复现</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

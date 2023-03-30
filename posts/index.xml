@@ -6,7 +6,34 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 29 Mar 2023 15:59:44 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 Mar 2023 09:14:22 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ctfd_env_setting</title>
+      <link>https://olist213.github.io/posts/ctfd_env_setting/</link>
+      <pubDate>Thu, 30 Mar 2023 09:14:22 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/ctfd_env_setting/</guid>
+      <description>ctfd汉化 导入文件到ctfd目录下即可
+项目地址：GitHub - Gu-f/CTFd_chinese_CN: 对CTFd平台各版本的汉化记录。key:中文、汉化、翻译、chinese、CN、CTFd
+汉化版已推送到hub docker中。
+docker pull liangchenga/ctfd-341_ctfd:latest 支持动态flag的ctfd  大佬已经搭建好的vmware版本：VMware虚拟机版本  直接用别人做好的虚拟机搭建，自己搭建起来有点麻烦，这里会记录一些使用过程中的问题及使用心得。
+ 这里也有一个自动搭建ctfd的脚本，用到的是nip.io的域名。  项目地址：GitHub - pwnthebox/ctfd-auto-deploy
+sh &amp;lt;(curl -s https://raw.githubusercontent.com/pwnthebox/ctfd-auto-deploy/master/install.sh) 需要手动输入的值得
+Http Domain Suffix ：域名/ip
+External Http Port : 靶机http映射端口 (这里不能写80，因为80给了ctfd)
+Direct Minimum/Maximum Port : 靶机端口开放范围
+ 通过这篇文章搭建，简单易懂。2022.12.31  https://mp.weixin.qq.com/s/oMI9h_hBc373poVsR2CiVw
+项目地址：
+GitHub - Un1kTeam/CTFd: CTFs as you need them
+此项目版本是3.3.0，可以进行汉化，同时也包括了frp、ctfd-whale @ 138b042，ctf-whale单独下载安装。
+ctfd环境测试 打开浏览器，输入http://127.0.0.1:9124访问，返回如下界面：
+![](https://raw.githubusercontent.com/olist213/olistimg/master/picgo/Pasted image 20221231133629.png)
+一步一步设置完，在样式处，banner如果尺寸太大有点问题，设置完成后，就可以使用了。
+动态靶场配置，点击Whale插件
+没有域名Http Domain Suffix可以不填写
+Direct IP Address 填写虚拟机的ip地址。</description>
+    </item>
+    
     <item>
       <title>fastjson 80远程代码执行漏洞复现</title>
       <link>https://olist213.github.io/posts/fastjson_80_rce/</link>
