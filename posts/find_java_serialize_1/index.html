@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/python_pyinstaller/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/find_java_serialize_1/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Find_java_serialize_1 | Olist.213
+       
+  </title>
+  <meta name="title" content="Find_java_serialize_1 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Find_java_serialize_1",
+    "headline" : "Find_java_serialize_1",
+    "description" : "  任何大数据二进制数据都可能存在反序列化漏洞\n  Base64 encoded serialized Java object as a cookie value  在这种情况下，一个Java对象被序列化并使用Base64进行编码，然后作为Cookie的值进行存储。这是在使用Cookie时的常见做法，因为Cookie只能存储文本数据。通过将Java对象序列化，它被转换为一个字节流，可以使用Base64轻松地将其编码为字符串。\nBase64编码是一种将二进制数据表示为一系列ASCII字符的方法。这使得可以以易于在网络上传输或存储为文本数据的格式传输二进制数据，例如序列化的Java对象。在读取Cookie时，使用Base64解码编码值，然后将其反序列化回原始的Java对象。\n需要注意的是，在序列化和编码之前，Java对象中存储的任何敏感信息都应该得到充分保护。此外，在Cookie中使用序列化的Java对象可能存在潜在的安全风险，重要的是在实施此方法之前考虑安全性问题。\n 序列化java对象   类描述   对象中的数据  ",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-03-31 09:11:30 \u002b0800 CST",
+    "dateModified" : "2023-03-31 09:11:30 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/find_java_serialize_1\/",
+    "wordCount" : "16",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Find_java_serialize_1</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-03-31 itemprop="datePublished">March 31, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <ul>
+<li>
+<p>任何大数据二进制数据都可能存在反序列化漏洞</p>
+</li>
+<li>
+<p><input checked="" disabled="" type="checkbox"> <!-- raw HTML omitted -->Base64 encoded serialized Java object as a cookie value<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202303310910960.png" alt=""></p>
+<p>在这种情况下，一个Java对象被序列化并使用Base64进行编码，然后作为Cookie的值进行存储。这是在使用Cookie时的常见做法，因为Cookie只能存储文本数据。通过将Java对象序列化，它被转换为一个字节流，可以使用Base64轻松地将其编码为字符串。</p>
+<p>Base64编码是一种将二进制数据表示为一系列ASCII字符的方法。这使得可以以易于在网络上传输或存储为文本数据的格式传输二进制数据，例如序列化的Java对象。在读取Cookie时，使用Base64解码编码值，然后将其反序列化回原始的Java对象。</p>
+<p>需要注意的是，在序列化和编码之前，Java对象中存储的任何敏感信息都应该得到充分保护。此外，在Cookie中使用序列化的Java对象可能存在潜在的安全风险，重要的是在实施此方法之前考虑安全性问题。</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 序列化java对象</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202303310910961.png" alt=""></p>
+<ul>
+<li>类描述</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202303310910962.png" alt=""></p>
+<ul>
+<li>对象中的数据</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202303310910963.png" alt=""></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/find_java_serialize_1/>https://olist213.github.io/posts/find_java_serialize_1/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/python_pyinstaller/" class="prev" rel="prev" title="Python_pyinstaller"><i class="iconfont icon-left"></i>&nbsp;Python_pyinstaller</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

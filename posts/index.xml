@@ -6,7 +6,20 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 30 Mar 2023 22:09:58 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 31 Mar 2023 09:11:30 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Find_java_serialize_1</title>
+      <link>https://olist213.github.io/posts/find_java_serialize_1/</link>
+      <pubDate>Fri, 31 Mar 2023 09:11:30 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/find_java_serialize_1/</guid>
+      <description>  任何大数据二进制数据都可能存在反序列化漏洞
+  Base64 encoded serialized Java object as a cookie value  在这种情况下，一个Java对象被序列化并使用Base64进行编码，然后作为Cookie的值进行存储。这是在使用Cookie时的常见做法，因为Cookie只能存储文本数据。通过将Java对象序列化，它被转换为一个字节流，可以使用Base64轻松地将其编码为字符串。
+Base64编码是一种将二进制数据表示为一系列ASCII字符的方法。这使得可以以易于在网络上传输或存储为文本数据的格式传输二进制数据，例如序列化的Java对象。在读取Cookie时，使用Base64解码编码值，然后将其反序列化回原始的Java对象。
+需要注意的是，在序列化和编码之前，Java对象中存储的任何敏感信息都应该得到充分保护。此外，在Cookie中使用序列化的Java对象可能存在潜在的安全风险，重要的是在实施此方法之前考虑安全性问题。
+ 序列化java对象   类描述   对象中的数据  </description>
+    </item>
+    
     <item>
       <title>Python_pyinstaller</title>
       <link>https://olist213.github.io/posts/python_pyinstaller/</link>
