@@ -6,7 +6,16 @@
     <description>Recent content in web安全 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 29 Mar 2023 15:59:44 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 14:01:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一些工具(updating)</title>
+      <link>https://olist213.github.io/posts/tools_resoure/</link>
+      <pubDate>Sat, 01 Apr 2023 14:01:34 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/tools_resoure/</guid>
+      <description>   工具名称 工具链接 工具描述 更新时间     Fastjson 扫描器 https://github.com/a1phaboy/FastjsonScan fastjson扫描 无   FastjsonPatrol https://github.com/ce-automne/FastjsonPatrol 一款探测fastjson漏洞的BurpSuite插件 2022.4.1   Log4j2Scan https://github.com/whwlsfb/Log4j2Scan Log4j2 burpsuite被动扫描插件 2022.10.21   SpringBootExploit https://github.com/0x727/SpringBootExploit springboot漏洞利用工具 2022.4.17    </description>
+    </item>
+    
     <item>
       <title>fastjson 80远程代码执行漏洞复现</title>
       <link>https://olist213.github.io/posts/fastjson_80_rce/</link>

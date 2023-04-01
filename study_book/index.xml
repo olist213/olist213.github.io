@@ -6,7 +6,17 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 31 Mar 2023 08:40:51 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 13:27:26 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023 04 01</title>
+      <link>https://olist213.github.io/study_book/2023-04-01/</link>
+      <pubDate>Sat, 01 Apr 2023 13:27:26 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/2023-04-01/</guid>
+      <description> 每日学习 技术学习 1、python发序列化
+pickletools.dis(opcode) pickle.loads(opcode) </description>
+    </item>
+    
     <item>
       <title>2023 03 31</title>
       <link>https://olist213.github.io/study_book/2023-03-31/</link>

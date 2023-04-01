@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Apr 2023 11:09:38 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 14:01:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>一些工具(updating)</title>
+      <link>https://olist213.github.io/posts/tools_resoure/</link>
+      <pubDate>Sat, 01 Apr 2023 14:01:34 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/tools_resoure/</guid>
+      <description>   工具名称 工具链接 工具描述 更新时间     Fastjson 扫描器 https://github.com/a1phaboy/FastjsonScan fastjson扫描 无   FastjsonPatrol https://github.com/ce-automne/FastjsonPatrol 一款探测fastjson漏洞的BurpSuite插件 2022.4.1   Log4j2Scan https://github.com/whwlsfb/Log4j2Scan Log4j2 burpsuite被动扫描插件 2022.10.21   SpringBootExploit https://github.com/0x727/SpringBootExploit springboot漏洞利用工具 2022.4.17    </description>
+    </item>
+    
     <item>
       <title>Ctf_resoures</title>
       <link>https://olist213.github.io/posts/ctf_resoures/</link>
