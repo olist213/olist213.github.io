@@ -13,8 +13,15 @@
       <pubDate>Sat, 01 Apr 2023 13:27:26 +0800</pubDate>
       
       <guid>https://olist213.github.io/study_book/2023-04-01/</guid>
-      <description> 每日学习 技术学习 1、python发序列化
-pickletools.dis(opcode) pickle.loads(opcode) </description>
+      <description>每日学习汇总 2023-04-01 每日学习 readwise day log  可见，受难的人有受难的人的活法，这种活法，非身历其境的，不能体会它的艰苦；但这种艰苦，对伟大的人说来，也不过是“苦其心志”的一种磨练与过渡，一念之转，一切艰苦，也就统统可以心平气和、可以若无其事、可以不以为意、可以视为当然，也就不足道了。 - 李敖 伏尔泰说得好：“你说的话，我一句也不赞成；但是我要拼命为你争取你有说这话的权利。”民主的可贵，就是在于人人有“站到亮处来”说话的权利，人人有表现他的真知灼见或胡说八道的权利。 - 李敖 当有人笑话耶稣是傻子的时候，其实谁都不傻，仅仅是两种价值观不兼容。 遥远的救世主，豆豆 技艺改进的结果往往是战略上的突破，而不仅仅是技巧上的提高。 - 人月神话 如果身边无人聆听，你可以翻开子弹笔记，写一封信给“亲爱的鸭子”，或者其他温柔的、值得信任的、包容的对象。 - 子弹笔记 在这种框框教育出来的人民，自然就是整天喊万岁唱梅花的、整天“感谢政府德意”的、整天歌颂“大有为政府”的。这样发展的自由民主，是畸形的自由民主、是奴性的自由民主、是绵羊的自由民主，不是男子汉的自由民主！ - 李敖  技术学习 1、python发序列化
+pickletools.dis(opcode) pickle.loads(opcode) Python 反序列化漏洞通常发生在接受不可信数据并使用 Python 的 pickle 或 cPickle 模块时，攻击者可以通过反序列化操作来执行恶意代码。攻击者可以构造恶意的数据，借助 Python 的 Pickle 模块执行任意代码，这将导致严重的安全问题。
+攻击者可以利用反序列化漏洞来实现以下攻击：
+• 代码注入和远程代码执行
+• 会话劫持和会话固化攻击
+• 认证绕过和凭据盗窃
+• 敏感数据泄露
+以下是一个使用 pickle 模块反序列化漏洞的漏洞示例：
+import pickle import os class Exploit(object): def __reduce__(self): return (os.system, (&amp;#39;cat /etc/passwd&amp;#39;,)) def serialize_exploit(): exploit = Exploit() with open(&amp;#39;exploit.</description>
     </item>
     
     <item>

