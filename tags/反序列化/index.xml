@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>反序列化 on Olist.213</title>
+    <link>https://olist213.github.io/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</link>
+    <description>Recent content in 反序列化 on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 31 Mar 2023 08:40:51 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023 03 31</title>
+      <link>https://olist213.github.io/study_book/2023-03-31/</link>
+      <pubDate>Fri, 31 Mar 2023 08:40:51 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/2023-03-31/</guid>
+      <description>chatgpt #1day
+ 昨日开卡了depay，然后想着通过欧易进行usdt充值，不清楚欧易平台的T+N策略，充值后7天后，方可进行货币交易，现在卡在那了。 本来说打算通过淘宝购买的呢，可是找了个商家，却无法开通，后面就退款给我了，他们的充值流程是把你的充值页面给他就行了，他那边进行操作。 还是在等等吧，等我欧易上的钱解锁。    今天开番茄
+ 🍅    java反射机制
+  Java反射机制是在运行状态时，对于任意一个类，都能够获取到这个类的所有属性和方法，对于任意一个对象，都能够调用它的任意一个方法和属性(包括私有的方法和属性)，这种动态获取的信息以及动态调用对象的方法的功能就称为java语言的反射机制。
+  通过反射机制调用一个对象的任意方法
+  1、获取User对象的Class类实例
+  Class clz = (new User()).getClass();     2、获取setName方法
+  clz.getMethod(方法名，这个方法的参数类型)     3、调用setName方法
+  User user = new User(); method.invoke(user, &amp;#34;axin&amp;#34;);     end
+    java序列化与反序列化
+ 讲了如何触发序列化和反序列化，对比php中的反序列化漏洞，通过自定义readObject与writeObject方法，在其中写入危险函数操作，从而导致反序列化漏洞的产生。    深入理解 Java中的 流 (Stream)</description>
+    </item>
+    
+  </channel>
+</rss>
