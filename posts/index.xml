@@ -6,7 +6,42 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Apr 2023 23:13:41 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Apr 2023 14:09:50 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring4shell_env</title>
+      <link>https://olist213.github.io/posts/spring4shell_env/</link>
+      <pubDate>Mon, 03 Apr 2023 14:09:50 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/spring4shell_env/</guid>
+      <description>spring4shell环境搭建   docker
+  docker目录结构如下：
+  src目录下是编译后的app
+  原项目如下：https://github.com/jbaines-r7/spring4shell_vulnapp
+原项目无法构建成功，少了tomcat的环境
+修改后dockerfile
+FROM --platform=linux/amd64 openjdk:11 EXPOSE 8080 RUN apt update ADD . / /springy WORKDIR /springy COPY apache-tomcat-8.5.77.zip /springy RUN unzip apache-tomcat-8.5.77.zip RUN chmod +x apache-tomcat-8.5.77/bin/*.sh RUN cp src/vulnerable-1.0.0.0.war apache-tomcat-8.5.77/webapps/ CMD [&amp;#34;./apache-tomcat-8.5.77/bin/catalina.sh&amp;#34;, &amp;#34;run&amp;#34;] docker构建
+docker build -t spring4shell . docker run -itd -P spring4shell:latest # 访问 http://192.168.101.154:32769/vulnerable-1.0.0.0/rapid7  漏洞利用 项目地址：https://github.com/reznok/Spring4Shell-POC
+python3 exploit.py --url http://192.168.101.154:32769/vulnerable-1.0.0.0/rapid7 漏洞利用成功</description>
+    </item>
+    
+    <item>
+      <title>Bypass_antivirus</title>
+      <link>https://olist213.github.io/posts/bypass_antivirus/</link>
+      <pubDate>Mon, 03 Apr 2023 11:28:23 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/bypass_antivirus/</guid>
+      <description>    名称 描述 效果     c2-shellcode-py 免杀360，火绒的Python-shellcode加载器 ❌    </description>
+    </item>
+    
+    <item>
+      <title>Burpsuite_plugins</title>
+      <link>https://olist213.github.io/posts/burpsuite_plugins/</link>
+      <pubDate>Mon, 03 Apr 2023 10:12:22 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/burpsuite_plugins/</guid>
+      <description>插件名称 url 描述     JS Link Finder BApp Store 被动扫描js文件内的url   Turbo Intruder BApp Store 用于发送大量HTTP请求并分析结果（爆破）   HAE https://github.com/gh0stkey/HaE 请求高亮标记与信息提取   CO2 BApp Store 加了一些工具   BurpShiroPassiveScan https://github.com/pmiaowu/BurpShiroPassiveScan 基于BurpSuite的被动式shiro检测插件   APIKit https://github.com/API-Security/APIKit 主动/被动扫描发现应用泄露的API文档   xia SQL https://github.com/smxiazi/xia_sql 简单的判断注入   BurpFastJsonScan https://github.com/pmiaowu/BurpFastJsonScan 被动式FastJson检测   Log4j2Scan https://github.com/whwlsfb/Log4j2Scan Log4j2被动扫描   log4j2burpscanner https://github.com/f0ng/log4j2burpscanner Log4j2被动扫描   Flow BApp Store 筛选来自Burp工具的所有完整和不完整请求   Autorize BApp Store 授权检测插件   shiro scan https://github.</description>
+    </item>
+    
     <item>
       <title>记一次胖客户端程序渗透测试</title>
       <link>https://olist213.github.io/posts/thick_client_penetration_testing/</link>

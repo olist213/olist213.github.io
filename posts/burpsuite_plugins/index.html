@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/thick_client_penetration_testing/" />
+  <link rel="next" href="https://olist213.github.io/posts/bypass_antivirus/" />
+  <link rel="canonical" href="https://olist213.github.io/posts/burpsuite_plugins/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Burpsuite_plugins | Olist.213
+       
+  </title>
+  <meta name="title" content="Burpsuite_plugins | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Burpsuite_plugins",
+    "headline" : "Burpsuite_plugins",
+    "description" : "插件名称 url 描述     JS Link Finder BApp Store 被动扫描js文件内的url   Turbo Intruder BApp Store 用于发送大量HTTP请求并分析结果（爆破）   HAE https:\/\/github.com\/gh0stkey\/HaE 请求高亮标记与信息提取   CO2 BApp Store 加了一些工具   BurpShiroPassiveScan https:\/\/github.com\/pmiaowu\/BurpShiroPassiveScan 基于BurpSuite的被动式shiro检测插件   APIKit https:\/\/github.com\/API-Security\/APIKit 主动\/被动扫描发现应用泄露的API文档   xia SQL https:\/\/github.com\/smxiazi\/xia_sql 简单的判断注入   BurpFastJsonScan https:\/\/github.com\/pmiaowu\/BurpFastJsonScan 被动式FastJson检测   Log4j2Scan https:\/\/github.com\/whwlsfb\/Log4j2Scan Log4j2被动扫描   log4j2burpscanner https:\/\/github.com\/f0ng\/log4j2burpscanner Log4j2被动扫描   Flow BApp Store 筛选来自Burp工具的所有完整和不完整请求   Autorize BApp Store 授权检测插件   shiro scan https:\/\/github.",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-04-03 10:12:22 \u002b0800 CST",
+    "dateModified" : "2023-04-03 10:12:22 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/burpsuite_plugins\/",
+    "wordCount" : "58",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Burpsuite_plugins</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-04-03 itemprop="datePublished">April 3, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304031013047.jpg" alt="111"></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>插件名称</th>
+<th>url</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JS Link Finder</td>
+<td>BApp Store</td>
+<td>被动扫描js文件内的url</td>
+</tr>
+<tr>
+<td>Turbo Intruder</td>
+<td>BApp Store</td>
+<td>用于发送大量HTTP请求并分析结果（爆破）</td>
+</tr>
+<tr>
+<td>HAE</td>
+<td><a href="https://github.com/gh0stkey/HaE">https://github.com/gh0stkey/HaE</a></td>
+<td>请求高亮标记与信息提取</td>
+</tr>
+<tr>
+<td>CO2</td>
+<td>BApp Store</td>
+<td>加了一些工具</td>
+</tr>
+<tr>
+<td>BurpShiroPassiveScan</td>
+<td><a href="https://github.com/pmiaowu/BurpShiroPassiveScan">https://github.com/pmiaowu/BurpShiroPassiveScan</a></td>
+<td>基于BurpSuite的被动式shiro检测插件</td>
+</tr>
+<tr>
+<td>APIKit</td>
+<td><a href="https://github.com/API-Security/APIKit">https://github.com/API-Security/APIKit</a></td>
+<td>主动/被动扫描发现应用泄露的API文档</td>
+</tr>
+<tr>
+<td>xia SQL</td>
+<td><a href="https://github.com/smxiazi/xia_sql">https://github.com/smxiazi/xia_sql</a></td>
+<td>简单的判断注入</td>
+</tr>
+<tr>
+<td>BurpFastJsonScan</td>
+<td><a href="https://github.com/pmiaowu/BurpFastJsonScan">https://github.com/pmiaowu/BurpFastJsonScan</a></td>
+<td>被动式FastJson检测</td>
+</tr>
+<tr>
+<td>Log4j2Scan</td>
+<td><a href="https://github.com/whwlsfb/Log4j2Scan">https://github.com/whwlsfb/Log4j2Scan</a></td>
+<td>Log4j2被动扫描</td>
+</tr>
+<tr>
+<td>log4j2burpscanner</td>
+<td><a href="https://github.com/f0ng/log4j2burpscanner">https://github.com/f0ng/log4j2burpscanner</a></td>
+<td>Log4j2被动扫描</td>
+</tr>
+<tr>
+<td>Flow</td>
+<td>BApp Store</td>
+<td>筛选来自Burp工具的所有完整和不完整请求</td>
+</tr>
+<tr>
+<td>Autorize</td>
+<td>BApp Store</td>
+<td>授权检测插件</td>
+</tr>
+<tr>
+<td>shiro scan</td>
+<td><a href="https://github.com/pmiaowu/BurpShiroPassiveScan">https://github.com/pmiaowu/BurpShiroPassiveScan</a></td>
+<td>被动式shiro检测</td>
+</tr>
+<tr>
+<td>FastjsonScan</td>
+<td><a href="https://github.com/Maskhe/FastjsonScan">https://github.com/Maskhe/FastjsonScan</a></td>
+<td>Fastjson反序列化检测</td>
+</tr>
+<tr>
+<td>HackTools</td>
+<td><a href="https://github.com/Vicl1fe/HackTools">https://github.com/Vicl1fe/HackTools</a></td>
+<td>一些小工具</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/burpsuite_plugins/>https://olist213.github.io/posts/burpsuite_plugins/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/thick_client_penetration_testing/" class="prev" rel="prev" title="记一次胖客户端程序渗透测试"><i class="iconfont icon-left"></i>&nbsp;记一次胖客户端程序渗透测试</a>
+         
+        
+        <a href="https://olist213.github.io/posts/bypass_antivirus/" class="next" rel="next" title="Bypass_antivirus">Bypass_antivirus&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

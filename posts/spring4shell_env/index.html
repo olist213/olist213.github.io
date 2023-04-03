@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/bypass_antivirus/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/spring4shell_env/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Spring4shell_env | Olist.213
+       
+  </title>
+  <meta name="title" content="Spring4shell_env | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Spring4shell_env",
+    "headline" : "Spring4shell_env",
+    "description" : "spring4shell环境搭建   docker\n  docker目录结构如下：\n  src目录下是编译后的app\n  原项目如下：https:\/\/github.com\/jbaines-r7\/spring4shell_vulnapp\n原项目无法构建成功，少了tomcat的环境\n修改后dockerfile\nFROM --platform=linux\/amd64 openjdk:11 EXPOSE 8080 RUN apt update ADD . \/ \/springy WORKDIR \/springy COPY apache-tomcat-8.5.77.zip \/springy RUN unzip apache-tomcat-8.5.77.zip RUN chmod \u002bx apache-tomcat-8.5.77\/bin\/*.sh RUN cp src\/vulnerable-1.0.0.0.war apache-tomcat-8.5.77\/webapps\/ CMD [\u0026#34;.\/apache-tomcat-8.5.77\/bin\/catalina.sh\u0026#34;, \u0026#34;run\u0026#34;] docker构建\ndocker build -t spring4shell . docker run -itd -P spring4shell:latest # 访问 http:\/\/192.168.101.154:32769\/vulnerable-1.0.0.0\/rapid7  漏洞利用 项目地址：https:\/\/github.com\/reznok\/Spring4Shell-POC\npython3 exploit.py --url http:\/\/192.168.101.154:32769\/vulnerable-1.0.0.0\/rapid7 漏洞利用成功",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-04-03 14:09:50 \u002b0800 CST",
+    "dateModified" : "2023-04-03 14:09:50 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/spring4shell_env\/",
+    "wordCount" : "59",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Spring4shell_env</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-04-03 itemprop="datePublished">April 3, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="spring4shell环境搭建">spring4shell环境搭建</h2>
+<ul>
+<li>
+<p>docker</p>
+</li>
+<li>
+<p>docker目录结构如下：</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304031411216.png" alt="image-20230403141117142"></p>
+</li>
+<li>
+<p>src目录下是编译后的app</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304031411645.png" alt="image-20230403141158598"></p>
+<p>原项目如下：https://github.com/jbaines-r7/spring4shell_vulnapp</p>
+<p>原项目无法构建成功，少了tomcat的环境</p>
+<p>修改后dockerfile</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">FROM --platform<span style="color:#f92672">=</span>linux/amd64 openjdk:11
+
+EXPOSE <span style="color:#ae81ff">8080</span>
+
+RUN apt update
+
+ADD . / /springy
+WORKDIR /springy
+
+COPY apache-tomcat-8.5.77.zip /springy
+RUN unzip apache-tomcat-8.5.77.zip
+RUN chmod +x apache-tomcat-8.5.77/bin/*.sh
+
+RUN cp src/vulnerable-1.0.0.0.war apache-tomcat-8.5.77/webapps/
+
+CMD <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;./apache-tomcat-8.5.77/bin/catalina.sh&#34;</span>, <span style="color:#e6db74">&#34;run&#34;</span><span style="color:#f92672">]</span>
+</code></pre></div><p>docker构建</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build -t spring4shell .
+docker run -itd -P spring4shell:latest
+
+<span style="color:#75715e"># 访问</span>
+http://192.168.101.154:32769/vulnerable-1.0.0.0/rapid7
+</code></pre></div><hr>
+<h2 id="漏洞利用">漏洞利用</h2>
+<p>项目地址：https://github.com/reznok/Spring4Shell-POC</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 exploit.py --url http://192.168.101.154:32769/vulnerable-1.0.0.0/rapid7
+</code></pre></div><p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304031420131.png" alt="image-20230403142011087"></p>
+<p>漏洞利用成功</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304031421683.png" alt="image-20230403142108638"></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/spring4shell_env/>https://olist213.github.io/posts/spring4shell_env/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/bypass_antivirus/" class="prev" rel="prev" title="Bypass_antivirus"><i class="iconfont icon-left"></i>&nbsp;Bypass_antivirus</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
