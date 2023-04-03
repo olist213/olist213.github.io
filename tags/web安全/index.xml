@@ -6,7 +6,16 @@
     <description>Recent content in web安全 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Apr 2023 23:13:41 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Apr 2023 10:12:22 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Burpsuite_plugins</title>
+      <link>https://olist213.github.io/posts/burpsuite_plugins/</link>
+      <pubDate>Mon, 03 Apr 2023 10:12:22 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/burpsuite_plugins/</guid>
+      <description>插件名称 url 描述     JS Link Finder BApp Store 被动扫描js文件内的url   Turbo Intruder BApp Store 用于发送大量HTTP请求并分析结果（爆破）   HAE https://github.com/gh0stkey/HaE 请求高亮标记与信息提取   CO2 BApp Store 加了一些工具   BurpShiroPassiveScan https://github.com/pmiaowu/BurpShiroPassiveScan 基于BurpSuite的被动式shiro检测插件   APIKit https://github.com/API-Security/APIKit 主动/被动扫描发现应用泄露的API文档   xia SQL https://github.com/smxiazi/xia_sql 简单的判断注入   BurpFastJsonScan https://github.com/pmiaowu/BurpFastJsonScan 被动式FastJson检测   Log4j2Scan https://github.com/whwlsfb/Log4j2Scan Log4j2被动扫描   log4j2burpscanner https://github.com/f0ng/log4j2burpscanner Log4j2被动扫描   Flow BApp Store 筛选来自Burp工具的所有完整和不完整请求   Autorize BApp Store 授权检测插件   shiro scan https://github.</description>
+    </item>
+    
     <item>
       <title>记一次胖客户端程序渗透测试</title>
       <link>https://olist213.github.io/posts/thick_client_penetration_testing/</link>

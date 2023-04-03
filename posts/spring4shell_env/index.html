@@ -10,7 +10,7 @@
   
   
   <link rel="prev" href="https://olist213.github.io/posts/bypass_antivirus/" />
-  
+  <link rel="next" href="https://olist213.github.io/posts/minio-cve-2023-28432/" />
   <link rel="canonical" href="https://olist213.github.io/posts/spring4shell_env/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Spring4shell_env | Olist.213
+           Spring4shell环境搭建 | Olist.213
        
   </title>
-  <meta name="title" content="Spring4shell_env | Olist.213">
+  <meta name="title" content="Spring4shell环境搭建 | Olist.213">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,8 +44,8 @@
          "@id": "https:\/\/olist213.github.io"
     },
     "articleSection" : "posts",
-    "name" : "Spring4shell_env",
-    "headline" : "Spring4shell_env",
+    "name" : "Spring4shell环境搭建",
+    "headline" : "Spring4shell环境搭建",
     "description" : "spring4shell环境搭建   docker\n  docker目录结构如下：\n  src目录下是编译后的app\n  原项目如下：https:\/\/github.com\/jbaines-r7\/spring4shell_vulnapp\n原项目无法构建成功，少了tomcat的环境\n修改后dockerfile\nFROM --platform=linux\/amd64 openjdk:11 EXPOSE 8080 RUN apt update ADD . \/ \/springy WORKDIR \/springy COPY apache-tomcat-8.5.77.zip \/springy RUN unzip apache-tomcat-8.5.77.zip RUN chmod \u002bx apache-tomcat-8.5.77\/bin\/*.sh RUN cp src\/vulnerable-1.0.0.0.war apache-tomcat-8.5.77\/webapps\/ CMD [\u0026#34;.\/apache-tomcat-8.5.77\/bin\/catalina.sh\u0026#34;, \u0026#34;run\u0026#34;] docker构建\ndocker build -t spring4shell . docker run -itd -P spring4shell:latest # 访问 http:\/\/192.168.101.154:32769\/vulnerable-1.0.0.0\/rapid7  漏洞利用 项目地址：https:\/\/github.com\/reznok\/Spring4Shell-POC\npython3 exploit.py --url http:\/\/192.168.101.154:32769\/vulnerable-1.0.0.0\/rapid7 漏洞利用成功",
     "inLanguage" : "zh-cn",
     "author" : "",
@@ -58,7 +58,7 @@
     "dateModified" : "2023-04-03 14:09:50 \u002b0800 CST",
     "url" : "https:\/\/olist213.github.io\/posts\/spring4shell_env\/",
     "wordCount" : "59",
-    "keywords" : [  "Olist.213"]
+    "keywords" : [ "web学习", "Olist.213"]
 }
 </script>
 
@@ -124,7 +124,7 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Spring4shell_env</h1>
+        <h1 class="post-title" itemprop="name headline">Spring4shell环境搭建</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
                 <span class="post-time">
@@ -221,6 +221,14 @@ http://192.168.101.154:32769/vulnerable-1.0.0.0/rapid7
   
     <div class="post-tags">
         
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/web%E5%AD%A6%E4%B9%A0/">
+                    #web学习</a></span>
+            
+            </section>
+        
         <section>
                 <a href="javascript:window.history.back();">back</a></span> · 
                 <span><a href="https://olist213.github.io">home</a></span>
@@ -231,6 +239,8 @@ http://192.168.101.154:32769/vulnerable-1.0.0.0/rapid7
         
         <a href="https://olist213.github.io/posts/bypass_antivirus/" class="prev" rel="prev" title="Bypass_antivirus"><i class="iconfont icon-left"></i>&nbsp;Bypass_antivirus</a>
          
+        
+        <a href="https://olist213.github.io/posts/minio-cve-2023-28432/" class="next" rel="next" title="Minio Cve 2023 28432">Minio Cve 2023 28432&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
