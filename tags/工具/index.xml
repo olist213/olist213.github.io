@@ -13,7 +13,7 @@
       <pubDate>Sat, 01 Apr 2023 14:01:34 +0800</pubDate>
       
       <guid>https://olist213.github.io/posts/tools_resoure/</guid>
-      <description>   工具名称 工具链接 工具描述 更新时间     Fastjson 扫描器 https://github.com/a1phaboy/FastjsonScan fastjson扫描 无   FastjsonPatrol https://github.com/ce-automne/FastjsonPatrol 一款探测fastjson漏洞的BurpSuite插件 2022.4.1   Log4j2Scan https://github.com/whwlsfb/Log4j2Scan Log4j2 burpsuite被动扫描插件 2022.10.21   SpringBootExploit https://github.com/0x727/SpringBootExploit springboot漏洞利用工具 2022.4.17    </description>
+      <description>工具名称 工具链接 工具描述 更新时间     Fastjson 扫描器 https://github.com/a1phaboy/FastjsonScan fastjson扫描 无   FastjsonPatrol https://github.com/ce-automne/FastjsonPatrol 一款探测fastjson漏洞的BurpSuite插件 2022.4.1   Log4j2Scan https://github.com/whwlsfb/Log4j2Scan Log4j2 burpsuite被动扫描插件 2022.10.21   SpringBootExploit https://github.com/0x727/SpringBootExploit springboot漏洞利用工具 2022.4.17   EHole(棱洞)3.0 https://github.com/EdgeSecurityTeam/EHole 红队重点攻击系统指纹探测工具 2021.7.23   xray https://github.com/chaitin/xray 自动化安全测试工具 2023.1.10   HackBrowserData https://github.com/moonD4rk/HackBrowserData 提取和导出Chrome、Firefox、Edge、Opera等主流浏览器的历史记录、书签、密码等数据的工具 2022.8.16   fscan https://github.com/shadow1ng/fscan 轻量级的网络安全扫描工具 2023.2.22   Yakit https://github.com/yaklang/yakit ALL-IN-ONE Platform 2023.4.2   pocsuite3 https://github.com/knownsec/pocsuite3 漏洞测试框架 2023.</description>
     </item>
     
   </channel>
