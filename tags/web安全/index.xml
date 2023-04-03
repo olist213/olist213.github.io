@@ -6,7 +6,26 @@
     <description>Recent content in web安全 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 03 Apr 2023 10:12:22 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Apr 2023 21:22:56 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Write_good_bug_reports</title>
+      <link>https://olist213.github.io/posts/write_good_bug_reports/</link>
+      <pubDate>Mon, 03 Apr 2023 21:22:56 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/write_good_bug_reports/</guid>
+      <description>具体要点    确定漏洞类型：首先要明确漏洞的类型，并对其进行分类和描述。
+  重现漏洞：在报告中提供重现漏洞的步骤和环境。
+  提供详细信息：在漏洞报告中提供尽可能多的信息，例如操作系统，浏览器版本和漏洞所在的应用程序版本等。
+  描述漏洞的影响：在报告中描述漏洞的影响和可能对系统造成的损害。
+  提供解决方案：在漏洞报告中提供解决方案或建议。
+  应该保持专业：在报告中避免使用过度的情绪化或不适当的语言。
+  给漏洞指定一个严重程度：给漏洞指定一个适当的严重程度，例如高、中、低等级别。
+  与开发人员协作：最好与应用程序的开发团队合作，以便更好地理解和修复漏洞。
+  报告漏洞时保密：在报告漏洞时要保持保密，并且只将漏洞信息通知有关方面。
+  确认漏洞已得到修复：在漏洞得到修复后，最好要进行验证，以确保漏洞已被妥善修复。
+  FROM</description>
+    </item>
+    
     <item>
       <title>Burpsuite_plugins</title>
       <link>https://olist213.github.io/posts/burpsuite_plugins/</link>
