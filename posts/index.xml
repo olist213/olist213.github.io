@@ -8,7 +8,7 @@
     <language>zh-cn</language>
     <lastBuildDate>Mon, 03 Apr 2023 16:19:15 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Minio Cve 2023 28432</title>
+      <title>Minio CVE-2023-28432信息泄漏漏洞</title>
       <link>https://olist213.github.io/posts/minio-cve-2023-28432/</link>
       <pubDate>Mon, 03 Apr 2023 16:19:15 +0800</pubDate>
       

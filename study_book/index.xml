@@ -16,7 +16,8 @@
       <description>每日学习 blog：搭建了一下spring4shell的docker环境，上传github、docker hub等网站，内部系统也上了题目。
 技术学习 minio环境搭建
 来源：https://y4er.com/posts/minio-cve-2023-28432/
-端口：9001-9004</description>
+端口：9001-9004
+cve-2023-28432漏洞复现</description>
     </item>
     
     <item>
