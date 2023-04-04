@@ -6,7 +6,23 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 04 Apr 2023 16:18:09 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 22:26:33 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redteam_pentest_assessments_different</title>
+      <link>https://olist213.github.io/posts/redteam_pentest_assessments_different/</link>
+      <pubDate>Tue, 04 Apr 2023 22:26:33 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/redteam_pentest_assessments_different/</guid>
+      <description>1、红蓝、渗透测试、漏洞评估之间的区别    方法 描述 风险管理目标     渗透测试 针对系统、网络或应用程序的攻击，旨在识别和测试与攻击面有关的风险。(攻击路径验证) 缩小攻击面   漏洞评估 用来识别安全措施是否充分、发现安全缺陷、确保防御措施已生效 缩小攻击面   红蓝对抗 使用策略、技术和程序(TTP)的过程，目的是培训和验证蓝方人员、流程和技术的有效性 培训和验证蓝方人员、流程和技术(安全运营)的有效性    通过IPDRR来表示上述三种方法的不同阶段。
+漏洞评估覆盖了功能确定阶段、保护阶段。
+渗透测试覆盖了功能确定阶段、保护阶段、检测阶段。
+红蓝攻防覆盖了整个周期，功能确定阶段、保护阶段、检测阶段、响应阶段、恢复阶段。
+同时，三种类型的评估在安全运营方面的情况如下：
+漏洞评估范围广、深度有限。
+渗透测试属于中间阶段、提供了攻击路径证明，但缺少人员和流程，缺少检测和响应。
+红蓝对抗范围小、深度大，着重于整个安全运营。</description>
+    </item>
+    
     <item>
       <title>Nuclei扫描器的一些用法记录</title>
       <link>https://olist213.github.io/posts/nuclei_base/</link>
