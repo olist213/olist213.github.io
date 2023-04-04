@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/xray_rad_vul_scan/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/base_study_security/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Base_study_security | Olist.213
+       
+  </title>
+  <meta name="title" content="Base_study_security | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Base_study_security",
+    "headline" : "Base_study_security",
+    "description" : "如果想从事网络安全方面的学习或者其他方面的学习：\n先思考、再布局、后复盘（总结） 先思考\n   what\n  why\n  how\n  what?\n  做什么？sql注入漏洞是什么？ why？  为什么？为什么会产生sql注入漏洞？ how？  如何做？怎么去测试sql注入漏洞？如何去修复sql注入漏洞？ 知其然更要知其所以然\n  再布局\n  找方法 整合资源 如何实战测试？搭环境？实战？   后复盘\n  总结  1、对于入门网络安全的学生而言，有很多网络安全的概念和术语不清楚，在开始学习之前，了解基础的概念和术语。\n 来个漏洞利用流程图先不管这些有什么用，需要有大概的了解，如何学习？利用搜索引擎 or 书籍。\n2、学习漏洞流程和漏洞原理。\n  what? 学习漏洞流程，目标是什么？了解漏洞挖掘的流程。有何标准？owasp top 10。\n  why? 为什么学习？属于基础课程，打好基础方能进阶，目标：能清楚的讲出漏洞流程及漏洞原理。\n  how？ 如何学习？ 1、看书。2、看视频  一些操作系统的知识：\n linux windows  3、阅读网络安全相关资源\n在了解了基础之后如何学习？",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-04-04 12:45:44 \u002b0800 CST",
+    "dateModified" : "2023-04-04 12:45:44 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/base_study_security\/",
+    "wordCount" : "72",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Base_study_security</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-04-04 itemprop="datePublished">April 4, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>如果想从事网络安全方面的学习或者其他方面的学习：</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->先思考、再布局、后复盘（总结）<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+<p>先思考</p>
+</blockquote>
+<ul>
+<li>
+<p>what</p>
+</li>
+<li>
+<p>why</p>
+</li>
+<li>
+<p>how</p>
+</li>
+<li>
+<p>what?</p>
+</li>
+</ul>
+<p>做什么？<!-- raw HTML omitted -->sql注入漏洞是什么？<!-- raw HTML omitted --></p>
+<ul>
+<li>why？</li>
+</ul>
+<p>为什么？<!-- raw HTML omitted -->为什么会产生sql注入漏洞？<!-- raw HTML omitted --></p>
+<ul>
+<li>how？</li>
+</ul>
+<p>如何做？<!-- raw HTML omitted -->怎么去测试sql注入漏洞？如何去修复sql注入漏洞？<!-- raw HTML omitted --></p>
+<blockquote>
+<p>知其然更要知其所以然</p>
+</blockquote>
+<blockquote>
+<p>再布局</p>
+</blockquote>
+<ul>
+<li>找方法</li>
+<li>整合资源</li>
+<li>如何实战测试？<!-- raw HTML omitted -->搭环境？实战？<!-- raw HTML omitted --></li>
+</ul>
+<blockquote>
+<p>后复盘</p>
+</blockquote>
+<ul>
+<li><!-- raw HTML omitted -->总结<!-- raw HTML omitted --></li>
+</ul>
+<p>1、对于入门网络安全的学生而言，有很多网络安全的概念和术语不清楚，在开始学习之前，了解基础的概念和术语。</p>
+<hr>
+<p><!-- raw HTML omitted -->来个漏洞利用流程图<!-- raw HTML omitted --></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041241136.png" alt=""></p>
+<p>先不管这些有什么用，需要有大概的了解，如何学习？<!-- raw HTML omitted -->利用搜索引擎 or 书籍<!-- raw HTML omitted -->。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041241137.png" alt=""></p>
+<p>2、学习漏洞流程和漏洞原理。</p>
+<ul>
+<li>
+<p>what? 学习漏洞流程，目标是什么？<!-- raw HTML omitted -->了解漏洞挖掘的流程<!-- raw HTML omitted -->。有何标准？<!-- raw HTML omitted -->owasp top 10<!-- raw HTML omitted -->。</p>
+</li>
+<li>
+<p>why? 为什么学习？<!-- raw HTML omitted -->属于基础课程，打好基础方能进阶<!-- raw HTML omitted -->，目标：<!-- raw HTML omitted -->能清楚的讲出漏洞流程及漏洞原理<!-- raw HTML omitted -->。</p>
+</li>
+<li>
+<p>how？ 如何学习？ <!-- raw HTML omitted -->1、看书。2、看视频<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041241138.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041241139.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041241140.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041241142.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041241143.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041241144.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041241145.png" alt=""></p>
+<p>一些操作系统的知识：</p>
+<ul>
+<li>linux</li>
+<li>windows</li>
+</ul>
+<p>3、阅读网络安全相关资源</p>
+<p>在了解了基础之后如何学习？</p>
+<ul>
+<li>微信公众号关注网络安全方面的内容。</li>
+<li>rss订阅网络安全方面的内容。</li>
+<li>多看别人的文章，打造网络安全知识体系。</li>
+<li>github学习</li>
+</ul>
+<p>在这个过程，记得做好笔记，有条件可以搭建博客，分享学习过程，分享的过程也是学习的过程。</p>
+<p>4.实践项目</p>
+<p>了解了理念后，通过参与网络安全项目，学习实践经验，提高技术水平。</p>
+<ul>
+<li>漏洞靶场</li>
+</ul>
+<p><a href="https://github.com/olist213/penetration_testing_env">https://github.com/olist213/penetration_testing_env</a></p>
+<ul>
+<li>
+<p>ctf靶场</p>
+<ul>
+<li>ctfshow</li>
+<li>buuctf</li>
+<li>ctfhub</li>
+<li>春秋云镜</li>
+<li>tryhackme</li>
+<li>hackthebox</li>
+<li><a href="https://portswigger.net/web-security/all-labs">All labs | Web Security Academy</a></li>
+</ul>
+</li>
+<li>
+<p>src漏洞挖掘</p>
+</li>
+</ul>
+<p>推荐教育src</p>
+<p><a href="https://src.sjtu.edu.cn/">https://src.sjtu.edu.cn/</a></p>
+<p>5.加入网络安全社区，向其他网络安全从业者学习和交流，获取更多的知识和经验。</p>
+<ul>
+<li>t00ls 土司</li>
+<li>other</li>
+</ul>
+<p>6.考证</p>
+<p>可以考一些证书，提升技能。</p>
+<ul>
+<li>信息安全工程师</li>
+<li>oscp</li>
+<li>bscp</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/base_study_security/>https://olist213.github.io/posts/base_study_security/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/xray_rad_vul_scan/" class="prev" rel="prev" title="xray结合其他工具进行批量扫描"><i class="iconfont icon-left"></i>&nbsp;xray结合其他工具进行批量扫描</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

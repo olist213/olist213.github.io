@@ -6,7 +6,32 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 04 Apr 2023 09:02:05 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 12:45:44 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Base_study_security</title>
+      <link>https://olist213.github.io/posts/base_study_security/</link>
+      <pubDate>Tue, 04 Apr 2023 12:45:44 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/base_study_security/</guid>
+      <description>如果想从事网络安全方面的学习或者其他方面的学习：
+先思考、再布局、后复盘（总结） 先思考
+   what
+  why
+  how
+  what?
+  做什么？sql注入漏洞是什么？ why？  为什么？为什么会产生sql注入漏洞？ how？  如何做？怎么去测试sql注入漏洞？如何去修复sql注入漏洞？ 知其然更要知其所以然
+  再布局
+  找方法 整合资源 如何实战测试？搭环境？实战？   后复盘
+  总结  1、对于入门网络安全的学生而言，有很多网络安全的概念和术语不清楚，在开始学习之前，了解基础的概念和术语。
+ 来个漏洞利用流程图先不管这些有什么用，需要有大概的了解，如何学习？利用搜索引擎 or 书籍。
+2、学习漏洞流程和漏洞原理。
+  what? 学习漏洞流程，目标是什么？了解漏洞挖掘的流程。有何标准？owasp top 10。
+  why? 为什么学习？属于基础课程，打好基础方能进阶，目标：能清楚的讲出漏洞流程及漏洞原理。
+  how？ 如何学习？ 1、看书。2、看视频  一些操作系统的知识：
+ linux windows  3、阅读网络安全相关资源
+在了解了基础之后如何学习？</description>
+    </item>
+    
     <item>
       <title>xray结合其他工具进行批量扫描</title>
       <link>https://olist213.github.io/posts/xray_rad_vul_scan/</link>
