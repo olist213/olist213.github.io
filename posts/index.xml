@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 03 Apr 2023 21:22:56 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 09:02:05 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>xray结合其他工具进行批量扫描</title>
+      <link>https://olist213.github.io/posts/xray_rad_vul_scan/</link>
+      <pubDate>Tue, 04 Apr 2023 09:02:05 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/xray_rad_vul_scan/</guid>
+      <description> xray的批量扫描从官方文档中查看有两种方式可以实现：
+1、社区版 需要设置上游代理，然后xray进行监听，如下：
+# 如rad，运行 rad -t http://example.com -http-proxy 127.0.0.1:7777 # xray监听 xray webscan --listen 127.0.0.1:7777 --html-output proxy.html 设置完成后，就可以实现扫描了。
+rad有个问题，只能扫描单个目标，官方没有实现批量扫描的功能，但通过另一种方式也可以实现批量扫描（前提：linux or mac），就是用xargs命令。
+cat 22222.txt | xargs -I {} rad -t {} 除了rad之外，也可以使用其他的endpoint扫描工具进行url的爬取，如katana、cariddi。
+ katana  katana的使用方式比较简单，直接可以加载文本文件。
+.\katana.exe -u .\111.txt -proxy http://127.0.0.1:7777 扫描效果：
+ cariddi  测试后，无法通过http代理将流量发送到xray的监听端口，无法配合xray扫描。
+2、高级版 根据rad官方文档，如果是高级版的xray，自带了浏览器爬虫的功能，只需使用下面的命令即可，但是只能扫描单个目标。
+xray webscan --browser-crawler http://example.com --html-output vuln.html </description>
+    </item>
+    
     <item>
       <title>Write_good_bug_reports</title>
       <link>https://olist213.github.io/posts/write_good_bug_reports/</link>

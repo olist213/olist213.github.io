@@ -9,9 +9,9 @@
   <meta name="description" content="一点牢骚">
   
   
-  <link rel="prev" href="https://olist213.github.io/posts/minio-cve-2023-28432/" />
-  <link rel="next" href="https://olist213.github.io/posts/xray_rad_vul_scan/" />
-  <link rel="canonical" href="https://olist213.github.io/posts/write_good_bug_reports/" />
+  <link rel="prev" href="https://olist213.github.io/posts/write_good_bug_reports/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/xray_rad_vul_scan/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           Write_good_bug_reports | Olist.213
+           xray结合其他工具进行批量扫描 | Olist.213
        
   </title>
-  <meta name="title" content="Write_good_bug_reports | Olist.213">
+  <meta name="title" content="xray结合其他工具进行批量扫描 | Olist.213">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/olist213.github.io"
     },
     "articleSection" : "posts",
-    "name" : "Write_good_bug_reports",
-    "headline" : "Write_good_bug_reports",
-    "description" : "具体要点    确定漏洞类型：首先要明确漏洞的类型，并对其进行分类和描述。\n  重现漏洞：在报告中提供重现漏洞的步骤和环境。\n  提供详细信息：在漏洞报告中提供尽可能多的信息，例如操作系统，浏览器版本和漏洞所在的应用程序版本等。\n  描述漏洞的影响：在报告中描述漏洞的影响和可能对系统造成的损害。\n  提供解决方案：在漏洞报告中提供解决方案或建议。\n  应该保持专业：在报告中避免使用过度的情绪化或不适当的语言。\n  给漏洞指定一个严重程度：给漏洞指定一个适当的严重程度，例如高、中、低等级别。\n  与开发人员协作：最好与应用程序的开发团队合作，以便更好地理解和修复漏洞。\n  报告漏洞时保密：在报告漏洞时要保持保密，并且只将漏洞信息通知有关方面。\n  确认漏洞已得到修复：在漏洞得到修复后，最好要进行验证，以确保漏洞已被妥善修复。\n  FROM",
+    "name" : "xray结合其他工具进行批量扫描",
+    "headline" : "xray结合其他工具进行批量扫描",
+    "description" : " xray的批量扫描从官方文档中查看有两种方式可以实现：\n1、社区版 需要设置上游代理，然后xray进行监听，如下：\n# 如rad，运行 rad -t http:\/\/example.com -http-proxy 127.0.0.1:7777 # xray监听 xray webscan --listen 127.0.0.1:7777 --html-output proxy.html 设置完成后，就可以实现扫描了。\nrad有个问题，只能扫描单个目标，官方没有实现批量扫描的功能，但通过另一种方式也可以实现批量扫描（前提：linux or mac），就是用xargs命令。\ncat 22222.txt | xargs -I {} rad -t {} 除了rad之外，也可以使用其他的endpoint扫描工具进行url的爬取，如katana、cariddi。\n katana  katana的使用方式比较简单，直接可以加载文本文件。\n.\\katana.exe -u .\\111.txt -proxy http:\/\/127.0.0.1:7777 扫描效果：\n cariddi  测试后，无法通过http代理将流量发送到xray的监听端口，无法配合xray扫描。\n2、高级版 根据rad官方文档，如果是高级版的xray，自带了浏览器爬虫的功能，只需使用下面的命令即可，但是只能扫描单个目标。\nxray webscan --browser-crawler http:\/\/example.com --html-output vuln.html ",
     "inLanguage" : "zh-cn",
     "author" : "",
     "creator" : "",
@@ -54,11 +54,11 @@
     "accountablePerson" : "",
     "copyrightHolder" : "",
     "copyrightYear" : "2023",
-    "datePublished": "2023-04-03 21:22:56 \u002b0800 CST",
-    "dateModified" : "2023-04-03 21:22:56 \u002b0800 CST",
-    "url" : "https:\/\/olist213.github.io\/posts\/write_good_bug_reports\/",
-    "wordCount" : "12",
-    "keywords" : [ "web安全", "Olist.213"]
+    "datePublished": "2023-04-04 09:02:05 \u002b0800 CST",
+    "dateModified" : "2023-04-04 09:02:05 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/xray_rad_vul_scan\/",
+    "wordCount" : "50",
+    "keywords" : [  "Olist.213"]
 }
 </script>
 
@@ -124,11 +124,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Write_good_bug_reports</h1>
+        <h1 class="post-title" itemprop="name headline">xray结合其他工具进行批量扫描</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2023-04-03 itemprop="datePublished">April 3, 2023</time>
+                on <time datetime=2023-04-04 itemprop="datePublished">April 4, 2023</time>
                 </span>
                 in
                 
@@ -152,44 +152,35 @@
           
           
 
-          <p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304032124110.jpg" alt="General 3840x2160 artwork minimalism trees dark background Four Seasons colorful petals simple background"></p>
-<ul>
-<li>具体要点</li>
-</ul>
-<ol>
-<li>
-<p>确定漏洞类型：首先要明确漏洞的类型，并对其进行分类和描述。</p>
-</li>
-<li>
-<p>重现漏洞：在报告中提供重现漏洞的步骤和环境。</p>
-</li>
-<li>
-<p>提供详细信息：在漏洞报告中提供尽可能多的信息，例如操作系统，浏览器版本和漏洞所在的应用程序版本等。</p>
-</li>
-<li>
-<p>描述漏洞的影响：在报告中描述漏洞的影响和可能对系统造成的损害。</p>
-</li>
-<li>
-<p>提供解决方案：在漏洞报告中提供解决方案或建议。</p>
-</li>
-<li>
-<p>应该保持专业：在报告中避免使用过度的情绪化或不适当的语言。</p>
-</li>
-<li>
-<p>给漏洞指定一个严重程度：给漏洞指定一个适当的严重程度，例如高、中、低等级别。</p>
-</li>
-<li>
-<p>与开发人员协作：最好与应用程序的开发团队合作，以便更好地理解和修复漏洞。</p>
-</li>
-<li>
-<p>报告漏洞时保密：在报告漏洞时要保持保密，并且只将漏洞信息通知有关方面。</p>
-</li>
-<li>
-<p>确认漏洞已得到修复：在漏洞得到修复后，最好要进行验证，以确保漏洞已被妥善修复。</p>
-</li>
-</ol>
-<p><a href="https://infosecwriteups.com/how-to-write-good-bug-reports-725eb318c477">FROM</a></p>
+          <p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304040904243.png" alt="General 3840x2160 abstract digital art colorful minimalism simple background"></p>
+<hr>
+<p>xray的批量扫描从<a href="https://github.com/chaitin/rad">官方文档</a>中查看有两种方式可以实现：</p>
+<h2 id="1社区版">1、社区版</h2>
+<p>需要设置上游代理，然后xray进行监听，如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 如rad，运行</span>
+rad -t http://example.com -http-proxy 127.0.0.1:7777
 
+<span style="color:#75715e"># xray监听</span>
+xray webscan --listen 127.0.0.1:7777 --html-output proxy.html
+</code></pre></div><p>设置完成后，就可以实现扫描了。</p>
+<p>rad有个问题，只能扫描单个目标，官方没有实现批量扫描的功能，但通过另一种方式也可以实现批量扫描（<strong>前提：linux or mac</strong>），就是用xargs命令。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat 22222.txt | xargs -I <span style="color:#f92672">{}</span> rad -t <span style="color:#f92672">{}</span>
+</code></pre></div><p>除了<a href="https://github.com/chaitin/rad">rad</a>之外，也可以使用其他的endpoint扫描工具进行url的爬取，如<a href="https://github.com/projectdiscovery/katana">katana</a>、<a href="https://github.com/edoardottt/cariddi">cariddi</a>。</p>
+<ul>
+<li>katana</li>
+</ul>
+<p>katana的使用方式比较简单，直接可以加载文本文件。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.<span style="color:#ae81ff">\k</span>atana.exe -u .<span style="color:#ae81ff">\1</span>11.txt -proxy http://127.0.0.1:7777
+</code></pre></div><p>扫描效果：</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304040921465.png" alt="image-20230404092127362"></p>
+<ul>
+<li><del>cariddi</del></li>
+</ul>
+<p>测试后，无法通过http代理将流量发送到xray的监听端口，无法配合xray扫描。</p>
+<h2 id="2高级版">2、高级版</h2>
+<p>根据rad官方文档，如果是高级版的xray，自带了浏览器爬虫的功能，只需使用下面的命令即可，但是只能扫描单个目标。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xray webscan --browser-crawler http://example.com --html-output vuln.html
+</code></pre></div>
     </div>
 
     <div class="post-copyright">
@@ -203,7 +194,7 @@
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://olist213.github.io/posts/write_good_bug_reports/>https://olist213.github.io/posts/write_good_bug_reports/</span>
+                    <a href=https://olist213.github.io/posts/xray_rad_vul_scan/>https://olist213.github.io/posts/xray_rad_vul_scan/</span>
             </p>
             
             
@@ -211,14 +202,6 @@
 
   
     <div class="post-tags">
-        
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s): 
-            
-            <span class="tag"><a href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/">
-                    #web安全</a></span>
-            
-            </section>
         
         <section>
                 <a href="javascript:window.history.back();">back</a></span> · 
@@ -228,10 +211,8 @@
 
     <div class="post-nav">
         
-        <a href="https://olist213.github.io/posts/minio-cve-2023-28432/" class="prev" rel="prev" title="Minio CVE-2023-28432信息泄漏漏洞"><i class="iconfont icon-left"></i>&nbsp;Minio CVE-2023-28432信息泄漏漏洞</a>
+        <a href="https://olist213.github.io/posts/write_good_bug_reports/" class="prev" rel="prev" title="Write_good_bug_reports"><i class="iconfont icon-left"></i>&nbsp;Write_good_bug_reports</a>
          
-        
-        <a href="https://olist213.github.io/posts/xray_rad_vul_scan/" class="next" rel="next" title="xray结合其他工具进行批量扫描">xray结合其他工具进行批量扫描&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
