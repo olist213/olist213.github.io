@@ -6,7 +6,18 @@
     <description>Recent content in 工具 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 01 Apr 2023 14:01:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Apr 2023 16:18:09 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nuclei扫描器的一些用法记录</title>
+      <link>https://olist213.github.io/posts/nuclei_base/</link>
+      <pubDate>Tue, 04 Apr 2023 16:18:09 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/nuclei_base/</guid>
+      <description>nuclei配置 1、忽略不需要的poc 编辑~/.config/nuclei/config.yaml文件
+一些排除的模版
+exclude-templates: - ssl/deprecated-tls.yaml - misconfiguration/http-missing-security-headers.yaml - ssl/tls-version.yaml - miscellaneous/addeventlistener-detect.yaml - technologies/akamai-cache-detect.yaml - technologies/apache/apache-detect.yaml - miscellaneous/apple-app-site-association.yaml - misconfiguration/aspx-debug-mode.yaml - technologies/aws/aws-cloudfront-service.yaml - exposures/configs/azure-domain-tenant.yaml - technologies/basic-auth-detect.yaml - vulnerabilities/generic/cors-misconfig.yaml - exposures/tokens/generic/credentials-disclosure.yaml - ssl/deprecated-tls.yaml - technologies/detect-sentry.yaml - miscellaneous/email-extractor.yaml - ssl/expired-ssl.yaml - technologies/fingerprinthub-web-fingerprints.yaml - technologies/google/google-bucket-service.yaml - technologies/google-frontend-httpserver.yaml - miscellaneous/gpc-json.yaml - misconfiguration/http-missing-security-headers.yaml - vulnerabilities/jira/jira-unauthenticated-user-picker.yaml - technologies/kubernetes/kubelet/kubelet-metrics.yaml - misconfiguration/kubernetes/kubernetes-metrics.yaml - misconfiguration/lvm-exporter-metrics.yaml - technologies/metatag-cms.yaml - ssl/mismatched-ssl.yaml - technologies/nginx/nginx-version.yaml - miscellaneous/old-copyright.yaml - technologies/openresty-detect.yaml - miscellaneous/options-method.yaml - misconfiguration/postgres-exporter-metrics.</description>
+    </item>
+    
     <item>
       <title>一些工具(updating)</title>
       <link>https://olist213.github.io/posts/tools_resoure/</link>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/base_study_security/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/nuclei_base/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Nuclei扫描器的一些用法记录 | Olist.213
+       
+  </title>
+  <meta name="title" content="Nuclei扫描器的一些用法记录 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Nuclei扫描器的一些用法记录",
+    "headline" : "Nuclei扫描器的一些用法记录",
+    "description" : "nuclei配置 1、忽略不需要的poc 编辑~\/.config\/nuclei\/config.yaml文件\n一些排除的模版\nexclude-templates: - ssl\/deprecated-tls.yaml - misconfiguration\/http-missing-security-headers.yaml - ssl\/tls-version.yaml - miscellaneous\/addeventlistener-detect.yaml - technologies\/akamai-cache-detect.yaml - technologies\/apache\/apache-detect.yaml - miscellaneous\/apple-app-site-association.yaml - misconfiguration\/aspx-debug-mode.yaml - technologies\/aws\/aws-cloudfront-service.yaml - exposures\/configs\/azure-domain-tenant.yaml - technologies\/basic-auth-detect.yaml - vulnerabilities\/generic\/cors-misconfig.yaml - exposures\/tokens\/generic\/credentials-disclosure.yaml - ssl\/deprecated-tls.yaml - technologies\/detect-sentry.yaml - miscellaneous\/email-extractor.yaml - ssl\/expired-ssl.yaml - technologies\/fingerprinthub-web-fingerprints.yaml - technologies\/google\/google-bucket-service.yaml - technologies\/google-frontend-httpserver.yaml - miscellaneous\/gpc-json.yaml - misconfiguration\/http-missing-security-headers.yaml - vulnerabilities\/jira\/jira-unauthenticated-user-picker.yaml - technologies\/kubernetes\/kubelet\/kubelet-metrics.yaml - misconfiguration\/kubernetes\/kubernetes-metrics.yaml - misconfiguration\/lvm-exporter-metrics.yaml - technologies\/metatag-cms.yaml - ssl\/mismatched-ssl.yaml - technologies\/nginx\/nginx-version.yaml - miscellaneous\/old-copyright.yaml - technologies\/openresty-detect.yaml - miscellaneous\/options-method.yaml - misconfiguration\/postgres-exporter-metrics.",
+    "inLanguage" : "zh-cn",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-04-04 16:18:09 \u002b0800 CST",
+    "dateModified" : "2023-04-04 16:18:09 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/nuclei_base\/",
+    "wordCount" : "380",
+    "keywords" : [ "web安全","工具", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Nuclei扫描器的一些用法记录</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author"></a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-04-04 itemprop="datePublished">April 4, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041634145.jpg" alt="General 1920x1240 nature flowers green plants leaves"></p>
+<h2 id="nuclei配置">nuclei配置</h2>
+<h3 id="1忽略不需要的poc">1、忽略不需要的poc</h3>
+<p>编辑~/.config/nuclei/config.yaml文件</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304041619640.png" alt="image-20230404161935512"></p>
+<p><strong>一些排除的模版</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">exclude-templates</span>:
+  - <span style="color:#ae81ff">ssl/deprecated-tls.yaml</span>
+  - <span style="color:#ae81ff">misconfiguration/http-missing-security-headers.yaml</span>
+  - <span style="color:#ae81ff">ssl/tls-version.yaml</span>
+  - <span style="color:#ae81ff">miscellaneous/addeventlistener-detect.yaml</span>
+  - <span style="color:#ae81ff">technologies/akamai-cache-detect.yaml</span>
+  - <span style="color:#ae81ff">technologies/apache/apache-detect.yaml</span>
+  - <span style="color:#ae81ff">miscellaneous/apple-app-site-association.yaml</span>
+  - <span style="color:#ae81ff">misconfiguration/aspx-debug-mode.yaml</span>
+  - <span style="color:#ae81ff">technologies/aws/aws-cloudfront-service.yaml</span>
+  - <span style="color:#ae81ff">exposures/configs/azure-domain-tenant.yaml</span>
+  - <span style="color:#ae81ff">technologies/basic-auth-detect.yaml</span>
+  - <span style="color:#ae81ff">vulnerabilities/generic/cors-misconfig.yaml</span>
+  - <span style="color:#ae81ff">exposures/tokens/generic/credentials-disclosure.yaml</span>
+  - <span style="color:#ae81ff">ssl/deprecated-tls.yaml</span>
+  - <span style="color:#ae81ff">technologies/detect-sentry.yaml</span>
+  - <span style="color:#ae81ff">miscellaneous/email-extractor.yaml</span>
+  - <span style="color:#ae81ff">ssl/expired-ssl.yaml</span>
+  - <span style="color:#ae81ff">technologies/fingerprinthub-web-fingerprints.yaml</span>
+  - <span style="color:#ae81ff">technologies/google/google-bucket-service.yaml</span>
+  - <span style="color:#ae81ff">technologies/google-frontend-httpserver.yaml</span>
+  - <span style="color:#ae81ff">miscellaneous/gpc-json.yaml</span>
+  - <span style="color:#ae81ff">misconfiguration/http-missing-security-headers.yaml</span>
+  - <span style="color:#ae81ff">vulnerabilities/jira/jira-unauthenticated-user-picker.yaml</span>
+  - <span style="color:#ae81ff">technologies/kubernetes/kubelet/kubelet-metrics.yaml</span>
+  - <span style="color:#ae81ff">misconfiguration/kubernetes/kubernetes-metrics.yaml</span>
+  - <span style="color:#ae81ff">misconfiguration/lvm-exporter-metrics.yaml</span>
+  - <span style="color:#ae81ff">technologies/metatag-cms.yaml</span>
+  - <span style="color:#ae81ff">ssl/mismatched-ssl.yaml</span>
+  - <span style="color:#ae81ff">technologies/nginx/nginx-version.yaml</span>
+  - <span style="color:#ae81ff">miscellaneous/old-copyright.yaml</span>
+  - <span style="color:#ae81ff">technologies/openresty-detect.yaml</span>
+  - <span style="color:#ae81ff">miscellaneous/options-method.yaml</span>
+  - <span style="color:#ae81ff">misconfiguration/postgres-exporter-metrics.yaml</span>
+  - <span style="color:#ae81ff">technologies/puppetdb-detect.yaml</span>
+  - <span style="color:#ae81ff">vulnerabilities/generic/request-based-interaction.yaml</span>
+  - <span style="color:#ae81ff">miscellaneous/robots-txt.yaml</span>
+  - <span style="color:#ae81ff">miscellaneous/robots-txt-endpoint.yaml</span>
+  - <span style="color:#ae81ff">miscellaneous/security-txt.yaml</span>
+  - <span style="color:#ae81ff">ssl/self-signed-ssl.yaml</span>
+  - <span style="color:#ae81ff">miscellaneous/sitemap-detect.yaml</span>
+  - <span style="color:#ae81ff">ssl/ssl-dns-names.yaml</span>
+  - <span style="color:#ae81ff">exposures/apis/swagger-api.yaml</span>
+  - <span style="color:#ae81ff">technologies/tech-detect.yaml</span>
+  - <span style="color:#ae81ff">misconfiguration/tls-sni-proxy.yaml</span>
+  - <span style="color:#ae81ff">ssl/tls-version.yaml</span>
+  - <span style="color:#ae81ff">misconfiguration/unauthenticated-varnish-cache-purge.yaml</span>
+  - <span style="color:#ae81ff">technologies/waf-detect.yaml</span>
+  - <span style="color:#ae81ff">technologies/wordpress-detect.yaml</span>
+  - <span style="color:#ae81ff">misconfiguration/xss-deprecated-header.yaml</span>
+  - <span style="color:#ae81ff">takeovers/announcekit-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/aha-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/flywheel-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/bigcartel-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/helprace-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/aftership-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/launchrock-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/teamwork-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/helpjuice-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/jetbrains-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/anima-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/wix-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/helpscout-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/vend-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/webflow-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/readme-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/cargo-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/ghost-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/pantheon-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/short-io.yaml</span>
+  - <span style="color:#ae81ff">takeovers/uservoice-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/wishpond-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/netlify-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/intercom-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/cargocollective-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/ngrok-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/pagewiz-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/canny-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/smartjob-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/tave-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/worksites-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/leadpages-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/github-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/kinsta-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/flexbe-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/readthedocs-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/heroku-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/sprintful-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/simplebooklet-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/gemfury-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/surveygizmo-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/bitbucket-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/strikingly-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/tumblr-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/uberflip-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/smugmug-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/tilda-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/hatenablog-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/airee-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/getresponse-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/zendesk-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/jazzhr-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/wufoo-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/agilecrm-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/gitbook-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/mashery-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/surveysparrow-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/proposify-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/surge-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/aws-bucket-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/hubspot-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/shopify-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/wordpress-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/frontify-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/campaignmonitor-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/meteor-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/pingdom-takeover.yaml</span>
+  - <span style="color:#ae81ff">takeovers/uptimerobot-takeover.yaml</span>
+  - <span style="color:#ae81ff">dns/txt-fingerprint.yaml</span>
+  - <span style="color:#ae81ff">dns/dns-waf-detect.yaml</span>
+  - <span style="color:#ae81ff">dns/worksites-detection.yaml</span>
+  - <span style="color:#ae81ff">dns/caa-fingerprint.yaml</span>
+  - <span style="color:#ae81ff">dns/cname-fingerprint.yaml</span>
+  - <span style="color:#ae81ff">dns/mx-service-detector.yaml</span>
+  - <span style="color:#ae81ff">dns/cname-service.yaml</span>
+  - <span style="color:#ae81ff">dns/detect-dangling-cname.yaml</span>
+  - <span style="color:#ae81ff">dns/nameserver-fingerprint.yaml</span>
+  - <span style="color:#ae81ff">dns/ec2-detection.yaml</span>
+  - <span style="color:#ae81ff">dns/dnssec-detection.yaml</span>
+  - <span style="color:#ae81ff">dns/spoofable-spf-records-ptr.yaml</span>
+  - <span style="color:#ae81ff">dns/azure-takeover-detection.yaml</span>
+  - <span style="color:#ae81ff">dns/dmarc-detect.yaml</span>
+  - <span style="color:#ae81ff">dns/ptr-fingerprint.yaml</span>
+  - <span style="color:#ae81ff">dns/elasticbeantalk-takeover.yaml</span>
+  - <span style="color:#ae81ff">dns/servfail-refused-hosts.yaml</span>
+  - <span style="color:#ae81ff">dns/mx-fingerprint.yaml</span>
+  - <span style="color:#ae81ff">exposed-panels/adobe</span>
+  - <span style="color:#ae81ff">ssl/revoked-ssl-certificate.yaml</span>
+  - <span style="color:#ae81ff">ssl/detect-ssl-issuer.yaml</span>
+  - <span style="color:#ae81ff">ssl/weak-cipher-suites.yaml</span>
+  - <span style="color:#ae81ff">add-2023-03-03/content_injection.yaml</span>
+  - <span style="color:#ae81ff">network/detection/smtp-detect.yaml</span>
+  - <span style="color:#ae81ff">network/detection/imap-detect.yaml</span>
+  - <span style="color:#ae81ff">network/detection/pop3-detect.yaml</span>
+  - <span style="color:#ae81ff">network/detection/esmtp-detect.yaml</span>
+  - <span style="color:#ae81ff">misconfiguration/httponly-cookie-detect.yaml</span>
+  - <span style="color:#ae81ff">network/detection/openssh-detect.yaml</span>
+  - <span style="color:#ae81ff">add-2023-03-03/exposed-pii.yaml</span>
+</code></pre></div><h3 id="2提高扫描效率">2、提高扫描效率</h3>
+<ul>
+<li>-timeout:设置超时时间，默认为10，可以把值设置小一些</li>
+<li>-retries:设置请求失败的尝试次数，默认为1</li>
+</ul>
+<h3 id="3定位漏洞">3、定位漏洞</h3>
+<p>假设第一次运行nuclei发现了漏洞，那么再运行<code>-debug</code>重新运行nuclei，那么可以识别漏洞。自己试了一下，发现-debug只是把所有目标的请求打印出来，如果目标过多，会有很多干扰。如果针对单个漏洞就还行，可以知道目标是怎么请求的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nuclei -t ~/nuclei-templates/add-2023-03-04/Seeyou-ReportServer.yaml -l 1.txt -debug
+</code></pre></div><h3 id="4nuclei指纹扫描">4、nuclei指纹扫描</h3>
+<p>nuclei还可以用来扫描目标系统的指纹信息，可以通过<code>-as</code>选项来设置。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nuclei -u http://example.com -as
+</code></pre></div><h3 id="5asn和cidr输入">5、asn和cidr输入</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo AS11533 | nucleit -tags log4j
+</code></pre></div><h3 id="6nuclei--tc-condition">6、nuclei -tc condition</h3>
+<p>nuclei也可以通过<code>-tc</code>来指定加载模版的条件。</p>
+<p>格式如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nuclei -tc &lt;condition&gt;
+</code></pre></div><p>如：contains函数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nuclei -tc <span style="color:#e6db74">&#34;contains(tags,&#39;xss&#39;) &amp;&amp; contains(tags,&#39;cve&#39;)&#34;</span>
+nuclei -tc <span style="color:#e6db74">&#34;contains(tags,&#39;xss&#39;) || contains(tags,&#39;ssrf&#39;)&#34;</span>
+nuclei -tc <span style="color:#e6db74">&#34;(contains(tags,&#39;xss&#39;) || contains(tags,&#39;ssrf&#39;)) &amp;&amp; contains(severity,&#39;high&#39;)&#34;</span>
+</code></pre></div><h3 id="7nuclei之tags">7、nuclei之tags</h3>
+<p>nuclei的标签可以指定需要加载的模版，分别有tags、etags、itags等。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nuclei -tags dns -u http://example.com
+
+<span style="color:#75715e"># 排除某些标签</span>
+nuclei -etags cve -u http://example.com
+
+<span style="color:#75715e"># 包含制定标签，排除其他标签</span>
+nuclei -itags xss -u http://example.com
+</code></pre></div><h3 id="8nuclei之cicd">8、nuclei之CI/CD</h3>
+<p>nuclei可以结合CI/CD Action工具联合起来使用，分别写了3个CI/CD平台，bitbucket、github、gitlab。</p>
+<p>CI/CD是指持续集成（Continuous Integration）与持续交付（Continuous Delivery）的缩写。CI/CD构建了一套自动部署软件的流程，将软件从开发、测试、部署到最终生产中的多个过程无缝贯穿。持续集成将测试和部署流程自动化，让每位开发者更快更轻松地推出新版本。持续交付则确保软件的快速、可靠交付，并能够快速故障回滚。</p>
+<p>参考：</p>
+<p><a href="https://blog.projectdiscovery.io/implementing-nuclei-into-your-bitbucket-ci-cd-pipeline-for-scanning-live-web-applications/">https://blog.projectdiscovery.io/implementing-nuclei-into-your-bitbucket-ci-cd-pipeline-for-scanning-live-web-applications/</a></p>
+<p><a href="https://blog.projectdiscovery.io/implementing-nuclei-into-your-github-ci-cd-for-scanning-live-web-applications/">https://blog.projectdiscovery.io/implementing-nuclei-into-your-github-ci-cd-for-scanning-live-web-applications/</a></p>
+<p><a href="https://blog.projectdiscovery.io/implementing-nuclei-into-your-gitlab-ci-cd-pipeline-for-scanning-live-web-applications/">https://blog.projectdiscovery.io/implementing-nuclei-into-your-gitlab-ci-cd-pipeline-for-scanning-live-web-applications/</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/nuclei_base/>https://olist213.github.io/posts/nuclei_base/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/web%E5%AE%89%E5%85%A8/">
+                    #web安全</a></span>
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/">
+                    #工具</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/base_study_security/" class="prev" rel="prev" title="如何学习网络安全基础"><i class="iconfont icon-left"></i>&nbsp;如何学习网络安全基础</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
