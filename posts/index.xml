@@ -6,14 +6,31 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 Apr 2023 20:08:37 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Apr 2023 19:05:17 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Springboot_base_pentest</title>
+      <link>https://olist213.github.io/posts/springboot_base_pentest/</link>
+      <pubDate>Thu, 06 Apr 2023 19:05:17 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/springboot_base_pentest/</guid>
+      <description>查找*号密码 在SpringBoot站点中，有一个名为/actuator/env的端点，通常情况下这个端点会屏蔽一些敏感信息，例如password等，但是会用*号进行替代。如果目标网站可以下载/actuator/heapdump或/heapdump的文件，并进行解码，就可以提取到其中包含的敏感信息了。
+也可以使用这款工具扫描springboot的节点。
+https://github.com/AabyssZG/SpringBoot-Scan
+mat select * from java.util.LinkedHashMap$Entry x WHERE (toString(x.key).contains(&amp;#34;password&amp;#34;)) select * from java.util.Hashtable$Entry x WHERE (toString(x.key).contains(&amp;#34;password&amp;#34;)) JDumpSpider 项目地址：https://github.com/whwlsfb/JDumpSpider
+$ java -jar JDumpSpider-1.0-SNAPSHOT-full.jar heapdump </description>
+    </item>
+    
     <item>
       <title>idea基础设置</title>
       <link>https://olist213.github.io/posts/idea_setting/</link>
       <pubDate>Wed, 05 Apr 2023 20:08:37 +0800</pubDate>
       
       <guid>https://olist213.github.io/posts/idea_setting/</guid>
-      <description> </description>
+      <description> 1、中文汉化 2、主题设置 主题下载地址：https://plugins.jetbrains.com/search?tags=Theme
+下载后的主题导入即可。
+或者直接在Marketplace上搜索。
+3、多个java版本 mac下通过alias进行实现，不同的java版本设置不同的变量，后面通过alias引用。
+版本： 1.7.0_25 1.7.0_80 1.8.0_201 1.8.0_92 16.0.1 </description>
     </item>
     
     <item>

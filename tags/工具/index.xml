@@ -13,7 +13,11 @@
       <pubDate>Wed, 05 Apr 2023 20:08:37 +0800</pubDate>
       
       <guid>https://olist213.github.io/posts/idea_setting/</guid>
-      <description> </description>
+      <description> 1、中文汉化 2、主题设置 主题下载地址：https://plugins.jetbrains.com/search?tags=Theme
+下载后的主题导入即可。
+或者直接在Marketplace上搜索。
+3、多个java版本 mac下通过alias进行实现，不同的java版本设置不同的变量，后面通过alias引用。
+版本： 1.7.0_25 1.7.0_80 1.8.0_201 1.8.0_92 16.0.1 </description>
     </item>
     
     <item>
