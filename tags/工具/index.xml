@@ -6,7 +6,40 @@
     <description>Recent content in 工具 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 05 Apr 2023 20:08:37 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Apr 2023 22:29:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Burpsuite使用的技巧和提示</title>
+      <link>https://olist213.github.io/posts/burpsuite_tips_and_tricks/</link>
+      <pubDate>Sat, 08 Apr 2023 22:29:34 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/burpsuite_tips_and_tricks/</guid>
+      <description> burpsuite的一些技巧 1、启动burpsuite后，默认禁用拦截功能 User options-&amp;gt;Misc-&amp;gt;Proxy Interception
+2、过滤不需要的内容 Proxy-&amp;gt;HTTP History-&amp;gt;Filter
+ 隐藏的文件类型：gif,jpg,png,css,woff,woff2,svg,mp4,map 过滤OPTIONS请求^OPTIONS / 仅显示范围内的项目 隐藏没有响应的包  3、保持清洁：不记录超出范围的项目 User options-&amp;gt;Misc-&amp;gt;Proxy History Logging
+如果你想在后台开启burpsuite的plugins进行扫描，此处可以不关闭记录。
+3、安装一些burpsuite扩展 见：https://olist213.github.io/posts/burpsuite_plugins/
+5、暗黑模式 User options-&amp;gt;Misc-&amp;gt;Display
+6、保存设置：不丢失项目进度 Project settings -&amp;gt; Save project settings
+启动时，加载配置文件
+Load from configuration file -&amp;gt; Pick the file you saved，勾选Default to the above in the future。
+7、过滤杂质 https://gist.github.com/vsec7/d5518a432b70714bedad79e4963ff320
+.*\.google\.com .*\.gstatic\.com .*\.mozilla\.com .*\.googleapis\.com .*\.pki\.goog 下载配置文件载入
+8、中文乱码 User options-&amp;gt;Misc-&amp;gt;Display-&amp;gt;HTTP Message Display
+9、被动扫描关闭扫描所有 Dashboard
+10、sitemap视图切换 </description>
+    </item>
+    
+    <item>
+      <title>Reg_base</title>
+      <link>https://olist213.github.io/posts/reg_base/</link>
+      <pubDate>Sat, 08 Apr 2023 11:21:44 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/reg_base/</guid>
+      <description> 日常使用的一些正则表达式 不完全配置p标签中的中文。
+&amp;lt;p class=&amp;#34;IX&amp;#34;&amp;gt;\s+.{1,100}\s+&amp;lt;\/p&amp;gt; 替换空行
+^\n </description>
+    </item>
+    
     <item>
       <title>idea基础设置</title>
       <link>https://olist213.github.io/posts/idea_setting/</link>

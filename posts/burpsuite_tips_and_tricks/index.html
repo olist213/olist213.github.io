@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/english_translate_book_end/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/posts/burpsuite_tips_and_tricks/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Burpsuite使用的技巧和提示 | Olist.213
+       
+  </title>
+  <meta name="title" content="Burpsuite使用的技巧和提示 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "Burpsuite使用的技巧和提示",
+    "headline" : "Burpsuite使用的技巧和提示",
+    "description" : " burpsuite的一些技巧 1、启动burpsuite后，默认禁用拦截功能 User options-\u0026gt;Misc-\u0026gt;Proxy Interception\n2、过滤不需要的内容 Proxy-\u0026gt;HTTP History-\u0026gt;Filter\n 隐藏的文件类型：gif,jpg,png,css,woff,woff2,svg,mp4,map 过滤OPTIONS请求^OPTIONS \/ 仅显示范围内的项目 隐藏没有响应的包  3、保持清洁：不记录超出范围的项目 User options-\u0026gt;Misc-\u0026gt;Proxy History Logging\n如果你想在后台开启burpsuite的plugins进行扫描，此处可以不关闭记录。\n3、安装一些burpsuite扩展 见：https:\/\/olist213.github.io\/posts\/burpsuite_plugins\/\n5、暗黑模式 User options-\u0026gt;Misc-\u0026gt;Display\n6、保存设置：不丢失项目进度 Project settings -\u0026gt; Save project settings\n启动时，加载配置文件\nLoad from configuration file -\u0026gt; Pick the file you saved，勾选Default to the above in the future。\n7、过滤杂质 https:\/\/gist.github.com\/vsec7\/d5518a432b70714bedad79e4963ff320\n.*\\.google\\.com .*\\.gstatic\\.com .*\\.mozilla\\.com .*\\.googleapis\\.com .*\\.pki\\.goog 下载配置文件载入\n8、中文乱码 User options-\u0026gt;Misc-\u0026gt;Display-\u0026gt;HTTP Message Display\n9、被动扫描关闭扫描所有 Dashboard\n10、sitemap视图切换 ",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-04-08 22:29:34 \u002b0800 CST",
+    "dateModified" : "2023-04-08 22:29:34 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/burpsuite_tips_and_tricks\/",
+    "wordCount" : "64",
+    "keywords" : [ "工具", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Burpsuite使用的技巧和提示</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-04-08 itemprop="datePublished">April 8, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082240347.png" alt="General 3840x2160 car interior steering wheel car interior"></p>
+<hr>
+<h2 id="burpsuite的一些技巧">burpsuite的一些技巧</h2>
+<h3 id="1启动burpsuite后默认禁用拦截功能">1、启动burpsuite后，默认禁用拦截功能</h3>
+<p>User options-&gt;Misc-&gt;Proxy Interception</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082259492.png" alt="image-20230408225917464"></p>
+<h3 id="2过滤不需要的内容">2、过滤不需要的内容</h3>
+<p>Proxy-&gt;HTTP History-&gt;Filter</p>
+<ul>
+<li>隐藏的文件类型：gif,jpg,png,css,woff,woff2,svg,mp4,map</li>
+<li>过滤OPTIONS请求^OPTIONS /</li>
+<li>仅显示范围内的项目</li>
+<li>隐藏没有响应的包</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082337390.png" alt="image-20230408233725362"></p>
+<h3 id="3保持清洁不记录超出范围的项目">3、保持清洁：不记录超出范围的项目</h3>
+<p>User options-&gt;Misc-&gt;Proxy History Logging</p>
+<p>如果你想在后台开启burpsuite的plugins进行扫描，此处可以不关闭记录。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082308750.png" alt="image-20230408230838735"></p>
+<h3 id="3安装一些burpsuite扩展">3、安装一些burpsuite扩展</h3>
+<p>见：https://olist213.github.io/posts/burpsuite_plugins/</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082316200.png" alt="image-20230408231614172"></p>
+<h3 id="5暗黑模式">5、暗黑模式</h3>
+<p>User options-&gt;Misc-&gt;Display</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082317611.png" alt="image-20230408231753578"></p>
+<h3 id="6保存设置不丢失项目进度">6、保存设置：不丢失项目进度</h3>
+<p>Project settings -&gt; Save project settings</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082319100.png" alt="image-20230408231948078"></p>
+<p>启动时，加载配置文件</p>
+<p>Load from configuration file -&gt; Pick the file you saved，勾选Default to the above in the future。</p>
+<h3 id="7过滤杂质">7、过滤杂质</h3>
+<p><a href="https://gist.github.com/vsec7/d5518a432b70714bedad79e4963ff320">https://gist.github.com/vsec7/d5518a432b70714bedad79e4963ff320</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.*<span style="color:#ae81ff">\.</span>google<span style="color:#ae81ff">\.</span>com 
+.*<span style="color:#ae81ff">\.</span>gstatic<span style="color:#ae81ff">\.</span>com
+.*<span style="color:#ae81ff">\.</span>mozilla<span style="color:#ae81ff">\.</span>com
+.*<span style="color:#ae81ff">\.</span>googleapis<span style="color:#ae81ff">\.</span>com
+.*<span style="color:#ae81ff">\.</span>pki<span style="color:#ae81ff">\.</span>goog
+</code></pre></div><p>下载配置文件载入</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082349057.png" alt="image-20230408234925023"></p>
+<h3 id="8中文乱码">8、中文乱码</h3>
+<p>User options-&gt;Misc-&gt;Display-&gt;HTTP Message Display</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082353606.png" alt="image-20230408235352575"></p>
+<h3 id="9被动扫描关闭扫描所有">9、被动扫描关闭扫描所有</h3>
+<p>Dashboard</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304090000579.png" alt="image-20230409000028536"></p>
+<h3 id="10sitemap视图切换">10、sitemap视图切换</h3>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304090003262.png" alt="image-20230409000351222"></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/burpsuite_tips_and_tricks/>https://olist213.github.io/posts/burpsuite_tips_and_tricks/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/">
+                    #工具</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/english_translate_book_end/" class="prev" rel="prev" title="英文技术翻译书籍"><i class="iconfont icon-left"></i>&nbsp;英文技术翻译书籍</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

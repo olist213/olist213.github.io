@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>book on Olist.213</title>
+    <link>https://olist213.github.io/tags/book/</link>
+    <description>Recent content in book on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 08 Apr 2023 11:30:44 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>英文技术翻译书籍</title>
+      <link>https://olist213.github.io/posts/english_translate_book_end/</link>
+      <pubDate>Sat, 08 Apr 2023 11:30:44 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/english_translate_book_end/</guid>
+      <description>书名 中文书名 是否翻译     This Is How They Tell Me the World Ends 这就是他们告诉我世界末日的方式 ✅   The Pentester Blue Print Starting a Career as an Ethical Hacker 渗透测试蓝图：作为道德黑客开始职业生涯 ✅   Practical Malware Analysis 实用恶意软件分析 ✅   Penetration Testing A Hands On Introdution to Hacking 渗透测试：一份实践性的黑客入门指南 ✅   Red Team Development and Operations A practical guide 红队开发和运营实用指南 ✅   Hacking APIs: Breaking Web Application Programming Interfaces API黑客：破解Web应用程序编程接口 ✅   Gray Hat Hacking The Ethical Hacker Handbook 灰帽黑客：道德黑客手册 ✅   OSCP PWK PEN 200 2021 .</description>
+    </item>
+    
+  </channel>
+</rss>
