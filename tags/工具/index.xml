@@ -17,7 +17,7 @@
 2、过滤不需要的内容 Proxy-&amp;gt;HTTP History-&amp;gt;Filter
  隐藏的文件类型：gif,jpg,png,css,woff,woff2,svg,mp4,map 过滤OPTIONS请求^OPTIONS / 仅显示范围内的项目 隐藏没有响应的包  3、保持清洁：不记录超出范围的项目 User options-&amp;gt;Misc-&amp;gt;Proxy History Logging
 如果你想在后台开启burpsuite的plugins进行扫描，此处可以不关闭记录。
-3、安装一些burpsuite扩展 见：https://olist213.github.io/posts/burpsuite_plugins/
+4、安装一些burpsuite扩展 见：https://olist213.github.io/posts/burpsuite_plugins/
 5、暗黑模式 User options-&amp;gt;Misc-&amp;gt;Display
 6、保存设置：不丢失项目进度 Project settings -&amp;gt; Save project settings
 启动时，加载配置文件

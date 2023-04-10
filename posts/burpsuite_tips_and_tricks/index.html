@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Burpsuite使用的技巧和提示",
     "headline" : "Burpsuite使用的技巧和提示",
-    "description" : " burpsuite的一些技巧 1、启动burpsuite后，默认禁用拦截功能 User options-\u0026gt;Misc-\u0026gt;Proxy Interception\n2、过滤不需要的内容 Proxy-\u0026gt;HTTP History-\u0026gt;Filter\n 隐藏的文件类型：gif,jpg,png,css,woff,woff2,svg,mp4,map 过滤OPTIONS请求^OPTIONS \/ 仅显示范围内的项目 隐藏没有响应的包  3、保持清洁：不记录超出范围的项目 User options-\u0026gt;Misc-\u0026gt;Proxy History Logging\n如果你想在后台开启burpsuite的plugins进行扫描，此处可以不关闭记录。\n3、安装一些burpsuite扩展 见：https:\/\/olist213.github.io\/posts\/burpsuite_plugins\/\n5、暗黑模式 User options-\u0026gt;Misc-\u0026gt;Display\n6、保存设置：不丢失项目进度 Project settings -\u0026gt; Save project settings\n启动时，加载配置文件\nLoad from configuration file -\u0026gt; Pick the file you saved，勾选Default to the above in the future。\n7、过滤杂质 https:\/\/gist.github.com\/vsec7\/d5518a432b70714bedad79e4963ff320\n.*\\.google\\.com .*\\.gstatic\\.com .*\\.mozilla\\.com .*\\.googleapis\\.com .*\\.pki\\.goog 下载配置文件载入\n8、中文乱码 User options-\u0026gt;Misc-\u0026gt;Display-\u0026gt;HTTP Message Display\n9、被动扫描关闭扫描所有 Dashboard\n10、sitemap视图切换 ",
+    "description" : " burpsuite的一些技巧 1、启动burpsuite后，默认禁用拦截功能 User options-\u0026gt;Misc-\u0026gt;Proxy Interception\n2、过滤不需要的内容 Proxy-\u0026gt;HTTP History-\u0026gt;Filter\n 隐藏的文件类型：gif,jpg,png,css,woff,woff2,svg,mp4,map 过滤OPTIONS请求^OPTIONS \/ 仅显示范围内的项目 隐藏没有响应的包  3、保持清洁：不记录超出范围的项目 User options-\u0026gt;Misc-\u0026gt;Proxy History Logging\n如果你想在后台开启burpsuite的plugins进行扫描，此处可以不关闭记录。\n4、安装一些burpsuite扩展 见：https:\/\/olist213.github.io\/posts\/burpsuite_plugins\/\n5、暗黑模式 User options-\u0026gt;Misc-\u0026gt;Display\n6、保存设置：不丢失项目进度 Project settings -\u0026gt; Save project settings\n启动时，加载配置文件\nLoad from configuration file -\u0026gt; Pick the file you saved，勾选Default to the above in the future。\n7、过滤杂质 https:\/\/gist.github.com\/vsec7\/d5518a432b70714bedad79e4963ff320\n.*\\.google\\.com .*\\.gstatic\\.com .*\\.mozilla\\.com .*\\.googleapis\\.com .*\\.pki\\.goog 下载配置文件载入\n8、中文乱码 User options-\u0026gt;Misc-\u0026gt;Display-\u0026gt;HTTP Message Display\n9、被动扫描关闭扫描所有 Dashboard\n10、sitemap视图切换 ",
     "inLanguage" : "zh-cn",
     "author" : "[lca]",
     "creator" : "[lca]",
@@ -171,7 +171,7 @@
 <p>User options-&gt;Misc-&gt;Proxy History Logging</p>
 <p>如果你想在后台开启burpsuite的plugins进行扫描，此处可以不关闭记录。</p>
 <p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082308750.png" alt="image-20230408230838735"></p>
-<h3 id="3安装一些burpsuite扩展">3、安装一些burpsuite扩展</h3>
+<h3 id="4安装一些burpsuite扩展">4、安装一些burpsuite扩展</h3>
 <p>见：https://olist213.github.io/posts/burpsuite_plugins/</p>
 <p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082316200.png" alt="image-20230408231614172"></p>
 <h3 id="5暗黑模式">5、暗黑模式</h3>
@@ -182,6 +182,7 @@
 <p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304082319100.png" alt="image-20230408231948078"></p>
 <p>启动时，加载配置文件</p>
 <p>Load from configuration file -&gt; Pick the file you saved，勾选Default to the above in the future。</p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304100942595.png" alt="image-20230410094235560"></p>
 <h3 id="7过滤杂质">7、过滤杂质</h3>
 <p><a href="https://gist.github.com/vsec7/d5518a432b70714bedad79e4963ff320">https://gist.github.com/vsec7/d5518a432b70714bedad79e4963ff320</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.*<span style="color:#ae81ff">\.</span>google<span style="color:#ae81ff">\.</span>com 
