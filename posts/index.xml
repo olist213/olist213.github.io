@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 11 Apr 2023 16:07:56 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Apr 2023 17:09:36 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>红队常见术语</title>
+      <link>https://olist213.github.io/posts/redteam_definitions/</link>
+      <pubDate>Tue, 11 Apr 2023 17:09:36 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/redteam_definitions/</guid>
+      <description>理解红队的常见术语，这些术语可以帮我我们更好的了解红队攻击。
+Allow-List 允许列表
+Allow list也可以被称为白名单，白名单中的内容是值得信任的。白名单通常用来授予特定资源的访问权限，通过白名单指定规则，白名单可以指定多个规则，如用户、ip、文件后缀，域名等，只有匹配白名单规则的才可以访问资源。相比于黑名单，创建一个良好的规则列表通常被认为是更好的做法，白名单通过默认拒绝的规则来加强安全性。
+ASSUMED BREACH &amp;quot;假设已遭受入侵&amp;quot;模型</description>
+    </item>
+    
     <item>
       <title>Ai</title>
       <link>https://olist213.github.io/posts/ai/</link>
