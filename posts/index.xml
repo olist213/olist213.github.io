@@ -6,9 +6,22 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 10 Apr 2023 21:38:19 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Apr 2023 16:07:56 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Redteam_development_and_operations</title>
+      <title>Ai</title>
+      <link>https://olist213.github.io/posts/ai/</link>
+      <pubDate>Tue, 11 Apr 2023 16:07:56 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/ai/</guid>
+      <description> 一些ai相关信息   低成本体验生成 AI 小姐姐照片
+  c站 模型下载
+  Stable Diffusion LoRA models: a complete guide
+  Mac上安装Stable Diffusion
+  资源  http://op.steveee.me:5244/  </description>
+    </item>
+    
+    <item>
+      <title>Redteam开发与运营</title>
       <link>https://olist213.github.io/posts/redteam_development_and_operations/</link>
       <pubDate>Mon, 10 Apr 2023 21:38:19 +0800</pubDate>
       
