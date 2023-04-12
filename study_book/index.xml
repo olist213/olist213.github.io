@@ -6,7 +6,20 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 10 Apr 2023 09:18:46 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Apr 2023 10:40:18 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023 04 12</title>
+      <link>https://olist213.github.io/study_book/2023-04-12/</link>
+      <pubDate>Wed, 12 Apr 2023 10:40:18 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/2023-04-12/</guid>
+      <description>每日学习  book  二手时间    技术学习   搭建bludit 3.14.1的漏洞环境，push到仓库
+  逻辑漏洞靶场
+ https://github.com/yingshang/ywljsec    php反序列化靶场
+ docker pull mcc0624/ser:1.8 docker run -p 8002:80 -d mcc0624/ser:1.8    blog
+ uncover的基本使用方法    漏洞学习  ESET Service 16.0.26.0 - &amp;lsquo;Service ekrn&amp;rsquo; Unquoted Service Path  C:\&amp;gt;sc qc ekrn [SC] QueryServiceConfig SUCCESS SERVICE_NAME: ekrn TYPE : 20 WIN32_SHARE_PROCESS START_TYPE : 2 AUTO_START ERROR_CONTROL : 1 NORMAL BINARY_PATH_NAME : &amp;#34;C:\Program Files\ESET\ESET Security\ekrn.</description>
+    </item>
+    
     <item>
       <title>2023 04 10</title>
       <link>https://olist213.github.io/study_book/2023-04-10/</link>

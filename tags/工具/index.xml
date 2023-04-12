@@ -6,7 +6,24 @@
     <description>Recent content in 工具 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 Apr 2023 09:20:43 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Apr 2023 11:15:43 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>uncover的基本使用方法</title>
+      <link>https://olist213.github.io/posts/uncover_usage/</link>
+      <pubDate>Wed, 12 Apr 2023 11:15:43 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/uncover_usage/</guid>
+      <description>1、基础配置 uncover基于网络测绘引擎（如shadon、censys）提供搜索结果，通过这个工具可以查找互联网上的主机资产。uncover拥有多搜索引擎，包括了shadon、censys、fofa、hunter、zoomeye。支持多API Key，支持标准输入、标准输出进行输入且可将结果输出到另一个程序中。
+项目地址：https://github.com/projectdiscovery/uncover
+安装：
+go install -v github.com/projectdiscovery/uncover/cmd/uncover@latest 配置文件：
+$HOME/.config/uncover/provider-config.yaml 也可以直接将配置文件写入~/.bash_profile文件中。
+2、基本用法  uncover默认从shadon中搜索结果。  echo &#39;&amp;quot;Dell&amp;quot;&#39; | uncover  使用特定搜索引擎，支持如下引擎：   假如要使用fofa进行查询。   指定多个关键词   针对多个搜索引擎运行单个查询，使用-e标志运行单个查询  echo granafa | uncover -e hunter,fofa -f host  Shodan InternetDB API  当需要查询的内容为IP或者IP段时，uncover默认使用Shodan InternetDB API进行查询。
+echo 8.8.8.8 | uncover -v 3、输出自定义 输出返回的字段内容使用-f指定，目前支持ip、端口和主机。
+echo granafa | uncover -e hunter,fofa -f host 在不指定格式的情况下，默认以ip:port的格式返回。
+4、uncover自动化示例  信息收集 漏洞扫描 资产探测 威胁情报  简单示例如下：</description>
+    </item>
+    
     <item>
       <title>信息收集工具top 2023</title>
       <link>https://olist213.github.io/posts/top_recon_tools/</link>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/posts/top_recon_tools/" />
+  <link rel="next" href="https://olist213.github.io/posts/crapi/" />
+  <link rel="canonical" href="https://olist213.github.io/posts/uncover_usage/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           uncover的基本使用方法 | Olist.213
+       
+  </title>
+  <meta name="title" content="uncover的基本使用方法 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "posts",
+    "name" : "uncover的基本使用方法",
+    "headline" : "uncover的基本使用方法",
+    "description" : "1、基础配置 uncover基于网络测绘引擎（如shadon、censys）提供搜索结果，通过这个工具可以查找互联网上的主机资产。uncover拥有多搜索引擎，包括了shadon、censys、fofa、hunter、zoomeye。支持多API Key，支持标准输入、标准输出进行输入且可将结果输出到另一个程序中。\n项目地址：https:\/\/github.com\/projectdiscovery\/uncover\n安装：\ngo install -v github.com\/projectdiscovery\/uncover\/cmd\/uncover@latest 配置文件：\n$HOME\/.config\/uncover\/provider-config.yaml 也可以直接将配置文件写入~\/.bash_profile文件中。\n2、基本用法  uncover默认从shadon中搜索结果。  echo \u0027\u0026quot;Dell\u0026quot;\u0027 | uncover  使用特定搜索引擎，支持如下引擎：   假如要使用fofa进行查询。   指定多个关键词   针对多个搜索引擎运行单个查询，使用-e标志运行单个查询  echo granafa | uncover -e hunter,fofa -f host  Shodan InternetDB API  当需要查询的内容为IP或者IP段时，uncover默认使用Shodan InternetDB API进行查询。\necho 8.8.8.8 | uncover -v 3、输出自定义 输出返回的字段内容使用-f指定，目前支持ip、端口和主机。\necho granafa | uncover -e hunter,fofa -f host 在不指定格式的情况下，默认以ip:port的格式返回。\n4、uncover自动化示例  信息收集 漏洞扫描 资产探测 威胁情报  简单示例如下：",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2023",
+    "datePublished": "2023-04-12 11:15:43 \u002b0800 CST",
+    "dateModified" : "2023-04-12 11:15:43 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/posts\/uncover_usage\/",
+    "wordCount" : "69",
+    "keywords" : [ "工具", "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">uncover的基本使用方法</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2023-04-12 itemprop="datePublished">April 12, 2023</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304121125968.png" alt="httpx"></p>
+<h2 id="1基础配置">1、基础配置</h2>
+<p>uncover基于网络测绘引擎（如shadon、censys）提供搜索结果，通过这个工具可以查找互联网上的主机资产。uncover拥有多搜索引擎，包括了shadon、censys、fofa、hunter、zoomeye。支持多API Key，支持标准输入、标准输出进行输入且可将结果输出到另一个程序中。</p>
+<p>项目地址：https://github.com/projectdiscovery/uncover</p>
+<p>安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go install -v github.com/projectdiscovery/uncover/cmd/uncover@latest
+</code></pre></div><p>配置文件：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$HOME/.config/uncover/provider-config.yaml
+</code></pre></div><p>也可以直接将配置文件写入~/.bash_profile文件中。</p>
+<h2 id="2基本用法">2、基本用法</h2>
+<ul>
+<li>uncover默认从shadon中搜索结果。</li>
+</ul>
+<pre><code>echo '&quot;Dell&quot;' | uncover
+</code></pre><p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304121138957.png" alt="image-20230412113842924"></p>
+<ul>
+<li>使用特定搜索引擎，支持如下引擎：</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304121139016.png" alt="image-20230412113955989"></p>
+<ul>
+<li>假如要使用fofa进行查询。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304121145976.png" alt="image-20230412114528936"></p>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304121145346.png" alt="image-20230412114518299"></p>
+<ul>
+<li>指定多个关键词</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304121148363.png" alt="image-20230412114808329"></p>
+<ul>
+<li>针对多个搜索引擎运行单个查询，使用<code>-e</code>标志运行单个查询</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo granafa | uncover -e hunter,fofa -f host
+</code></pre></div><p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304121152697.png" alt="image-20230412115253663"></p>
+<ul>
+<li>Shodan InternetDB API</li>
+</ul>
+<p>当需要查询的内容为IP或者IP段时，uncover默认使用Shodan InternetDB API进行查询。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo 8.8.8.8 | uncover -v
+</code></pre></div><h2 id="3输出自定义">3、输出自定义</h2>
+<p>输出返回的字段内容使用<code>-f</code>指定，目前支持ip、端口和主机。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo granafa | uncover -e hunter,fofa -f host
+</code></pre></div><p><img src="https://raw.githubusercontent.com/olist213/olistimg/master/picgo/202304121308817.png" alt="image-20230412130807746"></p>
+<p>在不指定格式的情况下，默认以ip:port的格式返回。</p>
+<h2 id="4uncover自动化示例">4、uncover自动化示例</h2>
+<ul>
+<li>信息收集</li>
+<li>漏洞扫描</li>
+<li>资产探测</li>
+<li>威胁情报</li>
+</ul>
+<p>简单示例如下：</p>
+<p><strong>uncover、httpx、nuclei构建自动化</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">uncover -criminalip “ssl_subject_organization:dell” | httpx | nuclei
+</code></pre></div><p><em>注：在nuclei中集成了uncover工具，可直接使用</em></p>
+<h2 id="5参考">5、参考</h2>
+<p><a href="https://blog.projectdiscovery.io/uncover/">https://blog.projectdiscovery.io/uncover/</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/posts/uncover_usage/>https://olist213.github.io/posts/uncover_usage/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/">
+                    #工具</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/posts/top_recon_tools/" class="prev" rel="prev" title="信息收集工具top 2023"><i class="iconfont icon-left"></i>&nbsp;信息收集工具top 2023</a>
+         
+        
+        <a href="https://olist213.github.io/posts/crapi/" class="next" rel="next" title="CrApi">CrApi&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2023</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
