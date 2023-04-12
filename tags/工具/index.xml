@@ -6,7 +6,16 @@
     <description>Recent content in 工具 on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 08 Apr 2023 22:29:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Apr 2023 09:20:43 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>信息收集工具top 2023</title>
+      <link>https://olist213.github.io/posts/top_recon_tools/</link>
+      <pubDate>Wed, 12 Apr 2023 09:20:43 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/top_recon_tools/</guid>
+      <description> </description>
+    </item>
+    
     <item>
       <title>Burpsuite使用的技巧和提示</title>
       <link>https://olist213.github.io/posts/burpsuite_tips_and_tricks/</link>
@@ -55,7 +64,7 @@ http://www.codebaoku.com/jdk/jdk-oracle-jdk1-8.html#jdk8u201</description>
     </item>
     
     <item>
-      <title>Nuclei扫描器的一些用法记录</title>
+      <title>Nuclei扫描器基础用法与设置 1</title>
       <link>https://olist213.github.io/posts/nuclei_base/</link>
       <pubDate>Tue, 04 Apr 2023 16:18:09 +0800</pubDate>
       

@@ -54,7 +54,7 @@ GET IN 获取目标内网网络访问权限，红队需要获取目标网络访�
     </item>
     
     <item>
-      <title>Nuclei扫描器的一些用法记录</title>
+      <title>Nuclei扫描器基础用法与设置 1</title>
       <link>https://olist213.github.io/posts/nuclei_base/</link>
       <pubDate>Tue, 04 Apr 2023 16:18:09 +0800</pubDate>
       
