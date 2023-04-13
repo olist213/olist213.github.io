@@ -6,7 +6,52 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 Apr 2023 14:09:42 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Apr 2023 10:37:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CTFd资源收集</title>
+      <link>https://olist213.github.io/posts/ctfd_resource/</link>
+      <pubDate>Thu, 13 Apr 2023 10:37:34 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/ctfd_resource/</guid>
+      <description> 插件   分数面板插件
+ ctfd-matrix-scoreboard https://github.com/itszn/ctfd-matrix-scoreboard-plugin    题目分类主题
+ ctfd-pages-theme    多选题
+  ctfd-plugin-multichoice
+  选择题插件（官方版本）
+    前三血插件
+  qqbot分数播报
+  CTFd动态靶机自动搭建脚本  https://github.com/pwnthebox/ctfd-auto-deploy  动态flag  CTFd-Whale  汉化  CTFd_chinese_CN  主题   CTFd中文主题，高仿buuoj.cn以及ctf.hzyxxl.com
+  Pixo Theme
+  learning官方主题
+ 下载    Car Hacking Village
+  参考  https://www.yuque.com/dat0u/ctfd/sm2tt0  </description>
+    </item>
+    
+    <item>
+      <title>Ctfd分类分页设置</title>
+      <link>https://olist213.github.io/posts/ctfd_pages_theme_setting/</link>
+      <pubDate>Thu, 13 Apr 2023 10:05:11 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/ctfd_pages_theme_setting/</guid>
+      <description>搭建了ctfd的朋友可能都知道，ctfd中如果题目多起来了，就会在一个页面中显示所有的题目，这个时候就需要一个分类分页插件，从互联网上搜索之后，发现有一个有一个项目可以满足要求，效果类似于ctfshow、buuoj。
+项目地址：https://github.com/frankli0324/ctfd-pages-theme
+看了一下，这个项目很多人都npm报错，我也尝试了好几次，也是npm报错，那些报错我也不知道是什么意思，虽然报错了，但是可以不管报错，同样可以达到需要的效果。
+这里就写下搭建的一个流程，我是直接在ctfd-pages-theme的基础上修改的core目录下的文件，只需要替换掉两个文件即可。
+1、CTFd/themes/core/assets/js/pages/challenges.js
+2、CTFd/themes/core/templates/challenges.html
+如果你是直接修改的core目录下的challenges.*文件的话，ctfd-pages-theme项目说的将webpack.config.js替换为仓库中的webpack.config.js 然后利用npm构建可以忽略，直接使用原先的webpack.config.js文件即可。
+前置工作好了之后，就可以开始通过npm构建了。
+1、安装npm
+sudo apt install npm 2、安装完npm之后，设置npm源
+npm config set registry https://registry.npm.taobao.org 3、构建
+npm i &amp;amp;&amp;amp; npm run build 4、如果构建报错如下，说明npm构建有问题
+但是如果报错信息上面还有绿字信息。
+说明pages分类页面可以使用了，为什么报错呢？看了下，可能和admin theme主题有关，但这个消息可以忽略。
+5、最后一步，就是重新docker-compose和重启ctfd容器。
+sudo docker-compose up -d sudo docker restart 13d 效果如下：
+end&amp;hellip;</description>
+    </item>
+    
     <item>
       <title>CrApi</title>
       <link>https://olist213.github.io/posts/crapi/</link>
@@ -49,6 +94,7 @@ echo granafa | uncover -e hunter,fofa -f host 在不指定格式的情况下，�
       
       <guid>https://olist213.github.io/posts/redteam_definitions/</guid>
       <description>理解红队的常见术语，这些术语可以帮我我们更好的了解红队攻击。
+基于：RedTeam Development and Operations
 Allow-List 允许列表
 Allow list也可以被称为白名单，白名单中的内容是值得信任的。白名单通常用来授予特定资源的访问权限，通过白名单指定规则，白名单可以指定多个规则，如用户、ip、文件后缀，域名等，只有匹配白名单规则的才可以访问资源。相比于黑名单，创建一个良好的规则列表通常被认为是更好的做法，白名单通过默认拒绝的规则来加强安全性。
 ASSUMED BREACH &amp;quot;假设已遭受入侵&amp;quot;模型
@@ -72,9 +118,7 @@ ENGAGEMENT/EXERCISE CONTROL GROUP (ECG) 参与/演习控制组
 ECG负责演练期间的所有活动。ECG由一两个高级管理人员（例如首席信息官或首席运营官）、一个信息技术部门的成员、一个紫队和一个红队联络员组成。根据需要可以添加更多人选。所有人都被视为Trusted Agents（可信代理）。
 EXFILTRATION 数据外泄，信息窃取
 通过隐蔽隧道从目标提取敏感信息的过程，
-GET IN, STAY IN, ACT 进入，保持，执行
-红队攻击的三个步骤
-GET IN 获取目标内网网络访问权限，红队需要获取目标网络访问权限才能进入到目标内网环境，才有后期的STAY IN和ACT，可以通过合法入侵和假设已入侵内部网络直接获取内部网络访问权限。</description>
+GET IN, STAY IN, ACT 进入，保持，执行</description>
     </item>
     
     <item>
