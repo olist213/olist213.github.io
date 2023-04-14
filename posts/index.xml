@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 13 Apr 2023 10:37:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Apr 2023 22:16:59 +0800</lastBuildDate><atom:link href="https://olist213.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog_to_xlog</title>
+      <link>https://olist213.github.io/posts/blog_to_xlog/</link>
+      <pubDate>Fri, 14 Apr 2023 22:16:59 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/blog_to_xlog/</guid>
+      <description>blog转移至xlog。
+https://lca.xlog.app/</description>
+    </item>
+    
     <item>
       <title>CTFd资源收集</title>
       <link>https://olist213.github.io/posts/ctfd_resource/</link>
@@ -344,7 +354,7 @@ python3 exploit.py --url http://192.168.101.154:32769/vulnerable-1.0.0.0/rapid7 
       <pubDate>Mon, 03 Apr 2023 11:28:23 +0800</pubDate>
       
       <guid>https://olist213.github.io/posts/bypass_antivirus/</guid>
-      <description>    名称 描述 效果     c2-shellcode-py 免杀360，火绒的Python-shellcode加载器 ❌    </description>
+      <description>    名称 描述 效果     c2-shellcode-py 免杀360，火绒的Python-shellcode加载器 ❌   Generate FUD backdoors Generate FUD backdoors     </description>
     </item>
     
     <item>
