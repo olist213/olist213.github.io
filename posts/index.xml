@@ -33,7 +33,7 @@
       <pubDate>Thu, 13 Apr 2023 10:05:11 +0800</pubDate>
       
       <guid>https://olist213.github.io/posts/ctfd_pages_theme_setting/</guid>
-      <description>搭建了ctfd的朋友可能都知道，ctfd中如果题目多起来了，就会在一个页面中显示所有的题目，这个时候就需要一个分类分页插件，从互联网上搜索之后，发现有一个有一个项目可以满足要求，效果类似于ctfshow、buuoj。
+      <description>搭建了ctfd的朋友可能都知道，ctfd中如果题目多起来了，就会在一个页面中显示所有的题目，这个时候就需要一个分类分页插件，从互联网上搜索之后，发现有一个项目可以满足要求，效果类似于ctfshow、buuoj。
 项目地址：https://github.com/frankli0324/ctfd-pages-theme
 看了一下，这个项目很多人都npm报错，我也尝试了好几次，也是npm报错，那些报错我也不知道是什么意思，虽然报错了，但是可以不管报错，同样可以达到需要的效果。
 这里就写下搭建的一个流程，我是直接在ctfd-pages-theme的基础上修改的core目录下的文件，只需要替换掉两个文件即可。
