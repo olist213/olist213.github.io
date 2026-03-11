@@ -77,7 +77,8 @@ Load from configuration file -&amp;gt; Pick the file you saved，勾选Default t
 或者直接在Marketplace上搜索。
 3、多个java版本 mac下通过alias进行实现，不同的java版本设置不同的变量，后面通过alias引用。
 版本： 1.7.0_25 1.7.0_80 1.8.0_201 1.8.0_92 16.0.1 java版本下载地址：
-http://www.codebaoku.com/jdk/jdk-oracle-jdk1-8.html#jdk8u201</description>
+http://www.codebaoku.com/jdk/jdk-oracle-jdk1-8.html#jdk8u201
+https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html</description>
     </item>
     
     <item>
