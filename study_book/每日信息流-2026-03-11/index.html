@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/2023-04-14/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-11/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           每日信息流 2026 03 11 | Olist.213
+       
+  </title>
+  <meta name="title" content="每日信息流 2026 03 11 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "每日信息流 2026 03 11",
+    "headline" : "每日信息流 2026 03 11",
+    "description" : "文章标题：AVideo 平台零点击命令注入漏洞可劫持直播流\n文章链接：AVideo平台存在高危零点击命令注入漏洞 可被用于劫持直播流\n所属领域：渗透\n推荐理由：该文聚焦可远程触发的命令注入链路，具备高危利用价值。对直播业务面暴露点与攻击后果给出了实战导向的风险说明。\n 文章标题：LeakyLooker：Google Looker Studio 跨租户数据泄露漏洞分析\n文章链接：LeakyLooker: Hacking Google Cloud’s Data via Dangerous Looker Studio Vulnerabilities\n所属领域：网络安全\n推荐理由：文章围绕云数据分析平台的多租户边界失效展开，技术细节和攻击路径清晰。对云上数据隔离与权限模型审计有直接参考价值。\n 文章标题：FortiGate 边界入侵：服务账号被盗导致 AD 深度失陷\n文章链接：FortiGate Edge Intrusions | Stolen Service Accounts Lead to Rogue Workstations and Deep AD Compromise\n所属领域：红队\n推荐理由：该文复盘了从边界设备切入到域内横向的完整攻陷链。对服务账号保护、持久化与内网扩展阶段的检测点给出高价值线索。\n 文章标题：BeatBanker：具备双模式能力的 Android 木马分析\n文章链接：BeatBanker: A dual‑mode Android Trojan\n所属领域：网络安全\n推荐理由：样本分析覆盖投递、功能模块与行为特征，兼顾金融窃密与恶意控制能力。可直接用于移动端威胁狩猎与 IOC 补充。\n 文章标题：虚假 OpenClaw 安装包传播 GhostSocks 恶意软件\n文章链接：虚假 OpenClaw 安装程序如何传播 GhostSocks 恶意软件\n所属领域：红队",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-03-11 19:32:32 \u002b0800 CST",
+    "dateModified" : "2026-03-11 19:32:32 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-11\/",
+    "wordCount" : "335",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每日信息流 2026 03 11</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2026-03-11 itemprop="datePublished">March 11, 2026</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>文章标题：AVideo 平台零点击命令注入漏洞可劫持直播流</p>
+<p>文章链接：<a href="https://www.anquanke.com/post/id/315062">AVideo平台存在高危零点击命令注入漏洞 可被用于劫持直播流</a></p>
+<p>所属领域：渗透</p>
+<p>推荐理由：该文聚焦可远程触发的命令注入链路，具备高危利用价值。对直播业务面暴露点与攻击后果给出了实战导向的风险说明。</p>
+<hr>
+<p>文章标题：LeakyLooker：Google Looker Studio 跨租户数据泄露漏洞分析</p>
+<p>文章链接：<a href="https://www.tenable.com/blog/leakylooker-google-cloud-looker-studio-vulnerabilities">LeakyLooker: Hacking Google Cloud’s Data via Dangerous Looker Studio Vulnerabilities</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：文章围绕云数据分析平台的多租户边界失效展开，技术细节和攻击路径清晰。对云上数据隔离与权限模型审计有直接参考价值。</p>
+<hr>
+<p>文章标题：FortiGate 边界入侵：服务账号被盗导致 AD 深度失陷</p>
+<p>文章链接：<a href="https://www.sentinelone.com/blog/fortigate-edge-intrusions/">FortiGate Edge Intrusions | Stolen Service Accounts Lead to Rogue Workstations and Deep AD Compromise</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：该文复盘了从边界设备切入到域内横向的完整攻陷链。对服务账号保护、持久化与内网扩展阶段的检测点给出高价值线索。</p>
+<hr>
+<p>文章标题：BeatBanker：具备双模式能力的 Android 木马分析</p>
+<p>文章链接：<a href="https://securelist.com/beatbanker-miner-and-banker/119121/">BeatBanker: A dual‑mode Android Trojan</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：样本分析覆盖投递、功能模块与行为特征，兼顾金融窃密与恶意控制能力。可直接用于移动端威胁狩猎与 IOC 补充。</p>
+<hr>
+<p>文章标题：虚假 OpenClaw 安装包传播 GhostSocks 恶意软件</p>
+<p>文章链接：<a href="https://paper.seebug.org/3470/">虚假 OpenClaw 安装程序如何传播 GhostSocks 恶意软件</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：文章展示了利用热门工具名义进行供应链伪装投递的实战套路。对社工诱导、载荷执行与防守侧识别策略具有强借鉴意义。</p>
+<hr>
+<p>文章标题：伪装 Chrome 网站的银狐黑产攻击样本分析</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&amp;mid=2247495873&amp;idx=1&amp;sn=c8046fd810abb422abba9fa9e3884329">伪装Chrome网站银狐黑产最新攻击样本分析</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：样本分析聚焦仿冒页面与恶意链路组合，覆盖从诱导到落地执行的关键环节。适合用于钓鱼演练对抗与蓝队检测规则优化。</p>
+<hr>
+<p>文章标题：AI 辅助还原自定义 VMP 保护方案</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&amp;mid=2458611998&amp;idx=1&amp;sn=a33d501c7e3619333d8c851518627443">AI 辅助还原自定义 VMP 保护方案</a></p>
+<p>所属领域：CTF</p>
+<p>推荐理由：文章提供了逆向还原思路与自动化辅助方法，对处理混淆与虚拟机保护样本很实用。适合逆向与 CTF 选手提升分析效率。</p>
+<hr>
+<p>文章标题：从信息收集到云服务器接管实战复盘</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MzIzMTIzNTM0MA==&amp;mid=2247499156&amp;idx=1&amp;sn=00d65a5e98c9cf759e049416046f86b6">从信息收集到云服务器接管</a></p>
+<p>所属领域：渗透</p>
+<p>推荐理由：文章按攻击阶段展示了从资产发现到权限获取的完整路径。对 Web 渗透与云主机接管场景的实操步骤有较强指导意义。</p>
+<hr>
+<p>文章标题：Nginx UI 信息泄露漏洞 CVE-2026-27944 通告</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=Mzg2NjgzNjA5NQ==&amp;mid=2247525086&amp;idx=2&amp;sn=e45679fde28a38c59eac984113ab93a8">【漏洞通告】Nginx UI 信息泄露漏洞 （CVE-2026-27944）</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：通告提供了漏洞影响面与排查修复建议，便于快速落实补丁与缓解措施。适合用于企业侧紧急漏洞响应流程。</p>
+<hr>
+<p>文章标题：构建检测基础（三）：PowerShell 与脚本日志</p>
+<p>文章链接：<a href="https://trustedsec.com/blog/building-a-detection-foundation-part-3-powershell-and-script-logging">Building a Detection Foundation: Part 3 - PowerShell and Script Logging</a></p>
+<p>所属领域：工具</p>
+<p>推荐理由：文章围绕日志采集与检测基线建设，直接面向蓝队可落地配置。对脚本滥用、无文件攻击等场景的可见性提升很关键。</p>
+<hr>
+<p>文章标题：黑色圣诞 EDR 杀手瞄准 HR 部门</p>
+<p>文章链接：<a href="https://www.bleepingcomputer.com/news/security/new-blacksanta-edr-killer-spotted-targeting-hr-departments/">New ‘BlackSanta’ EDR killer spotted targeting HR departments</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：该案例突出“先绕过终端防护再落地窃密”的攻击组织方式。对终端防护策略强化和行为检测规则有直接参考价值。</p>
+<hr>
+<p>文章标题：Zombie ZIP 新技巧可绕过安全检测</p>
+<p>文章链接：<a href="https://www.bleepingcomputer.com/news/security/new-zombie-zip-technique-lets-malware-slip-past-security-tools/">New &lsquo;Zombie ZIP&rsquo; technique lets malware slip past security tools</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：文章揭示压缩包层面的规避思路，适合作为邮件网关与沙箱策略评估样本。对恶意文件检测能力建设有现实意义。</p>
+<hr>
+<p>文章标题：KadNap 僵尸网络劫持 ASUS 路由器构建代理网络</p>
+<p>文章链接：<a href="https://www.bleepingcomputer.com/news/security/new-kadnap-botnet-hijacks-asus-routers-to-fuel-cybercrime-proxy-network/">New KadNap botnet hijacks ASUS routers to fuel cybercrime proxy network</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：文中覆盖 IoT 设备被控后的代理化利用路径，反映边缘设备攻防新趋势。对企业外设资产治理与异常流量监测有价值。</p>
+<hr>
+<p>文章标题：OAuth 设备码钓鱼：Microsoft 365 账号入侵新向量</p>
+<p>文章链接：<a href="https://any.run/cybersecurity-blog/oauth-device-code-phishing/">OAuth Device Code Phishing: A New Microsoft 365 Account Breach Vector</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：该文解析了绕过传统 MFA 认知的钓鱼手法，攻击门槛低且隐蔽性强。对身份安全体系和授权流程加固非常关键。</p>
+<hr>
+<p>文章标题：APT28 使用 BEARDSHELL 与 COVENANT 持续监控乌克兰军方</p>
+<p>文章链接：<a href="https://thehackernews.com/2026/03/apt28-uses-beardshell-and-covenant.html">APT28 Uses BEARDSHELL and COVENANT Malware to Spy on Ukrainian Military</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：文章给出 APT 组织工具链与战术组合，适合用于威胁情报映射与攻防演练。对内网持久化和指控链识别有实战参考。</p>
+<hr>
+<p>文章标题：攻击者批量扫描 Salesforce Experience Cloud 并改造 AuraInspector 取数</p>
+<p>文章链接：<a href="https://thehackernews.com/2026/03/threat-actors-mass-scan-salesforce.html">Threat Actors Mass-Scan Salesforce Experience Cloud via Modified AuraInspector Tool</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：该文展示了针对 SaaS 平台的自动化枚举与数据采集攻击思路。对云业务暴露面治理和 API 访问控制校验有直接价值。</p>
+<hr>
+<p>文章标题：CISA 将 SolarWinds、Ivanti、Workspace One 漏洞列入在野利用目录</p>
+<p>文章链接：<a href="https://thehackernews.com/2026/03/cisa-flags-solarwinds-ivanti-and.html">CISA Flags SolarWinds, Ivanti, and Workspace One Vulnerabilities as Actively Exploited</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：文章明确了已被利用漏洞的优先修复清单，适合直接驱动补丁优先级。对漏洞运营和风险闭环管理有很强实用性。</p>
+<hr>
+<p>文章标题：MDR 视角下的 KongTuke ClickFix 利用被攻陷 WordPress 站点分析</p>
+<p>文章链接：<a href="https://www.trendmicro.com/en_us/research/26/c/kongtuke-clickfix-abuse-of-compromised-wordpress-sites.html">Through the Lens of MDR: Analysis of KongTuke’s ClickFix Abuse of Compromised WordPress Sites</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：文章从托管检测响应角度拆解真实攻击活动，细节覆盖攻击链关键节点。可用于完善 SOC 检测剧本与响应流程。</p>
+<hr>
+<p>文章标题：Kali 与 LLM 本地化实践：基于 Ollama 与 5ire</p>
+<p>文章链接：<a href="https://www.kali.org/blog/kali-llm-ollama-5ire/">Kali &amp; LLM: Completely local with Ollama &amp; 5ire</a></p>
+<p>所属领域：AI</p>
+<p>推荐理由：该文提供在安全测试环境中本地部署 LLM 的可执行方案，兼顾隐私与可用性。适合构建离线辅助分析与自动化工作流。</p>
+<hr>
+<p>文章标题：逆向 FORM 游泳镜：BLE 自定义协议与 697 条 API 抓包实录</p>
+<p>文章链接：<a href="https://www.reddit.com/r/ReverseEngineering/comments/1rq3bu7/reverse_engineering_form_swim_goggles_custom/">Reverse engineering FORM swim goggles: custom protobuf over BLE, 697 captured API requests, full protocol documented</a></p>
+<p>所属领域：CTF</p>
+<p>推荐理由：文章以完整抓包与协议还原为核心，给出高质量逆向过程记录。对硬件安全、蓝牙协议分析和实战逆向训练价值很高。</p>
+<hr>
+<p>文章标题：加强加密为何反而导致认证失效：FreshRSS 与 bcrypt 72 字节限制</p>
+<p>文章链接：<a href="https://www.reddit.com/r/netsec/comments/1rqa9sg/how_strengthening_crypto_broke_authentication/">How &ldquo;Strengthening Crypto&rdquo; Broke Authentication: FreshRSS and bcrypt&rsquo;s 72-Byte Limit</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：该文揭示密码学实现细节导致的认证逻辑缺陷，问题具有普适性。对代码审计中“安全增强引发回归”场景非常有启发。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-11/>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-11/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/2023-04-14/" class="prev" rel="prev" title="2023 04 14"><i class="iconfont icon-left"></i>&nbsp;2023 04 14</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -6,7 +6,34 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 14 Apr 2023 09:54:46 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Mar 2026 19:32:32 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 11</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-11/</link>
+      <pubDate>Wed, 11 Mar 2026 19:32:32 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-11/</guid>
+      <description>文章标题：AVideo 平台零点击命令注入漏洞可劫持直播流
+文章链接：AVideo平台存在高危零点击命令注入漏洞 可被用于劫持直播流
+所属领域：渗透
+推荐理由：该文聚焦可远程触发的命令注入链路，具备高危利用价值。对直播业务面暴露点与攻击后果给出了实战导向的风险说明。
+ 文章标题：LeakyLooker：Google Looker Studio 跨租户数据泄露漏洞分析
+文章链接：LeakyLooker: Hacking Google Cloud’s Data via Dangerous Looker Studio Vulnerabilities
+所属领域：网络安全
+推荐理由：文章围绕云数据分析平台的多租户边界失效展开，技术细节和攻击路径清晰。对云上数据隔离与权限模型审计有直接参考价值。
+ 文章标题：FortiGate 边界入侵：服务账号被盗导致 AD 深度失陷
+文章链接：FortiGate Edge Intrusions | Stolen Service Accounts Lead to Rogue Workstations and Deep AD Compromise
+所属领域：红队
+推荐理由：该文复盘了从边界设备切入到域内横向的完整攻陷链。对服务账号保护、持久化与内网扩展阶段的检测点给出高价值线索。
+ 文章标题：BeatBanker：具备双模式能力的 Android 木马分析
+文章链接：BeatBanker: A dual‑mode Android Trojan
+所属领域：网络安全
+推荐理由：样本分析覆盖投递、功能模块与行为特征，兼顾金融窃密与恶意控制能力。可直接用于移动端威胁狩猎与 IOC 补充。
+ 文章标题：虚假 OpenClaw 安装包传播 GhostSocks 恶意软件
+文章链接：虚假 OpenClaw 安装程序如何传播 GhostSocks 恶意软件
+所属领域：红队</description>
+    </item>
+    
     <item>
       <title>2023 04 14</title>
       <link>https://olist213.github.io/study_book/2023-04-14/</link>
