@@ -6,7 +6,44 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 11 Mar 2026 19:32:32 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Mar 2026 17:00:00 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 12</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-12/</link>
+      <pubDate>Thu, 12 Mar 2026 17:00:00 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-12/</guid>
+      <description>文章标题：基于图像的提示注入：通过视觉嵌入劫持多模态大模型
+文章链接：基于图像的提示注入：通过视觉嵌入的对抗性指令劫持多模态大语言模型
+所属领域：AI
+推荐理由：文章聚焦多模态模型的提示注入新路径，强调图像载荷对指令对齐的绕过能力。对 AI 应用红队测试和输入安全加固有直接参考价值。
+ 文章标题：Re0(2) - OpenClaw 到底为什么爆火
+文章链接：Re0(2) - OpenClaw到底为什么爆火？
+所属领域：AI
+推荐理由：从架构和生态角度拆解 OpenClaw 爆发原因，有助于理解 AI Agent 工具链的攻防面变化。对评估新平台安全边界很有价值。
+ 文章标题：实战记录：某众测项目渗透测试随记
+文章链接：实战 | 某众测项目随记
+所属领域：渗透
+推荐理由：包含真实众测场景下的测试路径与问题定位过程，偏实操导向。适合渗透测试人员借鉴目标拆解和漏洞验证思路。
+ 文章标题：EasyTools 渗透测试工具箱 V2.1.8 更新说明
+文章链接：EasyTools渗透测试工具箱V2.1.8更新(1.优化端口扫描规则，提高扫描效率; 2.重新设计ssh、ftp界面; 3.优化各数据库数据展示)
+所属领域：工具
+推荐理由：更新内容聚焦端口扫描效率与常用模块可用性，直接影响实战测试效率。对日常渗透工具选型和流程优化有现实价值。
+ 文章标题：使用 Zoomeye 与 AiPy 捕获 Coruna 样本
+文章链接：使用Zoomeye 和 AiPy 捕获 Coruna 样本
+所属领域：网络安全
+推荐理由：展示了从测绘到样本捕获的落地方法，覆盖威胁狩猎关键步骤。对情报驱动的恶意样本搜集很有借鉴意义。
+ 文章标题：Ingress-Nginx 注入漏洞可导致集群密钥泄露
+文章链接：Kubernetes安全预警Ingress-Nginx注入漏洞可致集群密钥全局泄露
+所属领域：网络安全
+推荐理由：该漏洞直指 Kubernetes 控制面关键资产，影响面广且风险高。适合用于容器集群紧急排查与防护优先级评估。
+ 文章标题：Budibase 高危漏洞导致生产密钥泄露
+文章链接：Budibase存在高危漏洞 可导致生产环境密钥全面泄露
+所属领域：网络安全
+推荐理由：文章关注低代码平台中的密钥暴露风险，具备较强通用性。对企业内部平台安全审计和密钥治理很有指导意义。
+ 文章标题：GhostClaw 伪装 OpenClaw 窃取开发者设备数据</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 11</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-11/</link>
