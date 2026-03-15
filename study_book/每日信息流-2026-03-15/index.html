@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-12/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-15/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           每日信息流 2026 03 15 | Olist.213
+       
+  </title>
+  <meta name="title" content="每日信息流 2026 03 15 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "每日信息流 2026 03 15",
+    "headline" : "每日信息流 2026 03 15",
+    "description" : "文章标题：注册表被“记事本”劫持？镜像劫持 \u002b Winlogon 持久化\n文章链接：注册表被“记事本”劫持？镜像劫持 \u002b Winlogon 持久化\n所属领域：红队\n推荐理由：文章覆盖注册表镜像劫持与 Winlogon 持久化链路，偏操作级落地。适合用于主机侧持久化检测与蓝队溯源分析。\n 文章标题：基于 PowerShell 的字符串免杀\n文章链接：【免杀攻防】基于powershell的字符串免杀\n所属领域：红队\n推荐理由：聚焦免杀中的字符串层绕过手法，具备直接复现价值。对红队载荷构造与检测规则优化都很有参考意义。\n 文章标题：JsRouteScan：渗透测试中的路由发现利器\n文章链接：JsRouteScan：渗透测试中的路由发现利器\n所属领域：工具\n推荐理由：路由发现是 Web 渗透前置关键步骤，这篇内容强调了自动化提取入口点的效率收益。对黑盒和灰盒测试都很实用。\n 文章标题：Tuoni：一个功能全面的跨平台红队框架\n文章链接：Tuoni：一个功能全面的跨平台红队框架\n所属领域：红队\n推荐理由：框架化红队平台便于统一任务编排和对抗演练。文章对工具能力边界与实战使用场景有较高参考价值。\n 文章标题：CC1 链分析\n文章链接：【java安全】CC1链分析\n所属领域：网络安全\n推荐理由：围绕 Java 反序列化经典利用链展开，适合用于漏洞机理回顾与代码审计训练。对排查历史遗留风险很有帮助。\n 文章标题：Frida 17.8 基于 eBPF 的系统调用跟踪模块原理解析\n文章链接：Frida17.8引入的大招：基于eBPF的系统调用跟踪模块技术原理解析\n所属领域：工具\n推荐理由：将动态插桩与内核可观测能力结合，提升了行为分析深度。对移动安全和主机攻防中的运行时监控很有价值。\n 文章标题：Metasploit Pro 5.0.0 强化红队攻击能力，直击 AD CS 漏洞\n文章链接：Metasploit Pro 5.0.0强化红队攻击能力，直击AD CS漏洞\n所属领域：工具\n推荐理由：版本更新直接面向 AD CS 高价值攻击面，实战导向强。对企业内网评估和攻防演练工具选型意义明确。\n 文章标题：Windows 辅助功能权限提升漏洞 CVE-2026-24291 分析",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-03-15 20:04:42 \u002b0800 CST",
+    "dateModified" : "2026-03-15 20:04:42 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-15\/",
+    "wordCount" : "229",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每日信息流 2026 03 15</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2026-03-15 itemprop="datePublished">March 15, 2026</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>文章标题：注册表被“记事本”劫持？镜像劫持 + Winlogon 持久化</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/NLLtW42CCACp_fDYL3gdVg">注册表被“记事本”劫持？镜像劫持 + Winlogon 持久化</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：文章覆盖注册表镜像劫持与 Winlogon 持久化链路，偏操作级落地。适合用于主机侧持久化检测与蓝队溯源分析。</p>
+<hr>
+<p>文章标题：基于 PowerShell 的字符串免杀</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/PaQK3GEoxvhHY9ZGLq9rKg">【免杀攻防】基于powershell的字符串免杀</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：聚焦免杀中的字符串层绕过手法，具备直接复现价值。对红队载荷构造与检测规则优化都很有参考意义。</p>
+<hr>
+<p>文章标题：JsRouteScan：渗透测试中的路由发现利器</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/8cEbgFDYgmz9Waqd65LQog">JsRouteScan：渗透测试中的路由发现利器</a></p>
+<p>所属领域：工具</p>
+<p>推荐理由：路由发现是 Web 渗透前置关键步骤，这篇内容强调了自动化提取入口点的效率收益。对黑盒和灰盒测试都很实用。</p>
+<hr>
+<p>文章标题：Tuoni：一个功能全面的跨平台红队框架</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/LxbbKqAWATd3feVwM-E8Cw">Tuoni：一个功能全面的跨平台红队框架</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：框架化红队平台便于统一任务编排和对抗演练。文章对工具能力边界与实战使用场景有较高参考价值。</p>
+<hr>
+<p>文章标题：CC1 链分析</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/SrgjKqKUUEQhtM2BpN5saw">【java安全】CC1链分析</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：围绕 Java 反序列化经典利用链展开，适合用于漏洞机理回顾与代码审计训练。对排查历史遗留风险很有帮助。</p>
+<hr>
+<p>文章标题：Frida 17.8 基于 eBPF 的系统调用跟踪模块原理解析</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/RYcgkWEWocrKH3QmCHlt4Q">Frida17.8引入的大招：基于eBPF的系统调用跟踪模块技术原理解析</a></p>
+<p>所属领域：工具</p>
+<p>推荐理由：将动态插桩与内核可观测能力结合，提升了行为分析深度。对移动安全和主机攻防中的运行时监控很有价值。</p>
+<hr>
+<p>文章标题：Metasploit Pro 5.0.0 强化红队攻击能力，直击 AD CS 漏洞</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/xEgN3HepCavuRNnWCYMoIA">Metasploit Pro 5.0.0强化红队攻击能力，直击AD CS漏洞</a></p>
+<p>所属领域：工具</p>
+<p>推荐理由：版本更新直接面向 AD CS 高价值攻击面，实战导向强。对企业内网评估和攻防演练工具选型意义明确。</p>
+<hr>
+<p>文章标题：Windows 辅助功能权限提升漏洞 CVE-2026-24291 分析</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/7PdW2uDag3V7ZXr-BXIKfQ">Windows辅助功能权限提升漏洞CVE-2026-24291分析</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：权限提升漏洞分析有助于理解本地提权利用条件与防护点。可直接用于主机基线加固和补丁优先级判断。</p>
+<hr>
+<p>文章标题：EnGenius EnShare usbinteract.cgi 命令执行漏洞（CVE-2025-34035）</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/8EdjLfarhbD7D507AgEpVA">EnGenius EnShare usbinteract.cgi 命令执行漏洞(CVE-2025-34035)</a></p>
+<p>所属领域：渗透</p>
+<p>推荐理由：属于典型设备侧命令执行问题，攻击面清晰且风险高。对边界设备排查和 PoC 复核有直接价值。</p>
+<hr>
+<p>文章标题：HGAME 2026 复现</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/f4xaKqwVt6j4rL76F2F3NA">HGAME 2026复现</a></p>
+<p>所属领域：CTF</p>
+<p>推荐理由：高质量赛事复盘可沉淀稳定解题套路和复现方法。适合用于赛题训练与团队知识库建设。</p>
+<hr>
+<p>文章标题：当代理成为 Web 架构中的攻击向量</p>
+<p>文章链接：<a href="https://www.praetorian.com/blog/cve-2026-0953-bypass-tutor-lms-pro-auth-vulnerability/">When Proxies Become the Attack Vectors in Web Architectures</a></p>
+<p>所属领域：渗透</p>
+<p>推荐理由：聚焦代理层信任边界失效导致的认证绕过，属于真实系统常见薄弱点。对网关与上游应用联动审计有很强实战意义。</p>
+<hr>
+<p>文章标题：Elementor Ally 插件 SQL 注入漏洞影响超 25 万个 WordPress 网站</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63778">Elementor Ally 插件中的 SQL 注入漏洞影响超 25 万个 WordPress 网站</a></p>
+<p>所属领域：渗透</p>
+<p>推荐理由：该漏洞影响面广且可直接用于站点批量风险评估。对 WordPress 生态的组件治理和补丁推进很关键。</p>
+<hr>
+<p>文章标题：研究人员在四分钟内让 Comet AI 浏览器落入钓鱼陷阱</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63770">研究人员在四分钟内就让 Comet AI 浏览器落入网络钓鱼陷阱</a></p>
+<p>所属领域：AI</p>
+<p>推荐理由：文章体现 AI 浏览器在人机交互链中的新攻击入口，时间成本极低。对 AI 产品上线前的对抗测试很有警示价值。</p>
+<hr>
+<p>文章标题：PhantomRaven 发起 NPM 新一轮攻击，窃取开发数据</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63759">PhantomRaven 发起 NPM 新一轮攻击，窃取开发数据</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：供应链投毒持续瞄准开发者生态，危害直达源码与凭证。对私有源治理、签名校验与 CI 安全策略有直接参考。</p>
+<hr>
+<p>文章标题：UNC6426 利用 nx npm 供应链攻击，72 小时内获取 AWS 管理员权限</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63752">UNC6426 利用 nx npm 供应链攻击，72 小时内获取 AWS 管理员权限</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：展示了从包管理到云权限接管的完整攻击路径，攻击效率很高。对云上最小权限和供应链防线建设非常关键。</p>
+<hr>
+<p>文章标题：五个恶意 Rust 包与 AI 机器人利用 CI/CD 流水线窃取开发者密钥</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63744">五个恶意 Rust 包与 AI 机器人利用 CI/CD 流水线窃取开发者密钥</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：内容直击 CI/CD 密钥管理薄弱点，兼具现实威胁与可操作防护思路。对 DevSecOps 团队价值很高。</p>
+<hr>
+<p>文章标题：2025 年度全球 APT 威胁研究报告</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&amp;mid=2247495913&amp;idx=1&amp;sn=f223efe0cee9e80a7dfd00d665e54380">2025年度全球APT威胁研究报告</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：报告聚合了年度级攻击组织动向和战术变化，适合用于威胁建模和情报优先级调整。对企业防守策略制定有实际指导价值。</p>
+<hr>
+<p>文章标题：实战还原 V8 bytenode 保护 JavaScript（V8 字节码分析记录）</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&amp;mid=2458612044&amp;idx=1&amp;sn=0a4bd1a14ff9503b9b8c48dfd91e7bb4">实战还原 V8 bytenode 保护 JS（V8 字节码分析记录）</a></p>
+<p>所属领域：CTF</p>
+<p>推荐理由：逆向分析过程细节较完整，覆盖了字节码层面的关键理解点。对 CTF 逆向题与真实样本分析都很有借鉴价值。</p>
+<hr>
+<p>文章标题：新型 Zombie ZIP：利用压缩格式歧义绕过杀毒引擎检测</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&amp;mid=2458612044&amp;idx=3&amp;sn=2e940fc163947c5553a684d0d372ba85">新型“Zombie ZIP”：利用压缩格式歧义绕过杀毒引擎检测</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：通过格式歧义实现安全产品绕过，体现了文件检测链的结构性问题。对邮件网关与终端检测策略优化很有启发。</p>
+<hr>
+<p>文章标题：JsDeObsBench：面向 JavaScript 反混淆的大语言模型评测基准</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MzU5MTM5MTQ2MA==&amp;mid=2247495153&amp;idx=1&amp;sn=b28c6cdd615408cd870cad509ec53db1">俄亥俄州立大学 | JsDeObsBench：面向 JavaScript 反混淆的大语言模型评测基准</a></p>
+<p>所属领域：AI</p>
+<p>推荐理由：该基准把 LLM 用于反混淆能力进行系统化量化评估，兼具研究和工程意义。对 AI 辅助逆向的能力评估体系建设价值很高。</p>
+<hr>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-15/>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-15/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-12/" class="prev" rel="prev" title="每日信息流 2026 03 12"><i class="iconfont icon-left"></i>&nbsp;每日信息流 2026 03 12</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -6,7 +6,44 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Mar 2026 17:00:00 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Mar 2026 20:04:42 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 15</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-15/</link>
+      <pubDate>Sun, 15 Mar 2026 20:04:42 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-15/</guid>
+      <description>文章标题：注册表被“记事本”劫持？镜像劫持 + Winlogon 持久化
+文章链接：注册表被“记事本”劫持？镜像劫持 + Winlogon 持久化
+所属领域：红队
+推荐理由：文章覆盖注册表镜像劫持与 Winlogon 持久化链路，偏操作级落地。适合用于主机侧持久化检测与蓝队溯源分析。
+ 文章标题：基于 PowerShell 的字符串免杀
+文章链接：【免杀攻防】基于powershell的字符串免杀
+所属领域：红队
+推荐理由：聚焦免杀中的字符串层绕过手法，具备直接复现价值。对红队载荷构造与检测规则优化都很有参考意义。
+ 文章标题：JsRouteScan：渗透测试中的路由发现利器
+文章链接：JsRouteScan：渗透测试中的路由发现利器
+所属领域：工具
+推荐理由：路由发现是 Web 渗透前置关键步骤，这篇内容强调了自动化提取入口点的效率收益。对黑盒和灰盒测试都很实用。
+ 文章标题：Tuoni：一个功能全面的跨平台红队框架
+文章链接：Tuoni：一个功能全面的跨平台红队框架
+所属领域：红队
+推荐理由：框架化红队平台便于统一任务编排和对抗演练。文章对工具能力边界与实战使用场景有较高参考价值。
+ 文章标题：CC1 链分析
+文章链接：【java安全】CC1链分析
+所属领域：网络安全
+推荐理由：围绕 Java 反序列化经典利用链展开，适合用于漏洞机理回顾与代码审计训练。对排查历史遗留风险很有帮助。
+ 文章标题：Frida 17.8 基于 eBPF 的系统调用跟踪模块原理解析
+文章链接：Frida17.8引入的大招：基于eBPF的系统调用跟踪模块技术原理解析
+所属领域：工具
+推荐理由：将动态插桩与内核可观测能力结合，提升了行为分析深度。对移动安全和主机攻防中的运行时监控很有价值。
+ 文章标题：Metasploit Pro 5.0.0 强化红队攻击能力，直击 AD CS 漏洞
+文章链接：Metasploit Pro 5.0.0强化红队攻击能力，直击AD CS漏洞
+所属领域：工具
+推荐理由：版本更新直接面向 AD CS 高价值攻击面，实战导向强。对企业内网评估和攻防演练工具选型意义明确。
+ 文章标题：Windows 辅助功能权限提升漏洞 CVE-2026-24291 分析</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 12</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-12/</link>
