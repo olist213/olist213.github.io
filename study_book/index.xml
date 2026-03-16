@@ -6,7 +6,40 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 15 Mar 2026 20:04:42 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Mar 2026 10:30:00 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 14</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-14/</link>
+      <pubDate>Mon, 16 Mar 2026 10:30:00 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-14/</guid>
+      <description>文章标题：揭开 SilverFox 新趋势：逃避战术、域名仿冒与批量生成的假软件
+文章链接：揭开 SilverFox 新趋势：逃避战术、域名仿冒与批量生成的假软件
+所属领域：网络安全
+推荐理由：标题直接点出样本逃逸、域名仿冒和假软件投递链，适合做威胁狩猎和投递基础设施研判。对提炼 IOC 和还原攻击链都有参考价值。
+ 文章标题：Ivanti EPMM 的“沉睡 WebShell”真的不沉睡吗
+文章链接：Ivanti EPMM 的“沉睡 WebShell”真的不沉睡吗
+所属领域：网络安全
+推荐理由：聚焦 Ivanti EPMM 遗留后门与排查思路，贴近真实应急场景。对漏洞修复后的残留风险复盘很有价值。
+ 文章标题：我如何在一个“被遗弃”的网站中找到高危 SQL 注入
+文章链接：我如何在一个“被遗弃”的网站中找到高危 SQL 注入
+所属领域：渗透
+推荐理由：这是典型的真实资产挖掘案例，价值在于罕见条件组合下的发现过程。对目标筛选、入口判断和漏洞验证都很有借鉴意义。
+ 文章标题：提示注入长大了，现在它会横向移动
+文章链接：提示注入长大了，现在它会横向移动
+所属领域：AI
+推荐理由：标题已经把问题从单轮注入扩展到横向移动，这正是 AI Agent 安全的高风险方向。适合安全团队重新审视工具调用和权限边界。
+ 文章标题：AMSI 解密：面向安全专家的全面绕过技术
+文章链接：AMSI 解密：面向安全专家的全面绕过技术
+所属领域：红队
+推荐理由：AMSI 绕过始终是红队与检测对抗的核心议题，这篇内容偏方法论和实操结合。对载荷免杀和蓝队规则补强都有直接价值。
+ 文章标题：深入分析并提供 POC：Tomcat 高危漏洞 CVE-2024-50379
+文章链接：深入分析并提供 POC：Tomcat 高危漏洞 CVE-2024-50379
+所属领域：网络安全
+推荐理由：标题明确包含 Deep Dive 和 POC，适合做漏洞复现、利用条件确认和修复优先级判断。对 Java 资产面管理尤其有用。
+ 文章标题：Coruna iOS Web 恶意软件客户端利用工具包的 IOC 指标</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 15</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-15/</link>
