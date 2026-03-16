@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-13/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-16/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           每日信息流 2026 03 16 | Olist.213
+       
+  </title>
+  <meta name="title" content="每日信息流 2026 03 16 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "每日信息流 2026 03 16",
+    "headline" : "每日信息流 2026 03 16",
+    "description" : "文章标题：实战 Web 渗透 CTF 挑战逐步通关\n文章链接：A Practical Web Pentesting CTF Challenge — Step-by-Step Walkthrough\n所属领域：CTF\n文章总结：这篇文章把一个贴近真实渗透场景的 Web CTF 拆成清晰链路：先对登录页做目录爆破拿到 credentials.txt，再用泄露凭据进入业务面，通过修改 \/profile\/{id} 做 IDOR，进一步接管管理员资料与入口。它的价值不在单点漏洞，而在把信息收集、越权、后台接管串成一条完整实战路径。\n 文章标题：采购单取消接口 IDOR 可越权撤销他人订单\n文章链接：IDOR in Purchase Order Cancellation Allows Unauthorized Users to Cancel Other Users’ POs\n所属领域：渗透\n文章总结：作者抓到 PUT \/purchase-order\/v1\/ingredient-purchase-order\/{PO_ID}\/cancel 请求后，只替换路径中的采购单 ID，就能用攻击者自己的令牌取消受害者订单。服务端没有校验资源归属，仅凭已登录态就执行高影响业务操作。这个案例很适合审计多租户接口里的对象级授权缺失。\n 文章标题：绕过 Threads 拉黑机制后仍可查看自定义 Feed 内容\n文章链接：Bypassing Threads Block System: Blocked Users Can Still View Custom Feed Content\n所属领域：渗透\n文章总结：文章展示了一个很典型的“前端限制了，后端没限制”的逻辑绕过。被拉黑用户虽然无法直接访问目标自定义 Feed，但可以拦截 useBarcelonaCreateColumnMutation 的 GraphQL 请求，替换 relativeURL 为受害者 Feed ID，再把内容钉到自己的首页里查看。问题根源是封禁逻辑只停留在 UI 层。",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-03-16 18:59:57 \u002b0800 CST",
+    "dateModified" : "2026-03-16 18:59:57 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-16\/",
+    "wordCount" : "393",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每日信息流 2026 03 16</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2026-03-16 itemprop="datePublished">March 16, 2026</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>文章标题：实战 Web 渗透 CTF 挑战逐步通关</p>
+<p>文章链接：<a href="https://infosecwriteups.com/a-practical-web-pentesting-ctf-challenge-step-by-step-walkthrough-2c2bc2d63ef7?source=rss----7b722bfd1b8d---4">A Practical Web Pentesting CTF Challenge — Step-by-Step Walkthrough</a></p>
+<p>所属领域：CTF</p>
+<p>文章总结：这篇文章把一个贴近真实渗透场景的 Web CTF 拆成清晰链路：先对登录页做目录爆破拿到 <code>credentials.txt</code>，再用泄露凭据进入业务面，通过修改 <code>/profile/{id}</code> 做 IDOR，进一步接管管理员资料与入口。它的价值不在单点漏洞，而在把信息收集、越权、后台接管串成一条完整实战路径。</p>
+<hr>
+<p>文章标题：采购单取消接口 IDOR 可越权撤销他人订单</p>
+<p>文章链接：<a href="https://infosecwriteups.com/idor-in-purchase-order-cancellation-allows-unauthorized-users-to-cancel-other-users-pos-bb9cbf4f7548?source=rss----7b722bfd1b8d---4">IDOR in Purchase Order Cancellation Allows Unauthorized Users to Cancel Other Users’ POs</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：作者抓到 <code>PUT /purchase-order/v1/ingredient-purchase-order/{PO_ID}/cancel</code> 请求后，只替换路径中的采购单 ID，就能用攻击者自己的令牌取消受害者订单。服务端没有校验资源归属，仅凭已登录态就执行高影响业务操作。这个案例很适合审计多租户接口里的对象级授权缺失。</p>
+<hr>
+<p>文章标题：绕过 Threads 拉黑机制后仍可查看自定义 Feed 内容</p>
+<p>文章链接：<a href="https://infosecwriteups.com/bypassing-threads-block-system-blocked-users-can-still-view-custom-feed-content-61a320325691?source=rss----7b722bfd1b8d---4">Bypassing Threads Block System: Blocked Users Can Still View Custom Feed Content</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：文章展示了一个很典型的“前端限制了，后端没限制”的逻辑绕过。被拉黑用户虽然无法直接访问目标自定义 Feed，但可以拦截 <code>useBarcelonaCreateColumnMutation</code> 的 GraphQL 请求，替换 <code>relativeURL</code> 为受害者 Feed ID，再把内容钉到自己的首页里查看。问题根源是封禁逻辑只停留在 UI 层。</p>
+<hr>
+<p>文章标题：先绘制攻击者画像，再绘制应用画像</p>
+<p>文章链接：<a href="https://infosecwriteups.com/mapping-the-attackers-before-mapping-the-application-af002d1d396b?source=rss----7b722bfd1b8d---4">Mapping the Attackers Before Mapping the Application</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：作者不是先枚举站点功能，而是先观察攻击者社区和外部讨论，试图反向定位已经被盯上的资产线索，最终把这套思路落到一次 Web Cache Poisoning 挖掘中。对渗透人员来说，这篇文章的启发在于：情报、攻击面和漏洞发现并不是三件分开的事，外部信号本身就是优先级线索。</p>
+<hr>
+<p>文章标题：过度开放文件共享的危险</p>
+<p>文章链接：<a href="https://infosecwriteups.com/the-danger-of-over-permissive-file-shares-bea10fab5190?source=rss----7b722bfd1b8d---4">The Danger of Over-Permissive File Shares</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：这是一篇围绕 Hack The Box <code>Escape</code> 靶机展开的 AD 向实战复盘。文章从 Nmap 枚举开始，覆盖 SMB、LDAP、MSSQL 等面，再把“共享目录权限过宽”这个常被忽视的问题转化为横向推进和域环境突破的切入点。它适合拿来训练内网初始落点后的枚举顺序与弱权限资源利用思路。</p>
+<hr>
+<p>文章标题：字母汤：LOTL Shellcode 混淆术</p>
+<p>文章链接：<a href="https://infosecwriteups.com/alphabet-soup-lotl-shellcode-obfuscation-891667a6ee46?source=rss----7b722bfd1b8d---4">Alphabet Soup: LOTL Shellcode Obfuscation</a></p>
+<p>所属领域：红队</p>
+<p>文章总结：文章提出一种很有意思的载荷混淆思路：不把 shellcode 字节直接打进二进制，而是把系统中现成的合法文件当作“字典”，记录目标字节在文件中的偏移索引，运行时再按 LUT 重组。这样样本里只剩整数数组，能显著降低静态特征暴露面，也给对抗侧提供了新的变形空间。</p>
+<hr>
+<p>文章标题：漏洞赏金训练营 28：布尔盲注如何逐位榨出数据库</p>
+<p>文章链接：<a href="https://infosecwriteups.com/bug-bounty-bootcamp-28-boolean-based-blind-sql-injection-extracting-data-one-true-false-at-a-abe69e3de702?source=rss----7b722bfd1b8d---4">Bug Bounty Bootcamp #28: Boolean-Based Blind SQL Injection — Extracting Data One True/False at a Time</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：作者用“用户名是否已占用”这类只返回真假的接口，讲清了布尔盲注最核心的利用模型：通过构造条件表达式，把数据库变成一个只会回答 yes/no 的黑盒，再一点点重建库名、表名和字段值。文章虽然偏入门，但对盲注 payload 设计、回显判断和枚举耐心都有很好的教学价值。</p>
+<hr>
+<p>文章标题：单接口竞态条件</p>
+<p>文章链接：<a href="https://infosecwriteups.com/single-endpoint-race-conditions-7a3879c09e79?source=rss----7b722bfd1b8d---4">Single-endpoint Race Conditions</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：这篇文章聚焦一个很容易被忽视的竞态场景：同一个接口在并发下出现状态错乱，最终把本不该成功的邮箱更新或权限变更做成了越权入口。相比泛泛而谈“多发几次包”，它强调的是如何识别单接口里的原子性缺失，以及如何把业务状态竞争转化成稳定可复现的漏洞利用。</p>
+<hr>
+<p>文章标题：DLL 搜索顺序劫持：如何发现并利用该缺陷</p>
+<p>文章链接：<a href="https://infosecwriteups.com/dll-search-order-hijacking-finding-and-exploiting-the-flaw-9f5dabaa2470?source=rss----7b722bfd1b8d---4">DLL Search Order Hijacking: Finding and Exploiting the Flaw</a></p>
+<p>所属领域：红队</p>
+<p>文章总结：文章把 Windows <code>Safe DLL Search Mode</code> 的查找顺序讲得很透，并用 ProcMon 演示如何筛出 <code>NAME NOT FOUND</code> 的 DLL 加载事件，快速定位可能被劫持的应用。它的价值在于把“原理”直接落到发现方法和利用思路上，尤其适合主机提权、持久化和本地攻击面排查时参考。</p>
+<hr>
+<p>文章标题：从 API 狩猎到员工 PII 数据</p>
+<p>文章链接：<a href="https://infosecwriteups.com/api-hunting-to-employee-pii-data-638866e3f494?source=rss----7b722bfd1b8d--bug_bounty">API Hunting to Employee PII Data</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：作者在常规子域名收集里发现一个新上线业务域名，随后围绕 API 面做快速探测，最终把接口访问问题转化成员工个人敏感信息暴露。文章不是炫技型写法，而是强调新业务、新资产、新接口的组合价值。对做资产面 API 狩猎的人来说，这种“先找新入口，再做细分验证”的路线很实用。</p>
+<hr>
+<p>文章标题：二阶漏洞：一种少见但高价值的漏洞类型</p>
+<p>文章链接：<a href="https://infosecwriteups.com/8-second-order-vulnerabilities-a-rare-bug-316829a5292d?source=rss----7b722bfd1b8d--bug_bounty">8. Second-Order Vulnerabilities: A Rare Bug -&gt; $$$</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：这篇文章专门讨论二阶漏洞的思维方式。它强调 payload 在首次提交时往往表现正常，真正的危险发生在“存储后的再次处理”阶段，所以这类漏洞比即时触发型问题更容易漏掉。对代码审计和黑盒测试都很有参考价值，因为它逼着测试者把视角从单请求结果扩展到后续工作流。</p>
+<hr>
+<p>文章标题：我如何用 6 位 PIN 暴力破解接管账户</p>
+<p>文章链接：<a href="https://infosecwriteups.com/i-hacked-your-account-with-a-6-digit-pin-the-brute-force-nightmare-you-need-to-fix-7707309ca8c4?source=rss----7b722bfd1b8d--bug_bounty">I Hacked Your Account with a 6-Digit PIN: The Brute-Force Nightmare You Need to Fix</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：文章把一个看似普通的“找回密码验证码”问题，写成了完整账户接管案例。核心缺陷是 PIN 校验缺少严格限速，且服务端会话让重置流程长时间保持有效，攻击者可以用 Burp Intruder 自动跑完大量组合。它非常适合拿来提醒研发：弱口令和弱验证码并不只是概率问题，而是业务防护设计问题。</p>
+<hr>
+<p>文章标题：提权实录：通过命名管道劫持可写服务</p>
+<p>文章链接：<a href="https://gh0st.cn/archives/2026-03-16/1">提权实录：通过命名管道劫持可写服务</a></p>
+<p>所属领域：红队</p>
+<p>文章总结：这篇文章质量很高，完整还原了一个本地提权利用链：先发现 <code>KeyServicePipe</code> 命名管道对 Everyone 可写，低权限用户可以向高权限服务发送消息，触发 <code>taskkill</code> 任意终止进程；再结合可写服务二进制与自动重启特性，替换合法程序完成提权。分析、调试、利用三段都写得很细。</p>
+<hr>
+<p>文章标题：Codex Skills 不是 Prompt 的升级版，而是写给 AI 的岗位 SOP</p>
+<p>文章链接：<a href="https://blog.vadxq.com/article/codex-skills-are-ai-sops/">Codex Skills 不是 Prompt 的升级版，而是写给 AI 的岗位 SOP</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章把 <code>Skills</code> 放到工程化语境里理解，而不是把它当作更长的提示词。作者重点讨论了按需加载、能力接口与执行层分工、沙箱边界、CI 接入和团队方法论沉淀，核心观点是：AI 真正可用的前提，不是偶尔写对，而是把规范、流程和护栏沉成可复用的执行单元。对做 AI 研发协作的人很有启发。</p>
+<hr>
+<p>文章标题：当 Kanban 不再管理人：Routa Kanban 如何管理 Agent Team</p>
+<p>文章链接：<a href="https://www.phodal.com/blog/routa-kanban/">当 Kanban 不再管理人：Routa Kanban 如何管理 Agent Team</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章讨论的是多 Agent 协作进入工程交付后，为什么需要一层真正的控制平面。作者把任务流、运行上下文、执行历史、验证证据、并发队列和 hard gate 放到同一块看板里，强调 Kanban 不该只是展示任务状态，而要承担可观察、可约束、可回放的运行时治理职责。很适合做 AI Agent 平台设计时参考。</p>
+<hr>
+<p>文章标题：GTC 2026 前夜：AI 正在成为新的基础设施</p>
+<p>文章链接：<a href="https://jimmysong.io/blog/gtc-2026-ai-native-infrastructure/">GTC 2026 Eve: AI is Becoming the New Infrastructure</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：作者从 NVIDIA 的 AI Five-Layer Cake、Agent Runtime 与 AI-Native Infrastructure 这些线索出发，讨论 AI 正在从应用能力转向底层基础设施的过程。虽然不是安全文章，但对安全从业者理解未来攻击面很重要，因为当推理、调度和上下文管理都基础设施化后，治理和边界问题会更早暴露出来。</p>
+<hr>
+<p>文章标题：wechat2md：将公众号文章转为 Markdown</p>
+<p>文章链接：<a href="https://arminli.com/wechat2md/">wechat2md：将公众号文章转为Markdown</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：这是一款很实用的内容处理工具，核心能力是把公众号富文本直接转换成结构化 Markdown，并尽量保留标题、列表、引用等格式，同时自动提取标题、作者、发布时间并生成 YAML front matter。对做情报沉淀、知识库归档和离线分析的人来说，它能显著减少手工清洗内容的时间。</p>
+<hr>
+<p>文章标题：Splunk 输入验证不当导致远程命令执行</p>
+<p>文章链接：<a href="https://cxsecurity.com/issue/WLB-2026030021">Splunk Remote Command Execution via Improper Input Validation</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这则通告指出 Splunk 存在高危远程命令执行问题，根源是输入验证不足。文章明确提醒：如果管理接口或相关服务暴露在互联网上，攻击者可远程利用并进一步控制整个 Splunk 部署。考虑到 Splunk 往往以较高权限运行，这类缺陷一旦打通，后果通常不仅是单点入侵，而是整套日志基础设施失守。</p>
+<hr>
+<p>文章标题：Wekan Meteor DDP notificationUsers 敏感数据泄露</p>
+<p>文章链接：<a href="https://cxsecurity.com/issue/WLB-2026030022">Wekan 8.31.0 - 8.33Meteor DDP notificationUsers Sensitive Data Leak</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章给出了相当完整的 PoC。问题出在 <code>notificationUsers</code> 这个 Meteor 发布接口没有做字段投影和授权限制，任何已认证用户都能订阅并拿到完整用户文档，包括 bcrypt 密码哈希、活动会话令牌、邮箱地址和服务数据。它非常适合作为实时通信框架里“订阅即授权”误区的反面教材。</p>
+<hr>
+<p>文章标题：zumba/json-serializer 小于 3.2.3 存在远程代码执行风险</p>
+<p>文章链接：<a href="https://cxsecurity.com/issue/WLB-2026030023">zumba/json-serializer zumba/json-serializer &lt; 3.2.3 RCE</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇通告聚焦 PHP 组件 <code>zumba/json-serializer</code> 在低版本中的反序列化风险。作者给出的是对象注入到潜在 RCE 的利用方向：如果目标环境存在合适 gadget chain，就能把不安全的对象恢复升级为代码执行。哪怕没有完整链条，这类问题本身也足以触发高优先级排查，因为组件级反序列化往往影响面很广。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-16/>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-16/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-13/" class="prev" rel="prev" title="每日信息流 2026 03 13"><i class="iconfont icon-left"></i>&nbsp;每日信息流 2026 03 13</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

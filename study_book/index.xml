@@ -6,7 +6,27 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 16 Mar 2026 10:36:00 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Mar 2026 18:59:57 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 16</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-16/</link>
+      <pubDate>Mon, 16 Mar 2026 18:59:57 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-16/</guid>
+      <description>文章标题：实战 Web 渗透 CTF 挑战逐步通关
+文章链接：A Practical Web Pentesting CTF Challenge — Step-by-Step Walkthrough
+所属领域：CTF
+文章总结：这篇文章把一个贴近真实渗透场景的 Web CTF 拆成清晰链路：先对登录页做目录爆破拿到 credentials.txt，再用泄露凭据进入业务面，通过修改 /profile/{id} 做 IDOR，进一步接管管理员资料与入口。它的价值不在单点漏洞，而在把信息收集、越权、后台接管串成一条完整实战路径。
+ 文章标题：采购单取消接口 IDOR 可越权撤销他人订单
+文章链接：IDOR in Purchase Order Cancellation Allows Unauthorized Users to Cancel Other Users’ POs
+所属领域：渗透
+文章总结：作者抓到 PUT /purchase-order/v1/ingredient-purchase-order/{PO_ID}/cancel 请求后，只替换路径中的采购单 ID，就能用攻击者自己的令牌取消受害者订单。服务端没有校验资源归属，仅凭已登录态就执行高影响业务操作。这个案例很适合审计多租户接口里的对象级授权缺失。
+ 文章标题：绕过 Threads 拉黑机制后仍可查看自定义 Feed 内容
+文章链接：Bypassing Threads Block System: Blocked Users Can Still View Custom Feed Content
+所属领域：渗透
+文章总结：文章展示了一个很典型的“前端限制了，后端没限制”的逻辑绕过。被拉黑用户虽然无法直接访问目标自定义 Feed，但可以拦截 useBarcelonaCreateColumnMutation 的 GraphQL 请求，替换 relativeURL 为受害者 Feed ID，再把内容钉到自己的首页里查看。问题根源是封禁逻辑只停留在 UI 层。</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 13</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-13/</link>
