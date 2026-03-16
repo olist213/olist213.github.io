@@ -6,7 +6,37 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 16 Mar 2026 10:30:00 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Mar 2026 10:36:00 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 13</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-13/</link>
+      <pubDate>Mon, 16 Mar 2026 10:36:00 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-13/</guid>
+      <description>文章标题：MetaCRM 美特 CRM 系统 toviewspecial.jsp 接口存在任意文件读取漏洞
+文章链接：MetaCRM 美特 CRM 系统 toviewspecial.jsp 接口存在任意文件读取漏洞
+所属领域：渗透
+推荐理由：这是典型的业务系统文件读取问题，攻击面直接、利用链清晰。对 OA/CRM 资产排查和漏洞复现都很有价值。
+ 文章标题：某公司的渗透技能考核靶场通关记录
+文章链接：某公司的渗透技能考核靶场通关记录
+所属领域：渗透
+推荐理由：靶场通关记录通常会把入口识别、突破路径和提权链路串起来，实战感强。适合拿来校准真实渗透中的思路和节奏。
+ 文章标题：绕过某防护盾的 XSS（一）
+文章链接：绕过某防护盾的 XSS（一）
+所属领域：渗透
+推荐理由：这类内容的价值不在于 XSS 本身，而在于对防护规则绕过的细节处理。对 WAF 绕过和输入点构造很有参考意义。
+ 文章标题：成功复现 Cisco Catalyst SD-WAN 身份验证绕过漏洞 CVE-2026-20127
+文章链接：成功复现 Cisco Catalyst SD-WAN 身份验证绕过漏洞 CVE-2026-20127
+所属领域：网络安全
+推荐理由：身份认证绕过往往比普通 Web 漏洞更危险，尤其目标还是 SD-WAN 设备。具备复现细节的内容非常适合边界设备排查和补丁验证。
+ 文章标题：SwordfishSuite：多平台抓包分析利器，现代化 Web 安全测试平台
+文章链接：SwordfishSuite：多平台抓包分析利器，现代化 Web 安全测试平台
+所属领域：工具
+推荐理由：抓包和流量重放是 Web 渗透的基本功，这类平台型工具文章更看重工作流效率。对日常测试、复现和协作都比较实用。
+ 文章标题：Storm-2561 利用 SEO 投毒分发虚假 VPN 客户端窃取凭据
+文章链接：Storm-2561 利用 SEO 投毒分发虚假 VPN 客户端窃取凭据</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 14</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-14/</link>

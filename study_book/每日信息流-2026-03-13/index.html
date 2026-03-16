@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-14/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-13/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           每日信息流 2026 03 13 | Olist.213
+       
+  </title>
+  <meta name="title" content="每日信息流 2026 03 13 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "每日信息流 2026 03 13",
+    "headline" : "每日信息流 2026 03 13",
+    "description" : "文章标题：MetaCRM 美特 CRM 系统 toviewspecial.jsp 接口存在任意文件读取漏洞\n文章链接：MetaCRM 美特 CRM 系统 toviewspecial.jsp 接口存在任意文件读取漏洞\n所属领域：渗透\n推荐理由：这是典型的业务系统文件读取问题，攻击面直接、利用链清晰。对 OA\/CRM 资产排查和漏洞复现都很有价值。\n 文章标题：某公司的渗透技能考核靶场通关记录\n文章链接：某公司的渗透技能考核靶场通关记录\n所属领域：渗透\n推荐理由：靶场通关记录通常会把入口识别、突破路径和提权链路串起来，实战感强。适合拿来校准真实渗透中的思路和节奏。\n 文章标题：绕过某防护盾的 XSS（一）\n文章链接：绕过某防护盾的 XSS（一）\n所属领域：渗透\n推荐理由：这类内容的价值不在于 XSS 本身，而在于对防护规则绕过的细节处理。对 WAF 绕过和输入点构造很有参考意义。\n 文章标题：成功复现 Cisco Catalyst SD-WAN 身份验证绕过漏洞 CVE-2026-20127\n文章链接：成功复现 Cisco Catalyst SD-WAN 身份验证绕过漏洞 CVE-2026-20127\n所属领域：网络安全\n推荐理由：身份认证绕过往往比普通 Web 漏洞更危险，尤其目标还是 SD-WAN 设备。具备复现细节的内容非常适合边界设备排查和补丁验证。\n 文章标题：SwordfishSuite：多平台抓包分析利器，现代化 Web 安全测试平台\n文章链接：SwordfishSuite：多平台抓包分析利器，现代化 Web 安全测试平台\n所属领域：工具\n推荐理由：抓包和流量重放是 Web 渗透的基本功，这类平台型工具文章更看重工作流效率。对日常测试、复现和协作都比较实用。\n 文章标题：Storm-2561 利用 SEO 投毒分发虚假 VPN 客户端窃取凭据\n文章链接：Storm-2561 利用 SEO 投毒分发虚假 VPN 客户端窃取凭据",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-03-16 10:36:00 \u002b0800 CST",
+    "dateModified" : "2026-03-16 10:36:00 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-13\/",
+    "wordCount" : "250",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每日信息流 2026 03 13</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2026-03-16 itemprop="datePublished">March 16, 2026</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>文章标题：MetaCRM 美特 CRM 系统 toviewspecial.jsp 接口存在任意文件读取漏洞</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/zkJ1B6feAf9hnNxZSop-Ag">MetaCRM 美特 CRM 系统 toviewspecial.jsp 接口存在任意文件读取漏洞</a></p>
+<p>所属领域：渗透</p>
+<p>推荐理由：这是典型的业务系统文件读取问题，攻击面直接、利用链清晰。对 OA/CRM 资产排查和漏洞复现都很有价值。</p>
+<hr>
+<p>文章标题：某公司的渗透技能考核靶场通关记录</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/-S1Zo1ipwd-qs3MHkqGVZw">某公司的渗透技能考核靶场通关记录</a></p>
+<p>所属领域：渗透</p>
+<p>推荐理由：靶场通关记录通常会把入口识别、突破路径和提权链路串起来，实战感强。适合拿来校准真实渗透中的思路和节奏。</p>
+<hr>
+<p>文章标题：绕过某防护盾的 XSS（一）</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/cvhcVGNiMk3kgqCQ08ZMkw">绕过某防护盾的 XSS（一）</a></p>
+<p>所属领域：渗透</p>
+<p>推荐理由：这类内容的价值不在于 XSS 本身，而在于对防护规则绕过的细节处理。对 WAF 绕过和输入点构造很有参考意义。</p>
+<hr>
+<p>文章标题：成功复现 Cisco Catalyst SD-WAN 身份验证绕过漏洞 CVE-2026-20127</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/kFumEDnSU92irduCfNu4QQ">成功复现 Cisco Catalyst SD-WAN 身份验证绕过漏洞 CVE-2026-20127</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：身份认证绕过往往比普通 Web 漏洞更危险，尤其目标还是 SD-WAN 设备。具备复现细节的内容非常适合边界设备排查和补丁验证。</p>
+<hr>
+<p>文章标题：SwordfishSuite：多平台抓包分析利器，现代化 Web 安全测试平台</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/KqL-oht4_T09L0hm1Ge4Zw">SwordfishSuite：多平台抓包分析利器，现代化 Web 安全测试平台</a></p>
+<p>所属领域：工具</p>
+<p>推荐理由：抓包和流量重放是 Web 渗透的基本功，这类平台型工具文章更看重工作流效率。对日常测试、复现和协作都比较实用。</p>
+<hr>
+<p>文章标题：Storm-2561 利用 SEO 投毒分发虚假 VPN 客户端窃取凭据</p>
+<p>文章链接：<a href="https://www.microsoft.com/en-us/security/blog/2026/03/12/storm-2561-uses-seo-poisoning-to-distribute-fake-vpn-clients-for-credential-theft/">Storm-2561 利用 SEO 投毒分发虚假 VPN 客户端窃取凭据</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：微软官方威胁情报的价值在于样本与攻击链细节通常更完整。SEO 投毒叠加假 VPN 客户端投递，正好覆盖了当前高频钓鱼与凭证窃取场景。</p>
+<hr>
+<p>文章标题：检测并分析 AI 工具中的提示滥用</p>
+<p>文章链接：<a href="https://www.microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools/">检测并分析 AI 工具中的提示滥用</a></p>
+<p>所属领域：AI</p>
+<p>推荐理由：提示滥用已经从简单注入发展到真实工作流破坏，这篇偏检测与分析方法。对企业落地 AI 工具安全审计很有现实意义。</p>
+<hr>
+<p>文章标题：当代理成为 Web 架构中的攻击向量</p>
+<p>文章链接：<a href="https://www.praetorian.com/blog/cve-2026-0953-bypass-tutor-lms-pro-auth-vulnerability/">当代理成为 Web 架构中的攻击向量</a></p>
+<p>所属领域：渗透</p>
+<p>推荐理由：代理层和上游应用之间的信任错位是常见但容易被忽略的薄弱点。文章聚焦认证绕过，非常适合做反向代理和网关配置审计。</p>
+<hr>
+<p>文章标题：Elementor Ally 插件中的 SQL 注入漏洞影响超 25 万个 WordPress 网站</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63778">Elementor Ally 插件中的 SQL 注入漏洞影响超 25 万个 WordPress 网站</a></p>
+<p>所属领域：渗透</p>
+<p>推荐理由：这类广泛使用组件的 SQL 注入价值很高，因为既有批量影响面，也有明确利用方向。对 WordPress 生态资产治理尤其关键。</p>
+<hr>
+<p>文章标题：研究人员在四分钟内让 Comet AI 浏览器落入网络钓鱼陷阱</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63770">研究人员在四分钟内让 Comet AI 浏览器落入网络钓鱼陷阱</a></p>
+<p>所属领域：AI</p>
+<p>推荐理由：AI 浏览器叠加自动操作能力后，钓鱼的攻击面已经明显变化。这个案例胜在时间成本低、攻击路径直观，适合做 AI 产品对抗测试参考。</p>
+<hr>
+<p>文章标题：PhantomRaven 发起 NPM 新一轮攻击，窃取开发数据</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63759">PhantomRaven 发起 NPM 新一轮攻击，窃取开发数据</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：这类 NPM 供应链攻击和开发者数据窃取紧密相关，影响面直达源码与凭据。对私有源治理和依赖审核策略很有参考价值。</p>
+<hr>
+<p>文章标题：UNC6426 利用 nx npm 供应链攻击，72 小时内获取 AWS 管理员权限</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63752">UNC6426 利用 nx npm 供应链攻击，72 小时内获取 AWS 管理员权限</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：标题直接给出了从包管理到云上接管的完整攻击跨度，实战价值很强。适合用来审视 CI/CD、构建权限和云角色边界。</p>
+<hr>
+<p>文章标题：五个恶意 Rust 包与 AI 机器人利用 CI/CD 流水线窃取开发者密钥</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63744">五个恶意 Rust 包与 AI 机器人利用 CI/CD 流水线窃取开发者密钥</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：它把恶意包、自动化机器人和 CI/CD 密钥窃取串到了一起，代表了新一代供应链攻击的组合拳。对开发安全团队价值很高。</p>
+<hr>
+<p>文章标题：2025 年度全球 APT 威胁研究报告</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MzA4ODEyODA3MQ==&amp;mid=2247495913&amp;idx=1&amp;sn=f223efe0cee9e80a7dfd00d665e54380">2025 年度全球 APT 威胁研究报告</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：年度级 APT 报告适合做威胁建模和重点行业风险对照。相比日常资讯，这类内容更适合沉淀长期防守视角。</p>
+<hr>
+<p>文章标题：完整分析：首个被捕获的利用 OpenClaw 黑产团伙</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=Mzg5MTc3ODY4Mw==&amp;mid=2247508325&amp;idx=1&amp;sn=3c089f3e3bb02fbc6bbc8bc884ad4da7">完整分析：首个被捕获的利用 OpenClaw 黑产团伙</a></p>
+<p>所属领域：网络安全</p>
+<p>推荐理由：黑产团伙分析的价值在于把技术滥用、运营方式和落地风险放到同一视角里。对 AI Agent 风险研判和取证思路都有现实参考。</p>
+<hr>
+<p>文章标题：实战还原 V8 bytenode 保护 JavaScript</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&amp;mid=2458612044&amp;idx=1&amp;sn=0a4bd1a14ff9503b9b8c48dfd91e7bb4">实战还原 V8 bytenode 保护 JavaScript</a></p>
+<p>所属领域：CTF</p>
+<p>推荐理由：字节码层逆向和保护还原本身就有较高技术密度，这类文章对 CTF 和样本分析都很适用。尤其适合做 JavaScript 保护对抗的参考材料。</p>
+<hr>
+<p>文章标题：新型 Zombie ZIP：利用压缩格式歧义绕过杀毒引擎检测</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MjM5NTc2MDYxMw==&amp;mid=2458612044&amp;idx=3&amp;sn=2e940fc163947c5553a684d0d372ba85">新型 Zombie ZIP：利用压缩格式歧义绕过杀毒引擎检测</a></p>
+<p>所属领域：红队</p>
+<p>推荐理由：格式歧义绕过是非常典型也非常实用的检测规避思路。它对终端防护产品评估、邮件网关绕过和蓝队策略优化都很有价值。</p>
+<hr>
+<p>文章标题：判断海量网站是否重复的技术方案</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MzI5MDQ2NjExOQ==&amp;mid=2247500393&amp;idx=1&amp;sn=dfca8859f087ef1be9103764c49db0ff">判断海量网站是否重复的技术方案</a></p>
+<p>所属领域：工具</p>
+<p>推荐理由：海量站点去重是资产收敛和情报研判里的实用问题，带代码思路的文章更具落地性。对测绘、漏洞排查和批量分析都能直接复用。</p>
+<hr>
+<p>文章标题：JsDeObsBench：面向 JavaScript 反混淆的大语言模型评测基准</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MzU5MTM5MTQ2MA==&amp;mid=2247495153&amp;idx=1&amp;sn=b28c6cdd615408cd870cad509ec53db1">JsDeObsBench：面向 JavaScript 反混淆的大语言模型评测基准</a></p>
+<p>所属领域：AI</p>
+<p>推荐理由：它把 LLM 反混淆能力拉到可比较、可评估的基准层面，不再只是经验判断。对 AI 辅助逆向和自动化分析的能力评估很有帮助。</p>
+<hr>
+<p>文章标题：推荐一款优秀的镜像仿真工具，小 D 仿真</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=MzAwMTMzMDUwNg==&amp;mid=2650890125&amp;idx=1&amp;sn=a47b99f03caef79a5a7129b2d5f064ad">推荐一款优秀的镜像仿真工具，小 D 仿真</a></p>
+<p>所属领域：工具</p>
+<p>推荐理由：仿真类工具对测试演练、样本观察和环境构造都很有帮助。只要文章包含具体能力和使用方式，就具备不错的工程参考价值。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-13/>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-13/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-14/" class="prev" rel="prev" title="每日信息流 2026 03 14"><i class="iconfont icon-left"></i>&nbsp;每日信息流 2026 03 14</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
