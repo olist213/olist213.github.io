@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-16/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-17/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           每日信息流 2026 03 17 | Olist.213
+       
+  </title>
+  <meta name="title" content="每日信息流 2026 03 17 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "每日信息流 2026 03 17",
+    "headline" : "每日信息流 2026 03 17",
+    "description" : "文章标题：多轮会话攻击工具 Augustus v0.0.9：会“打回重试”的 LLM 攻击引擎\n文章链接：多轮会话攻击工具 Augustus v0.0.9：会“打回重试”的 LLM 攻击引擎\n所属领域：AI\n文章总结：文章介绍了 Augustus v0.0.9 如何把单轮提示词攻击扩展为真正的多轮会话攻击框架。它把攻击者、目标模型、裁判模型拆开，支持 Crescendo、GOAT、Hydra、Mischievous User 四种策略，并引入逐轮打分、拒绝检测和 turn-level rollback。对做 AI 红队的人来说，这篇文章最有价值的是把“如何稳定推进对话直到越狱成功”工程化了。\n 文章标题：AI 智能体没有身份，这正在演变成一场安全危机\n文章链接：AI 智能体没有身份，这正在演变成一场安全危机\n所属领域：AI\n文章总结：文章聚焦一个被广泛忽视的问题：大量 AI Agent 已进入生产环境，但很多企业仍用共享 API Key、服务账号和静态凭据驱动它们。作者系统梳理了 OAuth 代理授权草案、SPIFFE、A2A、审计链等方向，指出 Agent 既不是人也不是传统服务账号，必须拥有实例级身份、委托链和工具级授权。对设计企业级 Agent 平台的人，这是一篇很值得细读的安全底座文章。\n 文章标题：一次 Teams 支持电话如何导向入侵\n文章链接：一次 Teams 支持电话如何导向入侵\n所属领域：红队\n文章总结：这篇复盘围绕“伪装成技术支持”的社工入侵路径展开，核心不是单一恶意样本，而是攻击者如何借助 Teams 支持通话建立信任、推进远程协助或后续恶意操作。它对防守侧的意义在于，把社工、协作软件、远程支持工具和初始访问串成了完整链路，提醒企业对“语音\/视频支持请求”也要做身份校验、会话审计和最小授权。\n 文章标题：GlassWorm 恶意软件进化：藏进依赖链的供应链隐蔽术\n文章链接：GlassWorm 恶意软件进化：藏进依赖链的供应链隐蔽术\n所属领域：网络安全\n文章总结：文章关注 GlassWorm 如何把恶意能力进一步隐藏进依赖链与开发生态，目标不再只是终端用户，而是信任第三方扩展和依赖包的开发者群体。它的参考价值在于再次提醒我们：供应链攻击的重点已从“投递恶意文件”转向“借正常分发渠道完成隐蔽植入”。对蓝队和安全工程团队来说，依赖审计、来源校验、构建链可追溯性已经是必须项。\n 文章标题：AI 驱动的恶意软件调试器：自动解释每个函数行为\n文章链接：AI 驱动的恶意软件调试器：自动解释每个函数行为\n所属领域：工具\n文章总结：作者实现了一个面向恶意代码分析的 AIDebug，把静态分析、递归函数发现、FLIRT 签名匹配、行为模式检测、CFG 构建和 Claude 解读整合到一起，还可联动 Frida 做动态观察。它的价值不在“AI 自动代替分析员”，而在于显著压缩逆向的前置噪音，把大量 sub_xxx 级别函数先做预分类、风险评级和 ATT\u0026amp;CK 映射，让分析员更快定位高价值逻辑。",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-03-17 16:41:25 \u002b0800 CST",
+    "dateModified" : "2026-03-17 16:41:25 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-17\/",
+    "wordCount" : "371",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每日信息流 2026 03 17</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2026-03-17 itemprop="datePublished">March 17, 2026</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>文章标题：多轮会话攻击工具 Augustus v0.0.9：会“打回重试”的 LLM 攻击引擎</p>
+<p>文章链接：<a href="https://www.praetorian.com/blog/llm-multi-turn-attacks-augustus/">多轮会话攻击工具 Augustus v0.0.9：会“打回重试”的 LLM 攻击引擎</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章介绍了 Augustus v0.0.9 如何把单轮提示词攻击扩展为真正的多轮会话攻击框架。它把攻击者、目标模型、裁判模型拆开，支持 Crescendo、GOAT、Hydra、Mischievous User 四种策略，并引入逐轮打分、拒绝检测和 turn-level rollback。对做 AI 红队的人来说，这篇文章最有价值的是把“如何稳定推进对话直到越狱成功”工程化了。</p>
+<hr>
+<p>文章标题：AI 智能体没有身份，这正在演变成一场安全危机</p>
+<p>文章链接：<a href="https://hackernoon.com/ai-agents-dont-have-identities-and-thats-a-security-crisis?source=rss">AI 智能体没有身份，这正在演变成一场安全危机</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章聚焦一个被广泛忽视的问题：大量 AI Agent 已进入生产环境，但很多企业仍用共享 API Key、服务账号和静态凭据驱动它们。作者系统梳理了 OAuth 代理授权草案、SPIFFE、A2A、审计链等方向，指出 Agent 既不是人也不是传统服务账号，必须拥有实例级身份、委托链和工具级授权。对设计企业级 Agent 平台的人，这是一篇很值得细读的安全底座文章。</p>
+<hr>
+<p>文章标题：一次 Teams 支持电话如何导向入侵</p>
+<p>文章链接：<a href="https://www.microsoft.com/en-us/security/blog/2026/03/16/help-on-the-line-how-a-microsoft-teams-support-call-led-to-compromise/">一次 Teams 支持电话如何导向入侵</a></p>
+<p>所属领域：红队</p>
+<p>文章总结：这篇复盘围绕“伪装成技术支持”的社工入侵路径展开，核心不是单一恶意样本，而是攻击者如何借助 Teams 支持通话建立信任、推进远程协助或后续恶意操作。它对防守侧的意义在于，把社工、协作软件、远程支持工具和初始访问串成了完整链路，提醒企业对“语音/视频支持请求”也要做身份校验、会话审计和最小授权。</p>
+<hr>
+<p>文章标题：GlassWorm 恶意软件进化：藏进依赖链的供应链隐蔽术</p>
+<p>文章链接：<a href="https://www.darkreading.com/application-security/glassworm-malware-evolves-hide-dependencies">GlassWorm 恶意软件进化：藏进依赖链的供应链隐蔽术</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章关注 GlassWorm 如何把恶意能力进一步隐藏进依赖链与开发生态，目标不再只是终端用户，而是信任第三方扩展和依赖包的开发者群体。它的参考价值在于再次提醒我们：供应链攻击的重点已从“投递恶意文件”转向“借正常分发渠道完成隐蔽植入”。对蓝队和安全工程团队来说，依赖审计、来源校验、构建链可追溯性已经是必须项。</p>
+<hr>
+<p>文章标题：AI 驱动的恶意软件调试器：自动解释每个函数行为</p>
+<p>文章链接：<a href="https://infosecwriteups.com/ai-powered-malware-debugger-that-explains-every-function-it-sees-2a28ef75df8a?source=rss----7b722bfd1b8d---4">AI 驱动的恶意软件调试器：自动解释每个函数行为</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：作者实现了一个面向恶意代码分析的 AIDebug，把静态分析、递归函数发现、FLIRT 签名匹配、行为模式检测、CFG 构建和 Claude 解读整合到一起，还可联动 Frida 做动态观察。它的价值不在“AI 自动代替分析员”，而在于显著压缩逆向的前置噪音，把大量 <code>sub_xxx</code> 级别函数先做预分类、风险评级和 ATT&amp;CK 映射，让分析员更快定位高价值逻辑。</p>
+<hr>
+<p>文章标题：我如何在 60 秒内让 AI 智能体追猎 APT29</p>
+<p>文章链接：<a href="https://infosecwriteups.com/my-ai-agent-hunted-apt29-under-60-seconds-heres-how-i-built-it-f98dfbdd115c?source=rss----7b722bfd1b8d---4">我如何在 60 秒内让 AI 智能体追猎 APT29</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章展示了一个基于 Elastic SIEM、LangGraph、LLM 和结构化状态机的威胁狩猎 Agent。从 APT29 公开数据集导入、日志查询、事件分类到 MITRE ATT&amp;CK 推断，作者把整套流程拆成可执行节点并解释了每层状态设计。对安全工程师来说，它提供的不是一个炫技 demo，而是一套“如何把威胁狩猎工作流做成可重复执行 Agent”的落地范式。</p>
+<hr>
+<p>文章标题：3・15 曝光 AI 安全暗礁：企业如何筑牢投毒与幻觉防护墙</p>
+<p>文章链接：<a href="https://www.cnblogs.com/goodhacker/p/19726543">3・15 曝光 AI 安全暗礁：企业如何筑牢投毒与幻觉防护墙</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章围绕 3·15 曝光的 AI 投毒黑产，系统梳理了数据注入、标签翻转、后门投毒和模型幻觉等风险，并把防守思路分成事前、事中、事后三层。值得关注的是，作者没有停留在泛泛而谈，而是给出了可信数据供应链、实时语义防火墙、RAG 事实核查、应急复盘等企业级做法。对正在把大模型接入业务流程的团队来说，这篇文章很适合作为风险清单与治理框架参考。</p>
+<hr>
+<p>文章标题：RSAC 2026创新沙盒 | Geordie AI：企业 AI Agent 安全治理体系的构建者</p>
+<p>文章链接：<a href="https://blog.nsfocus.net/rsac-2026%e5%88%9b%e6%96%b0%e6%b2%99%e7%9b%92-geordie-ai%ef%bc%9a%e4%bc%81%e4%b8%9a-ai-agent-%e5%ae%89%e5%85%a8%e6%b2%bb%e7%90%86%e4%bd%93%e7%b3%bb%e7%9a%84%e6%9e%84%e5%bb%ba%e8%80%85/">RSAC 2026创新沙盒 | Geordie AI：企业 AI Agent 安全治理体系的构建者</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章从产品和行业视角拆解了 Geordie AI 的 Agent-native 安全平台：资产发现、权限边界、动态行为监管、风险面分析以及 Beam 风险缓解引擎。它最大的启发是，企业对 Agent 的治理不能只靠 IAM、SIEM、EDR 等老工具，而要把“智能体本身”当成新的运行主体来管理。对做企业 AI 治理平台、内控和审计的人，这篇材料密度很高。</p>
+<hr>
+<p>文章标题：RSAC 2026创新沙盒 | Crash Override：从被动扫描走向主动溯源，重塑软件供应链安全底座</p>
+<p>文章链接：<a href="https://blog.nsfocus.net/rsac-2026%e5%88%9b%e6%96%b0%e6%b2%99%e7%9b%92-crash-override%ef%bc%9a%e4%bb%8e%e8%a2%ab%e5%8a%a8%e6%89%ab%e6%8f%8f%e8%b5%b0%e5%90%91%e4%b8%bb%e5%8a%a8%e6%ba%af%e6%ba%90%ef%bc%8c%e9%87%8d%e5%a1%91/">RSAC 2026创新沙盒 | Crash Override：从被动扫描走向主动溯源，重塑软件供应链安全底座</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章重点介绍了 Crash Override 提出的 Engineering Relationship Management 思路，试图用“工程关系图谱”替代传统只会报洞的扫描器，把代码、制品、构建、AI 编码助手和部署链路统一串起来。它对供应链安全从业者很有参考意义，因为重点不再是发现一个 CVE，而是回答“谁改的、在哪条链路里传播、怎样快速回溯和约束”。这是很典型的工程化安全升级方向。</p>
+<hr>
+<p>文章标题：3·15晚会曝光：AI大模型被“投毒”？给AI“洗脑”已成完整产业链</p>
+<p>文章链接：<a href="https://www.4hou.com/posts/GAP5">3·15晚会曝光：AI大模型被“投毒”？给AI“洗脑”已成完整产业链</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章以安全资讯汇总的形式，聚焦 AI 投毒黑产、OpenClaw 金融使用风险和“网络开盒”等热点。其中最值得关注的是它对 AI 投毒产业链的拆解：从 GEO 优化工具、虚假内容批量生成、自动分发，再到误导模型输出和商业变现，链条已经高度成熟。虽然不是深度技术论文，但对安全团队理解当前黑产如何利用生成式检索与模型推荐机制非常有价值。</p>
+<hr>
+<p>文章标题：构建可靠 AI 系统：为什么必须做 AI 可观测性</p>
+<p>文章链接：<a href="https://hackernoon.com/building-reliable-ai-systems-with-ai-observability?source=rss">构建可靠 AI 系统：为什么必须做 AI 可观测性</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章从企业 AI 项目“花了钱却没有收益”的现实出发，讨论为什么传统日志和监控不足以支撑 AI 系统。作者系统解释了数据漂移、概念漂移、标签漂移，以及数据质量、模型表现、可解释性、公平性、谱系追踪五大观测支柱。对安全和平台团队而言，AI 可观测性并不只是稳定性议题，它同样关系到风险审计、异常发现和责任追溯。</p>
+<hr>
+<p>文章标题：MCP 服务器真正的坑：stdout、报错设计与 Rust 的工程优势</p>
+<p>文章链接：<a href="https://hackernoon.com/the-mcp-server-nobody-warned-you-about-stdout-errors-and-why-rust-wins?source=rss">MCP 服务器真正的坑：stdout、报错设计与 Rust 的工程优势</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：这篇文章非常工程化，专讲 MCP 服务在生产环境里容易踩的坑：stdout 一旦混入调试输出就会污染 JSON-RPC 协议流，错误信息写得不对会让模型无限重试，TypeScript 与 Rust 在内存占用和并发会话下的行为差异也会迅速放大。对正在写 Agent 工具链的人，这篇文章提供了比“怎么定义一个 tool”更稀缺的实战经验。</p>
+<hr>
+<p>文章标题：wechat2md：将公众号文章转为Markdown</p>
+<p>文章链接：<a href="https://arminli.com/wechat2md/">wechat2md：将公众号文章转为Markdown</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：这是一个很适合情报归档和知识库沉淀的实用工具。它能把微信公众号文章的富文本直接转换成结构化 Markdown，保留标题、列表、引用等常用格式，并自动提取标题、作者、发布日期生成 front matter。对日常要处理公众号技术文章的安全研究人员来说，这意味着可以把“采集-清洗-入库”的手工活大幅压缩，方便后续全文检索和二次整理。</p>
+<hr>
+<p>文章标题：Codex Skills 不是 Prompt 的升级版，而是写给 AI 的岗位 SOP</p>
+<p>文章链接：<a href="https://blog.vadxq.com/article/codex-skills-are-ai-sops/">Codex Skills 不是 Prompt 的升级版，而是写给 AI 的岗位 SOP</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章把 Skill 放回到工程上下文里理解，强调它不是一段更长的提示词，而是一套可复用、可版本化、可协作的工作流单元。作者详细讨论了按需加载、scripts/references/assets 的边界、与 MCP/Agent/Sub-agent 的关系，以及多智能体场景下为何需要统一的方法论资产。对做 AI 安全平台、自动化审计或团队 AI 协作的人，这篇文章非常值得读。</p>
+<hr>
+<p>文章标题：当 Kanban 不再管理人：Routa Kanban 如何管理 Agent Team</p>
+<p>文章链接：<a href="http://www.phodal.com/blog/routa-kanban/">当 Kanban 不再管理人：Routa Kanban 如何管理 Agent Team</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章讨论的不是传统看板，而是多 Agent 协作进入工程交付后，为什么需要一层真正的控制平面。作者把任务卡、运行上下文、session、worktree、运行历史、验证证据和并发压力统一映射到看板语义中，强调 Kanban 必须从“展示状态”升级为“管理运行时事实”。对做 Agent 编排平台和安全治理的人，它提供了很清晰的系统视角。</p>
+<hr>
+<p>文章标题：Harness Engineering 的下一步：Fitness Function 定义 AI Agent 的完成条件</p>
+<p>文章链接：<a href="http://www.phodal.com/blog/harness-engineering-fitness-function/">Harness Engineering 的下一步：Fitness Function 定义 AI Agent 的完成条件</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章围绕一个关键问题展开：AI Agent 什么时候才算“真的完成任务”。作者用 Fitness Function、frontmatter 规则、证据文件、统一执行器和 hard gate 机制，把“完成条件”从经验判断改造成可执行、可阻断、可审计的工程信号。对需要让 Agent 参与研发、安全修复或自动化变更的人来说，这套设计直接关系到质量失控和错误提前收口。</p>
+<hr>
+<p>文章标题：用好你的 jj - 重新思考 Agent 时代的版本控制</p>
+<p>文章链接：<a href="https://onevcat.com/2026/03/jj-for-agent-era/">用好你的 jj - 重新思考 Agent 时代的版本控制</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：文章从 AI Agent 协作编程的实际痛点出发，讨论为什么 Git 在本地工作流中的大量隐式状态会不断打断人与 Agent 的协作节奏，以及 jj 的 change 模型如何简化提交、拆分、回退和并行修改。它的价值在于不是停留在理念，而是给出了非常具体的命令、心智模型和与 Agent 协作的方式。对高频用 Agent 写代码的人，很有借鉴意义。</p>
+<hr>
+<p>文章标题：GTC 2026 前夜：AI 正在成为新的基础设施</p>
+<p>文章链接：<a href="https://jimmysong.io/blog/gtc-2026-ai-native-infrastructure/">GTC 2026 前夜：AI 正在成为新的基础设施</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：作者从 NVIDIA 的 AI Five-Layer Cake、推理算力、Agent 平台和 AI-native Infrastructure 这些线索出发，论证 AI 正在从“应用能力”转向“基础设施能力”。文章对安全从业者的重要价值在于，它提醒我们未来的核心攻击面不只在模型本身，而在 GPU 调度、推理运行时、Agent 工作负载和异构算力管理这些基础层。理解基础设施，才能更早识别安全边界。</p>
+<hr>
+<p>文章标题：让医院在不共享病患数据的情况下训练模型的 AI 突破</p>
+<p>文章链接：<a href="https://hackernoon.com/the-ai-breakthrough-that-lets-hospitals-train-algorithms-without-sharing-patient-data?source=rss">让医院在不共享病患数据的情况下训练模型的 AI 突破</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章转述了一篇关于医疗联邦学习的研究，核心是让多家医院在数据不出域的前提下协同训练模型，只交换参数或梯度，而不直接共享病患原始数据。它详细讨论了数据孤岛、隐私合规、模型泛化、差分隐私和加密计算等问题。对安全与隐私工程师而言，这不是泛泛而谈的“保护数据”，而是一个真正能在高敏行业落地的协作训练范式。</p>
+<hr>
+<p>文章标题：AI 越用越累的真相：配置税与验证地狱</p>
+<p>文章链接：<a href="https://lukefan.com/2026/03/16/ai-fatigue-income-drop-work-creep-verification-hell-youtube-2025/">AI 越用越累的真相：配置税与验证地狱</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章从一线重度用户视角讨论 AI 工具带来的反向成本：信息焦虑、配置税、工作蔓延和验证地狱。虽然它不是漏洞研究，但对做 AI 生产化的人很有现实价值，因为问题并不在模型本身，而在工具组合、权限配置、套餐额度、工作流碎片化和输出可信性校验这些工程摩擦。它提醒我们，真正的生产力提升必须建立在可维护工作流之上。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-17/>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-17/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-16/" class="prev" rel="prev" title="每日信息流 2026 03 16"><i class="iconfont icon-left"></i>&nbsp;每日信息流 2026 03 16</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

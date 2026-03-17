@@ -6,7 +6,35 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 16 Mar 2026 18:59:57 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Mar 2026 16:41:25 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 17</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-17/</link>
+      <pubDate>Tue, 17 Mar 2026 16:41:25 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-17/</guid>
+      <description>文章标题：多轮会话攻击工具 Augustus v0.0.9：会“打回重试”的 LLM 攻击引擎
+文章链接：多轮会话攻击工具 Augustus v0.0.9：会“打回重试”的 LLM 攻击引擎
+所属领域：AI
+文章总结：文章介绍了 Augustus v0.0.9 如何把单轮提示词攻击扩展为真正的多轮会话攻击框架。它把攻击者、目标模型、裁判模型拆开，支持 Crescendo、GOAT、Hydra、Mischievous User 四种策略，并引入逐轮打分、拒绝检测和 turn-level rollback。对做 AI 红队的人来说，这篇文章最有价值的是把“如何稳定推进对话直到越狱成功”工程化了。
+ 文章标题：AI 智能体没有身份，这正在演变成一场安全危机
+文章链接：AI 智能体没有身份，这正在演变成一场安全危机
+所属领域：AI
+文章总结：文章聚焦一个被广泛忽视的问题：大量 AI Agent 已进入生产环境，但很多企业仍用共享 API Key、服务账号和静态凭据驱动它们。作者系统梳理了 OAuth 代理授权草案、SPIFFE、A2A、审计链等方向，指出 Agent 既不是人也不是传统服务账号，必须拥有实例级身份、委托链和工具级授权。对设计企业级 Agent 平台的人，这是一篇很值得细读的安全底座文章。
+ 文章标题：一次 Teams 支持电话如何导向入侵
+文章链接：一次 Teams 支持电话如何导向入侵
+所属领域：红队
+文章总结：这篇复盘围绕“伪装成技术支持”的社工入侵路径展开，核心不是单一恶意样本，而是攻击者如何借助 Teams 支持通话建立信任、推进远程协助或后续恶意操作。它对防守侧的意义在于，把社工、协作软件、远程支持工具和初始访问串成了完整链路，提醒企业对“语音/视频支持请求”也要做身份校验、会话审计和最小授权。
+ 文章标题：GlassWorm 恶意软件进化：藏进依赖链的供应链隐蔽术
+文章链接：GlassWorm 恶意软件进化：藏进依赖链的供应链隐蔽术
+所属领域：网络安全
+文章总结：文章关注 GlassWorm 如何把恶意能力进一步隐藏进依赖链与开发生态，目标不再只是终端用户，而是信任第三方扩展和依赖包的开发者群体。它的参考价值在于再次提醒我们：供应链攻击的重点已从“投递恶意文件”转向“借正常分发渠道完成隐蔽植入”。对蓝队和安全工程团队来说，依赖审计、来源校验、构建链可追溯性已经是必须项。
+ 文章标题：AI 驱动的恶意软件调试器：自动解释每个函数行为
+文章链接：AI 驱动的恶意软件调试器：自动解释每个函数行为
+所属领域：工具
+文章总结：作者实现了一个面向恶意代码分析的 AIDebug，把静态分析、递归函数发现、FLIRT 签名匹配、行为模式检测、CFG 构建和 Claude 解读整合到一起，还可联动 Frida 做动态观察。它的价值不在“AI 自动代替分析员”，而在于显著压缩逆向的前置噪音，把大量 sub_xxx 级别函数先做预分类、风险评级和 ATT&amp;amp;CK 映射，让分析员更快定位高价值逻辑。</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 16</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-16/</link>
