@@ -6,7 +6,33 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 17 Mar 2026 16:41:25 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Mar 2026 12:39:25 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 18</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-18/</link>
+      <pubDate>Wed, 18 Mar 2026 12:39:25 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-18/</guid>
+      <description>文章标题：Microsoft Word OLE 绕过漏洞 CVE-2026-21514 常见问题解答
+文章链接：Microsoft Word OLE 绕过漏洞 CVE-2026-21514 常见问题解答
+所属领域：网络安全
+文章总结：文章围绕 CVE-2026-21514 展开，重点解释该漏洞如何绕过 Word 中 OLE 与 Mark-of-the-Web 相关安全提示，让受害者仅需打开恶意文档就可能触发后续载荷。对安全从业者最有价值的是它不只讲漏洞原理，还结合资产暴露规模、活跃利用情况与缓解建议，给出了补丁、ASR 规则、阻断 OLE/COM 场景和终端监控等一整套防守优先级。
+ 文章标题：Operation Epic Fury：暴露面数据如何改写伊朗网络动能战研判
+文章链接：Operation Epic Fury：暴露面数据如何改写伊朗网络动能战研判
+所属领域：网络安全
+文章总结：这篇文章把地缘冲突、网络行动和暴露面情报结合在一起分析，核心观点是单看威胁情报不够，必须把可被利用的真实资产规模纳入研判。作者用七个国家的暴露面数据说明，像 CVE-2026-21514 这类 N-Day 在现实中的杀伤力，取决于外网可达资产、区域集中度与补丁滞后。对攻防团队来说，它很适合作为“威胁优先级排序应基于暴露面”的案例材料。
+ 文章标题：企业邮箱防钓鱼攻击：邮件安全网关的 3 大核心技术
+文章链接：企业邮箱防钓鱼攻击：邮件安全网关的 3 大核心技术
+所属领域：网络安全
+文章总结：文章围绕企业邮箱场景中的仿冒、恶意附件和 BEC 三类主流攻击，系统梳理了邮件安全网关的三道关键防线：SPF、DKIM、DMARC 身份校验，基于语义和行为的内容识别，以及对附件和链接的沙箱检测。它的价值不在基础概念，而在于把防钓鱼能力拆成可部署的技术层，并强调“协议校验 + 智能识别 + 动态检测”的组合拳更贴近企业真实落地。
+ 文章标题：新窃密技术预警：现代光学鼠标窃密
+文章链接：新窃密技术预警：现代光学鼠标窃密
+所属领域：网络安全
+文章总结：文章介绍了 Mic-E-Mouse 这类利用高 DPI 光学鼠标做侧信道窃密的新思路：攻击者不需要麦克风权限，而是通过采集桌面微振动并结合信号处理与机器学习重建人声信息。它的技术价值在于提醒防守侧重新审视“看似无害的外设传感能力”，也给红队和硬件安全研究者提供了一个值得继续验证的攻击面，即声学泄露可以被非传统设备放大和转化。
+ 文章标题：AI 系统威胁建模：划清应用安全与 AI 安全的边界
+文章链接：AI 系统威胁建模：划清应用安全与 AI 安全的边界</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 17</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-17/</link>
