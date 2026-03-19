@@ -6,7 +6,32 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 18 Mar 2026 12:39:25 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Mar 2026 12:23:11 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 19</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-19/</link>
+      <pubDate>Thu, 19 Mar 2026 12:23:11 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-19/</guid>
+      <description>文章标题：Claude 用户数据窃取三连洞：Claudy Day 攻击链曝光
+文章链接：Claude 用户数据窃取三连洞：Claudy Day 攻击链曝光
+所属领域：AI
+文章总结：文章披露了 Claude 相关的三处缺陷如何被串成完整攻击链：攻击者可借助 Google 搜索广告、预填充 URL、隐藏提示词和 Files API，把看似正常的访问变成静默数据外传。真正值得安全团队关注的是，这条链并不依赖复杂外部工具，一旦 Agent 已接入 MCP、文件或企业系统，风险会从聊天泄露迅速升级为跨系统越权与敏感数据外流。
+ 文章标题：DarkSword：间谍与窃贼通用的 iPhone 利用工具包
+文章链接：DarkSword：间谍与窃贼通用的 iPhone 利用工具包
+所属领域：网络安全
+文章总结：文章梳理了 DarkSword 利用链的组成方式，涵盖 JavaScriptCore、内核、沙箱逃逸和提权等多个阶段，说明攻击者如何通过一次点击完成从网页到设备完全失陷的过程。它最有价值的点在于指出这类 iOS 0day 工具已不再只服务于传统间谍场景，还开始兼顾加密钱包窃取等逐利用途，意味着移动端高端攻击能力正在向更混合的威胁模型演化。
+ 文章标题：SnappyClient C2 植入体瞄准加密钱包
+文章链接：SnappyClient C2 植入体瞄准加密钱包
+所属领域：红队
+文章总结：这篇分析展示了 SnappyClient 作为 C2 植入体的完整能力面，包括远程 Shell、截图、键盘记录、浏览器与扩展数据窃取，以及通过 HijackLoader 完成交付与加载。文章的技术价值在于对规避检测的细节说明比较明确，例如 AMSI 绕过、64 位执行、直接系统调用和进程注入，这些手法说明它更像一个长期潜伏型后渗透组件，而不是一次性盗号木马。
+ 文章标题：研究人员称 Meta 与 TikTok 在广告点击后仍收集个人与金融信息
+文章链接：研究人员称 Meta 与 TikTok 在广告点击后仍收集个人与金融信息
+所属领域：网络安全
+文章总结：文章聚焦广告像素的第三方数据收集问题，指出相关脚本会在用户尚未完成同意选择前就开始收集姓名、位置、购物流程以及部分支付信息。对安全从业者来说，这篇文章的价值不在“又一起隐私争议”，而在于它把追踪像素重新放回第三方脚本风险、合规失控和供应链数据外流的框架中看待，适合做浏览器侧数据出境与第三方治理的人参考。
+ 文章标题：AI 系统可观测性：用可见性前移主动风险检测</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 18</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-18/</link>
