@@ -6,7 +6,32 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 19 Mar 2026 12:23:11 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Mar 2026 13:36:50 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 20</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-20/</link>
+      <pubDate>Fri, 20 Mar 2026 13:36:50 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-20/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-20 进行筛选，只保留对安全从业者更有参考价值、且能稳定获取正文的 20 篇内容。
+文章标题：逃离沙箱：一个简单 Python 路径缺陷如何导致主机 RCE
+文章链接：逃离沙箱：一个简单 Python 路径缺陷如何导致主机 RCE
+所属领域：渗透
+文章总结：文章围绕一个部署引擎中的 Python os.path.join() 逻辑缺陷展开。作者展示了当用户可控路径以绝对路径形式传入时，原本用于限制脚本执行目录的“沙箱”会被直接绕过，最终将路径穿越升级为主机级远程代码执行。它的价值在于把“代码看起来安全”和“实际上可被利用”之间的差距讲得很具体，适合做代码审计与上线前自检的反面样例。
+ 文章标题：我的完整漏洞赏金狩猎工作流：逐步命令清单
+文章链接：我的完整漏洞赏金狩猎工作流：逐步命令清单
+所属领域：工具
+文章总结：这篇文章把漏洞赏金流程拆成攻击面梳理、漏洞挖掘、业务/API 测试、敏感信息收集和报告固化五个阶段，并明确强调“先侦察、后利用”的节奏。它的可读性不在概念，而在作者用命令驱动方式组织日常操作，适合想把零散工具链沉淀成稳定打法的读者。对刚开始做众测或想标准化个人方法论的人尤其有参考意义。
+ 文章标题：OffSec Proving Grounds：Potato 靶机解析
+文章链接：OffSec Proving Grounds：Potato 靶机解析
+所属领域：CTF
+文章总结：Potato 这台靶机把 PHP 类型混淆、匿名 FTP 源码泄露、LFI、MD5 破解和 sudo 通配符提权串成了一条完整链路。作者重点强调全端口扫描的重要性，因为关键服务并不在常规端口上。虽然利用点不新，但整条路径很适合训练“枚举决定成败”的意识，也适合作为初中级靶机场景里从 Web 入口走到 root 的复盘模板。
+ 文章标题：Proving Grounds：XposedAPI 靶机解析
+文章链接：Proving Grounds：XposedAPI 靶机解析
+所属领域：CTF
+文章总结：文章从对暴露 API 的识别开始，逐步推进到 Web 接口利用、拿 shell 以及通过 SUID 二进制完成提权。它的亮点在于把“看起来像一台普通 Web 机”如何变成“接口攻击面主导的提权路径”解释得很顺，适合练习从端口服务、页面提示到接口语义三层联动枚举。做 API 安全和靶场训练的人都能从中找到复盘价值。</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 19</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-19/</link>
