@@ -6,7 +6,29 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 20 Mar 2026 13:36:50 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Mar 2026 19:49:10 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 21</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-21/</link>
+      <pubDate>Sat, 21 Mar 2026 19:49:10 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-21/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-21 进行筛选，优先保留漏洞分析、攻防实战、工具能力与 AI 安全方向中信息密度更高的 20 篇内容。
+文章标题：CTI-REALM：面向 AI Agent 端到端检测规则生成的新基准
+文章链接：CTI-REALM：面向 AI Agent 端到端检测规则生成的新基准
+所属领域：AI
+文章总结：微软提出的 CTI-REALM 不再只测模型会不会回答情报问答，而是把阅读威胁报告、探索遥测、编写与迭代 KQL、生成 Sigma 规则这一整条检测工程链路纳入评估。它覆盖 Linux、AKS 和 Azure 云环境，并对中间步骤单独打分，适合安全团队在引入 AI 检测助手前，验证模型到底能不能把情报真正转化为可落地的检测规则。
+ 文章标题：端到端保护 Agentic AI
+文章链接：端到端保护 Agentic AI
+所属领域：AI
+文章总结：这篇文章的价值不在宣传概念，而是把企业落地 Agentic AI 时最现实的三层问题拆开讲清楚：如何观测与治理 Agent、如何保护底层身份与数据基础设施、以及如何利用安全 Agent 反过来提升防御效率。文中覆盖了影子 AI 发现、身份恢复、数据过度共享防护和统一身份风险视图等能力，对企业设计 AI 安全基线很有参考意义。
+ 文章标题：AI 驱动的进攻性安全：当前格局及其对防御的意义
+文章链接：AI 驱动的进攻性安全：当前格局及其对防御的意义
+所属领域：红队
+文章总结：Praetorian 讨论的重点不是“AI 会写点脚本”这种浅层自动化，而是 Agentic AI 如何把自定义恶意软件和 C2 工具从数周研发压缩到数天，并能围绕真实 EDR 遥测做闭环迭代。最值得警惕的是它强调了面向特定环境定制规避逻辑的能力正在下降门槛，意味着蓝队必须把检测思路从静态样本转向更快的行为与反馈回路。
+ 文章标题：CVE-2026-21992：Oracle Identity Manager 与 Oracle Web Services Manager 关键远程代码执行漏洞</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 20</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-20/</link>
