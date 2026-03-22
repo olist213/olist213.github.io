@@ -6,7 +6,29 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 21 Mar 2026 19:49:10 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Mar 2026 13:27:47 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 22</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-22/</link>
+      <pubDate>Sun, 22 Mar 2026 13:27:47 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-22/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-22 进行筛选，严格从 issue 正文链接中挑选 20 篇更适合网络安全从业者深读的内容，优先保留供应链攻击、漏洞利用、攻防实战、AI 安全与高价值工具方向。
+文章标题：Trivy 漏洞扫描器供应链失陷，GitHub Actions 被植入窃密程序
+文章链接：Trivy 漏洞扫描器供应链失陷，GitHub Actions 被植入窃密程序
+所属领域：网络安全
+文章总结：这篇文章把 Trivy 事件的危险性讲得很透。攻击者利用被盗写权限篡改官方 release 和 GitHub Actions 标签，把 entrypoint.sh 替换为窃密脚本，系统性搜集 SSH 密钥、云凭证、CI/CD 配置、Shell 历史与环境变量，并通过伪装域名外传，失败时还会借 GitHub 仓库回传数据。它对供应链防护、Actions 固定版本与密钥隔离都有直接参考价值。
+ 文章标题：Azure Monitor 告警被滥用于回拨式钓鱼
+文章链接：Azure Monitor 告警被滥用于回拨式钓鱼
+所属领域：红队
+文章总结：这篇内容的关键点在于攻击并非伪造邮件，而是直接借 Azure Monitor 的合法告警通道发送钓鱼信息。由于邮件来自 azure-noreply@microsoft.com，还能通过 SPF、DKIM、DMARC 校验，极大提升了可信度。攻击者只需在告警描述里植入“异常扣费”和回拨电话，再配合邮件列表转发，就能把云厂商通知链条反过来变成社工基础设施。
+ 文章标题：Google 为 Android APK 侧载引入“高级流程”安全机制
+文章链接：Google 为 Android APK 侧载引入“高级流程”安全机制
+所属领域：网络安全
+文章总结：Google 这次不是简单收紧侧载，而是给高阶用户单独设计了一条更安全的未验证 APK 安装路径。文章指出，新机制会在保留侧载自由度的同时，尽量降低恶意软件与诈骗应用的落地概率。对移动安全从业者来说，这类设计值得关注，因为它代表平台开始用流程控制和风险分层，而不只是“一刀切”封堵，来平衡开放性与防护强度。
+ 文章标题：WorldLeaks 勒索组织入侵洛杉矶市政府</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 21</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-21/</link>
