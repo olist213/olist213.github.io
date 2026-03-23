@@ -6,26 +6,26 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Mar 2026 12:19:02 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Mar 2026 19:31:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>每日信息流 2026 03 23</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-23/</link>
-      <pubDate>Mon, 23 Mar 2026 12:19:02 +0800</pubDate>
+      <pubDate>Mon, 23 Mar 2026 19:31:34 +0800</pubDate>
       
       <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-23/</guid>
-      <description>截至 2026-03-23 12:19:02 +08:00，GitHub Issues 最新一期仍为 [每日信息流] 2026-03-22。因此本文严格基于该 issue 正文链接重新整理 20 篇最值得网络安全从业者深读的内容，优先保留供应链攻击、漏洞利用、攻防实战、AI 安全与高价值工具方向。
-文章标题：Trivy 漏洞扫描器供应链失陷，GitHub Actions 被植入窃密程序
-文章链接：Trivy 漏洞扫描器供应链失陷，GitHub Actions 被植入窃密程序
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-23 进行筛选，严格从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞复现、攻击链拆解、基础设施追踪、红队工具、AI 工程化与可直接落地的方法论，排除了泛新闻、纯情绪表达和低技术密度内容。
+文章标题：构建适合 AI 使用的 CLI
+文章链接：构建适合 AI 使用的 CLI
+所属领域：AI
+文章总结：这篇文章把“AI 为什么用不好很多 CLI”拆得很具体。作者从实践出发，指出彩色表格、非结构化输出、locale 差异和进度条混流都会显著拉低 Agent 稳定性，因此主张 CLI 默认提供 JSON 输入输出，并补充 schema 子命令让模型运行时自发现参数和输出结构。对正在做安全自动化、MCP 包装或内部工具改造的人，这是一篇非常实用的工程指南。
+ 文章标题：基础设施枢轴分析：如何从单个 IOC 扩展出完整攻击者网络
+文章链接：基础设施枢轴分析：如何从单个 IOC 扩展出完整攻击者网络
 所属领域：网络安全
-文章总结：这篇文章把 Trivy 事件的危险性讲得很透。攻击者利用被盗写权限篡改官方 release 和 GitHub Actions 标签，把 entrypoint.sh 替换为窃密脚本，系统性搜集 SSH 密钥、云凭证、CI/CD 配置、Shell 历史与环境变量，并通过伪装域名外传，失败时还会借 GitHub 仓库回传数据。它对供应链防护、Actions 固定版本与密钥隔离都有直接参考价值。
- 文章标题：Azure Monitor 告警被滥用于回拨式钓鱼
-文章链接：Azure Monitor 告警被滥用于回拨式钓鱼
-所属领域：红队
-文章总结：这篇内容的关键点在于攻击并非伪造邮件，而是直接借 Azure Monitor 的合法告警通道发送钓鱼信息。由于邮件来自 azure-noreply@microsoft.com，还能通过 SPF、DKIM、DMARC 校验，极大提升了可信度。攻击者只需在告警描述里植入“异常扣费”和回拨电话，再配合邮件列表转发，就能把云厂商通知链条反过来变成社工基础设施。
- 文章标题：Google 为 Android APK 侧载引入“高级流程”安全机制
-文章链接：Google 为 Android APK 侧载引入“高级流程”安全机制
+文章总结：文章把 CTI 分析里最关键的“从一个点拉出一张网”讲成了可执行流程。可见目录覆盖了域名到 IP、被动 DNS、ASN、TLS 证书、子域模式、Shodan/Censys/FOFA 指纹、WHOIS 关联以及 Python 自动化，已经不是泛泛而谈，而是完整的基础设施扩展链路。对于威胁情报、红队画像和溯源辅助场景都很有参考价值，尤其适合拿来补齐 IOC 关联分析的方法体系。
+ 文章标题：Ploutus 恶意软件再起：ATM 吐钞攻击上升并触发 FBI 警报
+文章链接：Ploutus 恶意软件再起：ATM 吐钞攻击上升并触发 FBI 警报
 所属领域：网络安全
-文章总结：Google 这次不是简单收紧侧载，而是给高阶用户单独设计了一条更安全的未验证 APK 安装路径。文章指出，新机制会在保留侧载自由度的同时，尽量降低恶意软件与诈骗应用的落地概率。对移动安全从业者来说，这类设计值得关注，因为它代表平台开始用流程控制和风险分层，而不只是“一刀切”封堵，来平衡开放性与防护强度。</description>
+文章总结：这篇文章的价值在于它没有停留在“ATM 又被打了”的新闻层面，而是把问题压到 XFS 中间件这一关键层。作者明确指出，Ploutus 的核心不是绕过银行卡认证，而是直接对 ATM 的原生控制接口发出出钞指令，从而绕过交易校验链。对金融安全从业者来说，这提醒我们防护重点不能只盯银行核心系统，还要覆盖 Windows Embedded、第三方运维和设备控制中间层。</description>
     </item>
     
     <item>

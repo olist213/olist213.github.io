@@ -46,7 +46,7 @@
     "articleSection" : "study_book",
     "name" : "每日信息流 2026 03 23",
     "headline" : "每日信息流 2026 03 23",
-    "description" : "截至 2026-03-23 12:19:02 \u002b08:00，GitHub Issues 最新一期仍为 [每日信息流] 2026-03-22。因此本文严格基于该 issue 正文链接重新整理 20 篇最值得网络安全从业者深读的内容，优先保留供应链攻击、漏洞利用、攻防实战、AI 安全与高价值工具方向。\n文章标题：Trivy 漏洞扫描器供应链失陷，GitHub Actions 被植入窃密程序\n文章链接：Trivy 漏洞扫描器供应链失陷，GitHub Actions 被植入窃密程序\n所属领域：网络安全\n文章总结：这篇文章把 Trivy 事件的危险性讲得很透。攻击者利用被盗写权限篡改官方 release 和 GitHub Actions 标签，把 entrypoint.sh 替换为窃密脚本，系统性搜集 SSH 密钥、云凭证、CI\/CD 配置、Shell 历史与环境变量，并通过伪装域名外传，失败时还会借 GitHub 仓库回传数据。它对供应链防护、Actions 固定版本与密钥隔离都有直接参考价值。\n 文章标题：Azure Monitor 告警被滥用于回拨式钓鱼\n文章链接：Azure Monitor 告警被滥用于回拨式钓鱼\n所属领域：红队\n文章总结：这篇内容的关键点在于攻击并非伪造邮件，而是直接借 Azure Monitor 的合法告警通道发送钓鱼信息。由于邮件来自 azure-noreply@microsoft.com，还能通过 SPF、DKIM、DMARC 校验，极大提升了可信度。攻击者只需在告警描述里植入“异常扣费”和回拨电话，再配合邮件列表转发，就能把云厂商通知链条反过来变成社工基础设施。\n 文章标题：Google 为 Android APK 侧载引入“高级流程”安全机制\n文章链接：Google 为 Android APK 侧载引入“高级流程”安全机制\n所属领域：网络安全\n文章总结：Google 这次不是简单收紧侧载，而是给高阶用户单独设计了一条更安全的未验证 APK 安装路径。文章指出，新机制会在保留侧载自由度的同时，尽量降低恶意软件与诈骗应用的落地概率。对移动安全从业者来说，这类设计值得关注，因为它代表平台开始用流程控制和风险分层，而不只是“一刀切”封堵，来平衡开放性与防护强度。",
+    "description" : "本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-23 进行筛选，严格从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞复现、攻击链拆解、基础设施追踪、红队工具、AI 工程化与可直接落地的方法论，排除了泛新闻、纯情绪表达和低技术密度内容。\n文章标题：构建适合 AI 使用的 CLI\n文章链接：构建适合 AI 使用的 CLI\n所属领域：AI\n文章总结：这篇文章把“AI 为什么用不好很多 CLI”拆得很具体。作者从实践出发，指出彩色表格、非结构化输出、locale 差异和进度条混流都会显著拉低 Agent 稳定性，因此主张 CLI 默认提供 JSON 输入输出，并补充 schema 子命令让模型运行时自发现参数和输出结构。对正在做安全自动化、MCP 包装或内部工具改造的人，这是一篇非常实用的工程指南。\n 文章标题：基础设施枢轴分析：如何从单个 IOC 扩展出完整攻击者网络\n文章链接：基础设施枢轴分析：如何从单个 IOC 扩展出完整攻击者网络\n所属领域：网络安全\n文章总结：文章把 CTI 分析里最关键的“从一个点拉出一张网”讲成了可执行流程。可见目录覆盖了域名到 IP、被动 DNS、ASN、TLS 证书、子域模式、Shodan\/Censys\/FOFA 指纹、WHOIS 关联以及 Python 自动化，已经不是泛泛而谈，而是完整的基础设施扩展链路。对于威胁情报、红队画像和溯源辅助场景都很有参考价值，尤其适合拿来补齐 IOC 关联分析的方法体系。\n 文章标题：Ploutus 恶意软件再起：ATM 吐钞攻击上升并触发 FBI 警报\n文章链接：Ploutus 恶意软件再起：ATM 吐钞攻击上升并触发 FBI 警报\n所属领域：网络安全\n文章总结：这篇文章的价值在于它没有停留在“ATM 又被打了”的新闻层面，而是把问题压到 XFS 中间件这一关键层。作者明确指出，Ploutus 的核心不是绕过银行卡认证，而是直接对 ATM 的原生控制接口发出出钞指令，从而绕过交易校验链。对金融安全从业者来说，这提醒我们防护重点不能只盯银行核心系统，还要覆盖 Windows Embedded、第三方运维和设备控制中间层。",
     "inLanguage" : "zh-cn",
     "author" : "[lca]",
     "creator" : "[lca]",
@@ -54,10 +54,10 @@
     "accountablePerson" : "[lca]",
     "copyrightHolder" : "[lca]",
     "copyrightYear" : "2026",
-    "datePublished": "2026-03-23 12:19:02 \u002b0800 CST",
-    "dateModified" : "2026-03-23 12:19:02 \u002b0800 CST",
+    "datePublished": "2026-03-23 19:31:34 \u002b0800 CST",
+    "dateModified" : "2026-03-23 19:31:34 \u002b0800 CST",
     "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-23\/",
-    "wordCount" : "432",
+    "wordCount" : "379",
     "keywords" : [  "Olist.213"]
 }
 </script>
@@ -150,106 +150,106 @@
           
           
 
-          <p>截至 2026-03-23 12:19:02 +08:00，GitHub Issues 最新一期仍为 <a href="https://github.com/chainreactors/picker/issues/1185"><code>[每日信息流] 2026-03-22</code></a>。因此本文严格基于该 issue 正文链接重新整理 20 篇最值得网络安全从业者深读的内容，优先保留供应链攻击、漏洞利用、攻防实战、AI 安全与高价值工具方向。</p>
-<p>文章标题：Trivy 漏洞扫描器供应链失陷，GitHub Actions 被植入窃密程序</p>
-<p>文章链接：<a href="https://www.bleepingcomputer.com/news/security/trivy-vulnerability-scanner-breach-pushed-infostealer-via-github-actions/">Trivy 漏洞扫描器供应链失陷，GitHub Actions 被植入窃密程序</a></p>
-<p>所属领域：网络安全</p>
-<p>文章总结：这篇文章把 Trivy 事件的危险性讲得很透。攻击者利用被盗写权限篡改官方 release 和 GitHub Actions 标签，把 <code>entrypoint.sh</code> 替换为窃密脚本，系统性搜集 SSH 密钥、云凭证、CI/CD 配置、Shell 历史与环境变量，并通过伪装域名外传，失败时还会借 GitHub 仓库回传数据。它对供应链防护、Actions 固定版本与密钥隔离都有直接参考价值。</p>
+          <p>本文基于 GitHub Issues 最新一期 <a href="https://github.com/Tyaoo/picker/issues/1322"><code>[每日信息流] 2026-03-23</code></a> 进行筛选，严格从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞复现、攻击链拆解、基础设施追踪、红队工具、AI 工程化与可直接落地的方法论，排除了泛新闻、纯情绪表达和低技术密度内容。</p>
+<p>文章标题：构建适合 AI 使用的 CLI</p>
+<p>文章链接：<a href="https://www.hahwul.com/posts/2026/building-ai-friendly-clis/">构建适合 AI 使用的 CLI</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章把“AI 为什么用不好很多 CLI”拆得很具体。作者从实践出发，指出彩色表格、非结构化输出、locale 差异和进度条混流都会显著拉低 Agent 稳定性，因此主张 CLI 默认提供 JSON 输入输出，并补充 <code>schema</code> 子命令让模型运行时自发现参数和输出结构。对正在做安全自动化、MCP 包装或内部工具改造的人，这是一篇非常实用的工程指南。</p>
 <hr>
-<p>文章标题：Azure Monitor 告警被滥用于回拨式钓鱼</p>
-<p>文章链接：<a href="https://www.bleepingcomputer.com/news/security/microsoft-azure-monitor-alerts-abused-in-callback-phishing-campaigns/">Azure Monitor 告警被滥用于回拨式钓鱼</a></p>
+<p>文章标题：基础设施枢轴分析：如何从单个 IOC 扩展出完整攻击者网络</p>
+<p>文章链接：<a href="https://infosecwriteups.com/infrastructure-pivoting-how-cti-analysts-expand-from-a-single-ioc-to-a-full-attacker-network-1295d50ec29c?source=rss----7b722bfd1b8d---4">基础设施枢轴分析：如何从单个 IOC 扩展出完整攻击者网络</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章把 CTI 分析里最关键的“从一个点拉出一张网”讲成了可执行流程。可见目录覆盖了域名到 IP、被动 DNS、ASN、TLS 证书、子域模式、Shodan/Censys/FOFA 指纹、WHOIS 关联以及 Python 自动化，已经不是泛泛而谈，而是完整的基础设施扩展链路。对于威胁情报、红队画像和溯源辅助场景都很有参考价值，尤其适合拿来补齐 IOC 关联分析的方法体系。</p>
+<hr>
+<p>文章标题：Ploutus 恶意软件再起：ATM 吐钞攻击上升并触发 FBI 警报</p>
+<p>文章链接：<a href="https://infosecwriteups.com/ploutus-malware-uptick-in-atm-jackpotting-incidents-prompts-fbi-warning-554a944847b6?source=rss----7b722bfd1b8d---4">Ploutus 恶意软件再起：ATM 吐钞攻击上升并触发 FBI 警报</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章的价值在于它没有停留在“ATM 又被打了”的新闻层面，而是把问题压到 XFS 中间件这一关键层。作者明确指出，Ploutus 的核心不是绕过银行卡认证，而是直接对 ATM 的原生控制接口发出出钞指令，从而绕过交易校验链。对金融安全从业者来说，这提醒我们防护重点不能只盯银行核心系统，还要覆盖 Windows Embedded、第三方运维和设备控制中间层。</p>
+<hr>
+<p>文章标题：使用 Shodan 在大型企业生产环境中发现拒绝服务漏洞</p>
+<p>文章链接：<a href="https://infosecwriteups.com/found-a-denial-of-service-vulnerability-in-a-major-companys-production-infrastructure-using-shodan-e5f766a4df79?source=rss----7b722bfd1b8d---4">使用 Shodan 在大型企业生产环境中发现拒绝服务漏洞</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：这篇文章比较值得看的地方，不是结论本身，而是完整的侦察过程。作者从目标 IP 段入手，用 Shodan 筛出异常主机，再根据非常规端口、服务指纹和协议响应逐层排查，最终定位到生产基础设施上的 DoS 风险点。它非常适合提醒做赏金和外网资产面的测试人员：IP 段、非标准端口、冷门服务和自定义协议，往往比常规 Web 更容易藏住高价值问题。</p>
+<hr>
+<p>文章标题：人们正把一切系统的钥匙交给智能体</p>
+<p>文章链接：<a href="https://hackernoon.com/people-are-handing-their-agents-the-keys-to-everything-heres-what-happening?source=rss">人们正把一切系统的钥匙交给智能体</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章从一个典型但危险的场景切入：开发者在演示自治代理时，顺手把 Gmail、GitHub、Slack 乃至 AWS 凭据都接了进去，却几乎没做真正的护栏。它的现实意义在于指出，当团队把 Agent 当成“更聪明的脚本”时，往往会低估委托边界、权限收敛、审批链和回滚机制的重要性。对安全团队而言，这正是当前 AI 落地中最值得提前介入的风险点。</p>
+<hr>
+<p>文章标题：Cloudflare 将 archive.today 归类为 C&amp;C/Botnet</p>
+<p>文章链接：<a href="https://www.solidot.org/story?sid=83830">Cloudflare 将 archive.today 归类为 C&amp;C/Botnet</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这条信息流的价值在于它揭示了一个不常见但非常现实的滥用面。根据报道，archive.today 被发现通过面向特定地区用户的 CAPTCHA 页面嵌入脚本，对目标博客发起 DDoS，最终被 Cloudflare 直接归入 Command and Control &amp; Botnet 类别，并在 1.1.1.2 上停止解析。对蓝队和情报分析来说，这说明“看起来合法的归档站”同样可能被拿来承载攻击流量，域名信誉不能被简单等同于安全。</p>
+<hr>
+<p>文章标题：从 Conti 泄露数据挖到真实样本、硬编码 C2 与加密密钥</p>
+<p>文章链接：<a href="https://ddanchev.blogspot.com/2026/03/when-data-mining-conti-leaks-leads-to_029886864.html">从 Conti 泄露数据挖到真实样本、硬编码 C2 与加密密钥</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章的技术密度很高。作者不是停留在 Conti 泄露数据的情报整理，而是沿着泄露材料挖到真实恶意样本，再对 PE 文件做行为拆解，给出注册表改写、动态 API 解析、文件系统操作、系统信息采集、内存操控和互斥体等关键能力点。最有价值的是，它把“泄露数据集”真正转化成了可验证的样本分析链路，适合做恶意软件画像、IOC 扩展和历史样本再挖掘。</p>
+<hr>
+<p>文章标题：RAMP 论坛成员域名资产全集</p>
+<p>文章链接：<a href="https://ddanchev.blogspot.com/2026/03/a-domains-portfolio-belonging-to-ramp.html">RAMP 论坛成员域名资产全集</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇内容本质上是一份极具操作性的归因线索表。作者基于此前对 RAMP 论坛的研究，把论坛成员邮箱与其管理或注册的域名资产逐条映射出来，既能用于被动监测，也能用于历史基础设施回溯。对威胁情报团队来说，这类“邮箱到域名”的关联表非常珍贵，因为它能直接拿来做注册特征聚类、钓鱼站扩展和跨案件基础设施碰撞，而不是只做事后阅读。</p>
+<hr>
+<p>文章标题：RAMP 论坛成员比特币钱包地址全集</p>
+<p>文章链接：<a href="https://ddanchev.blogspot.com/2026/03/a-compilation-of-bitcoin-wallet.html">RAMP 论坛成员比特币钱包地址全集</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：相比泛泛而谈的链上分析文章，这篇更像一份现成的追踪素材库。作者直接整理出 RAMP 论坛成员在私信和帖子里出现的比特币钱包地址，并标注对应用户与消息来源。其价值不只是“列地址”，而是为执法、情报团队和链上分析人员提供了高质量标签源。后续无论是看资金汇聚、混币路径，还是交叉碰撞其他勒索组织地址簇，这类原始映射都极具长期使用价值。</p>
+<hr>
+<p>文章标题：RAMP 论坛成员可归因邮箱地址全集</p>
+<p>文章链接：<a href="https://ddanchev.blogspot.com/2026/03/a-compilation-of-personally.html">RAMP 论坛成员可归因邮箱地址全集</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章最重要的地方在于规模和可直接利用性。作者整理了 8300 名活跃 RAMP 论坛成员的可归因邮箱账户，目标很明确，就是帮助安全社区和执法侧提升溯源与关联打击能力。对于防守方来说，这份数据不仅能用于账号和域名复用碰撞，也很适合拿去做注册模式、邮箱服务偏好、历史泄露数据重叠和威胁团伙画像补全，是一类难得的高质量归因原料。</p>
+<hr>
+<p>文章标题：LOLFSaaS：免费 SaaS 的 Living off the Land 目录</p>
+<p>文章链接：<a href="https://github.com/lolfsaas/lolfsaas.github.io">LOLFSaaS：免费 SaaS 的 Living off the Land 目录</a></p>
 <p>所属领域：红队</p>
-<p>文章总结：这篇内容的关键点在于攻击并非伪造邮件，而是直接借 Azure Monitor 的合法告警通道发送钓鱼信息。由于邮件来自 <code>azure-noreply@microsoft.com</code>，还能通过 SPF、DKIM、DMARC 校验，极大提升了可信度。攻击者只需在告警描述里植入“异常扣费”和回拨电话，再配合邮件列表转发，就能把云厂商通知链条反过来变成社工基础设施。</p>
+<p>文章总结：这个项目非常适合红队和蓝队同时关注。它收录了 127 个带免费层的 SaaS 平台，不只是简单罗列名称，而是把滥用面、OPSEC 风险、检测逻辑、C2 映射、外传工具映射和运营限制整理成结构化字段。对红队来说，这是一份“合法服务滥用面”地图；对蓝队来说，它等于是把未来可能被用于钓鱼、载荷托管、C2 与数据外传的可信平台名单提前摊开，方便建立检测基线。</p>
 <hr>
-<p>文章标题：Google 为 Android APK 侧载引入“高级流程”安全机制</p>
-<p>文章链接：<a href="https://www.bleepingcomputer.com/news/security/google-adds-advanced-flow-for-safe-apk-sideloading-on-android/">Google 为 Android APK 侧载引入“高级流程”安全机制</a></p>
-<p>所属领域：网络安全</p>
-<p>文章总结：Google 这次不是简单收紧侧载，而是给高阶用户单独设计了一条更安全的未验证 APK 安装路径。文章指出，新机制会在保留侧载自由度的同时，尽量降低恶意软件与诈骗应用的落地概率。对移动安全从业者来说，这类设计值得关注，因为它代表平台开始用流程控制和风险分层，而不只是“一刀切”封堵，来平衡开放性与防护强度。</p>
-<hr>
-<p>文章标题：WorldLeaks 勒索组织入侵洛杉矶市政府</p>
-<p>文章链接：<a href="https://securityaffairs.com/189753/data-breach/worldleaks-group-breached-the-city-of-los-angeles.html">WorldLeaks 勒索组织入侵洛杉矶市政府</a></p>
-<p>所属领域：网络安全</p>
-<p>文章总结：这篇报道的参考意义在于，它再次说明公共部门仍是勒索组织眼中的高收益目标。市政机构一旦被打穿，影响往往不是单一业务中断，而是横跨民生系统、政务协同和敏感数据披露的复合风险。对防守方来说，值得关注的不是事件本身的热度，而是勒索团伙持续验证“打地方政府”这条路径依旧具备足够高的施压与变现价值。</p>
-<hr>
-<p>文章标题：PolyShell 漏洞使 Magento 与 Adobe Commerce 面临文件上传攻击</p>
-<p>文章链接：<a href="https://securityaffairs.com/189744/security/polyshell-flaw-exposes-magento-and-adobe-commerce-to-file-upload-attacks.html">PolyShell 漏洞使 Magento 与 Adobe Commerce 面临文件上传攻击</a></p>
-<p>所属领域：渗透</p>
-<p>文章总结：Sansec 将这个问题命名为 PolyShell，重点不是单一的“能上传文件”，而是它出现在 Magento 和 Adobe Commerce 这类高价值电商系统的 REST API 上，且可在未授权条件下触发文件上传，并进一步带出 XSS 乃至更严重的后续利用空间。对渗透测试和蓝队加固都很有价值，因为这类洞一旦命中，往往直接碰到支付、订单和后台管理面的核心资产。</p>
-<hr>
-<p>文章标题：FBI 警告俄方黑客大规模钓鱼 Signal 与 WhatsApp 账号</p>
-<p>文章链接：<a href="https://thehackernews.com/2026/03/fbi-warns-russian-hackers-target-signal.html">FBI 警告俄方黑客大规模钓鱼 Signal 与 WhatsApp 账号</a></p>
-<p>所属领域：红队</p>
-<p>文章总结：这篇文章的价值在于把“端到端加密不等于不会失守”说得非常具体。攻击者并不是破解 Signal 或 WhatsApp 的加密，而是冒充支持团队，诱导受害者提交验证码、PIN，或扫描恶意二维码以绑定攻击者设备。成功后既能查看历史消息，也能利用受害者身份继续二次钓鱼。对高价值目标保护而言，这就是最典型的信任链劫持案例。</p>
-<hr>
-<p>文章标题：Oracle 修复可未授权远程执行代码的 CVE-2026-21992</p>
-<p>文章链接：<a href="https://thehackernews.com/2026/03/oracle-patches-critical-cve-2026-21992.html">Oracle 修复可未授权远程执行代码的 CVE-2026-21992</a></p>
-<p>所属领域：网络安全</p>
-<p>文章总结：CVE-2026-21992 的危险点非常直接，CVSS 9.8，且可通过 HTTP 在未认证状态下远程利用，影响 Oracle Identity Manager 和 Oracle Web Services Manager。文章还特别提醒，Oracle Identity Manager 在 2025 年已有同类高危问题被纳入 KEV，这意味着相关组件已是持续受压的攻击面。对企业中间件和身份平台维护团队来说，这类漏洞必须按应急级别推进。</p>
-<hr>
-<p>文章标题：Trivy 供应链攻击衍生 CanisterWorm，可在 47 个 npm 包中自传播</p>
-<p>文章链接：<a href="https://thehackernews.com/2026/03/trivy-supply-chain-attack-triggers-self.html">Trivy 供应链攻击衍生 CanisterWorm，可在 47 个 npm 包中自传播</a></p>
-<p>所属领域：网络安全</p>
-<p>文章总结：如果说 Trivy 被投毒已经够严重，这篇文章展示的是后续扩散阶段更危险的部分。攻击者把后门植入 47 个 npm 包，通过 <code>postinstall</code> 阶段落地 Python 后门、查找 npm token，并借 Internet Computer 的 canister 作为死投递点动态下发后续载荷，还能用 systemd 服务维持持久化。它说明现代供应链攻击已经开始具备“自动找新宿主并继续扩散”的蠕虫化特征。</p>
-<hr>
-<p>文章标题：CISA 将 Apple、Craft CMS 与 Laravel 漏洞加入 KEV 并要求限期修补</p>
-<p>文章链接：<a href="https://thehackernews.com/2026/03/cisa-flags-apple-craft-cms-laravel-bugs.html">CISA 将 Apple、Craft CMS 与 Laravel 漏洞加入 KEV 并要求限期修补</a></p>
-<p>所属领域：网络安全</p>
-<p>文章总结：这篇文章不是简单罗列 KEV 新增条目，而是把几类不同栈的现实攻击压力串了起来。新增的 5 个条目里既有 Apple WebKit 与内核缺陷，也有 Craft CMS 代码注入和 Laravel Livewire 的未授权命令执行场景。文章还把 Apple 漏洞和 DarkSword 利用链、把 Laravel 条目和 MuddyWater 的活跃攻击关联起来，能帮助防守团队更快地做修补优先级排序。</p>
-<hr>
-<p>文章标题：Windows RRAS 远程代码执行漏洞（CVE-2026-26111）利用分析</p>
-<p>文章链接：<a href="https://cxsecurity.com/issue/WLB-2026030030">Windows RRAS 远程代码执行漏洞（CVE-2026-26111）利用分析</a></p>
-<p>所属领域：渗透</p>
-<p>文章总结：CXSecurity 给出的 PoC 价值在于把问题机制写得相当明确。该漏洞位于 Windows RRAS 对特制 RPC 响应的解析过程中，先触发整数溢出，再落到堆缓冲区溢出，最终允许攻击者以高权限执行任意代码。文中还给出恶意响应结构、利用条件与补丁编号。做协议面评估和边界服务审计时，这类“服务端解析链路 + PoC 结构”最值得重点参考。</p>
-<hr>
-<p>文章标题：Linux Kernel 5.8 至 5.15.25 本地提权利用分析</p>
-<p>文章链接：<a href="https://cxsecurity.com/issue/WLB-2026030029">Linux Kernel 5.8 至 5.15.25 本地提权利用分析</a></p>
-<p>所属领域：渗透</p>
-<p>文章总结：虽然底层仍然是 Dirty Pipe 思路，但这篇内容把受影响版本、利用边界和落地方式梳理得比较实用。攻击者可以借未初始化的 <code>pipe_buffer.flags</code> 覆写页缓存内容，从而修改只读文件甚至 <code>/etc/passwd</code>、<code>/etc/bash.bashrc</code> 等关键路径，进而提权到 root。对 Linux 主机场景来说，这类“看似旧洞、实则还在大量老内核里可用”的样本非常适合作为基线核查材料。</p>
-<hr>
-<p>文章标题：Discourse &lt;= 2026.2.1 已认证缺失授权漏洞</p>
-<p>文章链接：<a href="https://cxsecurity.com/issue/WLB-2026030028">Discourse &lt;= 2026.2.1 已认证缺失授权漏洞</a></p>
-<p>所属领域：渗透</p>
-<p>文章总结：这个问题不是经典 RCE，但在真实社区平台里同样有破坏性。文章披露，普通已认证用户可以通过 <code>post_actions</code> 端点里的类型强制问题，把 <code>is_warning</code> 以字符串形式传入，从而绕过原本仅限 staff 的“官方警告”操作。它本质上是权限边界被悄悄撕开，适合提醒审计人员关注业务接口里布尔值、状态位与权限逻辑组合时的隐性绕过。</p>
-<hr>
-<p>文章标题：garak：LLM 漏洞扫描器</p>
-<p>文章链接：<a href="https://github.com/NVIDIA/garak">garak：LLM 漏洞扫描器</a></p>
-<p>所属领域：AI</p>
-<p>文章总结：garak 可以理解成面向大模型的 <code>nmap</code> 或轻量版 Metasploit。它不是只测一个提示词是否越狱，而是系统覆盖幻觉、数据泄露、提示注入、错误信息生成、毒性内容与多类 jailbreak 场景，并支持静态、动态和自适应探测。对安全团队而言，它最大的价值是把“LLM 安全测试”从零散提示词实验，推进到更可重复、可比对、可纳入流程的基线化扫描。</p>
-<hr>
-<p>文章标题：Rustunnel：Rust 编写的 ngrok 风格安全隧道</p>
-<p>文章链接：<a href="https://github.com/joaoh82/rustunnel">Rustunnel：Rust 编写的 ngrok 风格安全隧道</a></p>
+<p>文章标题：MicroBurst：Azure 攻击与安全评估 PowerShell 工具集</p>
+<p>文章链接：<a href="https://github.com/NetSPI/MicroBurst">MicroBurst：Azure 攻击与安全评估 PowerShell 工具集</a></p>
 <p>所属领域：工具</p>
-<p>文章总结：Rustunnel 的亮点不只是“又一个内网穿透工具”，而是把安全隧道、TLS 终止、HTTP/TCP 代理、实时面板、Prometheus 指标与审计日志打成一套完整能力。对红队、开发安全和演示环境暴露来说，这类工具的价值在于既能快速把本地服务拉到公网，又保留较好的可观测性与自托管能力，适合做实验环境、临时接入和多跳代理基础设施。</p>
+<p>文章总结：MicroBurst 依然是做 Azure 安全面时非常值得反复翻的项目。它不仅能做 Azure 服务发现和弱配置审计，还覆盖凭据提取、自动化账户滥用、Key Vault 访问、托管身份提取、App Service 横向移动等后渗透动作。更重要的是，它不是单个脚本，而是一整套围绕 Azure 攻击面沉淀下来的 PowerShell 工作台。对云渗透、云基线核查和实战演练都非常有用。</p>
 <hr>
-<p>文章标题：OpenCLI：把网站与桌面工具统一成 CLI 的 AI 原生运行时</p>
-<p>文章链接：<a href="https://github.com/jackwener/opencli">OpenCLI：把网站与桌面工具统一成 CLI 的 AI 原生运行时</a></p>
-<p>所属领域：AI</p>
-<p>文章总结：OpenCLI 的思路很新，它试图把网站、Electron 应用和本地命令统一抽象成命令行接口，让 AI Agent 可以通过同一套入口发现、学习并调用工具。项目强调浏览器会话复用、动态适配器、命令合成与 <code>AGENT.md</code> 集成，这对需要快速把现有 SaaS、桌面端和内部工具接入自动化工作流的安全团队尤其有启发，属于很值得关注的 Agent 基础设施方向。</p>
+<p>文章标题：PentAGI：全自动 AI 渗透测试代理系统</p>
+<p>文章链接：<a href="https://github.com/IC3-CR3AM/pentagi">PentAGI：全自动 AI 渗透测试代理系统</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：PentAGI 的亮点不在于“用了 AI”，而在于它把自动化渗透真正做成了体系化平台。README 展示了沙箱隔离、长期记忆、知识图谱、外部搜索、子代理协作、Grafana/Prometheus 监控、REST/GraphQL API 以及 20 多种安全工具编排能力。对安全工程师来说，它值得关注的不是噱头，而是它把“自治代理做渗透”涉及的执行隔离、状态持久化、任务分发和结果报告这些硬问题都摆到了台面上。</p>
 <hr>
-<p>文章标题：HopperMCP：面向 Hopper Disassembler 的 MCP 服务</p>
-<p>文章链接：<a href="https://github.com/MxIris-Reverse-Engineering/HopperMCP">HopperMCP：面向 Hopper Disassembler 的 MCP 服务</a></p>
+<p>文章标题：ldapx-py：可组合的 LDAP 过滤器与属性转换工具</p>
+<p>文章链接：<a href="https://github.com/j0hnZ3RA/ldapx-py">ldapx-py：可组合的 LDAP 过滤器与属性转换工具</a></p>
 <p>所属领域：工具</p>
-<p>文章总结：HopperMCP 把逆向分析工具 Hopper 直接接到 MCP 生态里，允许大模型读取伪代码、汇编、地址级内容并写入注释。更有意思的是，它为突破 Hopper 封闭环境与缺失公开接口，采用了代码注入和私有接口调用的办法来拿到反汇编与反编译数据。对逆向工程、恶意代码分析和自动化审计来说，这类“让 LLM 真正接管 RE 工具”的工程路线非常值得关注。</p>
+<p>文章总结：从标题看它像一个普通库，但对做目录服务审计和自动化测试的人其实很有价值。项目把 LDAP filter、BaseDN、属性列表和属性条目都抽象成可组合的中间件链，既能当库用，也能直接走 CLI，而且零依赖。这样的设计特别适合在账号枚举、目录查询变换、批量构造测试负载和协议层自动化脚本里复用，属于那种体积不大但能持续省时间的基础设施型工具。</p>
 <hr>
-<p>文章标题：go-msrpc v1.2.17：Go 版 MS-RPC/DCOM 代码生成与客户端工具</p>
-<p>文章链接：<a href="https://github.com/oiweiwei/go-msrpc/releases/tag/v1.2.17">go-msrpc v1.2.17：Go 版 MS-RPC/DCOM 代码生成与客户端工具</a></p>
-<p>所属领域：工具</p>
-<p>文章总结：这次 release 本身新增的是 <code>tsts.idl</code> 支持，但更值得关注的是项目整体定位。go-msrpc 提供面向 Go 的 MS-RPC/DCOM IDL 解析、代码生成和客户端能力，覆盖 Netlogon、Registry、WMI、Eventlog 等多类 Windows 协议接口。对做域环境协议研究、横向移动工具开发、Windows 管理面审计的人来说，这是一类很少见但非常实用的底层能力库。</p>
-<hr>
-<p>文章标题：AI 恐慌</p>
-<p>文章链接：<a href="http://xargin.com/ai-panic/">AI 恐慌</a></p>
+<p>文章标题：DeerFlow 2.0：开源 SuperAgent 编排框架</p>
+<p>文章链接：<a href="https://github.com/bytedance/deer-flow">DeerFlow 2.0：开源 SuperAgent 编排框架</a></p>
 <p>所属领域：AI</p>
-<p>文章总结：这篇文章不是在空谈“AI 会替代程序员”，而是从作者亲自把大型 Java 项目迁移到 Rust 的体验出发，比较了 2025 到 2026 年模型在长任务收敛、上下文保持和工程执行上的真实变化。它的参考价值在于提醒安全工程师，AI 对研发流程的冲击已经从写 Demo 变成写项目，真正需要思考的是团队结构、技能栈和成本模型如何随之调整。</p>
+<p>文章总结：DeerFlow 2.0 展示的不是一个单点 Agent，而是一套完整的“多代理 + 记忆 + 沙箱 + 技能”编排框架。项目说明里明确强调子代理协作、长期记忆、Context Engineering、沙箱文件系统以及搜索和爬取工具集成，这些恰好都是把 Agent 从 Demo 推向可持续运行系统时最难做好的部分。对想把 AI 真正接到安全研究、代码分析或内容生成流水线的人，这个项目非常值得拆读。</p>
 <hr>
-<p>文章标题：慢跑应用记录泄露法国航母位置</p>
-<p>文章链接：<a href="https://blog.upx8.com/%E6%B0%B4%E5%85%B5%E6%85%A2%E8%B7%91App%E7%BA%AA%E5%BD%95%E6%B3%84%E8%A1%8C%E8%B8%AA-%E6%B3%95%E5%9B%BD%E8%88%AA%E8%88%B0%E4%BD%8D%E7%BD%AE%E5%A4%96%E6%B5%81">慢跑应用记录泄露法国航母位置</a></p>
-<p>所属领域：网络安全</p>
-<p>文章总结：这是一例很典型的 OPSEC 失误案例。法国海军人员在 Strava 上公开的跑步轨迹，意外暴露了“戴高乐”号航母在特定时段的海上位置及过往停泊轨迹。它再次说明，在高敏目标场景里，安全问题未必来自漏洞和恶意代码，很多时候只是个人设备、运动 App 和公开元数据的组合泄漏。对涉密单位、出海团队和高风险岗位的终端管理非常有警示意义。</p>
+<p>文章标题：Claude Bug Bounty：面向漏洞挖掘的 Claude Code 技能集</p>
+<p>文章链接：<a href="https://github.com/shuvonsec/claude-bug-bounty">Claude Bug Bounty：面向漏洞挖掘的 Claude Code 技能集</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：这个项目的实用价值在于它不是泛泛谈“让 AI 帮你挖洞”，而是直接把 recon、IDOR、XSS、SSRF、OAuth、GraphQL、LLM injection 和报告生成整理成可调用的 Claude Code Skill。也就是说，它试图把经验型的漏洞挖掘流程拆成可复用的任务单元。对赏金猎人和内部红队来说，这类技能集最大的意义是把方法论沉淀进执行框架里，提升重复性和协作效率。</p>
 <hr>
-<p>文章标题：Cloudflare CEO：AI 机器人流量将在 2027 年超过人类</p>
-<p>文章链接：<a href="https://blog.upx8.com/Cloudflare-CEO-AI-bot%E4%BA%A7%E7%94%9F%E6%B5%81%E9%87%8F%E5%B0%86%E8%B6%85%E8%BF%87%E4%BA%BA%E7%B1%BB">Cloudflare CEO：AI 机器人流量将在 2027 年超过人类</a></p>
+<p>文章标题：ZeroClaw v0.5.8：轻量可部署的自治 AI 助手基础设施</p>
+<p>文章链接：<a href="https://github.com/zeroclaw-labs/zeroclaw/releases/tag/v0.5.8">ZeroClaw v0.5.8：轻量可部署的自治 AI 助手基础设施</a></p>
 <p>所属领域：AI</p>
-<p>文章总结：这篇内容的看点不只是一个预测数字，而是它点出了生成式 AI 对网站数据抓取需求会持续膨胀这一趋势。若 AI bot 流量在 2027 年前后超过真实用户流量，传统面向“人类访问者”的风控、内容分发和身份判断模型都会被重写。对安全团队来说，这意味着未来的 Web 防护重点会越来越偏向机器人识别、访问治理和数据被动采集防护。</p>
+<p>文章总结：ZeroClaw 的定位很明确，就是提供一套“小、快、可自治、可跨平台部署”的 AI 助手基础设施。虽然这次 issue 指向的是 v0.5.8 release，但结合仓库描述可以看出，它更强调在不同系统和平台上快速部署、自由替换组件和保持轻量化，这种取向对想把 Agent 嵌进个人工作台、实验环境或小型安全工具链的人很有吸引力，适合关注其工程取舍而不只是功能清单。</p>
+<hr>
+<p>文章标题：AI Agent 的上下文系统：Context Engineering 指南</p>
+<p>文章链接：<a href="https://www.luozhiyun.com/archives/915">AI Agent 的上下文系统：Context Engineering 指南</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章把 Context Engineering 讲得相当透彻，重点不是怎么写提示词，而是怎样把系统指令、记忆、工具结果、检索数据和文件系统状态组织成一套“信息物流系统”。文中对 context rot、Observation 过长、子代理分治、文件作为外部上下文和消息拼接顺序都给出了很实用的经验。做安全自动化或复杂 Agent 系统时，这类内容比单纯调 prompt 更接近真实生产问题。</p>
+<hr>
+<p>文章标题：GitHub Trending 霸榜：深度解析 AI Coding 辅助神器 Superpowers</p>
+<p>文章链接：<a href="https://zxs.io/article/2172">GitHub Trending 霸榜：深度解析 AI Coding 辅助神器 Superpowers</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章最值得看的点，是它把 Superpowers 拆成一套完整的软件工程纪律，而不是“更聪明的提示词包”。作者逐项梳理了 14 个 Skill 如何覆盖设计澄清、计划编写、并行子代理、TDD、系统化调试、先验证再宣称完成等环节。对安全团队来说，这种把流程护栏嵌入 Agent 的思路很重要，因为很多失败并不是模型不够强，而是没有把验证、评审和回滚机制前置到执行流里。</p>
+<hr>
+<p>文章标题：UI 区域检测的 vibe coding 复盘</p>
+<p>文章链接：<a href="https://blog.ponder.work/2026/03/22/ui-region-detection-vibe-coding-review/">UI 区域检测的 vibe coding 复盘</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇复盘很适合拿来观察“AI 写代码”在真实迭代里的表现，而不是只看最终演示。作者完整记录了 UI 区域检测从 Canny、Sobel、投影法、OCR 聚类一路走到“蛋糕切割”递归算法，再到 CLAHE、动态阈值、间隙检查和向量化提速的过程。它的参考意义在于展示了，当问题进入图像处理和工程优化阶段后，真正起作用的是系统性实验、诊断脚本和指标验证，而不是一句万能提示词。</p>
 
     </div>
 
