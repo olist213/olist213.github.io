@@ -6,7 +6,28 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Mar 2026 19:31:34 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 Mar 2026 12:25:54 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 24</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-24/</link>
+      <pubDate>Tue, 24 Mar 2026 12:25:54 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-24/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-24 进行筛选，严格从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、恶意代码分析、实战复现、工具方法论和 AI 工程化安全文章，避免只集中在单一信息源，也排除了偏资讯播报和技术密度不足的内容。
+文章标题：PolarCTF2026 春季个人赛 Web 方向全解
+文章链接：PolarCTF2026 春季个人赛 Web 方向全解
+所属领域：CTF
+文章总结：这篇题解的价值在于覆盖面和利用细节都比较扎实。作者不仅逐题给出解法，还把双写后缀上传、先写后删竞争条件、SQLite 注入、JWT 弱密钥伪造、zip 伪协议、云元数据 SSRF、文件包含与软链接逃逸等利用思路拆开说明。对做 Web CTF 或将题目技巧迁移到真实渗透中的读者来说，这是一篇可以直接复盘和摘取技巧点的汇总文。
+ 文章标题：大模型应用中的不安全输出处理：XSS 利用（上）
+文章链接：大模型应用中的不安全输出处理：XSS 利用（上）
+所属领域：AI
+文章总结：文章把 OWASP LLM Top 10 里的 LLM05 落到了一个很具体的利用面上：模型输出被前端当作可信 HTML 渲染，从而形成 XSS。作者没有停在概念层，而是通过 HTB 实验演示从探测 HTML 注入、到让模型返回外链脚本、再到窃取 Cookie 的完整链路。对做 AI 应用安全评估的人来说，这篇文章很适合作为“输出层风险”检查单的起点。
+ 文章标题：Shellcode 分析：Egg Hunter、编码器与多态
+文章链接：Shellcode 分析：Egg Hunter、编码器与多态
+所属领域：红队
+文章总结：这篇文章适合拿来快速建立对 shellcode 规避技巧的整体认识。作者按实际攻击流程讲清楚 shellcode 如何进入内存、在地址未知时靠 egg hunter 搜索、再通过编码与多态绕过静态特征匹配。虽然篇幅不算长，但把几个经常在免杀、漏洞利用和恶意代码分析中遇到的关键概念串成了一条线，适合做红队基础知识补盲。</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 23</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-23/</link>
