@@ -6,7 +6,30 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 24 Mar 2026 12:25:54 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Mar 2026 12:23:05 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 25</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-25/</link>
+      <pubDate>Wed, 25 Mar 2026 12:23:05 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-25/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-25 进行筛选，严格从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、云渗透、恶意软件投递、供应链安全、AI Agent 安全治理与工程化实践文章，也刻意避免只集中在单一来源。
+文章标题：Azure APIM 注册绕过：97.9% 的开发者门户仍可被匿名利用
+文章链接：Azure APIM 注册绕过：97.9% 的开发者门户仍可被匿名利用
+所属领域：渗透
+文章总结：Praetorian 这篇研究直接指出，即使管理员显式关闭注册功能，大量 Azure APIM 开发者门户仍可被匿名触发注册流程，进而拿到访问 API 所需的身份与密钥。文章给出了成因、影响范围与“97.9% 互联网暴露门户仍可利用”的统计结果，对云 API 面暴露评估和租户边界审计都很有参考价值。
+ 文章标题：用量纲分析发现 DeFi 公式漏洞
+文章链接：用量纲分析发现 DeFi 公式漏洞
+所属领域：网络安全
+文章总结：Trail of Bits 把物理学里的量纲分析迁移到 DeFi 智能合约审计中，说明如何用 token、价格、流动性这些“维度”快速识别逻辑和算术错误。文章不仅给出多个错误公式示例，还结合 CAP Labs 审计中的真实问题说明 ERC-4626 参数误用会怎样演变成定价漏洞，方法论和落地性都很强。
+ 文章标题：权限提升：一次越权如何走到完整账号接管
+文章链接：权限提升：一次越权如何走到完整账号接管
+所属领域：渗透
+文章总结：这篇实战文围绕 Staff、Manager、Owner 三层角色差异展开，展示作者如何先按正常业务路径摸清权限边界，再利用 Broken Access Control 从低权限员工账号横向进入高权限配置区，最终触达支付、银行账号和店铺设置等敏感面。对做 Web 权限模型测试的人来说，这类“先理解业务再下手”的打法很值得借鉴。
+ 文章标题：GCP 渗透测试：一步步拿下项目 Owner
+文章链接：GCP 渗透测试：一步步拿下项目 Owner</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 24</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-24/</link>
