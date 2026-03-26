@@ -6,7 +6,29 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 25 Mar 2026 12:23:05 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Mar 2026 12:31:52 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 26</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-26/</link>
+      <pubDate>Thu, 26 Mar 2026 12:31:52 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-26/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-26 进行筛选，严格从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留供应链投毒、AI Agent 安全、渗透利用链、攻击面发现与可直接落地的工程化方法，也刻意避免只集中在单一信息源。
+文章标题：采用老派黑客习惯，让 Vibe Coding 更安全
+文章链接：采用老派黑客习惯，让 Vibe Coding 更安全
+所属领域：AI
+文章总结：文章给出的核心做法很务实：把 AI 编码和日常开发都放到远端服务器或开发虚机中完成，避免把密钥、生产令牌和长期凭据直接留在本机，再通过开发分叉仓库降低上游仓库被顺手污染的风险。它不是在讨论“要不要用 Agent”，而是在讲怎样把供应链风险、提示词注入和开发机沦陷的影响面压到最小。
+ 文章标题：Apifox CDN 供应链投毒事件简单复盘
+文章链接：Apifox CDN 供应链投毒事件简单复盘
+所属领域：网络安全
+文章总结：这篇复盘把 Apifox 官方 CDN 投毒拆得很细，重点不是停留在“脚本被篡改”，而是顺着归档样本还原了追加恶意代码的结构、Electron 环境依赖、主机指纹采集、账号信息回传以及后续载荷解密执行链。对做供应链事件响应、客户端安全和 Electron 应用审计的人来说，它很适合作为一次完整的样本拆解参考。
+ 文章标题：面向 AI 开发安全：管理 Vibe Coding 与 AI 编程风险指南
+文章链接：面向 AI 开发安全：管理 Vibe Coding 与 AI 编程风险指南
+所属领域：AI
+文章总结：Tenable 这篇文章站在企业治理视角，总结了开发团队、DevOps 乃至“公民开发者”把 Agent 和低代码平台带入研发流程后会如何重塑攻击面。它的价值在于没有泛泛而谈，而是明确落到可接受使用策略、开发安全问卷、培训与暴露面管理这些控制点，适合作为团队制定 AI 编码使用边界时的参考底稿。
+ 文章标题：不再让分析埋点悄悄出错：一个 SDK 加一个 GitHub Action 就够了</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 25</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-25/</link>

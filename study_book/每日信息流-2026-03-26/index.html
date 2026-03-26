@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-25/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-26/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           每日信息流 2026 03 26 | Olist.213
+       
+  </title>
+  <meta name="title" content="每日信息流 2026 03 26 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "每日信息流 2026 03 26",
+    "headline" : "每日信息流 2026 03 26",
+    "description" : "本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-26 进行筛选，严格从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留供应链投毒、AI Agent 安全、渗透利用链、攻击面发现与可直接落地的工程化方法，也刻意避免只集中在单一信息源。\n文章标题：采用老派黑客习惯，让 Vibe Coding 更安全\n文章链接：采用老派黑客习惯，让 Vibe Coding 更安全\n所属领域：AI\n文章总结：文章给出的核心做法很务实：把 AI 编码和日常开发都放到远端服务器或开发虚机中完成，避免把密钥、生产令牌和长期凭据直接留在本机，再通过开发分叉仓库降低上游仓库被顺手污染的风险。它不是在讨论“要不要用 Agent”，而是在讲怎样把供应链风险、提示词注入和开发机沦陷的影响面压到最小。\n 文章标题：Apifox CDN 供应链投毒事件简单复盘\n文章链接：Apifox CDN 供应链投毒事件简单复盘\n所属领域：网络安全\n文章总结：这篇复盘把 Apifox 官方 CDN 投毒拆得很细，重点不是停留在“脚本被篡改”，而是顺着归档样本还原了追加恶意代码的结构、Electron 环境依赖、主机指纹采集、账号信息回传以及后续载荷解密执行链。对做供应链事件响应、客户端安全和 Electron 应用审计的人来说，它很适合作为一次完整的样本拆解参考。\n 文章标题：面向 AI 开发安全：管理 Vibe Coding 与 AI 编程风险指南\n文章链接：面向 AI 开发安全：管理 Vibe Coding 与 AI 编程风险指南\n所属领域：AI\n文章总结：Tenable 这篇文章站在企业治理视角，总结了开发团队、DevOps 乃至“公民开发者”把 Agent 和低代码平台带入研发流程后会如何重塑攻击面。它的价值在于没有泛泛而谈，而是明确落到可接受使用策略、开发安全问卷、培训与暴露面管理这些控制点，适合作为团队制定 AI 编码使用边界时的参考底稿。\n 文章标题：不再让分析埋点悄悄出错：一个 SDK 加一个 GitHub Action 就够了",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-03-26 12:31:52 \u002b0800 CST",
+    "dateModified" : "2026-03-26 12:31:52 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-26\/",
+    "wordCount" : "367",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每日信息流 2026 03 26</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2026-03-26 itemprop="datePublished">March 26, 2026</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>本文基于 GitHub Issues 最新一期 <a href="https://github.com/Tyaoo/picker/issues/1325"><code>[每日信息流] 2026-03-26</code></a> 进行筛选，严格从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留供应链投毒、AI Agent 安全、渗透利用链、攻击面发现与可直接落地的工程化方法，也刻意避免只集中在单一信息源。</p>
+<p>文章标题：采用老派黑客习惯，让 Vibe Coding 更安全</p>
+<p>文章链接：<a href="https://addxorrol.blogspot.com/2026/03/slightly-safer-vibecoding-by-adopting.html">采用老派黑客习惯，让 Vibe Coding 更安全</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章给出的核心做法很务实：把 AI 编码和日常开发都放到远端服务器或开发虚机中完成，避免把密钥、生产令牌和长期凭据直接留在本机，再通过开发分叉仓库降低上游仓库被顺手污染的风险。它不是在讨论“要不要用 Agent”，而是在讲怎样把供应链风险、提示词注入和开发机沦陷的影响面压到最小。</p>
+<hr>
+<p>文章标题：Apifox CDN 供应链投毒事件简单复盘</p>
+<p>文章链接：<a href="https://www.leavesongs.com/PENETRATION/apifox-supply-chain-attack-analysis.html">Apifox CDN 供应链投毒事件简单复盘</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇复盘把 Apifox 官方 CDN 投毒拆得很细，重点不是停留在“脚本被篡改”，而是顺着归档样本还原了追加恶意代码的结构、Electron 环境依赖、主机指纹采集、账号信息回传以及后续载荷解密执行链。对做供应链事件响应、客户端安全和 Electron 应用审计的人来说，它很适合作为一次完整的样本拆解参考。</p>
+<hr>
+<p>文章标题：面向 AI 开发安全：管理 Vibe Coding 与 AI 编程风险指南</p>
+<p>文章链接：<a href="https://www.tenable.com/blog/security-for-ai-guide-managing-vibe-coding-risks-ai-in-software-development">面向 AI 开发安全：管理 Vibe Coding 与 AI 编程风险指南</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：Tenable 这篇文章站在企业治理视角，总结了开发团队、DevOps 乃至“公民开发者”把 Agent 和低代码平台带入研发流程后会如何重塑攻击面。它的价值在于没有泛泛而谈，而是明确落到可接受使用策略、开发安全问卷、培训与暴露面管理这些控制点，适合作为团队制定 AI 编码使用边界时的参考底稿。</p>
+<hr>
+<p>文章标题：不再让分析埋点悄悄出错：一个 SDK 加一个 GitHub Action 就够了</p>
+<p>文章链接：<a href="https://hackernoon.com/no-more-silent-analytics-bugs-all-it-takes-is-one-sdk-and-one-github-action">不再让分析埋点悄悄出错：一个 SDK 加一个 GitHub Action 就够了</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：文章聚焦一种很容易被忽视的工程问题：埋点事件、指标上报和分析 SDK 经常在不报错的情况下悄悄漂移，最后影响业务判断。作者提出把事件契约、埋点检查和 GitHub Actions 结合进 CI，用自动化方式在合并前发现字段丢失、命名不一致和数据格式错位。虽然偏工程质量，但对安全运营与日志数据可靠性同样有借鉴意义。</p>
+<hr>
+<p>文章标题：让 AI 编码真正可用的关键能力：2026 年的上下文工程</p>
+<p>文章链接：<a href="https://hackernoon.com/this-skill-makes-ai-coding-work-navigating-context-engineering-in-2026">让 AI 编码真正可用的关键能力：2026 年的上下文工程</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章把“AI 编码为什么有时很好、有时一团糟”归因到上下文工程，而不是单纯模型能力。重点讨论的是如何组织需求、代码背景、约束、历史决策和边界条件，让模型在足够清晰的上下文里工作。对安全团队来说，这种方法同样适用于审计提示词、构建高可信 Agent 工作流，以及减少错误自动化带来的放大效应。</p>
+<hr>
+<p>文章标题：为什么 AI 代码审查工具拦不住生产事故，真正有效的是什么</p>
+<p>文章链接：<a href="https://hackernoon.com/why-ai-code-review-tools-cant-prevent-production-failures-and-what-can">为什么 AI 代码审查工具拦不住生产事故，真正有效的是什么</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章核心观点很直接：只盯着 diff 的 AI 代码审查，天然难以发现运行时依赖、数据状态、配置组合和跨服务交互引发的生产事故。作者主张把代码审查和更贴近真实环境的测试、故障模拟以及行为验证结合起来。对做安全测试的人来说，这提醒我们不要把 LLM 审查当成万能护栏，仍要回到动态验证和系统级观测。</p>
+<hr>
+<p>文章标题：什么是 Agentic Testing</p>
+<p>文章链接：<a href="https://hackernoon.com/what-is-agentic-testing">什么是 Agentic Testing</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：文章围绕“让 Agent 主动执行测试”这一思路展开，强调测试不再只是脚本回放，而是让模型根据界面和状态变化持续调整路径、补充断言并发现人工未预设的边界条件。虽然偏测试工具视角，但对安全从业者很有启发，因为很多复杂 Web 业务和 AI 应用也正在从固定脚本验证，转向更具探索性的自动化交互测试。</p>
+<hr>
+<p>文章标题：从假新闻刷屏看清“认知安全”：AI 时代网络安全的新边疆</p>
+<p>文章链接：<a href="https://www.4hou.com/posts/nlMp">从假新闻刷屏看清“认知安全”：AI 时代网络安全的新边疆</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章通过“AI 伪造监管政策”这一案例说明，攻击者已经不满足于制造低质量谣言，而是在利用大模型批量生产高拟真、可触发行业焦虑的认知攻击内容。它对安全行业的价值在于把问题从内容真假，上升到决策误导、舆情操控和平台治理失效，提醒企业把信息验证链路也纳入安全建设，而不是只盯传统入侵面。</p>
+<hr>
+<p>文章标题：Trivy 漏洞扫描器遭入侵，攻击者通过 GitHub Actions 分发窃密恶意软件</p>
+<p>文章链接：<a href="https://www.4hou.com/posts/9jxz">Trivy 漏洞扫描器遭入侵，攻击者通过 GitHub Actions 分发窃密恶意软件</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章的可读性在于它把 Trivy 事件的危险点讲透了：攻击者不仅篡改了发布产物，还通过 GitHub Actions 入口脚本和标签污染把恶意逻辑送进大量依赖工作流里。文中列出了被窃取的环境变量、SSH 密钥、云凭据、CI 配置和本地敏感文件范围，非常适合作为理解“安全工具本身也会反过来成为供应链入口”的案例材料。</p>
+<hr>
+<p>文章标题：试试我们的量纲分析 Claude 插件</p>
+<p>文章链接：<a href="https://blog.trailofbits.com/2026/03/25/try-our-new-dimensional-analysis-claude-plugin/">试试我们的量纲分析 Claude 插件</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：Trail of Bits 这篇文章延续了他们前一篇 DeFi 审计方法论，把“量纲分析”真正做成了 Claude 可调用的技能。它的关键点不在“让模型找 bug”，而在于用 LLM 先给代码元素贴上维度标签，再机械地检查不匹配。相比常见的提示词式审计，这种路线更稳定、可复查，也更适合扩展到高风险金融合约和复杂数值逻辑审计。</p>
+<hr>
+<p>文章标题：Navia 数据泄露影响 HackerOne 员工信息</p>
+<p>文章链接：<a href="https://securityaffairs.com/189969/data-breach/recent-navia-data-breach-impacts-hackerone-employee-data.html">Navia 数据泄露影响 HackerOne 员工信息</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这起事件的警示意义不在于“又一家服务商泄露了数据”，而在于它让人看到第三方福利与行政系统如何成为安全公司的软肋。文章披露近 300 名 HackerOne 员工受到影响，而被暴露的数据覆盖出生日期、联系方式、社保相关字段和福利信息。对安全团队而言，这说明外包与合作方管理依然是长期且真实的攻击入口。</p>
+<hr>
+<p>文章标题：Intigriti 0326 CTF 挑战：串联 DOM Clobbering 与 CSP 绕过实现 XSS</p>
+<p>文章链接：<a href="https://www.intigriti.com/researchers/blog/hacking-tools/0326-ctf-challenge-exploiting-dom-clobbering-csp-xss">Intigriti 0326 CTF 挑战：串联 DOM Clobbering 与 CSP 绕过实现 XSS</a></p>
+<p>所属领域：CTF</p>
+<p>文章总结：这篇题解质量很高，亮点在于它没有把 XSS 当作单点漏洞，而是完整演示了如何把 DOM Clobbering、DOMPurify 清洗边界、报告给管理员的 Bot 流程以及 CSP 绕过链起来，最终形成可被管理员点击触发的利用路径。做 Web 安全和 CTF 训练的人都能从中获得一套很实战的思考顺序，而不只是抄 payload。</p>
+<hr>
+<p>文章标题：系统提示和 RCE，究竟谁先失守</p>
+<p>文章链接：<a href="https://www.praetorian.com/blog/which-came-first-system-prompt-or-rce/">系统提示和 RCE，究竟谁先失守</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：Praetorian 这篇实战文很值得精读。作者面对的是一个能操作第三方资产平台的 AI 桌面代理，原有系统提示和规则钩子并没有被直接绕过，但他们通过自动化 LLM-on-LLM 测试、文件上传、扩展名修正和“看似无害”的 Hello World 二进制伪装，最终把任意文件执行链条转成了真实 RCE。它非常适合作为 AI Agent 渗透测试的样板。</p>
+<hr>
+<p>文章标题：Julius v0.2.0：探针从 33 增至 63，新增云 AI、企业推理与 RAG 检测</p>
+<p>文章链接：<a href="https://www.praetorian.com/blog/julius-v020-cloud-ai-rag-detection/">Julius v0.2.0：探针从 33 增至 63，新增云 AI、企业推理与 RAG 检测</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：这篇发布说明的价值在于它清晰刻画了企业 AI 资产正在长成什么样。Julius 新增了对 AWS Bedrock、Azure OpenAI、Vertex AI、高吞吐推理框架、AI 网关以及自托管 RAG 平台的识别探针，说明攻击面早就不再局限于 Ollama 这类单机服务。对做外网资产盘点、影子 AI 发现和红队摸排的人来说，这类工具方向非常有现实意义。</p>
+<hr>
+<p>文章标题：PyPI 中的 LiteLLM 被植入恶意代码</p>
+<p>文章链接：<a href="https://www.solidot.org/story?sid=83865">PyPI 中的 LiteLLM 被植入恶意代码</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这条内容虽然篇幅不长，但信息密度很高。它明确指出恶意版本通过 <code>.pth</code> 文件在 Python 进程启动时自动执行，目标是窃取 SSH 密钥、云凭据和钱包数据，而维护者还提到事件与 Trivy 漏洞链可能存在关联。对所有把 LiteLLM 接入生产网关、Agent 平台或内部工具链的团队来说，这是一次典型的 AI 基础设施供应链警报。</p>
+<hr>
+<p>文章标题：从 Conti 泄露数据中挖到真实样本与硬编码 C2</p>
+<p>文章链接：<a href="https://ddanchev.blogspot.com/2026/03/when-data-mining-conti-leaks-leads-to_25.html">从 Conti 泄露数据中挖到真实样本与硬编码 C2</a></p>
+<p>所属领域：红队</p>
+<p>文章总结：这篇分析不是泛泛讲 Conti，而是沿着泄露数据真正挖到了可执行样本、固定 C2 和加密细节。作者把样本的线程模型、长度封包协议、命令执行、交互式 shell 以及类似 SOCKS 的控制协商逐步拆出来，读完能大致还原它作为定制后门的工作方式。做恶意代码分析、红队基础设施仿真和 IOC 追踪的人会很受用。</p>
+<hr>
+<p>文章标题：一次聊天机器人事故的教训</p>
+<p>文章链接：<a href="https://www.blackhillsinfosec.com/lessons-from-a-chatbot-incident/">一次聊天机器人事故的教训</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章以一组暴露在公网的客服数据库为切口，说明聊天机器人不仅是“服务工具”，更是会持续汇聚语音、转写、PII 和业务上下文的数据系统。一旦后端存储、权限或加密措施不到位，它会瞬间变成高价值泄露源。对正在落地客服 Agent、语音助手或内部问答系统的团队来说，这篇文章很适合作为数据最小化与日志治理的反面教材。</p>
+<hr>
+<p>文章标题：OpenAI 扩招 3500 人背后的危机与豪赌</p>
+<p>文章链接：<a href="https://lukefan.com/2026/03/25/openai-hiring-gemini-anthropic-operator-superapp-price-war/">OpenAI 扩招 3500 人背后的危机与豪赌</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章更像产业观察，但它提供了一个理解 AI 竞争格局的有用视角：当 Anthropic、Gemini 和国防场景落地同时施压时，OpenAI 选择用激进扩招和组织扩张来对冲压力。对一线安全从业者而言，这种组织动作本身就意味着未来会有更多 Agent 产品、企业集成和模型服务快速落地，从而继续推高 AI 供应链和权限治理的复杂度。</p>
+<hr>
+<p>文章标题：Vibe Coding 的问题</p>
+<p>文章链接：<a href="https://jw1.dev/problems-with-vibe-coding">Vibe Coding 的问题</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：作者最有价值的观点是，编码代理真正危险的地方不只是“代码可能写错”，而是它让开发者过早停止思考接口、边界情况、测试和整体结构，最后把系统带进越来越难维护的复杂性坡道。文章适合和前面的风险治理文章对照来看，因为它从一线开发体验解释了为什么纯提示驱动的交付，很容易把工程债和安全债一起滚大。</p>
+<hr>
+<p>文章标题：面向 AI Agent 的文件系统 AGFS</p>
+<p>文章链接：<a href="https://www.chenshaowen.com/blog/agfs-file-system-for-ai-agent.html">面向 AI Agent 的文件系统 AGFS</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：AGFS 的思路很适合 Agent 工程实践：不执着于 POSIX 语义，而是把内存、队列、KV、S3、SQL 等后端统一挂进一棵可远程访问的目录树，让不同 Agent 和沙箱进程共享中间状态。文章还给出了部署方式、插件结构和典型映射关系。对正在设计多 Agent 工作流、远端沙箱和可恢复执行环境的人来说，它是很有参考价值的基础设施方案。</p>
+<hr>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-26/>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-26/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-25/" class="prev" rel="prev" title="每日信息流 2026 03 25"><i class="iconfont icon-left"></i>&nbsp;每日信息流 2026 03 25</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
