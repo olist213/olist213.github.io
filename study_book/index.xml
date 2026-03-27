@@ -6,7 +6,30 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 26 Mar 2026 12:31:52 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Mar 2026 12:29:56 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 27</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-27/</link>
+      <pubDate>Fri, 27 Mar 2026 12:29:56 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-27/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-27 进行筛选，严格从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留渗透利用、供应链事件、AI Agent 安全、工程治理与可直接落地的基础设施实践，并刻意拉开来源分布，避免只集中在单一聚合源。
+文章标题：Azure APIM 注册绕过：97.9% 的开发者门户仍可被匿名利用
+文章链接：Azure APIM 注册绕过：97.9% 的开发者门户仍可被匿名利用
+所属领域：渗透
+文章总结：Praetorian 把 Azure APIM 开发者门户一个很危险的设计缺口讲得很透。即便很多组织关闭了注册入口，攻击者仍可能借公开门户匿名拿到 API key，再继续接近后端接口。文章的价值在于没有停留在“存在绕过”，而是给出了影响面判断、利用前提和“这是 by design 还是漏洞”的争议点，适合做云上 API 攻击面排查时参考。
+ 文章标题：用量纲分析识别 DeFi 问题
+文章链接：用量纲分析识别 DeFi 问题
+所属领域：工具
+文章总结：Trail of Bits 这篇文章很有启发性，它不是继续堆 prompt 去“猜 bug”，而是把金额、价格、份额、时间等变量先赋予量纲，再检查运算是否发生不匹配。对合约审计来说，这种方法尤其适合发现单位混淆、精度换算和价值流转中的隐性逻辑错误。相比纯经验型 code review，它更机械、更稳定，也更容易被工程化到自动审计链路里。
+ 文章标题：AI 安全防护的漏洞披露应该公开到什么程度
+文章链接：AI 安全防护的漏洞披露应该公开到什么程度
+所属领域：网络安全
+文章总结：文章围绕 AI safeguard 绕过测试该怎么做漏洞披露展开，讨论了公开项目、注册项目、申请制和私有项目之间的风险与收益权衡。它的重点不是抽象谈治理，而是把研究者激励、范围收敛、额外奖金、沟通透明度这些机制拆开分析。对计划上线越狱绕过赏金、Agent 防护验证计划或私有测试项目的团队，这是一篇非常实操的制度设计参考。
+ 文章标题：Checkmarx DAST：面向 AI 编码时代的运行时安全
+文章链接：Checkmarx DAST：面向 AI 编码时代的运行时安全</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 26</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-26/</link>
