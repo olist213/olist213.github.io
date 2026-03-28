@@ -6,7 +6,26 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Mar 2026 12:29:56 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Mar 2026 12:41:25 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 28</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-28/</link>
+      <pubDate>Sat, 28 Mar 2026 12:41:25 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-28/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-28 进行筛选，只从 issue 正文给出的链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、威胁研究、工具方法论、AI 安全工程和可直接落地的攻防实践，尽量拉开来源分布，避免内容过度集中在单一聚合源。
+文章标题：仅有 HttpOnly 还不够：串联 XSS 与 GhostScript 实现完整 RCE
+文章链接：仅有 HttpOnly 还不够：串联 XSS 与 GhostScript 实现完整 RCE
+所属领域：渗透
+文章总结：Praetorian 这篇文章的价值在于它没有把 HttpOnly 当作终点，而是进一步演示了攻击者如何在已拿到 XSS 能力后，继续借助浏览器行为和后端文档处理链，把一次前端会话劫持升级成完整远程代码执行。它适合拿来复盘“单点缓解措施为何挡不住真实攻击链”这个问题，尤其适合做 Web 攻击面梳理、富文本与文件处理链审计的人参考。
+ 文章标题：为什么传统渗透测试打法不适合 AI 系统：信念、假设与非确定性
+文章链接：为什么传统渗透测试打法不适合 AI 系统：信念、假设与非确定性
+所属领域：AI
+文章总结：NVISO 这篇长文把 AI 安全测试和传统确定性软件测试的差异讲得很透。作者强调，AI 系统的风险并不总表现为崩溃或报错，而常常是“系统正常输出，却违反了策略”。文中结合 OWASP LLM Top 10、MITRE ATLAS 和真实统计数据，解释为什么 prompt injection、间接注入、工具链调用与非确定性行为会让传统 red team 套路失灵。对准备搭 AI 安全测试基线的人，这是一篇很好的方法论起点。
+ 文章标题：Microsoft Defender 如何在真实攻击中保护高价值资产
+文章链接：Microsoft Defender 如何在真实攻击中保护高价值资产</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 27</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-27/</link>
