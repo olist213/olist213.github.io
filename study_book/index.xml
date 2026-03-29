@@ -6,7 +6,27 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 28 Mar 2026 12:41:25 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Mar 2026 13:36:35 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 29</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-29/</link>
+      <pubDate>Sun, 29 Mar 2026 13:36:35 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-29/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-29 进行筛选，只从 issue 正文出现的链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞分析、实战复现、威胁情报、工具方法论和前沿 AI 工程文章，并尽量拉开来源分布，避免内容过度集中在单一聚合源。
+文章标题：维度的祝福：TurboQuant 如何用 JL 引理无偏压缩 KV Cache
+文章链接：维度的祝福：TurboQuant 如何用 JL 引理无偏压缩 KV Cache
+所属领域：AI
+文章总结：这篇文章把 TurboQuant 的核心思路讲得很清楚：不是简单裁剪上下文，而是借助 Johnson-Lindenstrauss 引理对 KV Cache 做随机投影压缩，在降低显存占用的同时尽量保留注意力结构。文章的价值在于它把数学直觉、工程目标和推理性能放在一起讨论，适合关注长上下文推理、模型推理优化和 AI 系统成本控制的人细读。
+ 文章标题：纯靠 Vibe，搞定 macOS 上的 HITMAN 外挂
+文章链接：纯靠 Vibe，搞定 macOS 上的 HITMAN 外挂
+所属领域：红队
+文章总结：作者用 Claude Code、IDA MCP 和动态注入的方式，在 macOS 上为 HITMAN 做运行时外挂，过程里覆盖了签名信息分析、DYLD_INSERT_LIBRARIES 注入、跨架构编译、内存冻结失效原因以及反作弊变量定位。它的参考价值不在游戏本身，而在于完整展示了 AI 辅助逆向、动态调试和运行时 patch 的一条可复用工作流。
+ 文章标题：要不要 Harness，这是个问题
+文章链接：要不要 Harness，这是个问题
+所属领域：AI</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 28</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-28/</link>

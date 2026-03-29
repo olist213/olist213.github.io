@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-28/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-29/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           每日信息流 2026 03 29 | Olist.213
+       
+  </title>
+  <meta name="title" content="每日信息流 2026 03 29 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "每日信息流 2026 03 29",
+    "headline" : "每日信息流 2026 03 29",
+    "description" : "本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-29 进行筛选，只从 issue 正文出现的链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞分析、实战复现、威胁情报、工具方法论和前沿 AI 工程文章，并尽量拉开来源分布，避免内容过度集中在单一聚合源。\n文章标题：维度的祝福：TurboQuant 如何用 JL 引理无偏压缩 KV Cache\n文章链接：维度的祝福：TurboQuant 如何用 JL 引理无偏压缩 KV Cache\n所属领域：AI\n文章总结：这篇文章把 TurboQuant 的核心思路讲得很清楚：不是简单裁剪上下文，而是借助 Johnson-Lindenstrauss 引理对 KV Cache 做随机投影压缩，在降低显存占用的同时尽量保留注意力结构。文章的价值在于它把数学直觉、工程目标和推理性能放在一起讨论，适合关注长上下文推理、模型推理优化和 AI 系统成本控制的人细读。\n 文章标题：纯靠 Vibe，搞定 macOS 上的 HITMAN 外挂\n文章链接：纯靠 Vibe，搞定 macOS 上的 HITMAN 外挂\n所属领域：红队\n文章总结：作者用 Claude Code、IDA MCP 和动态注入的方式，在 macOS 上为 HITMAN 做运行时外挂，过程里覆盖了签名信息分析、DYLD_INSERT_LIBRARIES 注入、跨架构编译、内存冻结失效原因以及反作弊变量定位。它的参考价值不在游戏本身，而在于完整展示了 AI 辅助逆向、动态调试和运行时 patch 的一条可复用工作流。\n 文章标题：要不要 Harness，这是个问题\n文章链接：要不要 Harness，这是个问题\n所属领域：AI",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-03-29 13:36:35 \u002b0800 CST",
+    "dateModified" : "2026-03-29 13:36:35 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-29\/",
+    "wordCount" : "351",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每日信息流 2026 03 29</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2026-03-29 itemprop="datePublished">March 29, 2026</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>本文基于 GitHub Issues 最新一期 <a href="https://github.com/Tyaoo/picker/issues/1328"><code>[每日信息流] 2026-03-29</code></a> 进行筛选，只从 issue 正文出现的链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞分析、实战复现、威胁情报、工具方法论和前沿 AI 工程文章，并尽量拉开来源分布，避免内容过度集中在单一聚合源。</p>
+<p>文章标题：维度的祝福：TurboQuant 如何用 JL 引理无偏压缩 KV Cache</p>
+<p>文章链接：<a href="https://toooold.com/2026/03/28/turboquant.html">维度的祝福：TurboQuant 如何用 JL 引理无偏压缩 KV Cache</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章把 TurboQuant 的核心思路讲得很清楚：不是简单裁剪上下文，而是借助 Johnson-Lindenstrauss 引理对 KV Cache 做随机投影压缩，在降低显存占用的同时尽量保留注意力结构。文章的价值在于它把数学直觉、工程目标和推理性能放在一起讨论，适合关注长上下文推理、模型推理优化和 AI 系统成本控制的人细读。</p>
+<hr>
+<p>文章标题：纯靠 Vibe，搞定 macOS 上的 HITMAN 外挂</p>
+<p>文章链接：<a href="https://github.red/hitman6-beater/">纯靠 Vibe，搞定 macOS 上的 HITMAN 外挂</a></p>
+<p>所属领域：红队</p>
+<p>文章总结：作者用 Claude Code、IDA MCP 和动态注入的方式，在 macOS 上为 HITMAN 做运行时外挂，过程里覆盖了签名信息分析、<code>DYLD_INSERT_LIBRARIES</code> 注入、跨架构编译、内存冻结失效原因以及反作弊变量定位。它的参考价值不在游戏本身，而在于完整展示了 AI 辅助逆向、动态调试和运行时 patch 的一条可复用工作流。</p>
+<hr>
+<p>文章标题：要不要 Harness，这是个问题</p>
+<p>文章链接：<a href="http://xargin.com/harness-or-not-harness-it-is-a-question/">要不要 Harness，这是个问题</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章系统梳理了 Agent Harness 工程的现实落地经验，把 context engineering、测试约束、架构规则、执行隔离、工具裁剪和熵治理拆成了八个关键组件。文中既引用了 OpenAI、Stripe、Anthropic 和 LangChain 的实践，也讨论了 AGENTS.md 为什么不能写成百科全书。对正在搭建编码 Agent 或多 Agent 流程的人，这是一篇方法论密度很高的文章。</p>
+<hr>
+<p>文章标题：FAT CAT 取证题解：KJSSE CTF 3.0</p>
+<p>文章链接：<a href="https://infosecwriteups.com/fat-cat-forensics-kjsse-ctf-3-0-389909256dc5?source=rss----7b722bfd1b8d---4">FAT CAT 取证题解：KJSSE CTF 3.0</a></p>
+<p>所属领域：CTF</p>
+<p>文章总结：这是一篇偏实战型的取证题解。题目从一张 <code>PNG</code> 图片切入，作者按常见隐写分析流程使用 <code>zsteg</code> 等工具逐步挖掘隐藏数据，再把线索还原成 flag。它的价值在于没有只给答案，而是把文件型取证题的判断路径和工具选择写得比较顺，适合作为新手补隐写分析手感、老手做速查复盘的材料。</p>
+<hr>
+<p>文章标题：Proving Grounds 实战：Access</p>
+<p>文章链接：<a href="https://infosecwriteups.com/proving-grounds-practice-access-a6e6a89f4ae6?source=rss----7b722bfd1b8d---4">Proving Grounds 实战：Access</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：这篇文章记录了对 OffSec Proving Grounds 机器 Access 的完整利用过程。目标是一台基于 Active Directory 的主机，作者先通过 Web 应用拿到 foothold，再结合 Kerberoasting 和服务账号权限实现提权。对准备 OSCP、想练习从外网打到域内的攻击链条，或者需要参考一条中等偏难靶机思路的人，这篇内容很有复盘价值。</p>
+<hr>
+<p>文章标题：我花 30 天追逐 4 万美元赏金，最终学到的代价</p>
+<p>文章链接：<a href="https://infosecwriteups.com/how-i-spent-30-days-chasing-a-40-000-bug-bounty-and-what-i-learned-the-hard-way-dc35caf61142?source=rss----7b722bfd1b8d---4">我花 30 天追逐 4 万美元赏金，最终学到的代价</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：这篇文章最有价值的地方在于它写的是一次失败复盘，而不是成功炫耀。作者围绕一台 AXIS 摄像头上的潜在高危 RCE 做了近 30 天调查、取证和升级沟通，最后发现自己在 shell quoting 上犯了技术性错误。对漏洞赏金研究员来说，这类“误判是怎么发生的”往往比简单晒赏金更有用，能直接提高验证严谨性。</p>
+<hr>
+<p>文章标题：从无声数学错误到证书绕过：TLS 解析器中的整数溢出</p>
+<p>文章链接：<a href="https://infosecwriteups.com/from-a-silent-math-error-to-certificate-bypass-uncovering-an-integer-overflow-in-a-tls-parser-b73b86696f74?source=rss----7b722bfd1b8d---4">从无声数学错误到证书绕过：TLS 解析器中的整数溢出</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：作者审计一个流行的 Java/Kotlin TLS 与证书校验库时，在 ASN.1 DER 的可变长度整数解析逻辑里发现了整数溢出问题。危险点不在崩溃，而在于攻击者理论上可以借此伪造 OID，影响证书校验结果。文章把 <code>VLQ</code> 编码、溢出成因和利用思路连到了一起，适合做协议解析、密码库审计和证书链验证研究的人重点看。</p>
+<hr>
+<p>文章标题：Azure Blob Storage 配置错误：攻击者进入数据资产的大门</p>
+<p>文章链接：<a href="https://infosecwriteups.com/azure-blob-storage-misconfigurations-attackers-gateway-to-data-b7d8e957440e?source=rss----7b722bfd1b8d---4">Azure Blob Storage 配置错误：攻击者进入数据资产的大门</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：文章围绕 Azure Blob Storage 的匿名访问误配置做了一次接近真实环境的演示。作者先解释 <code>Private</code>、<code>Blob</code>、<code>Container</code> 三种访问级别的差异，再展示如何故意开启匿名访问并用 MicroBurst 自动枚举暴露容器和文件。对云安全审计、存储资产盘点和横向扩展路径分析来说，这类“低门槛高影响”的误配置案例非常值得纳入检查清单。</p>
+<hr>
+<p>文章标题：ShinyHunters 声称入侵欧盟委员会</p>
+<p>文章链接：<a href="https://securityaffairs.com/190095/data-breach/shinyhunters-claims-the-hack-of-the-european-commission.html">ShinyHunters 声称入侵欧盟委员会</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇报道的价值在于把一次地下论坛中的入侵声称，放回到欧盟委员会此前确认部分云系统受影响的背景里理解。对情报分析来说，这类事件不能只看“是否实锤”，还要看威胁方是否在借机构事件做二次放大、数据叫卖或信誉建立。适合用来观察大型机构事件在黑产生态中的后续传播和利用路径。</p>
+<hr>
+<p>文章标题：伊朗关联组织 Handala 入侵 FBI 局长个人邮箱</p>
+<p>文章链接：<a href="https://securityaffairs.com/190088/intelligence/iran-linked-group-handala-hacked-fbi-director-kash-patels-personal-email-account.html">伊朗关联组织 Handala 入侵 FBI 局长个人邮箱</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章关注的是高价值个人目标，而不是传统企业入口。个人邮箱一旦被拿下，不只是隐私泄露，还可能成为社工、勒索、舆论操控和二次打点的跳板。对安全团队来说，这类案例再次提醒高层、政要、核心研发和涉密岗位不能把个人邮箱与工作环境隔离看待，个人数字资产同样属于关键攻击面。</p>
+<hr>
+<p>文章标题：XSS 黑产论坛用户名与账号标识全量整理</p>
+<p>文章链接：<a href="https://ddanchev.blogspot.com/2026/03/a-full-list-of-usernames-and-handles_28.html">XSS 黑产论坛用户名与账号标识全量整理</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章的价值非常直接，就是把 XSS 黑产论坛活跃成员的用户名和 handle 做成了一份可检索的清单。对威胁情报人员来说，这类基础数据本身就是后续画像、别名归并、跨平台关联和基础设施追踪的枢纽。它不提供花哨观点，但非常适合落库、做 pivot 和与其他论坛、泄露库、样本情报进行交叉映射。</p>
+<hr>
+<p>文章标题：XSS 黑产论坛社群结构解析</p>
+<p>文章链接：<a href="https://ddanchev.blogspot.com/2026/03/dissecting-xss-cybercrime-friendly.html">XSS 黑产论坛社群结构解析</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：相比单纯罗列昵称，这篇文章更进一步，展示了作者如何用自建 parser 和 dashboard 对 XSS 论坛活跃成员做结构化分析，并给出带来源定位的样例 IP 与帖子记录。它的核心价值在于可操作性很强，说明黑产社区研究并不只是舆情阅读，而是可以做成可查询、可回溯、可辅助执法或内部研判的数据资产。</p>
+<hr>
+<p>文章标题：苹果：锁定模式下的 iPhone 从未被入侵过</p>
+<p>文章链接：<a href="https://blog.upx8.com/%E8%8B%B9%E6%9E%9C-%E9%94%81%E5%AE%9A%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84iPhone%E4%BB%8E%E6%9C%AA%E8%A2%AB%E5%85%A5%E4%BE%B5%E8%BF%87">苹果：锁定模式下的 iPhone 从未被入侵过</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇短文虽然不是漏洞拆解，但对高风险设备防护很有参考意义。文中梳理了苹果锁定模式的几个关键限制项，包括禁用复杂 Web 技术、限制消息附件和阻止不安全网络自动接入，并给出“尚未观测到成功攻击”的官方说法。对记者、律师、活动人士和高价值目标的移动安全基线设计，这是一条值得持续跟踪的防护方向。</p>
+<hr>
+<p>文章标题：OpenClaw：新手最常踩的 8 个坑</p>
+<p>文章链接：<a href="https://heyuanfei.com/post/2026-03-28-openclaw-keng/">OpenClaw：新手最常踩的 8 个坑</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：如果你准备上手 OpenClaw，这篇文章非常实用。作者没有泛谈概念，而是围绕 Node.js 版本、Gateway 启动、配置文件路径、服务安装方式这些最容易卡住新人的点逐条拆解，还给出了可直接执行的命令。它适合当部署前 checklist 使用，能明显降低第一次把 Agent 控制面跑起来时的摩擦成本。</p>
+<hr>
+<p>文章标题：构建自己的信息简报 2.0</p>
+<p>文章链接：<a href="https://www.bmpi.dev/self/use-rss-email-read-v2/">构建自己的信息简报 2.0</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章把“信息收集”从传统 RSS + 邮件，升级到了 OpenClaw + Chrome 远程调试 + Discord 投递的自动化链路。作者重点讨论的不是抓得更多，而是如何利用登录态抓取真实关注内容，再交给模型摘要、去重和按频道分发。对想用 Agent 改造情报输入、技术追踪和内部情报简报的人，这是一篇很贴近落地场景的实践文。</p>
+<hr>
+<p>文章标题：你也可以这样落地 AI Agent：SOPS 篇</p>
+<p>文章链接：<a href="https://www.chenshaowen.com/blog/how-to-land-ai-agent-sops.html">你也可以这样落地 AI Agent：SOPS 篇</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：作者把生产场景里的标准操作程序抽成 SOPS，强调它们既是 Prompt，也是 few-shot 样本和高危动作的守门员。文章同时讨论了为什么能力层最好优先做成 MCP，而不是平台相关的 CLI，以及为什么高风险操作必须分流到审批流程。对企业内部做运维 Agent、故障处理 Agent 和自动化执行平台的人，这篇文章有很强的工程启发。</p>
+<hr>
+<p>文章标题：我是如何构建一个 AI 原生量化系统的</p>
+<p>文章链接：<a href="https://www.bmpi.dev/dev/ai-native-investment-system/">我是如何构建一个 AI 原生量化系统的</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇长文的亮点在于，作者没有让模型直接写策略代码，而是为 AI 设计了一套可验证、可复现的 DSL，让模型负责把自然语言意图翻译成结构化策略配置。文章详细解释了为什么纯代码和纯 API 都不适合作为稳定接口，以及如何在 DSL、few-shot、状态原语和本地/远程混合架构之间取得平衡。适合所有在做 AI 工作流编排的人参考。</p>
+<hr>
+<p>文章标题：AI 浪潮下的新时代开发模式：AI Coding 的快速成长</p>
+<p>文章链接：<a href="https://www.codesky.me/archives/ai-coding-2026.wind">AI 浪潮下的新时代开发模式：AI Coding 的快速成长</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：作者从一线开发者视角讨论了 2026 年 AI Coding 的真实边界，而不是只做概念吹捧。文中既谈了新模型和新工具如何改变开发范式，也提醒大家注意成本、收益和真实需求之间的平衡，还结合 <code>Agents.md</code>、技术方案底稿和 AI 自维护代码的体验谈了团队工程方式的变化。适合正在重构研发流程的人参考。</p>
+<hr>
+<p>文章标题：揭开 Softmax Loss 的数学过程：线性分类器的逐步推导</p>
+<p>文章链接：<a href="https://blog.aeilot.top/2026/03/29/softmax-math/">揭开 Softmax Loss 的数学过程：线性分类器的逐步推导</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章从单样本前向传播开始，逐步推导 <code>Softmax + Cross-Entropy</code> 的梯度，并最终把结果收束到非常经典的 <code>dz = p - y</code>。它适合拿来补齐机器学习里最常被“会用不会推”的一块基础，因为作者没有直接给结论，而是把从标量到矩阵向量化的链式法则一步步展开。对做模型训练、调试反向传播和讲解基础原理都很有帮助。</p>
+<hr>
+<p>文章标题：SecWiki News 2026-03-28 综述</p>
+<p>文章链接：<a href="http://www.sec-wiki.com/?2026-03-28">SecWiki News 2026-03-28 综述</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这页内容更像一个高质量入口，而不是单篇深文。它把当天值得继续深挖的安全研究集中到一个页面里，涵盖高级威胁预测、CISCN 题解、Agentic AI 基础设施、卫星互联网安全和红队工具等多个方向。对时间有限但又不想错过高信号文章的人，这类综述页的作用是先做一轮去噪，再决定下一步精读顺序。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-29/>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-29/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-28/" class="prev" rel="prev" title="每日信息流 2026 03 28"><i class="iconfont icon-left"></i>&nbsp;每日信息流 2026 03 28</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
