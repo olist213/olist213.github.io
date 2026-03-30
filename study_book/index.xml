@@ -6,7 +6,28 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 29 Mar 2026 13:36:35 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Mar 2026 12:33:35 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 30</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30/</link>
+      <pubDate>Mon, 30 Mar 2026 12:33:35 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-30 进行筛选，严格只从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、红队技法、安全工具、威胁情报、CTF 题解与 AI 安全工程文章，同时尽量拉开来源分布，避免内容过度集中在单一聚合源。
+文章标题：SecWiki News 2026-03-29 综述
+文章链接：SecWiki News 2026-03-29 综述
+所属领域：网络安全
+文章总结：这篇综述页本身不是单篇深文，但它把 3 月 29 日值得继续深挖的安全研究、漏洞通报、红队工具和 AI 相关文章集中在一起，适合当成当天高信号入口。对需要快速做技术筛选的人，它的价值在于先完成去噪，再决定哪些原始研究值得投入精读时间。
+ 文章标题：PSFuzz：在 AI 时代重新思考 Web 模糊测试
+文章链接：PSFuzz：在 AI 时代重新思考 Web 模糊测试
+所属领域：工具
+文章总结：文章从传统目录爆破与字典式 fuzzing 的噪声问题切入，强调真正的瓶颈不是发包速度，而是理解目标接口的上下文。作者围绕自己编写的 Go 工具 PSFuzz 讨论如何让 fuzzing 从“盲扫”转向“上下文驱动测试”，对做漏洞赏金和接口发现的人很有启发。
+ 文章标题：从 OSCP 备考到 HTB CPTS：我如何在 7 天内拿下考试
+文章链接：从 OSCP 备考到 HTB CPTS：我如何在 7 天内拿下考试
+所属领域：渗透
+文章总结：作者把从 OSCP 备考转向 HTB CPTS 的过程拆成训练路径、考试门槛、十天技术阶段与报告要求几个部分。它的参考价值不只是经验分享，而是说明新一代渗透认证更强调真实环境、工具使用和报告交付，适合准备进阶实战考核的人据此调整学习节奏。</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 29</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-29/</link>
