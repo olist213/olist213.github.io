@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-29/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           每日信息流 2026 03 30 | Olist.213
+       
+  </title>
+  <meta name="title" content="每日信息流 2026 03 30 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "每日信息流 2026 03 30",
+    "headline" : "每日信息流 2026 03 30",
+    "description" : "本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-30 进行筛选，严格只从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、红队技法、安全工具、威胁情报、CTF 题解与 AI 安全工程文章，同时尽量拉开来源分布，避免内容过度集中在单一聚合源。\n文章标题：SecWiki News 2026-03-29 综述\n文章链接：SecWiki News 2026-03-29 综述\n所属领域：网络安全\n文章总结：这篇综述页本身不是单篇深文，但它把 3 月 29 日值得继续深挖的安全研究、漏洞通报、红队工具和 AI 相关文章集中在一起，适合当成当天高信号入口。对需要快速做技术筛选的人，它的价值在于先完成去噪，再决定哪些原始研究值得投入精读时间。\n 文章标题：PSFuzz：在 AI 时代重新思考 Web 模糊测试\n文章链接：PSFuzz：在 AI 时代重新思考 Web 模糊测试\n所属领域：工具\n文章总结：文章从传统目录爆破与字典式 fuzzing 的噪声问题切入，强调真正的瓶颈不是发包速度，而是理解目标接口的上下文。作者围绕自己编写的 Go 工具 PSFuzz 讨论如何让 fuzzing 从“盲扫”转向“上下文驱动测试”，对做漏洞赏金和接口发现的人很有启发。\n 文章标题：从 OSCP 备考到 HTB CPTS：我如何在 7 天内拿下考试\n文章链接：从 OSCP 备考到 HTB CPTS：我如何在 7 天内拿下考试\n所属领域：渗透\n文章总结：作者把从 OSCP 备考转向 HTB CPTS 的过程拆成训练路径、考试门槛、十天技术阶段与报告要求几个部分。它的参考价值不只是经验分享，而是说明新一代渗透认证更强调真实环境、工具使用和报告交付，适合准备进阶实战考核的人据此调整学习节奏。",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-03-30 12:33:35 \u002b0800 CST",
+    "dateModified" : "2026-03-30 12:33:35 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30\/",
+    "wordCount" : "309",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每日信息流 2026 03 30</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2026-03-30 itemprop="datePublished">March 30, 2026</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>本文基于 GitHub Issues 最新一期 <a href="https://github.com/Tyaoo/picker/issues/1329"><code>[每日信息流] 2026-03-30</code></a> 进行筛选，严格只从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、红队技法、安全工具、威胁情报、CTF 题解与 AI 安全工程文章，同时尽量拉开来源分布，避免内容过度集中在单一聚合源。</p>
+<p>文章标题：SecWiki News 2026-03-29 综述</p>
+<p>文章链接：<a href="http://www.sec-wiki.com/?2026-03-29">SecWiki News 2026-03-29 综述</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇综述页本身不是单篇深文，但它把 3 月 29 日值得继续深挖的安全研究、漏洞通报、红队工具和 AI 相关文章集中在一起，适合当成当天高信号入口。对需要快速做技术筛选的人，它的价值在于先完成去噪，再决定哪些原始研究值得投入精读时间。</p>
+<hr>
+<p>文章标题：PSFuzz：在 AI 时代重新思考 Web 模糊测试</p>
+<p>文章链接：<a href="https://infosecwriteups.com/psfuzz-rethinking-web-fuzzing-in-the-age-of-ai-9fe0c2df0952?source=rss----7b722bfd1b8d---4">PSFuzz：在 AI 时代重新思考 Web 模糊测试</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：文章从传统目录爆破与字典式 fuzzing 的噪声问题切入，强调真正的瓶颈不是发包速度，而是理解目标接口的上下文。作者围绕自己编写的 Go 工具 PSFuzz 讨论如何让 fuzzing 从“盲扫”转向“上下文驱动测试”，对做漏洞赏金和接口发现的人很有启发。</p>
+<hr>
+<p>文章标题：从 OSCP 备考到 HTB CPTS：我如何在 7 天内拿下考试</p>
+<p>文章链接：<a href="https://infosecwriteups.com/from-oscp-prep-to-htb-cpts-how-i-conquered-the-exam-in-7-days-350b6f692bd5?source=rss----7b722bfd1b8d---4">从 OSCP 备考到 HTB CPTS：我如何在 7 天内拿下考试</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：作者把从 OSCP 备考转向 HTB CPTS 的过程拆成训练路径、考试门槛、十天技术阶段与报告要求几个部分。它的参考价值不只是经验分享，而是说明新一代渗透认证更强调真实环境、工具使用和报告交付，适合准备进阶实战考核的人据此调整学习节奏。</p>
+<hr>
+<p>文章标题：ORDER ORDER：PicoCTF 题解</p>
+<p>文章链接：<a href="https://infosecwriteups.com/order-order-picoctf-writeup-b7c7de44f296?source=rss----7b722bfd1b8d---4">ORDER ORDER：PicoCTF 题解</a></p>
+<p>所属领域：CTF</p>
+<p>文章总结：这篇题解适合作为 CTF Web 与逻辑题的复盘样例。文章围绕题目中的输入、排序或处理顺序问题展开，重点在于如何从页面行为还原隐藏约束，再把看似零散的线索拼成可利用路径。对练习题目建模、调试思路和快速定位突破口的人，比单纯看 flag 更有价值。</p>
+<hr>
+<p>文章标题：在用户资料 API 中发现 IDOR：一次价值 1.5 万美元的关键漏洞之旅</p>
+<p>文章链接：<a href="https://infosecwriteups.com/finding-an-idor-in-user-profile-api-a-15-000-journey-to-critical-0f05e583c00b?source=rss----7b722bfd1b8d---4">在用户资料 API 中发现 IDOR：一次价值 1.5 万美元的关键漏洞之旅</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：文章聚焦用户资料 API 中的对象级访问控制缺陷，展示作者如何从正常接口交互一路验证到高危越权，并最终将问题提升到关键级别。它的价值在于强调 IDOR 并不只是改个 ID，而是要把权限边界、用户上下文和敏感操作串起来看，对 API 安全测试非常实用。</p>
+<hr>
+<p>文章标题：OWASP 针对 LLM 的十大风险：AI 与网络安全初学者必须知道的内容</p>
+<p>文章链接：<a href="https://infosecwriteups.com/owasp-top-10-for-llms-what-every-beginner-in-ai-cybersecurity-must-know-4e83729725f6?source=rss----7b722bfd1b8d---4">OWASP 针对 LLM 的十大风险：AI 与网络安全初学者必须知道的内容</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章围绕 OWASP LLM Top 10 做面向实战的入门梳理，帮助读者把提示词注入、数据泄露、工具滥用和不安全输出这些风险放到统一框架里理解。虽然偏入门，但对刚开始做 AI 安全评估的人很适合用来建立检查清单，也便于和传统应用安全问题做映射。</p>
+<hr>
+<p>文章标题：如何将 Pi-hole 与 Tailscale 集成来保护隐私</p>
+<p>文章链接：<a href="https://hackernoon.com/how-to-integrate-pi-hole-with-tailscale-to-protect-your-privacy?source=rss">如何将 Pi-hole 与 Tailscale 集成来保护隐私</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：作者把 Pi-hole 这种 DNS 过滤能力和 Tailscale 的网状网络结合起来，目标是在多设备、多地点环境中获得统一的隐私保护和广告拦截能力。对安全从业者来说，这类文章的价值在于它展示了低成本、可自托管的边界防护思路，也适合作为家庭实验环境的基础设施模板。</p>
+<hr>
+<p>文章标题：量子计算对 RSA、ECC 与现代加密系统的威胁</p>
+<p>文章链接：<a href="https://hackernoon.com/the-quantum-threat-to-rsa-ecc-and-modern-encryption-systems?source=rss">量子计算对 RSA、ECC 与现代加密系统的威胁</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章把量子计算对 RSA、ECC 等公钥体系的冲击讲得比较集中，重点不是泛泛而谈“量子可怕”，而是把现有密码体系的风险窗口、迁移压力和长期数据保密问题放到一起讨论。对做密码治理、长期密钥规划和合规路线设计的人，有比较明确的提醒作用。</p>
+<hr>
+<p>文章标题：构建能够闭环处理流水线故障的 AI Agent</p>
+<p>文章链接：<a href="https://hackernoon.com/building-ai-agents-that-close-the-loop-on-pipeline-failures?source=rss">构建能够闭环处理流水线故障的 AI Agent</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章讨论的不是单点 Agent 能否调用工具，而是如何让它在流水线失败后形成观测、判断、修复和回写的闭环。对工程团队来说，这类设计比单纯聊天式 Agent 更贴近生产，尤其适合思考 AI 如何接入 CI/CD、告警系统和自动化运维链路。</p>
+<hr>
+<p>文章标题：混沌工程为何是 AI 可靠性体系中缺失的一层</p>
+<p>文章链接：<a href="https://hackernoon.com/chaos-engineering-is-the-missing-layer-in-every-ai-reliability-stack?source=rss">混沌工程为何是 AI 可靠性体系中缺失的一层</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：作者提出 AI 系统的可靠性不能只盯着模型输出本身，还要对提示词、工具调用、外部依赖和长链路编排做故障注入测试。这个视角很有价值，因为 AI 应用的真实脆弱点往往出在系统耦合层，而不是基准测试里那几个漂亮指标。</p>
+<hr>
+<p>文章标题：如何写出客户真正会看也愿意付费的 VAPT 报告</p>
+<p>文章链接：<a href="https://hackernoon.com/how-to-write-a-vapt-report-that-clients-actually-read-and-pay-for?source=rss">如何写出客户真正会看也愿意付费的 VAPT 报告</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：这篇文章围绕渗透测试报告的可读性与付费价值展开，强调报告不该只是漏洞堆砌，而要把资产影响、复现步骤、风险排序和修复建议组织成可执行成果。对乙方顾问、自由研究员和内部红队来说，它非常适合作为交付物优化的检查清单。</p>
+<hr>
+<p>文章标题：XSS 论坛成员域名资产组合梳理</p>
+<p>文章链接：<a href="https://ddanchev.blogspot.com/2026/03/a-domains-portfolio-belonging-to-xss.html">XSS 论坛成员域名资产组合梳理</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：作者围绕 XSS 黑产论坛成员的域名资产做了系统化整理，把原本零散的 handle、别名和基础设施线索收敛成可查询的情报材料。对威胁情报和黑产画像工作来说，这类文章的价值很直接，因为域名资产往往是做横向关联、归因和追踪活动集群的关键支点。</p>
+<hr>
+<p>文章标题：Google TurboQuant AI 压缩算法大幅减少大模型内存使用</p>
+<p>文章链接：<a href="https://www.solidot.org/story?sid=83907">Google TurboQuant AI 压缩算法大幅减少大模型内存使用</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章介绍 Google 的 TurboQuant 如何压缩大模型 KV Cache，在显著降低内存占用的同时尽量维持精度并提升速度。它对安全从业者的意义不只是 AI 科普，而是帮助理解未来本地推理、Agent 部署和资源受限环境中模型推理成本将如何继续下降。</p>
+<hr>
+<p>文章标题：OpenAI 与 Anthropic 新模型走向解析</p>
+<p>文章链接：<a href="https://lukefan.com/2026/03/29/openai-anthropic-new-models-spud-mythos-agent-codex/">OpenAI 与 Anthropic 新模型走向解析</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：作者围绕 OpenAI 代号 Spud 与 Anthropic Mythos 的泄露与传闻，讨论两家模型厂商在编码、代理和统一入口能力上的路线变化。对 AI 安全与工具生态观察者来说，这篇文章的价值在于它不只看模型参数，而是把产品策略、部署形态和开发者体验放进同一张图里看。</p>
+<hr>
+<p>文章标题：OpenClaw 安全指南：自托管 AI Agent 如何兼顾效率与安全</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/eDC6GoZqxPaZwQVQDRGT2w">OpenClaw 安全指南：自托管 AI Agent 如何兼顾效率与安全</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章关注的不是 OpenClaw 如何更快跑起来，而是自托管 AI Agent 的权限边界、敏感文件暴露、网络控制和沙箱隔离这些真正危险的地方。随着能够直接执行命令的 Agent 普及，这类安全指南非常有价值，因为它提醒部署者先设计控制面，再谈效率。</p>
+<hr>
+<p>文章标题：LiteLLM 供应链投毒攻击事件解析</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/XAChO4BQgV5ls6l2ktCCUA">LiteLLM 供应链投毒攻击事件解析</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇事件解析把 AI 基础组件面临的供应链风险摆到台前，核心问题不是单个漏洞，而是依赖关系、更新链路和自动化部署如何放大污染范围。对使用模型网关、中间层 SDK 或 AI 平台的团队来说，它提供了一个很好的提醒：锁版本、审来源、做隔离和监控，已经不是可选项。</p>
+<hr>
+<p>文章标题：Starkiller 钓鱼套件利用 AitM 反向代理绕过多因素身份验证</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s?__biz=Mzg3NjU4MDI4NQ==&amp;mid=2247486238&amp;idx=1&amp;sn=0ec917e2f83d7228b31ecf191d05e944">Starkiller 钓鱼套件利用 AitM 反向代理绕过多因素身份验证</a></p>
+<p>所属领域：红队</p>
+<p>文章总结：文章聚焦 Starkiller 这类新型钓鱼套件如何通过实时反向代理劫持认证流程，从而绕过基于短信或 TOTP 的 MFA。它的价值在于既解释了技术机制，也指出传统“开了多因子就安全”的假设正在失效，对企业身份安全建设和钓鱼演练都很有现实意义。</p>
+<hr>
+<p>文章标题：Langflow 漏洞披露后数小时即遭实战攻击，CISA 将其列入已知被利用漏洞清单</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/wZa2CmQ0JmDB1kaDYmuWpA">Langflow 漏洞披露后数小时即遭实战攻击，CISA 将其列入已知被利用漏洞清单</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章追踪 Langflow 漏洞从公开披露到被迅速用于实战攻击的过程，并强调 CISA 将其纳入已知被利用漏洞清单后的应急意义。对 AI 应用团队来说，这类案例说明可视化编排平台同样会成为公网高危入口，补丁、缓解和暴露面收缩都必须前置。</p>
+<hr>
+<p>文章标题：Magento PolyShell 漏洞分析：从任意文件上传到远程代码执行</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/CMTONs0DYNaV3w-KZwfoGg">Magento PolyShell 漏洞分析：从任意文件上传到远程代码执行</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：这篇分析围绕 Magento “PolyShell” 攻击链展开，关注点是攻击者如何借任意文件上传最终落到远程代码执行。它的技术价值在于把上传点、媒体目录执行面和后续清理检测串成一条完整链路，对电商系统运维、安全加固和应急排查都很有参考性。</p>
+<hr>
+<p>文章标题：一次奇妙的降价支付逻辑漏洞挖掘之旅</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/Etpy9YrD-LJ_kyTpA3abhA">一次奇妙的降价支付逻辑漏洞挖掘之旅</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：文章记录了一次围绕价格、优惠或支付流程状态差异展开的业务逻辑漏洞挖掘。相比传统注入类漏洞，这类问题更依赖对订单流、结算规则和边界条件的理解。对做业务安全测试的人来说，它提醒我们真正高价值的问题，往往藏在“系统按规则运行，但规则本身有洞”这种地方。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30/>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-29/" class="prev" rel="prev" title="每日信息流 2026 03 29"><i class="iconfont icon-left"></i>&nbsp;每日信息流 2026 03 29</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
