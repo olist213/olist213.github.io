@@ -6,7 +6,33 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Mar 2026 12:33:35 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 31 Mar 2026 12:23:51 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 03 31</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-31/</link>
+      <pubDate>Tue, 31 Mar 2026 12:23:51 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-31/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-31 进行筛选，严格只从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、红队技法、安全工具、AI 安全评估、漏洞情报与高质量实战复盘，同时尽量拉开来源分布，避免内容过度集中在单一聚合源。
+文章标题：Grafana SQL 表达式任意文件写入导致远程代码执行
+文章链接：Grafana SQL 表达式任意文件写入导致远程代码执行
+所属领域：渗透
+文章总结：文章围绕 Grafana SQL Expressions 相关缺陷展开，重点不只是告警编号，而是解释攻击者如何把可控表达式一路推进到任意文件写入，再继续拼接为远程执行链。对实战价值最大的部分在于它提醒读者检查运行权限、挂载目录、插件暴露面和落地痕迹，而不是只盯着版本号打补丁。
+ 文章标题：OpenClaw 安全风险浅析与排查指南
+文章链接：OpenClaw 安全风险浅析与排查指南
+所属领域：AI
+文章总结：这篇文章聚焦自托管 AI Agent 平台 OpenClaw 的真实风险面，内容覆盖访问日志排查、异常流量识别、插件可信性校验、令牌与敏感数据脱敏，以及版本补丁和权限隔离的长效治理。它的价值在于把 AI 系统安全问题拆成可执行检查项，适合直接转成上线前后的核查清单。
+ 文章标题：PAN-OS 中 Nginx/Apache 路径混淆导致身份验证绕过
+文章链接：PAN-OS 中 Nginx/Apache 路径混淆导致身份验证绕过
+所属领域：网络安全
+文章总结：文章讨论 PAN-OS 管理面中由 Nginx 与 Apache 对路径解析不一致引发的认证绕过问题，核心价值在于说明这类问题并非简单的单点校验失效，而是多层代理与后端组件认知不一致造成的边界崩塌。做设备攻防或 WAF 绕过研究的人，可以从中借鉴路径标准化与前后端解析差异的利用思路。
+ 文章标题：LiteLLM 供应链攻击事件始末
+文章链接：LiteLLM 供应链攻击事件始末
+所属领域：AI
+文章总结：这篇事件复盘的重点不是单个恶意版本，而是梳理 AI 基础组件在下载量巨大、依赖链复杂、自动化更新普遍的背景下，如何被供应链投毒放大影响面。对使用模型网关、AI SDK 或代理框架的团队来说，它很适合拿来反推版本锁定、包源审计、环境隔离和凭证监控的最低要求。
+ 文章标题：Langflow 未授权远程代码执行漏洞复现</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 30</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30/</link>
