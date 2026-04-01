@@ -6,7 +6,28 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 31 Mar 2026 12:23:51 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Apr 2026 12:21:58 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 04 01</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-01/</link>
+      <pubDate>Wed, 01 Apr 2026 12:21:58 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-01/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-04-01 进行筛选，只从 issue 正文出现的链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留 AI 安全、供应链攻击、云与基础设施风险、恶意软件分析、漏洞利用与高质量实战复盘，同时尽量避免同题材重复堆叠。
+文章标题：从 4.8 亿下载量的 LiteLLM 投毒事件，看 AI 基础设施安全攻与防
+文章链接：从 4.8 亿下载量的 LiteLLM 投毒事件，看 AI 基础设施安全攻与防
+所属领域：AI
+文章总结：文章围绕 LiteLLM 投毒事件拆解 AI 基础设施供应链为什么会被放大成系统性风险。重点不是单个恶意版本，而是下载量、包管理信任链、自动更新、凭证使用范围和响应滞后如何叠加成爆炸半径。对维护模型网关、SDK 和 AI 平台的团队来说，它很适合反推依赖锁定、发布校验、包源监控与应急止损的最小基线。
+ 文章标题：OpenClaw 又又又危！Axios npm 被投毒，植入全平台木马
+文章链接：OpenClaw 又又又危！Axios npm 被投毒，植入全平台木马
+所属领域：AI
+文章总结：这篇文章把 Axios 供应链事件放回 OpenClaw 生态来观察，强调 AI Agent 平台一旦依赖被投毒，影响面不会停留在单个包，而会继续传导到插件、自动执行链路和终端主机。它的价值在于提醒读者把 AI 应用看成高权限自动化系统，而不是普通 Web 服务，供应链加固和组件可追溯性必须前置。
+ 文章标题：360 漏洞挖掘智能体揪出 OpenClaw 新高危漏洞
+文章链接：360 漏洞挖掘智能体揪出 OpenClaw 新高危漏洞
+所属领域：AI
+文章总结：文章聚焦用漏洞挖掘智能体去发现 OpenClaw 新高危缺陷这件事本身，技术看点在于自动化发现不再只是扫已知规则，而是能沿着智能体工作流、权限边界和工具调用链去找可利用路径。对做 AI 安全测试的人来说，这类案例说明“让智能体审计智能体”正在从概念走向可落地的工程实践。</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 31</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-31/</link>
