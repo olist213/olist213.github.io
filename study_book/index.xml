@@ -6,7 +6,75 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 29 Mar 2026 13:36:35 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Apr 2026 12:21:58 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 04 01</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-01/</link>
+      <pubDate>Wed, 01 Apr 2026 12:21:58 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-01/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-04-01 进行筛选，只从 issue 正文出现的链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留 AI 安全、供应链攻击、云与基础设施风险、恶意软件分析、漏洞利用与高质量实战复盘，同时尽量避免同题材重复堆叠。
+文章标题：从 4.8 亿下载量的 LiteLLM 投毒事件，看 AI 基础设施安全攻与防
+文章链接：从 4.8 亿下载量的 LiteLLM 投毒事件，看 AI 基础设施安全攻与防
+所属领域：AI
+文章总结：文章围绕 LiteLLM 投毒事件拆解 AI 基础设施供应链为什么会被放大成系统性风险。重点不是单个恶意版本，而是下载量、包管理信任链、自动更新、凭证使用范围和响应滞后如何叠加成爆炸半径。对维护模型网关、SDK 和 AI 平台的团队来说，它很适合反推依赖锁定、发布校验、包源监控与应急止损的最小基线。
+ 文章标题：OpenClaw 又又又危！Axios npm 被投毒，植入全平台木马
+文章链接：OpenClaw 又又又危！Axios npm 被投毒，植入全平台木马
+所属领域：AI
+文章总结：这篇文章把 Axios 供应链事件放回 OpenClaw 生态来观察，强调 AI Agent 平台一旦依赖被投毒，影响面不会停留在单个包，而会继续传导到插件、自动执行链路和终端主机。它的价值在于提醒读者把 AI 应用看成高权限自动化系统，而不是普通 Web 服务，供应链加固和组件可追溯性必须前置。
+ 文章标题：360 漏洞挖掘智能体揪出 OpenClaw 新高危漏洞
+文章链接：360 漏洞挖掘智能体揪出 OpenClaw 新高危漏洞
+所属领域：AI
+文章总结：文章聚焦用漏洞挖掘智能体去发现 OpenClaw 新高危缺陷这件事本身，技术看点在于自动化发现不再只是扫已知规则，而是能沿着智能体工作流、权限边界和工具调用链去找可利用路径。对做 AI 安全测试的人来说，这类案例说明“让智能体审计智能体”正在从概念走向可落地的工程实践。</description>
+    </item>
+    
+    <item>
+      <title>每日信息流 2026 03 31</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-31/</link>
+      <pubDate>Tue, 31 Mar 2026 12:23:51 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-31/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-31 进行筛选，严格只从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、红队技法、安全工具、AI 安全评估、漏洞情报与高质量实战复盘，同时尽量拉开来源分布，避免内容过度集中在单一聚合源。
+文章标题：Grafana SQL 表达式任意文件写入导致远程代码执行
+文章链接：Grafana SQL 表达式任意文件写入导致远程代码执行
+所属领域：渗透
+文章总结：文章围绕 Grafana SQL Expressions 相关缺陷展开，重点不只是告警编号，而是解释攻击者如何把可控表达式一路推进到任意文件写入，再继续拼接为远程执行链。对实战价值最大的部分在于它提醒读者检查运行权限、挂载目录、插件暴露面和落地痕迹，而不是只盯着版本号打补丁。
+ 文章标题：OpenClaw 安全风险浅析与排查指南
+文章链接：OpenClaw 安全风险浅析与排查指南
+所属领域：AI
+文章总结：这篇文章聚焦自托管 AI Agent 平台 OpenClaw 的真实风险面，内容覆盖访问日志排查、异常流量识别、插件可信性校验、令牌与敏感数据脱敏，以及版本补丁和权限隔离的长效治理。它的价值在于把 AI 系统安全问题拆成可执行检查项，适合直接转成上线前后的核查清单。
+ 文章标题：PAN-OS 中 Nginx/Apache 路径混淆导致身份验证绕过
+文章链接：PAN-OS 中 Nginx/Apache 路径混淆导致身份验证绕过
+所属领域：网络安全
+文章总结：文章讨论 PAN-OS 管理面中由 Nginx 与 Apache 对路径解析不一致引发的认证绕过问题，核心价值在于说明这类问题并非简单的单点校验失效，而是多层代理与后端组件认知不一致造成的边界崩塌。做设备攻防或 WAF 绕过研究的人，可以从中借鉴路径标准化与前后端解析差异的利用思路。
+ 文章标题：LiteLLM 供应链攻击事件始末
+文章链接：LiteLLM 供应链攻击事件始末
+所属领域：AI
+文章总结：这篇事件复盘的重点不是单个恶意版本，而是梳理 AI 基础组件在下载量巨大、依赖链复杂、自动化更新普遍的背景下，如何被供应链投毒放大影响面。对使用模型网关、AI SDK 或代理框架的团队来说，它很适合拿来反推版本锁定、包源审计、环境隔离和凭证监控的最低要求。
+ 文章标题：Langflow 未授权远程代码执行漏洞复现</description>
+    </item>
+    
+    <item>
+      <title>每日信息流 2026 03 30</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30/</link>
+      <pubDate>Mon, 30 Mar 2026 12:33:35 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-30 进行筛选，严格只从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、红队技法、安全工具、威胁情报、CTF 题解与 AI 安全工程文章，同时尽量拉开来源分布，避免内容过度集中在单一聚合源。
+文章标题：SecWiki News 2026-03-29 综述
+文章链接：SecWiki News 2026-03-29 综述
+所属领域：网络安全
+文章总结：这篇综述页本身不是单篇深文，但它把 3 月 29 日值得继续深挖的安全研究、漏洞通报、红队工具和 AI 相关文章集中在一起，适合当成当天高信号入口。对需要快速做技术筛选的人，它的价值在于先完成去噪，再决定哪些原始研究值得投入精读时间。
+ 文章标题：PSFuzz：在 AI 时代重新思考 Web 模糊测试
+文章链接：PSFuzz：在 AI 时代重新思考 Web 模糊测试
+所属领域：工具
+文章总结：文章从传统目录爆破与字典式 fuzzing 的噪声问题切入，强调真正的瓶颈不是发包速度，而是理解目标接口的上下文。作者围绕自己编写的 Go 工具 PSFuzz 讨论如何让 fuzzing 从“盲扫”转向“上下文驱动测试”，对做漏洞赏金和接口发现的人很有启发。
+ 文章标题：从 OSCP 备考到 HTB CPTS：我如何在 7 天内拿下考试
+文章链接：从 OSCP 备考到 HTB CPTS：我如何在 7 天内拿下考试
+所属领域：渗透
+文章总结：作者把从 OSCP 备考转向 HTB CPTS 的过程拆成训练路径、考试门槛、十天技术阶段与报告要求几个部分。它的参考价值不只是经验分享，而是说明新一代渗透认证更强调真实环境、工具使用和报告交付，适合准备进阶实战考核的人据此调整学习节奏。</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 03 29</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-29/</link>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30/" />
+  <link rel="next" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-01/" />
+  <link rel="canonical" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-31/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           每日信息流 2026 03 31 | Olist.213
+       
+  </title>
+  <meta name="title" content="每日信息流 2026 03 31 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "每日信息流 2026 03 31",
+    "headline" : "每日信息流 2026 03 31",
+    "description" : "本文基于 GitHub Issues 最新一期 [每日信息流] 2026-03-31 进行筛选，严格只从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、红队技法、安全工具、AI 安全评估、漏洞情报与高质量实战复盘，同时尽量拉开来源分布，避免内容过度集中在单一聚合源。\n文章标题：Grafana SQL 表达式任意文件写入导致远程代码执行\n文章链接：Grafana SQL 表达式任意文件写入导致远程代码执行\n所属领域：渗透\n文章总结：文章围绕 Grafana SQL Expressions 相关缺陷展开，重点不只是告警编号，而是解释攻击者如何把可控表达式一路推进到任意文件写入，再继续拼接为远程执行链。对实战价值最大的部分在于它提醒读者检查运行权限、挂载目录、插件暴露面和落地痕迹，而不是只盯着版本号打补丁。\n 文章标题：OpenClaw 安全风险浅析与排查指南\n文章链接：OpenClaw 安全风险浅析与排查指南\n所属领域：AI\n文章总结：这篇文章聚焦自托管 AI Agent 平台 OpenClaw 的真实风险面，内容覆盖访问日志排查、异常流量识别、插件可信性校验、令牌与敏感数据脱敏，以及版本补丁和权限隔离的长效治理。它的价值在于把 AI 系统安全问题拆成可执行检查项，适合直接转成上线前后的核查清单。\n 文章标题：PAN-OS 中 Nginx\/Apache 路径混淆导致身份验证绕过\n文章链接：PAN-OS 中 Nginx\/Apache 路径混淆导致身份验证绕过\n所属领域：网络安全\n文章总结：文章讨论 PAN-OS 管理面中由 Nginx 与 Apache 对路径解析不一致引发的认证绕过问题，核心价值在于说明这类问题并非简单的单点校验失效，而是多层代理与后端组件认知不一致造成的边界崩塌。做设备攻防或 WAF 绕过研究的人，可以从中借鉴路径标准化与前后端解析差异的利用思路。\n 文章标题：LiteLLM 供应链攻击事件始末\n文章链接：LiteLLM 供应链攻击事件始末\n所属领域：AI\n文章总结：这篇事件复盘的重点不是单个恶意版本，而是梳理 AI 基础组件在下载量巨大、依赖链复杂、自动化更新普遍的背景下，如何被供应链投毒放大影响面。对使用模型网关、AI SDK 或代理框架的团队来说，它很适合拿来反推版本锁定、包源审计、环境隔离和凭证监控的最低要求。\n 文章标题：Langflow 未授权远程代码执行漏洞复现",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-03-31 12:23:51 \u002b0800 CST",
+    "dateModified" : "2026-03-31 12:23:51 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-31\/",
+    "wordCount" : "329",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每日信息流 2026 03 31</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2026-03-31 itemprop="datePublished">March 31, 2026</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>本文基于 GitHub Issues 最新一期 <a href="https://github.com/Tyaoo/picker/issues/1330"><code>[每日信息流] 2026-03-31</code></a> 进行筛选，严格只从 issue 正文链接中挑出 20 篇更适合网络安全从业者深读的内容。筛选时优先保留漏洞利用链、红队技法、安全工具、AI 安全评估、漏洞情报与高质量实战复盘，同时尽量拉开来源分布，避免内容过度集中在单一聚合源。</p>
+<p>文章标题：Grafana SQL 表达式任意文件写入导致远程代码执行</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/Q6TKTDQT_zJba4VnysTFrA">Grafana SQL 表达式任意文件写入导致远程代码执行</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：文章围绕 Grafana SQL Expressions 相关缺陷展开，重点不只是告警编号，而是解释攻击者如何把可控表达式一路推进到任意文件写入，再继续拼接为远程执行链。对实战价值最大的部分在于它提醒读者检查运行权限、挂载目录、插件暴露面和落地痕迹，而不是只盯着版本号打补丁。</p>
+<hr>
+<p>文章标题：OpenClaw 安全风险浅析与排查指南</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/vZZmZZBQQ-ZVeKBuHScMqw">OpenClaw 安全风险浅析与排查指南</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章聚焦自托管 AI Agent 平台 OpenClaw 的真实风险面，内容覆盖访问日志排查、异常流量识别、插件可信性校验、令牌与敏感数据脱敏，以及版本补丁和权限隔离的长效治理。它的价值在于把 AI 系统安全问题拆成可执行检查项，适合直接转成上线前后的核查清单。</p>
+<hr>
+<p>文章标题：PAN-OS 中 Nginx/Apache 路径混淆导致身份验证绕过</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/jZvvBfd6ua0INQY8W2QESw">PAN-OS 中 Nginx/Apache 路径混淆导致身份验证绕过</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章讨论 PAN-OS 管理面中由 Nginx 与 Apache 对路径解析不一致引发的认证绕过问题，核心价值在于说明这类问题并非简单的单点校验失效，而是多层代理与后端组件认知不一致造成的边界崩塌。做设备攻防或 WAF 绕过研究的人，可以从中借鉴路径标准化与前后端解析差异的利用思路。</p>
+<hr>
+<p>文章标题：LiteLLM 供应链攻击事件始末</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/mYPNVkYrsFpWRMT947JlLQ">LiteLLM 供应链攻击事件始末</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇事件复盘的重点不是单个恶意版本，而是梳理 AI 基础组件在下载量巨大、依赖链复杂、自动化更新普遍的背景下，如何被供应链投毒放大影响面。对使用模型网关、AI SDK 或代理框架的团队来说，它很适合拿来反推版本锁定、包源审计、环境隔离和凭证监控的最低要求。</p>
+<hr>
+<p>文章标题：Langflow 未授权远程代码执行漏洞复现</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/XowWtYcv49e-LVwOLKCxzg">Langflow 未授权远程代码执行漏洞复现</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章围绕 Langflow 未授权远程代码执行漏洞给出复现过程，价值在于把 AI 编排平台这类“看起来像业务工具”的系统重新放回高危攻击面来审视。它能帮助读者理解可视化工作流平台为何往往具备命令执行、外部连接和敏感凭据聚合能力，因此一旦暴露到公网，风险会迅速升级。</p>
+<hr>
+<p>文章标题：自写的几个 BOF，可过内存防护</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/89oU-ZV-F3uv29CbudGssg">自写的几个 BOF，可过内存防护</a></p>
+<p>所属领域：红队</p>
+<p>文章总结：文章聚焦 Beacon Object File 在对抗场景下的定制化开发，核心看点是如何通过更轻量、更贴近内存执行链路的方式绕开部分检测与防护。对红队人员来说，这类内容的参考价值在于它强调自研载荷与行为控制的重要性，尤其适合配合已有 C2 平台做细粒度能力补足与免杀实验。</p>
+<hr>
+<p>文章标题：VulnTarget-P 纯 IPv6 下的攻防与数据恢复实战</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/FBQFyPPTj4Q9YjLn6rkJuw">VulnTarget-P 纯 IPv6 下的攻防与数据恢复实战</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：这篇文章把测试环境放到更少被充分覆盖的纯 IPv6 场景，重点不只是打点方式，还涉及攻防过程中数据留存与恢复的处理思路。它的技术价值在于提醒渗透与运维团队，很多资产在 IPv6 下会暴露出与 IPv4 不同的发现、过滤和日志问题，传统经验不能直接照搬。</p>
+<hr>
+<p>文章标题：Burp Suite 文件上传漏洞自动化测试插件 1000+ Payload</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/UAh9CjgpmAk-k3FoC0Yrmg">Burp Suite 文件上传漏洞自动化测试插件 1000+ Payload</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：文章介绍了一款面向文件上传漏洞测试的 Burp 插件，主打预置大规模绕过载荷、支持代理抓包和自动化探测。它的实用价值不在于“再造一个上传模块”，而是把扩展名、内容类型、路径、截断、双写和解析差异等常见绕过点做成高效率测试流程，适合提升批量验证和复现速度。</p>
+<hr>
+<p>文章标题：用 Agent 打败 Agent：LLM 智能体漏洞正在进入自动化挖掘阶段</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/YQuXEKZNoehxwiyD-59ANg">用 Agent 打败 Agent：LLM 智能体漏洞正在进入自动化挖掘阶段</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章围绕 AgentFuzz 这类思路展开，核心不是让大模型帮助人工找漏洞，而是把智能体系统本身当成被测对象，通过自动化任务、恶意网页和对抗提示构建完整攻击样本。对 AI 安全研究者来说，这种“让代理攻击代理”的方法非常重要，因为它更贴近真实应用形态，而不是停留在单轮提示词实验。</p>
+<hr>
+<p>文章标题：Augustus：专为实战设计的 LLM 漏洞扫描器，支持 210 多种攻击手法</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/IhMZ8IPnnlteg2Ch3BRlpg">Augustus：专为实战设计的 LLM 漏洞扫描器，支持 210 多种攻击手法</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：文章介绍 Augustus 这一面向大模型安全评估的开源扫描器，重点是把提示注入、越权调用、数据泄露、工具滥用等攻击技术收拢进统一工具链，而不是零散脚本拼装。它的价值在于帮助团队更系统地建立 LLM 安全回归流程，适合在上线前后做重复性测试和版本对比。</p>
+<hr>
+<p>文章标题：手把手 CNVD 从资产收集到通杀漏洞挖掘</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/RVb-ai_ZrfWTyWdY6jjl0g">手把手 CNVD 从资产收集到通杀漏洞挖掘</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：文章的重点在于把 CNVD 类目标从“碰运气挖洞”转成更体系化的资产研判与信息收集流程，涵盖代码托管平台搜索、关键配置定位、资产边界确认和从单点漏洞向通杀思路迁移。对实战挖洞的人来说，它的启发在于先把可重复利用的信息优势建立起来，再考虑漏洞类型本身。</p>
+<hr>
+<p>文章标题：微软如何用 Copilot Studio 应对 Agentic AI 的 OWASP 十大风险</p>
+<p>文章链接：<a href="https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/">微软如何用 Copilot Studio 应对 Agentic AI 的 OWASP 十大风险</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章从平台治理视角讨论 Agentic AI 的安全建设，重点不是简单罗列风险，而是把提示注入、工具滥用、越权访问、代理失陷和数据暴露映射到实际控制项上。对企业团队最有参考价值的地方，是它展示了如何把 AI 安全从研究议题落到身份、权限、监控、审计和事件响应这些成熟能力上。</p>
+<hr>
+<p>文章标题：F5 BIG-IP 漏洞被重新定性为远程代码执行且已出现实战利用</p>
+<p>文章链接：<a href="https://www.darkreading.com/application-security/fortinet-big-ip-vulnerability-reclassified-rce-exploitation">F5 BIG-IP 漏洞被重新定性为远程代码执行且已出现实战利用</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章关注点在于漏洞评级变化背后的现实含义，即原本被低估的缺陷在深入分析和实战观测后，被确认具备更高的攻击能力并已进入利用阶段。对防守方来说，这类内容的价值在于提醒补丁优先级不该只看首次公告，还要持续跟踪复盘、利用代码流出和野外攻击情报。</p>
+<hr>
+<p>文章标题：Telegram 严重零点击漏洞风波</p>
+<p>文章链接：<a href="https://www.darkreading.com/application-security/storm-brews-critical-no-click-telegram-flaw">Telegram 严重零点击漏洞风波</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章聚焦 Telegram 中无需用户交互即可触发的高危缺陷。零点击漏洞一直是高价值攻击链的重要组成部分，因为它跳过了社工、点击和宏观诱导这些不稳定环节。对移动安全和高价值目标防护来说，这类案例能帮助团队重新评估消息应用、媒体解析和预览组件的真实暴露面。</p>
+<hr>
+<p>文章标题：AI 驱动的 DeepLoad 恶意软件窃取凭证并规避检测</p>
+<p>文章链接：<a href="https://www.darkreading.com/cyberattacks-data-breaches/ai-powered-deepload-steals-credentials-evades-detection">AI 驱动的 DeepLoad 恶意软件窃取凭证并规避检测</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章介绍一种利用海量垃圾代码隐藏真实逻辑、以此提升规避能力的恶意样本，并指出其中相当部分混淆内容很可能由 AI 生成。它的技术意义不在“AI 生成恶意代码”这个标签，而在于说明低成本自动化混淆已经足以抬高分析与检测门槛，后续样本库会更嘈杂、更难靠静态规则处理。</p>
+<hr>
+<p>文章标题：MobSF 已有移动端，我为 Web 打造了一个对应工具：Argus</p>
+<p>文章链接：<a href="https://infosecwriteups.com/mobsf-exists-for-mobile-so-i-built-one-for-the-web-meet-argus-6fbaf37557c8?source=rss----7b722bfd1b8d---4">MobSF 已有移动端，我为 Web 打造了一个对应工具：Argus</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：文章提出一个很直接也很实用的问题：既然移动端已经有像 MobSF 这样成体系的静态与动态分析平台，为什么 Web 侧还缺少类似的一站式审计入口。Argus 的价值就在于尝试把源码、依赖、配置和常见风险扫描收拢到同一视角，帮助研究者更快搭起面向 Web 应用的自动化初筛流程。</p>
+<hr>
+<p>文章标题：从 Paste 站点到奖金：一次由泄露数据转成关键漏洞的实战</p>
+<p>文章链接：<a href="https://infosecwriteups.com/from-paste-site-to-payout-how-a-single-dump-led-to-a-critical-bug-56bf0677d1cf?source=rss----7b722bfd1b8d---4">从 Paste 站点到奖金：一次由泄露数据转成关键漏洞的实战</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：文章展示了如何从公开泄露站点中的一份数据转储出发，把看似“只是情报”的线索继续延伸到真实系统中的高危问题。它的参考价值在于强调漏洞挖掘并不总从功能点开始，很多高质量成果来自外部情报、资产关联、命名规律和历史泄露信息之间的交叉验证。</p>
+<hr>
+<p>文章标题：从 SSRF 到管理员权限：一个“无害 URL”如何直通核心后台</p>
+<p>文章链接：<a href="https://infosecwriteups.com/ssrf-to-admin-access-when-a-harmless-url-took-me-straight-to-the-kingdom-000815d0725d?source=rss----7b722bfd1b8d---4">从 SSRF 到管理员权限：一个“无害 URL”如何直通核心后台</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：文章围绕一个表面上非常常见的 URL 参数切入，最终扩展成 SSRF 到后台能力获取的完整利用链。对做 Web 与云环境测试的人来说，这类文章的意义在于它提醒我们不要把 SSRF 只当“打个内网地址”，真正高价值的地方在于后续可达面、身份上下文与管理接口之间的联动。</p>
+<hr>
+<p>文章标题：幻影边界：一次 Cloudflare Pastejacking 攻击分析</p>
+<p>文章链接：<a href="https://infosecwriteups.com/the-phantom-edge-a-cloudflare-pastejacking-attack-farros-28e3889aa365?source=rss----7b722bfd1b8d---4">幻影边界：一次 Cloudflare Pastejacking 攻击分析</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章聚焦 pastejacking 这种老思路在现代边缘平台和内容分发场景中的新变体，核心是利用用户复制粘贴这一低摩擦动作，把安全边界外的恶意命令带回本机执行。它的价值在于提醒研究者重新审视剪贴板、终端、浏览器脚本和边缘内容之间的信任链，而不是只盯传统 XSS。</p>
+<hr>
+<p>文章标题：Windows RRAS 远程代码执行漏洞利用分析</p>
+<p>文章链接：<a href="https://cxsecurity.com/issue/WLB-2026030030">Windows RRAS 远程代码执行漏洞利用分析</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这是一篇典型的 exploit 类内容，价值在于它把一个 RRAS 远程代码执行问题从漏洞编号推进到可验证的攻击路径。对攻防人员而言，这类文章最重要的意义是帮助判断漏洞是否具备稳定利用条件、网络可达性要求和复现门槛，从而更准确地评估现实威胁而不是停留在通告层面。</p>
+<hr>
+<p>文章标题：Linux Kernel 5.8 至 5.15.25 本地提权漏洞利用分析</p>
+<p>文章链接：<a href="https://cxsecurity.com/issue/WLB-2026030029">Linux Kernel 5.8 至 5.15.25 本地提权漏洞利用分析</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章关注 Linux 内核较宽版本区间内的本地提权利用，核心参考价值在于它能帮助读者理解内核漏洞为何在落地后仍然高危，因为一旦进入主机便可继续突破容器、服务账号或受限用户的边界。对做云上攻防、容器逃逸评估和主机加固的人，这类 exploit 资料非常值得跟进。</p>
+<hr>
+<p>文章标题：GPT-5.4 多模态代码生成实战评测：2026 年 AI 编程的范式革命</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/um1fNeTzyh-EGBBdsD5TEg">GPT-5.4 多模态代码生成实战评测：2026 年 AI 编程的范式革命</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章围绕 GPT-5.4 在代码生成、网页操作、文档解析与多模态执行上的能力变化展开，重点不是单纯跑分，而是讨论 AI 编程工具从“补全助手”走向“任务执行者”的分界线。对安全从业者来说，这种能力跃迁直接影响代码审计、自动化验证、漏洞挖掘和防守流程的工具形态。</p>
+<hr>
+<p>文章标题：Anthropic 漏洞挖掘专用模型 Claude Mythos 泄露，AI 安全攻防格局突变</p>
+<p>文章链接：<a href="https://mp.weixin.qq.com/s/9pkBn5-z4CI5J4U42ezoHA">Anthropic 漏洞挖掘专用模型 Claude Mythos 泄露，AI 安全攻防格局突变</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章讨论一款被描述为偏向漏洞挖掘和安全研究场景的模型泄露事件，其价值不在八卦，而在于它把一个趋势说得很明确：专用安全模型正在从通用大模型能力中分化出来。对攻防双方来说，这意味着漏洞发现、利用链构造和防御对抗都可能被更强的领域模型进一步加速。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-31/>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-31/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-03-30/" class="prev" rel="prev" title="每日信息流 2026 03 30"><i class="iconfont icon-left"></i>&nbsp;每日信息流 2026 03 30</a>
+         
+        
+        <a href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-01/" class="next" rel="next" title="每日信息流 2026 04 01">每日信息流 2026 04 01&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
