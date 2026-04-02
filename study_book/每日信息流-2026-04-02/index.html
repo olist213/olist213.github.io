@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Olist.213">
+  <meta name="description" content="一点牢骚">
+  
+  
+  <link rel="prev" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-01/" />
+  
+  <link rel="canonical" href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-02/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           每日信息流 2026 04 02 | Olist.213
+       
+  </title>
+  <meta name="title" content="每日信息流 2026 04 02 | Olist.213">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/olist213.github.io"
+    },
+    "articleSection" : "study_book",
+    "name" : "每日信息流 2026 04 02",
+    "headline" : "每日信息流 2026 04 02",
+    "description" : "本文基于 GitHub Issues 最新一期 [每日信息流] 2026-04-02 进行筛选。本次先完整查看 issue 中可访问的多来源链接，再从渗透、红队、供应链、AI 安全和 CTF 方向挑出 20 篇更值得网络安全从业者细读的文章，尽量避开单一来源的重复转载和纯快讯。\n文章标题：起底 OpenClaw 提示词注入：从“无害话痨”到“主机沦陷”仅需一个网页\n文章链接：起底 OpenClaw 提示词注入：从“无害话痨”到“主机沦陷”仅需一个网页\n所属领域：AI\n文章总结：这篇文章的价值在于把提示词注入从“让模型说错话”推进到“让高权限 Agent 执行系统动作”。文中先展示直接注入为何会被拦截，再顺着边界标记、恶意网页和主机能力逐步拆出可利用链路。对正在评估本地 Agent 的团队来说，它很适合作为网页输入、权限设计和熔断机制的测试清单。\n 文章标题：Trivy 供应链攻击持续扩散，波及 Docker 镜像与 GitHub 代码仓库\n文章链接：Trivy 供应链攻击持续扩散，波及 Docker 镜像与 GitHub 代码仓库\n所属领域：网络安全\n文章总结：文章围绕 TeamPCP 对 Trivy 生态的连续打击展开，重点不是单个恶意版本，而是 GitHub 自动化构建、官方 Docker 镜像和版本标签信任如何一起失守。文中提到伪装镜像、被复用的后门特征以及非原子化密钥轮换带来的二次入侵，对做供应链响应和构建链加固的人很有参考价值。\n 文章标题：缓解 Axios npm 供应链投毒\n文章链接：缓解 Axios npm 供应链投毒\n所属领域：网络安全\n文章总结：微软这篇文章把 Axios 事件拆得很实。它明确指出 1.14.1 和 0.30.4 两个恶意版本通过 plain-crypto-js 投递跨平台 RAT，并给出凭证轮换、锁定安全版本、禁用自动升级、排查 node_modules 残留和配置 Dependabot 约束等落地措施。它适合直接作为 npm 供应链事件的企业处置模板。",
+    "inLanguage" : "zh-cn",
+    "author" : "[lca]",
+    "creator" : "[lca]",
+    "publisher": "[lca]",
+    "accountablePerson" : "[lca]",
+    "copyrightHolder" : "[lca]",
+    "copyrightYear" : "2026",
+    "datePublished": "2026-04-02 12:32:13 \u002b0800 CST",
+    "dateModified" : "2026-04-02 12:32:13 \u002b0800 CST",
+    "url" : "https:\/\/olist213.github.io\/study_book\/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-02\/",
+    "wordCount" : "372",
+    "keywords" : [  "Olist.213"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://olist213.github.io">Olist.213</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog&#39;s</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/study_book/" title="">学习笔记Day</a>
+                
+                <a class="menu-item" href="/security_process/" title="">安全流程</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">每日信息流 2026 04 02</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://olist213.github.io" rel="author">[lca]</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2026-04-02 itemprop="datePublished">April 2, 2026</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>本文基于 GitHub Issues 最新一期 <a href="https://github.com/Tyaoo/picker/issues/1332"><code>[每日信息流] 2026-04-02</code></a> 进行筛选。本次先完整查看 issue 中可访问的多来源链接，再从渗透、红队、供应链、AI 安全和 CTF 方向挑出 20 篇更值得网络安全从业者细读的文章，尽量避开单一来源的重复转载和纯快讯。</p>
+<p>文章标题：起底 OpenClaw 提示词注入：从“无害话痨”到“主机沦陷”仅需一个网页</p>
+<p>文章链接：<a href="https://www.4hou.com/posts/pnrQ">起底 OpenClaw 提示词注入：从“无害话痨”到“主机沦陷”仅需一个网页</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章的价值在于把提示词注入从“让模型说错话”推进到“让高权限 Agent 执行系统动作”。文中先展示直接注入为何会被拦截，再顺着边界标记、恶意网页和主机能力逐步拆出可利用链路。对正在评估本地 Agent 的团队来说，它很适合作为网页输入、权限设计和熔断机制的测试清单。</p>
+<hr>
+<p>文章标题：Trivy 供应链攻击持续扩散，波及 Docker 镜像与 GitHub 代码仓库</p>
+<p>文章链接：<a href="https://www.4hou.com/posts/gyBj">Trivy 供应链攻击持续扩散，波及 Docker 镜像与 GitHub 代码仓库</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章围绕 TeamPCP 对 Trivy 生态的连续打击展开，重点不是单个恶意版本，而是 GitHub 自动化构建、官方 Docker 镜像和版本标签信任如何一起失守。文中提到伪装镜像、被复用的后门特征以及非原子化密钥轮换带来的二次入侵，对做供应链响应和构建链加固的人很有参考价值。</p>
+<hr>
+<p>文章标题：缓解 Axios npm 供应链投毒</p>
+<p>文章链接：<a href="https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/">缓解 Axios npm 供应链投毒</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：微软这篇文章把 Axios 事件拆得很实。它明确指出 1.14.1 和 0.30.4 两个恶意版本通过 <code>plain-crypto-js</code> 投递跨平台 RAT，并给出凭证轮换、锁定安全版本、禁用自动升级、排查 <code>node_modules</code> 残留和配置 Dependabot 约束等落地措施。它适合直接作为 npm 供应链事件的企业处置模板。</p>
+<hr>
+<p>文章标题：关于 Axios npm 供应链攻击的常见问题</p>
+<p>文章链接：<a href="https://www.tenable.com/blog/faq-about-the-axios-npm-supply-chain-attack-by-north-korea-nexus-threat-actor-unc1069">关于 Axios npm 供应链攻击的常见问题</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：Tenable 用 FAQ 形式把这次投毒的关键问题讲清楚了，包括维护者账号如何失守、经典长期 token 如何绕过 GitHub Actions OIDC、恶意依赖如何在安装时投递后门，以及安全版本回退和冷静期策略为何重要。它适合在事件复盘时帮助团队把“知道出了事”转成“知道该改什么”。</p>
+<hr>
+<p>文章标题：面向 Agent 时代的变异测试</p>
+<p>文章链接：<a href="https://blog.trailofbits.com/2026/04/01/mutation-testing-for-the-agentic-era/">面向 Agent 时代的变异测试</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：Trail of Bits 这篇文章对安全工程很有启发，因为它直接指出代码覆盖率只能证明“跑到了”，证明不了“测到了”。文中发布了面向 Agent 使用场景优化的 MuTON 和 mewt，强调通过语法树、变异优先级和多语言支持来暴露测试盲区。对做 LLM 代码代理和安全测试自动化的人，这是一条很实用的质量增强路径。</p>
+<hr>
+<p>文章标题：BugQuest 2026：31 天打穿 Broken Access Control</p>
+<p>文章链接：<a href="https://www.intigriti.com/researchers/blog/hacking-tools/bugquest-2026-31-days-of-broken-access-control">BugQuest 2026：31 天打穿 Broken Access Control</a></p>
+<p>所属领域：渗透</p>
+<p>文章总结：这不是一篇单点技巧文，而是一套完整的越权测试课程索引。文章把认证与授权区别、RBAC/ABAC 模型、端点发现、HTTP 方法绕过、GraphQL、参数污染、多步骤流程缺口以及 Burp Autorize 自动化串成一条系统方法。对做业务逻辑测试和 API 渗透的人来说，它是很好的检查框架。</p>
+<hr>
+<p>文章标题：TrueConf 零日漏洞在针对东南亚政府网络攻击中被利用</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63997">TrueConf 零日漏洞在针对东南亚政府网络攻击中被利用</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章的重点是更新信任链被拿来做横向投毒。攻击者只要控制本地 TrueConf 服务器，就能借客户端缺失完整性校验的更新流程下发恶意安装包，并通过 DLL 侧加载落地 Havoc 一类植入。它提醒防守方不要只盯终端补丁，还要盯住私有更新基础设施和内部分发链的信任边界。</p>
+<hr>
+<p>文章标题：Claude AI 发现 Vim 和 Emacs 打开文件即触发的远程代码执行漏洞</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63996">Claude AI 发现 Vim 和 Emacs 打开文件即触发的远程代码执行漏洞</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：文章展示了 AI 辅助代码审计如何在老牌工具链里挖出高价值问题。Vim 一侧是 modeline 处理和沙箱限制组合失效，受害者只需打开特制文件就可能执行命令；Emacs 一侧则把 <code>vc-git</code> 行为与攻击者控制的 <code>.git/config</code> 串起来。对开发环境安全来说，这类“打开即中招”的链路非常值得复现验证。</p>
+<hr>
+<p>文章标题：Claude Code 源代码在 NPM 包中意外泄露</p>
+<p>文章链接：<a href="https://hackernews.cc/archives/63995">Claude Code 源代码在 NPM 包中意外泄露</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章最值得看的不是八卦，而是一次很典型的发布物料泄露教训。问题根源在于发布到 npm 的版本里混入了包含 <code>sourcesContent</code> 的大型 source map，结果让外界可以重建近 1900 个文件、约 50 万行源码，并顺便看到未公开功能。对做 CLI、桌面端和 AI 工具发布的人，这是一堂扎实的构建产物审计课。</p>
+<hr>
+<p>文章标题：“龙虾”来袭，绿盟科技三位一体防御体系，让网络告别“裸奔”风险</p>
+<p>文章链接：<a href="https://blog.nsfocus.net/%e9%be%99%e8%99%be%e6%9d%a5%e8%a2%ad%ef%bc%8c%e7%bb%bf%e7%9b%9f%e7%a7%91%e6%8a%80%e4%b8%89%e4%bd%8d%e4%b8%80%e4%bd%93%e9%98%b2%e5%be%a1%e4%bd%93%e7%b3%bb%ef%bc%8c%e8%ae%a9%e7%bd%91/">“龙虾”来袭，绿盟科技三位一体防御体系，让网络告别“裸奔”风险</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章把 OpenClaw 风险面拆成五个很容易映射到企业环境的控制点：高危漏洞、超级权限、恶意 Skills、凭证明文存储和自主操作失控。它的价值在于没有把问题说成单个 CVE，而是把 Agent 当成一个叠加了终端、身份、插件和外部服务能力的复合攻击面。对做落地治理的人，这种风险分解方式很实用。</p>
+<hr>
+<p>文章标题：读 Claude Code 源码：上下文压缩策略</p>
+<p>文章链接：<a href="https://shiina18.github.io/machine%20learning/2026/04/01/cc-compact/">读 Claude Code 源码：上下文压缩策略</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：这篇文章专注解释 Claude Code 如何在长会话里压缩巨大的工具输出，同时尽量不破坏 prompt cache。作者把“单条用户消息的工具结果预算”“持久化到本地再替换成 preview”“按 <code>tool_use_id</code> 固化命运”这些细节讲得很清楚。对做 Agent 基础设施、长上下文调度和成本控制的人，参考价值很高。</p>
+<hr>
+<p>文章标题：深入拆解 Claude Code 的记忆管理机制</p>
+<p>文章链接：<a href="https://finisky.github.io/claude-code-memory-management/">深入拆解 Claude Code 的记忆管理机制</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章从工程实现角度拆了 Claude Code 的三层记忆体系：上下文窗口压缩、后台持续摘要的 Session Memory，以及跨会话持久化的 <code>memdir</code>。它不只是描述概念，还讲了双阈值触发、Fork Agent 隔离更新和索引限制等实现细节。对设计长期任务代理的人来说，这是一篇很好的记忆系统参考稿。</p>
+<hr>
+<p>文章标题：Venom Stealer MaaS 平台把 ClickFix 攻击商品化</p>
+<p>文章链接：<a href="https://www.darkreading.com/endpoint-security/venom-stealer-maas-commoditizes-clickfix-attacks">Venom Stealer MaaS 平台把 ClickFix 攻击商品化</a></p>
+<p>所属领域：红队</p>
+<p>文章总结：Dark Reading 这篇文章把 ClickFix 从单个社会工程技巧提升成了完整的“偷密即服务”流水线。Venom Stealer 不只负责首个载荷，还把伪验证码、假更新、命令粘贴执行、浏览器凭证抓取、钱包数据窃取和持续外传整合进面板，甚至支持按操作员生成定制样本。它很好地说明了攻击工业化正在怎样降低门槛。</p>
+<hr>
+<p>文章标题：云安全加固技巧与资源清单</p>
+<p>文章链接：<a href="https://www.blackhillsinfosec.com/cloud-security-tips-and-resources-for-securing-the-cloud/">云安全加固技巧与资源清单</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：虽然这篇文章更偏方法论整理，但它对安全团队仍然有用，因为它把云安全重新拉回共享责任模型、身份边界、配置管理和基础治理这些常被忽视的基本盘。对准备补云安全基线的人来说，它适合拿来做巡检提纲，尤其适合和现有 Azure、AWS、GCP 环境的职责划分一并核对。</p>
+<hr>
+<p>文章标题：Intigriti 2026 年 3 月 XSS 挑战赛题解：三重绕过窃取管理员 Cookie</p>
+<p>文章链接：<a href="https://infosecwriteups.com/intigriti-march-2026-xss-challenge-writeup-chaining-3-bypasses-to-steal-admin-cookies-4e1910864582?source=rss----7b722bfd1b8d---4">Intigriti 2026 年 3 月 XSS 挑战赛题解：三重绕过窃取管理员 Cookie</a></p>
+<p>所属领域：CTF</p>
+<p>文章总结：这篇题解的亮点是链路很完整，不是单点 payload 炫技。作者把 DOM clobber、组件劫持和隐藏 JSONP 端点组合起来，在 DOMPurify、CSP 和 <code>SANITIZE_DOM</code> 多层防护下仍然完成管理员 Cookie 外带。对做前端渗透和 XSS 训练的人来说，这篇文章很适合作为“组合绕过”而不是“单技巧绕过”的学习样本。</p>
+<hr>
+<p>文章标题：用 Python 破解 DVRIP/Sofia 哈希</p>
+<p>文章链接：<a href="https://infosecwriteups.com/cracking-dvrip-sofia-hashes-with-python-e7596a6004bf?source=rss----7b722bfd1b8d---4">用 Python 破解 DVRIP/Sofia 哈希</a></p>
+<p>所属领域：工具</p>
+<p>文章总结：文章围绕雄迈系 IP 摄像头常见的 DVRIP/Sofia 哈希展开，重点在于把协议细节和实际破解步骤落到一个可复现的 Python 字典攻击脚本里。对做 IoT 审计、设备口令恢复和现场取证的人来说，这类把算法理解和代码实现绑在一起的文章，往往比单纯贴脚本更有长期参考价值。</p>
+<hr>
+<p>文章标题：我们是不是太晚才开始训练 AI</p>
+<p>文章链接：<a href="https://www.darkreading.com/cybersecurity-analytics/are-we-training-ai-too-late">我们是不是太晚才开始训练 AI</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：文章提出了一个很关键的问题：如果防守侧的 AI 主要用“事后确认的恶意样本”训练，那模型学到的往往是攻击结果，而不是攻击意图。文中用 GreyNoise 的边缘遥测数据说明，新基础设施、异常扫描峰值和披露前探测行为本身就是可量化信号。对做 AI 检测的人，这是一篇很好的“训练窗口前移”思路文。</p>
+<hr>
+<p>文章标题：拉美政府正承受更密集的网络攻击压力</p>
+<p>文章链接：<a href="https://www.darkreading.com/cyber-risk/cyberattacks-latin-american-governments">拉美政府正承受更密集的网络攻击压力</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章的价值不只在地区新闻，而在于它把攻击密度、入口偏好和防守短板讲得很清楚。拉美政府面临的是高暴露公共服务、老旧系统、技能缺口和海量泄露凭证叠加后的结构性风险，钓鱼和对外暴露服务仍是主入口。对做区域威胁判断的人，这篇文章适合用来校正“风险更偏结构还是偏技术”的认知。</p>
+<hr>
+<p>文章标题：网络安全价值链：25 家公司如何覆盖 72 个基础角色</p>
+<p>文章链接：<a href="https://hackernoon.com/the-cybersecurity-value-chain-how-25-companies-fill-72-foundational-roles?source=rss">网络安全价值链：25 家公司如何覆盖 72 个基础角色</a></p>
+<p>所属领域：网络安全</p>
+<p>文章总结：这篇文章不是漏洞分析，但对安全从业者做选型和能力盘点很有帮助。作者把身份、终端、网络、软件、数据、云、基础设施和安全运营拆成一条完整价值链，再指出真正覆盖 72 个角色的核心公司并不多。对甲方团队来说，它适合拿来补做“我们到底缺哪一层能力”的架构盘点。</p>
+<hr>
+<p>文章标题：HackerNoon 每日精选：在 AWS 上构建安全 RAG 管道</p>
+<p>文章链接：<a href="https://hackernoon.com/4-1-2026-newsletter?source=rss">HackerNoon 每日精选：在 AWS 上构建安全 RAG 管道</a></p>
+<p>所属领域：AI</p>
+<p>文章总结：虽然这是 HackerNoon 的日刊页面，但它点出的那篇 AWS 安全 RAG 管道文章非常值得关注。摘要明确强调了 PII 脱敏、Guardrails 和针对 LLM 数据泄露的防护步骤，说明这不是普通的“把向量库跑起来”，而是把生成式应用的安全控制前置到架构层。对做企业知识库和问答系统的人，这个方向很实用。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Olist.213 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-02/>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-02/</span>
+            </p>
+            
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://olist213.github.io">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-01/" class="prev" rel="prev" title="每日信息流 2026 04 01"><i class="iconfont icon-left"></i>&nbsp;每日信息流 2026 04 01</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2018 - 2026</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://olist213.github.io">Olist.213</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

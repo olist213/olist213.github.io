@@ -6,7 +6,28 @@
     <description>Recent content in Study_books on Olist.213</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Apr 2026 12:21:58 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Apr 2026 12:32:13 +0800</lastBuildDate><atom:link href="https://olist213.github.io/study_book/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>每日信息流 2026 04 02</title>
+      <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-02/</link>
+      <pubDate>Thu, 02 Apr 2026 12:32:13 +0800</pubDate>
+      
+      <guid>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-02/</guid>
+      <description>本文基于 GitHub Issues 最新一期 [每日信息流] 2026-04-02 进行筛选。本次先完整查看 issue 中可访问的多来源链接，再从渗透、红队、供应链、AI 安全和 CTF 方向挑出 20 篇更值得网络安全从业者细读的文章，尽量避开单一来源的重复转载和纯快讯。
+文章标题：起底 OpenClaw 提示词注入：从“无害话痨”到“主机沦陷”仅需一个网页
+文章链接：起底 OpenClaw 提示词注入：从“无害话痨”到“主机沦陷”仅需一个网页
+所属领域：AI
+文章总结：这篇文章的价值在于把提示词注入从“让模型说错话”推进到“让高权限 Agent 执行系统动作”。文中先展示直接注入为何会被拦截，再顺着边界标记、恶意网页和主机能力逐步拆出可利用链路。对正在评估本地 Agent 的团队来说，它很适合作为网页输入、权限设计和熔断机制的测试清单。
+ 文章标题：Trivy 供应链攻击持续扩散，波及 Docker 镜像与 GitHub 代码仓库
+文章链接：Trivy 供应链攻击持续扩散，波及 Docker 镜像与 GitHub 代码仓库
+所属领域：网络安全
+文章总结：文章围绕 TeamPCP 对 Trivy 生态的连续打击展开，重点不是单个恶意版本，而是 GitHub 自动化构建、官方 Docker 镜像和版本标签信任如何一起失守。文中提到伪装镜像、被复用的后门特征以及非原子化密钥轮换带来的二次入侵，对做供应链响应和构建链加固的人很有参考价值。
+ 文章标题：缓解 Axios npm 供应链投毒
+文章链接：缓解 Axios npm 供应链投毒
+所属领域：网络安全
+文章总结：微软这篇文章把 Axios 事件拆得很实。它明确指出 1.14.1 和 0.30.4 两个恶意版本通过 plain-crypto-js 投递跨平台 RAT，并给出凭证轮换、锁定安全版本、禁用自动升级、排查 node_modules 残留和配置 Dependabot 约束等落地措施。它适合直接作为 npm 供应链事件的企业处置模板。</description>
+    </item>
+    
     <item>
       <title>每日信息流 2026 04 01</title>
       <link>https://olist213.github.io/study_book/%E6%AF%8F%E6%97%A5%E4%BF%A1%E6%81%AF%E6%B5%81-2026-04-01/</link>
